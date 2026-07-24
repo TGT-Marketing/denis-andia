@@ -137,7 +137,7 @@ function Home() {
       {/* TRABALHO — Mapa */}
       <section id="trabalho" className="relative bg-background">
         <div className="mx-auto max-w-[1400px] px-4 md:px-10 pt-20 md:pt-28 pb-8">
-          <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr] items-end">
+          <div className="grid gap-10 lg:grid-cols-[1fr_1fr] items-end">
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-xs font-black text-primary uppercase tracking-[0.3em]">N°01</span>
@@ -165,7 +165,7 @@ function Home() {
               <img
                 src={denisTrabalhoCutout.url}
                 alt="Denis Andia com capacete"
-                className="w-full max-w-[420px] object-contain drop-shadow-2xl"
+                className="w-full max-w-[640px] object-contain drop-shadow-2xl"
               />
             </div>
           </div>
