@@ -7,6 +7,9 @@ import { VideoModal } from "@/components/site/VideoModal";
 import { NewsCarousel } from "@/components/site/NewsCarousel";
 import cutout from "@/assets/denis-menina-cutout.png";
 import walkImg from "@/assets/denis-chapeu.jpg";
+import bgAsset from "@/assets/denis-senhor-bg.jpg.asset.json";
+
+const heroBg = bgAsset.url;
 
 
 
@@ -31,7 +34,13 @@ function Home() {
     <Layout transparentHeader>
       {/* HERO */}
       <section className="relative overflow-hidden bg-ink text-white" style={{ backgroundColor: "var(--ink)" }}>
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/30 to-ink/60" style={{ background: "linear-gradient(to bottom, color-mix(in oklab, var(--ink) 75%, transparent), color-mix(in oklab, var(--ink) 20%, transparent), color-mix(in oklab, var(--ink) 65%, transparent))" }} />
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroBg})` }}
+        />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, color-mix(in oklab, var(--ink) 55%, transparent), color-mix(in oklab, var(--ink) 25%, transparent), color-mix(in oklab, var(--ink) 70%, transparent))" }} />
+
+
 
 
         <div className="relative mx-auto max-w-[1400px] px-4 md:px-10 pt-28 md:pt-40 pb-0">
@@ -55,17 +64,17 @@ function Home() {
               </span>
             </h1>
 
-            {/* script "Andia" overlay — sits over the D and E */}
+            {/* script "Andia" — below Denis, centered */}
             <span
-              className="pointer-events-none absolute z-30 text-secondary"
+              className="pointer-events-none absolute z-30"
               style={{
                 left: "50%",
-                bottom: "calc(55% + 12vw)",
-
-                transform: "translateX(calc(-50% - 24vw)) rotate(-6deg)",
-                fontFamily: '"Brush Script MT", "Lucida Handwriting", cursive',
+                bottom: "calc(55% - 6vw)",
+                transform: "translateX(-50%) rotate(-4deg)",
+                fontFamily: '"Great Vibes", "Brush Script MT", cursive',
                 color: "var(--brand-blue)",
-                fontSize: "clamp(2rem, 8vw, 8rem)",
+                fontSize: "clamp(3rem, 12vw, 12rem)",
+                lineHeight: 1,
                 textShadow: "0 6px 30px rgba(0,0,0,.6)",
                 animation: "andia-in 1s ease-out 0.9s both",
               }}
