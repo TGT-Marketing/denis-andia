@@ -32,7 +32,7 @@ export function Footer() {
         <div className="flex flex-col">
           <Link to="/" className="flex flex-col leading-none text-foreground">
             <span className="text-[10px] tracking-[0.35em] font-semibold text-primary">
-              DEPUTADO ESTADUAL
+              DEPUTADO FEDERAL
             </span>
             <span className="text-3xl md:text-4xl font-black tracking-tight mt-1 text-foreground">
               DEN<span className="text-primary">I</span>S
