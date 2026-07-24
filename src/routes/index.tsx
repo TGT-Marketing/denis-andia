@@ -40,17 +40,10 @@ function Home() {
           <div className="relative flex justify-center min-h-[70vh] md:min-h-[85vh] items-end">
             {/* GIANT NAME BEHIND */}
             <h1 className="pointer-events-none absolute inset-x-0 top-6 md:top-8 flex justify-center">
-              <span className="font-black tracking-tighter text-white leading-[0.8] text-[22vw] md:text-[18vw] select-none">
-                DEN<span className="inline-block">IS</span>
+              <span className="font-black tracking-tighter text-white leading-[0.8] text-[18vw] md:text-[15vw] select-none whitespace-nowrap">
+                DENIS ANDIA
               </span>
             </h1>
-            {/* script overlay */}
-            <span
-              className="pointer-events-none absolute left-1/2 -translate-x-[45%] top-[38%] md:top-[42%] text-secondary text-4xl md:text-7xl"
-              style={{ fontFamily: '"Brush Script MT", "Lucida Handwriting", cursive', color: "var(--brand-blue)", textShadow: "0 4px 30px rgba(0,0,0,.6)" }}
-            >
-              Ferreira
-            </span>
 
             {/* CUTOUT PHOTO */}
             <img
