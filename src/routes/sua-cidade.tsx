@@ -7,9 +7,9 @@ import { VideoModal } from "@/components/site/VideoModal";
 import cityImg from "@/assets/denis-city.jpg";
 import peopleImg from "@/assets/denis-people.jpg";
 import brasilImg from "@/assets/denis-brasil.jpg";
-import chapeuImg from "@/assets/denis-chapeu.jpg.asset.json";
-import meninaImg from "@/assets/denis-menina.jpg.asset.json";
-import trabalhoImg from "@/assets/denis-trabalho.jpg.asset.json";
+import chapeuImg from "@/assets/denis-chapeu.jpg";
+import meninaImg from "@/assets/denis-menina.JPG";
+import trabalhoImg from "@/assets/denis-trabalho.JPG";
 
 export const Route = createFileRoute("/sua-cidade")({
   head: () => ({
@@ -40,9 +40,9 @@ const PROJETOS: Projeto[] = [
     description:
       "Uma gestão marcada por resultados concretos, obras entregues e cuidado com quem mais precisa. Denis transformou Santa Bárbara d'Oeste com trabalho de perto e escuta ativa.",
     gallery: [
-      { image: meninaImg.url, caption: "Escuta ativa nos bairros" },
-      { image: trabalhoImg.url, caption: "Obras entregues" },
-      { image: chapeuImg.url, caption: "Presente nas comunidades" },
+      { image: meninaImg, caption: "Escuta ativa nos bairros" },
+      { image: trabalhoImg, caption: "Obras entregues" },
+      { image: chapeuImg, caption: "Presente nas comunidades" },
       { image: cityImg, caption: "Cidade renovada" },
     ],
   },
@@ -55,7 +55,7 @@ const PROJETOS: Projeto[] = [
     gallery: [
       { image: peopleImg, caption: "Famílias reassentadas" },
       { image: cityImg, caption: "Novo bairro entregue" },
-      { image: trabalhoImg.url, caption: "Obras de urbanização" },
+      { image: trabalhoImg, caption: "Obras de urbanização" },
       { image: brasilImg, caption: "Infraestrutura completa" },
     ],
   },
@@ -66,10 +66,10 @@ const PROJETOS: Projeto[] = [
     description:
       "Zeramos a fila de exames e cirurgias eletivas no SUS municipal. Investimento em unidades de saúde, equipes e tecnologia para atender com dignidade.",
     gallery: [
-      { image: chapeuImg.url, caption: "Atendimento humanizado" },
+      { image: chapeuImg, caption: "Atendimento humanizado" },
       { image: peopleImg, caption: "Fila zerada" },
       { image: cityImg, caption: "Novas unidades de saúde" },
-      { image: trabalhoImg.url, caption: "Equipes reforçadas" },
+      { image: trabalhoImg, caption: "Equipes reforçadas" },
     ],
   },
   {
@@ -79,7 +79,7 @@ const PROJETOS: Projeto[] = [
     description:
       "Santa Bárbara d'Oeste alcançou a melhor nota da educação da região, resultado de investimento em professores, escolas reformadas e material de qualidade.",
     gallery: [
-      { image: meninaImg.url, caption: "Alunos em primeiro lugar" },
+      { image: meninaImg, caption: "Alunos em primeiro lugar" },
       { image: peopleImg, caption: "Escolas reformadas" },
       { image: brasilImg, caption: "Professores valorizados" },
       { image: cityImg, caption: "Educação de qualidade" },
@@ -123,7 +123,7 @@ function SuaCidade() {
             className="relative aspect-video w-full overflow-hidden rounded-3xl shadow-card group"
             aria-label="Reproduzir vídeo"
           >
-            <img src={trabalhoImg.url} alt="Denis Andia" className="h-full w-full object-cover" />
+            <img src={trabalhoImg} alt="Denis Andia" className="h-full w-full object-cover" />
             <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors" />
             <span className="absolute inset-0 flex items-center justify-center">
               <span className="flex h-20 w-20 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-brand">

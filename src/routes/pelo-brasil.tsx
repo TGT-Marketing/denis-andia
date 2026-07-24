@@ -7,9 +7,9 @@ import { VideoModal } from "@/components/site/VideoModal";
 import cityImg from "@/assets/denis-city.jpg";
 import peopleImg from "@/assets/denis-people.jpg";
 import brasilImg from "@/assets/denis-brasil.jpg";
-import chapeuImg from "@/assets/denis-chapeu.jpg.asset.json";
-import meninaImg from "@/assets/denis-menina.jpg.asset.json";
-import trabalhoImg from "@/assets/denis-trabalho.jpg.asset.json";
+import chapeuImg from "@/assets/denis-chapeu.jpg";
+import meninaImg from "@/assets/denis-menina.JPG";
+import trabalhoImg from "@/assets/denis-trabalho.JPG";
 
 export const Route = createFileRoute("/pelo-brasil")({
   head: () => ({
@@ -41,7 +41,7 @@ const PROJETOS: Projeto[] = [
       "Grandes iniciativas estruturantes que conectam cidades, fortalecem regiões e destravam o desenvolvimento do país. Projetos pensados para transformar a vida de milhões de brasileiros.",
     gallery: [
       { image: brasilImg, caption: "Integração regional" },
-      { image: trabalhoImg.url, caption: "Obras estruturantes" },
+      { image: trabalhoImg, caption: "Obras estruturantes" },
       { image: cityImg, caption: "Desenvolvimento urbano" },
       { image: peopleImg, caption: "Impacto nacional" },
     ],
@@ -53,8 +53,8 @@ const PROJETOS: Projeto[] = [
     description:
       "À frente da Secretaria Nacional de Mobilidade, Denis coordenou políticas públicas para transporte urbano, mobilidade ativa e integração entre modais em todo o Brasil.",
     gallery: [
-      { image: trabalhoImg.url, caption: "Reuniões técnicas em Brasília" },
-      { image: chapeuImg.url, caption: "Visitas a projetos regionais" },
+      { image: trabalhoImg, caption: "Reuniões técnicas em Brasília" },
+      { image: chapeuImg, caption: "Visitas a projetos regionais" },
       { image: cityImg, caption: "Mobilidade urbana" },
       { image: brasilImg, caption: "Articulação com estados" },
     ],
@@ -66,10 +66,10 @@ const PROJETOS: Projeto[] = [
     description:
       "Uma vida dedicada ao serviço público, ao diálogo e à construção de pontes. Denis carrega no jeito de fazer política a marca de quem escuta, decide e entrega.",
     gallery: [
-      { image: chapeuImg.url, caption: "Perto das pessoas" },
-      { image: meninaImg.url, caption: "Escuta nas comunidades" },
+      { image: chapeuImg, caption: "Perto das pessoas" },
+      { image: meninaImg, caption: "Escuta nas comunidades" },
       { image: peopleImg, caption: "Presença ativa" },
-      { image: trabalhoImg.url, caption: "Trabalho contínuo" },
+      { image: trabalhoImg, caption: "Trabalho contínuo" },
     ],
   },
 ];
@@ -110,7 +110,7 @@ function PeloBrasil() {
             className="relative aspect-video w-full overflow-hidden rounded-3xl shadow-card group"
             aria-label="Reproduzir vídeo"
           >
-            <img src={trabalhoImg.url} alt="Denis Andia" className="h-full w-full object-cover" />
+            <img src={trabalhoImg} alt="Denis Andia" className="h-full w-full object-cover" />
             <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors" />
             <span className="absolute inset-0 flex items-center justify-center">
               <span className="flex h-20 w-20 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-brand">
