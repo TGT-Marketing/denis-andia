@@ -13,36 +13,37 @@ export function Header() {
   ] as const;
 
   return (
-    <header className="sticky top-0 z-40 bg-background/85 backdrop-blur border-b border-border">
-      <div className="mx-auto max-w-7xl px-4 md:px-8 h-20 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2">
-          <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground font-black text-lg">D</span>
-          <span className="text-2xl font-black tracking-tight">
-            <span className="text-primary">DENIS</span>
-            <span className="text-accent-foreground">.</span>
+    <header className="absolute top-0 inset-x-0 z-40">
+      <div className="mx-auto max-w-[1400px] px-6 md:px-10 h-24 flex items-center justify-between">
+        <Link to="/" className="flex flex-col leading-none text-white">
+          <span className="text-[10px] tracking-[0.35em] font-semibold text-accent">
+            DEPUTADO ESTADUAL
+          </span>
+          <span className="text-3xl md:text-4xl font-black tracking-tight mt-1">
+            DEN<span className="text-accent">I</span>S
+          </span>
+          <span className="text-[10px] tracking-[0.4em] font-semibold text-white/80">
+            FERREIRA
           </span>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-8">
-          <Link to="/" className="text-sm font-semibold hover:text-primary transition-colors">
-            Início
-          </Link>
+        <nav className="hidden lg:flex items-center gap-10 text-white">
           <div
             className="relative"
             onMouseEnter={() => setSubOpen(true)}
             onMouseLeave={() => setSubOpen(false)}
           >
-            <button className="flex items-center gap-1 text-sm font-semibold hover:text-primary transition-colors">
-              O que Denis fez por <ChevronDown className="h-4 w-4" />
+            <button className="flex items-center gap-1.5 text-sm font-bold tracking-wider uppercase hover:text-accent transition-colors">
+              O que o Denis fez por <ChevronDown className="h-4 w-4" />
             </button>
             {subOpen && (
-              <div className="absolute left-0 top-full pt-3">
-                <div className="min-w-56 rounded-xl bg-card shadow-card border border-border p-2">
+              <div className="absolute right-0 top-full pt-4">
+                <div className="min-w-56 rounded-xl bg-card text-foreground shadow-card border border-border p-2">
                   {submenu.map((s) => (
                     <Link
                       key={s.to}
                       to={s.to}
-                      className="block rounded-lg px-3 py-2 text-sm font-medium hover:bg-accent/40 transition-colors"
+                      className="block rounded-lg px-3 py-2 text-sm font-semibold hover:bg-accent hover:text-accent-foreground transition-colors"
                     >
                       {s.label}
                     </Link>
@@ -51,20 +52,20 @@ export function Header() {
               </div>
             )}
           </div>
-          <a href="#noticias" className="text-sm font-semibold hover:text-primary transition-colors">
-            Notícias
+          <Link to="/sua-cidade" className="text-sm font-bold tracking-wider uppercase hover:text-accent transition-colors">
+            São Paulo
+          </Link>
+          <Link to="/pelo-brasil" className="text-sm font-bold tracking-wider uppercase hover:text-accent transition-colors">
+            Brasil
+          </Link>
+          <span className="h-6 w-px bg-white/30" />
+          <a href="#sobre" className="text-sm font-black tracking-wider uppercase hover:text-accent transition-colors">
+            Sobre mim
           </a>
         </nav>
 
-        <a
-          href="#hero"
-          className="hidden lg:inline-flex items-center rounded-full bg-primary px-5 py-2.5 text-sm font-bold text-primary-foreground shadow-brand hover:opacity-90 transition-opacity"
-        >
-          Abrace o novo
-        </a>
-
         <button
-          className="lg:hidden p-2"
+          className="lg:hidden p-2 text-white"
           aria-label="Abrir menu"
           onClick={() => setOpen(!open)}
         >
@@ -73,24 +74,25 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="lg:hidden border-t border-border bg-background">
-          <div className="px-4 py-4 flex flex-col gap-2">
-            <Link to="/" onClick={() => setOpen(false)} className="rounded-lg px-3 py-2 text-sm font-semibold hover:bg-accent/40">
-              Início
-            </Link>
-            <div className="px-3 py-1 text-xs font-bold uppercase text-muted-foreground">
-              O que Denis fez por
+        <div className="lg:hidden bg-ink text-white" style={{ backgroundColor: "var(--ink)" }}>
+          <div className="px-6 py-4 flex flex-col gap-1">
+            <div className="px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-accent">
+              O que o Denis fez por
             </div>
             {submenu.map((s) => (
               <Link
                 key={s.to}
                 to={s.to}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-2 text-sm font-medium hover:bg-accent/40"
+                className="rounded-lg px-3 py-2 text-sm font-semibold hover:bg-white/10"
               >
                 {s.label}
               </Link>
             ))}
+            <div className="h-px bg-white/10 my-2" />
+            <a href="#sobre" onClick={() => setOpen(false)} className="rounded-lg px-3 py-2 text-sm font-bold uppercase tracking-wider">
+              Sobre mim
+            </a>
           </div>
         </div>
       )}
