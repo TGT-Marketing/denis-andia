@@ -28,15 +28,15 @@ export function Header() {
       style={scrolled ? { backgroundColor: "color-mix(in oklab, var(--ink) 88%, transparent)" } : undefined}
     >
       <div className={`mx-auto max-w-[1400px] px-6 md:px-10 flex items-center justify-between transition-all duration-300 ${scrolled ? "h-16" : "h-24"}`}>
-        <Link to="/" className="flex flex-col items-center leading-none text-white">
+        <Link to="/" className="inline-flex flex-col leading-none text-white">
           <span className={`font-black tracking-tight transition-all ${scrolled ? "text-2xl md:text-3xl" : "text-3xl md:text-4xl"}`}>
             DEN<span className="text-accent">I</span>S
           </span>
           <span
-            className="text-[11px] md:text-xs font-black text-white -mt-0.5"
-            style={{ letterSpacing: "0.55em", paddingLeft: "0.55em" }}
+            aria-label="ANDIA"
+            className="flex justify-between w-full text-[11px] md:text-xs font-black text-white -mt-0.5"
           >
-            ANDIA
+            <span>A</span><span>N</span><span>D</span><span>I</span><span>A</span>
           </span>
         </Link>
 
