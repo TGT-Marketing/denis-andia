@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
 import { RegionMap } from "@/components/site/RegionMap";
 import { NewsCarousel } from "@/components/site/NewsCarousel";
-import cutoutAsset from "@/assets/denis-trabalho.jpg.asset.json";
+import cutoutAsset from "@/assets/denis-cutout.png.asset.json";
 import rallyBgAsset from "@/assets/denis-menina.jpg.asset.json";
 import walkAsset from "@/assets/denis-chapeu.jpg.asset.json";
 
