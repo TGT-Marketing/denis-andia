@@ -10,9 +10,9 @@ const NAV = [
 
 const SOCIAL = [
   { icon: Instagram, label: "denisferreiradm", href: "#" },
-  { icon: Youtube, label: "Denis Ferreira", href: "#" },
+  { icon: Youtube, label: "Denis Andia", href: "#" },
   { icon: XIcon, label: "denis_dm", href: "#" },
-  { icon: Send, label: "Denis Ferreira", href: "#" },
+  { icon: Send, label: "Denis Andia", href: "#" },
 ] as const;
 
 export function Footer() {
@@ -119,7 +119,7 @@ export function Footer() {
       <div className="relative border-t border-foreground/15">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-5 flex flex-col md:flex-row justify-between items-center gap-3 text-[11px] font-bold tracking-[0.2em] uppercase text-foreground/80">
           <p>
-            Candidato Denis Ferreira © {new Date().getFullYear()} — Todos os direitos reservados
+            Candidato Denis Andia © {new Date().getFullYear()} — Todos os direitos reservados
           </p>
           <a href="#" className="hover:text-primary transition-colors">
             Política de Privacidade
