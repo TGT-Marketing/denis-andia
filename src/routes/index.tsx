@@ -47,20 +47,20 @@ function Home() {
           <div className="relative flex justify-center min-h-[65vh] sm:min-h-[75vh] md:min-h-[92vh] items-end">
             {/* cutout removido para dar destaque ao nome */}
 
-            {/* GIANT NAME — mesmo formato do menu (DENIS + ANDIA ponta a ponta) */}
-            <div className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 z-10 flex justify-center overflow-hidden">
-              <div className="inline-flex flex-col leading-none text-white">
+            {/* GIANT NAME — DENIS grande com ANDIA logo abaixo, ponta a ponta */}
+            <div className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 z-10 flex justify-center">
+              <div className="inline-flex flex-col items-stretch leading-none text-white">
                 <span
-                  className="font-black tracking-tight text-[22vw] leading-[0.8] select-none"
+                  className="font-black tracking-tight text-[22vw] leading-[0.85] select-none block"
                   style={{ animation: "denis-rise 1.1s cubic-bezier(0.22,1,0.36,1) 0.15s both" }}
                 >
                   DEN<span className="text-accent">I</span>S
                 </span>
                 <span
                   aria-label="ANDIA"
-                  className="flex justify-between w-full font-black text-white -mt-0.5 select-none"
+                  className="flex justify-between w-full font-black text-white select-none mt-1 md:mt-2"
                   style={{
-                    fontSize: "clamp(0.9rem, 3vw, 3.25rem)",
+                    fontSize: "clamp(0.9rem, 2.9vw, 3.25rem)",
                     animation: "andia-in 1s ease-out 0.9s both",
                   }}
                 >
