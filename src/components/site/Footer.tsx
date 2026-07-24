@@ -35,7 +35,7 @@ export function Footer() {
           <Link to="/" className="inline-block">
             <img
               src={denisLogo.url}
-              alt="Denis Andia 1540 - Deputado Federal"
+              alt="Denis Andia"
               className="h-20 md:h-24 w-auto object-contain"
             />
           </Link>
