@@ -141,7 +141,11 @@ function Home() {
 
             </div>
           </div>
-          <div className="h-2 bg-primary" />
+          <div className="flex h-3 w-full">
+            <div className="flex-1 bg-primary" />
+            <div className="flex-1 bg-secondary" />
+            <div className="flex-1" style={{ backgroundColor: "var(--brand-blue)" }} />
+          </div>
         </div>
       </section>
 
