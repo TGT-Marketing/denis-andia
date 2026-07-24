@@ -59,9 +59,9 @@ export function Header() {
             Brasil
           </Link>
           <span className="h-6 w-px bg-white/30" />
-          <a href="#sobre" className="text-sm font-black tracking-wider uppercase hover:text-accent transition-colors">
+          <Link to="/sobre-mim" className="text-sm font-black tracking-wider uppercase hover:text-accent transition-colors">
             Sobre mim
-          </a>
+          </Link>
         </nav>
 
         <button
