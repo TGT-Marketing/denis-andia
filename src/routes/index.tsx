@@ -80,25 +80,6 @@ function Home() {
             >
               Andia
             </span>
-
-            {/* Play button — right side */}
-            <button
-              type="button"
-              onClick={() => setVideoOpen(true)}
-              className="group absolute right-2 md:right-8 bottom-24 md:bottom-32 z-40 flex items-center gap-3 md:gap-4 animate-fade-in"
-              aria-label="Reproduzir vídeo: Gente que conhece gente"
-            >
-              <span className="relative flex h-14 w-14 md:h-20 md:w-20 items-center justify-center rounded-full bg-secondary text-secondary-foreground shadow-brand transition-transform duration-300 group-hover:scale-110">
-                <span className="absolute inset-0 rounded-full bg-secondary/60 animate-ping" />
-                <Play className="relative h-6 w-6 md:h-8 md:w-8 fill-current" />
-              </span>
-              <span className="hidden md:flex flex-col text-left text-white">
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-secondary">Assista</span>
-                <span className="text-sm font-black uppercase leading-tight max-w-[180px]">
-                  Conheça a história de Denis Andia
-                </span>
-              </span>
-            </button>
           </div>
         </div>
 
@@ -140,9 +121,24 @@ function Home() {
               >
                 Abrace o novo
               </a>
-              <p className="md:ml-auto text-xs font-semibold text-accent-foreground/70 uppercase tracking-widest">
-                #DenisAndia · São Paulo
-              </p>
+              <button
+                type="button"
+                onClick={() => setVideoOpen(true)}
+                className="group md:ml-auto flex items-center gap-3 md:gap-4"
+                aria-label="Reproduzir vídeo: Gente que conhece gente"
+              >
+                <span className="relative flex h-14 w-14 md:h-16 md:w-16 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-brand transition-transform duration-300 group-hover:scale-110">
+                  <span className="absolute inset-0 rounded-full bg-primary/50 animate-ping" />
+                  <Play className="relative h-5 w-5 md:h-6 md:w-6 fill-current" />
+                </span>
+                <span className="flex flex-col text-left">
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-accent-foreground/70">Assista</span>
+                  <span className="text-sm md:text-base font-black uppercase leading-tight text-accent-foreground max-w-[200px]">
+                    Conheça a história de Denis Andia
+                  </span>
+                </span>
+              </button>
+
             </div>
           </div>
           <div className="h-2 bg-primary" />
