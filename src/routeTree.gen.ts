@@ -9,8 +9,26 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SuaCidadeRouteImport } from './routes/sua-cidade'
+import { Route as PeloBrasilRouteImport } from './routes/pelo-brasil'
+import { Route as NossaGenteRouteImport } from './routes/nossa-gente'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SuaCidadeRoute = SuaCidadeRouteImport.update({
+  id: '/sua-cidade',
+  path: '/sua-cidade',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PeloBrasilRoute = PeloBrasilRouteImport.update({
+  id: '/pelo-brasil',
+  path: '/pelo-brasil',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NossaGenteRoute = NossaGenteRouteImport.update({
+  id: '/nossa-gente',
+  path: '/nossa-gente',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +37,61 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/nossa-gente': typeof NossaGenteRoute
+  '/pelo-brasil': typeof PeloBrasilRoute
+  '/sua-cidade': typeof SuaCidadeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/nossa-gente': typeof NossaGenteRoute
+  '/pelo-brasil': typeof PeloBrasilRoute
+  '/sua-cidade': typeof SuaCidadeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/nossa-gente': typeof NossaGenteRoute
+  '/pelo-brasil': typeof PeloBrasilRoute
+  '/sua-cidade': typeof SuaCidadeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/nossa-gente' | '/pelo-brasil' | '/sua-cidade'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/nossa-gente' | '/pelo-brasil' | '/sua-cidade'
+  id: '__root__' | '/' | '/nossa-gente' | '/pelo-brasil' | '/sua-cidade'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  NossaGenteRoute: typeof NossaGenteRoute
+  PeloBrasilRoute: typeof PeloBrasilRoute
+  SuaCidadeRoute: typeof SuaCidadeRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sua-cidade': {
+      id: '/sua-cidade'
+      path: '/sua-cidade'
+      fullPath: '/sua-cidade'
+      preLoaderRoute: typeof SuaCidadeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pelo-brasil': {
+      id: '/pelo-brasil'
+      path: '/pelo-brasil'
+      fullPath: '/pelo-brasil'
+      preLoaderRoute: typeof PeloBrasilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nossa-gente': {
+      id: '/nossa-gente'
+      path: '/nossa-gente'
+      fullPath: '/nossa-gente'
+      preLoaderRoute: typeof NossaGenteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +104,9 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  NossaGenteRoute: NossaGenteRoute,
+  PeloBrasilRoute: PeloBrasilRoute,
+  SuaCidadeRoute: SuaCidadeRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
