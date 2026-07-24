@@ -1,8 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
-import walkImg from "@/assets/denis-walk.jpg";
-import rallyBg from "@/assets/rally-bg.jpg";
-import cutout from "@/assets/denis-cutout.png";
+import walkAsset from "@/assets/denis-chapeu.jpg.asset.json";
+import rallyBgAsset from "@/assets/denis-menina.jpg.asset.json";
+import cutoutAsset from "@/assets/denis-trabalho.jpg.asset.json";
+
+const walkImg = walkAsset.url;
+const rallyBg = rallyBgAsset.url;
+const cutout = cutoutAsset.url;
 
 export const Route = createFileRoute("/sobre-mim")({
   head: () => ({
