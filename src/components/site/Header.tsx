@@ -59,8 +59,8 @@ export function Header() {
             Brasil
           </Link>
           <span className="h-6 w-px bg-white/30" />
-          <Link to="/sobre-mim" className="text-sm font-black tracking-wider uppercase hover:text-accent transition-colors">
-            Sobre mim
+          <Link to="/biografia" className="text-sm font-black tracking-wider uppercase hover:text-accent transition-colors">
+            Biografia
           </Link>
         </nav>
 
@@ -90,8 +90,8 @@ export function Header() {
               </Link>
             ))}
             <div className="h-px bg-white/10 my-2" />
-            <Link to="/sobre-mim" onClick={() => setOpen(false)} className="rounded-lg px-3 py-2 text-sm font-bold uppercase tracking-wider">
-              Sobre mim
+            <Link to="/biografia" onClick={() => setOpen(false)} className="rounded-lg px-3 py-2 text-sm font-bold uppercase tracking-wider">
+              Biografia
             </Link>
           </div>
         </div>
