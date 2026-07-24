@@ -1,15 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
-import walkAsset from "@/assets/denis-chapeu.jpg.asset.json";
-import rallyBgAsset from "@/assets/denis-menina.jpg.asset.json";
-import cutoutAsset from "@/assets/denis-trabalho.jpg.asset.json";
+import walkAsset from "@/assets/denis-chapeu.jpg";
+import rallyBgAsset from "@/assets/denis-menina.JPG";
+import cutoutAsset from "@/assets/denis-trabalho.JPG";
 import cityImg from "@/assets/denis-city.jpg";
 import peopleImg from "@/assets/denis-people.jpg";
 import brasilImg from "@/assets/denis-brasil.jpg";
 
-const walkImg = walkAsset.url;
-const rallyBg = rallyBgAsset.url;
-const cutout = cutoutAsset.url;
+const walkImg = walkAsset;
+const rallyBg = rallyBgAsset;
+const cutout = cutoutAsset;
 
 export const Route = createFileRoute("/biografia")({
   head: () => ({
