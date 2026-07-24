@@ -17,13 +17,13 @@ export function Header() {
       <div className="mx-auto max-w-[1400px] px-6 md:px-10 h-24 flex items-center justify-between">
         <Link to="/" className="flex flex-col leading-none text-white">
           <span className="text-[10px] tracking-[0.35em] font-semibold text-accent">
-            DEPUTADO ESTADUAL
+            CANDIDATO
           </span>
           <span className="text-3xl md:text-4xl font-black tracking-tight mt-1">
             DEN<span className="text-accent">I</span>S
           </span>
           <span className="text-[10px] tracking-[0.4em] font-semibold text-white/80">
-            FERREIRA
+            ANDIA
           </span>
         </Link>
 
@@ -52,15 +52,12 @@ export function Header() {
               </div>
             )}
           </div>
-          <Link to="/sua-cidade" className="text-sm font-bold tracking-wider uppercase hover:text-accent transition-colors">
-            São Paulo
-          </Link>
-          <Link to="/pelo-brasil" className="text-sm font-bold tracking-wider uppercase hover:text-accent transition-colors">
-            Brasil
+          <Link to="/bio" className="text-sm font-bold tracking-wider uppercase hover:text-accent transition-colors">
+            Bio
           </Link>
           <span className="h-6 w-px bg-white/30" />
           <Link to="/sobre-mim" className="text-sm font-black tracking-wider uppercase hover:text-accent transition-colors">
-            Sobre mim
+            Sobre o Denis
           </Link>
         </nav>
 
@@ -90,8 +87,11 @@ export function Header() {
               </Link>
             ))}
             <div className="h-px bg-white/10 my-2" />
+            <Link to="/bio" onClick={() => setOpen(false)} className="rounded-lg px-3 py-2 text-sm font-bold uppercase tracking-wider">
+              Bio
+            </Link>
             <Link to="/sobre-mim" onClick={() => setOpen(false)} className="rounded-lg px-3 py-2 text-sm font-bold uppercase tracking-wider">
-              Sobre mim
+              Sobre o Denis
             </Link>
           </div>
         </div>

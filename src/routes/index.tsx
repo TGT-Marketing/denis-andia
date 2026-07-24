@@ -1,18 +1,21 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
+import { Play } from "lucide-react";
 import { Layout } from "@/components/site/Layout";
-import { RegionMap } from "@/components/site/RegionMap";
+import { SPMap } from "@/components/site/SPMap";
 import { NewsCarousel } from "@/components/site/NewsCarousel";
-import cutout from "@/assets/denis-cutout.png";
-import rallyBg from "@/assets/rally-bg.jpg";
-import walkImg from "@/assets/denis-walk.jpg";
+import { VideoModal } from "@/components/site/VideoModal";
+import chapeuImg from "@/assets/denis-chapeu.png";
+import meninaImg from "@/assets/denis-menina.png";
+import obraImg from "@/assets/denis-obra.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Denis Ferreira — Gente que conhece gente" },
-      { name: "description", content: "Site oficial do candidato Denis Ferreira. Um novo jeito de fazer política em São Paulo e no Brasil." },
-      { property: "og:title", content: "Denis Ferreira — Gente que conhece gente" },
-      { property: "og:description", content: "Escuta, presença e resultado. Conheça o trabalho de Denis." },
+      { title: "Denis Andia — Gente que conhece gente" },
+      { name: "description", content: "Site oficial de Denis Andia. Escuta, presença e resultado — um novo jeito de fazer política." },
+      { property: "og:title", content: "Denis Andia — Gente que conhece gente" },
+      { property: "og:description", content: "Abrace o novo. Conheça o trabalho de Denis pelas cidades, pelo Brasil e pela nossa gente." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -21,133 +24,184 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
+  const [videoOpen, setVideoOpen] = useState(false);
+
   return (
     <Layout transparentHeader>
       {/* HERO */}
-      <section className="relative overflow-hidden bg-ink text-white" style={{ backgroundColor: "var(--ink)" }}>
-        {/* backdrop */}
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-60"
-          style={{ backgroundImage: `url(${rallyBg})` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/30 to-ink/60" style={{ background: "linear-gradient(to bottom, color-mix(in oklab, var(--ink) 75%, transparent), color-mix(in oklab, var(--ink) 20%, transparent), color-mix(in oklab, var(--ink) 65%, transparent))" }} />
+      <section
+        className="relative overflow-hidden text-white"
+        style={{
+          background:
+            "radial-gradient(ellipse at 50% 30%, #103a2a 0%, #0a1e17 55%, #05100c 100%)",
+        }}
+      >
+        <div className="relative mx-auto max-w-[1400px] px-4 md:px-10 pt-28 md:pt-32 pb-0">
+          {/* Top bar: left phrase / right video button */}
+          <div className="relative grid grid-cols-2 gap-6 md:gap-10 items-center min-h-[80px] md:min-h-[110px]">
+            <div className="text-left">
+              <p className="text-2xl md:text-4xl font-black uppercase tracking-tight text-accent leading-none">
+                Abrace <span className="text-white">o novo</span>
+              </p>
+              <p className="mt-2 text-xs md:text-sm font-semibold tracking-[0.35em] uppercase text-white/70">
+                #DenisAndia
+              </p>
+            </div>
 
-        <div className="relative mx-auto max-w-[1400px] px-4 md:px-10 pt-32 md:pt-40 pb-0">
-          <div className="relative flex justify-center min-h-[70vh] md:min-h-[85vh] items-end">
-            {/* GIANT NAME BEHIND */}
-            <h1 className="pointer-events-none absolute inset-x-0 top-6 md:top-8 flex justify-center">
-              <span className="font-black tracking-tighter text-white leading-[0.8] text-[22vw] md:text-[18vw] select-none">
-                DEN<span className="inline-block">IS</span>
-              </span>
-            </h1>
-            {/* script overlay */}
-            <span
-              className="pointer-events-none absolute left-1/2 -translate-x-[45%] top-[38%] md:top-[42%] text-secondary text-4xl md:text-7xl"
-              style={{ fontFamily: '"Brush Script MT", "Lucida Handwriting", cursive', color: "var(--brand-blue)", textShadow: "0 4px 30px rgba(0,0,0,.6)" }}
-            >
-              Ferreira
-            </span>
-
-            {/* CUTOUT PHOTO */}
-            <img
-              src={cutout}
-              alt="Denis Ferreira"
-              width={1200}
-              height={1600}
-              className="relative z-10 h-[60vh] md:h-[85vh] w-auto object-contain object-bottom"
-            />
-          </div>
-        </div>
-
-        {/* Color band */}
-        <div className="relative">
-          <div className="bg-accent">
-            <div className="mx-auto max-w-[1400px] px-4 md:px-10 py-6 md:py-8 flex flex-col md:flex-row items-center gap-6 md:gap-10">
-              <div className="bg-secondary text-secondary-foreground px-8 py-6 md:py-8 shadow-brand">
-                <p className="text-2xl md:text-3xl font-black leading-tight tracking-tight uppercase">
-                  Gente que <br />
-                  <span>conhece gente</span>
-                </p>
-              </div>
-              <a
-                href="#trabalho"
-                className="inline-flex items-center rounded-full border-2 border-primary bg-transparent px-10 py-4 text-lg font-black uppercase tracking-wider text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+            <div className="flex justify-end">
+              <button
+                onClick={() => setVideoOpen(true)}
+                className="group inline-flex items-center gap-3 rounded-full border border-white/25 bg-white/5 backdrop-blur px-4 py-2 md:px-5 md:py-3 hover:bg-white/15 transition-colors"
               >
-                Abrace o novo
-              </a>
-              <p className="md:ml-auto text-xs font-semibold text-accent-foreground/70 uppercase tracking-widest">
-                #DenisFerreira · São Paulo
+                <span className="flex h-11 w-11 md:h-12 md:w-12 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-brand transition-transform group-hover:scale-105">
+                  <Play className="h-5 w-5 fill-current" />
+                </span>
+                <span className="text-left leading-tight">
+                  <span className="block text-[10px] md:text-xs uppercase tracking-[0.25em] text-white/70">
+                    Assista
+                  </span>
+                  <span className="block text-sm md:text-base font-black uppercase tracking-wide">
+                    A história do Denis
+                  </span>
+                </span>
+              </button>
+            </div>
+          </div>
+
+          {/* Photos row with soft gradient transition between them */}
+          <div className="relative mt-8 md:mt-10">
+            <div className="relative grid grid-cols-2 items-end min-h-[52vh] md:min-h-[72vh]">
+              <div className="relative h-full flex items-end justify-center">
+                <img
+                  src={chapeuImg}
+                  alt="Denis Andia dando a mão para o Sr. Chapéu"
+                  className="relative z-10 h-[46vh] md:h-[70vh] w-auto object-contain object-bottom drop-shadow-2xl"
+                  style={{
+                    WebkitMaskImage:
+                      "radial-gradient(ellipse at 70% 60%, #000 55%, transparent 90%)",
+                    maskImage:
+                      "radial-gradient(ellipse at 70% 60%, #000 55%, transparent 90%)",
+                  }}
+                />
+              </div>
+
+              {/* Center soft blend */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-y-0 left-1/2 -translate-x-1/2 w-40 md:w-64"
+                style={{
+                  background:
+                    "radial-gradient(ellipse at center, rgba(16,58,42,0.9) 0%, rgba(10,30,23,0) 70%)",
+                }}
+              />
+
+              <div className="relative h-full flex items-end justify-center">
+                <img
+                  src={meninaImg}
+                  alt="Denis Andia com uma menina em evento"
+                  className="relative z-10 h-[46vh] md:h-[70vh] w-auto object-contain object-bottom drop-shadow-2xl"
+                  style={{
+                    WebkitMaskImage:
+                      "radial-gradient(ellipse at 30% 60%, #000 55%, transparent 90%)",
+                    maskImage:
+                      "radial-gradient(ellipse at 30% 60%, #000 55%, transparent 90%)",
+                  }}
+                />
+              </div>
+            </div>
+
+            {/* Name reveal centered at hand-height */}
+            <div className="pointer-events-none absolute inset-x-0 bottom-[10%] md:bottom-[14%] flex flex-col items-center">
+              <h1 className="text-center leading-[0.85]">
+                <span
+                  className="block font-black tracking-tighter text-white text-[14vw] md:text-[9vw] animate-name-reveal"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, #FEEE02 0%, #ffffff 40%, #B9CEE8 100%)",
+                    WebkitBackgroundClip: "text",
+                    backgroundClip: "text",
+                    color: "transparent",
+                  }}
+                >
+                  DENIS
+                </span>
+                <span
+                  className="block mt-1 md:mt-2 text-3xl md:text-6xl text-secondary"
+                  style={{
+                    fontFamily: '"Brush Script MT", "Lucida Handwriting", cursive',
+                    color: "var(--brand-blue)",
+                    textShadow: "0 4px 20px rgba(0,0,0,.5)",
+                  }}
+                >
+                  Andia
+                </span>
+              </h1>
+              <p className="mt-3 text-[10px] md:text-xs font-black tracking-[0.5em] uppercase text-white/70">
+                Gente que conhece gente
               </p>
             </div>
           </div>
-          <div className="h-2 bg-primary" />
+        </div>
+
+        {/* Tri-color strip: verde / amarelo / azul */}
+        <div className="relative mt-4">
+          <div className="grid grid-cols-3">
+            <div className="h-3 md:h-4" style={{ background: "var(--brand-green)" }} />
+            <div className="h-3 md:h-4" style={{ background: "var(--brand-yellow)" }} />
+            <div className="h-3 md:h-4" style={{ background: "var(--brand-blue)" }} />
+          </div>
         </div>
       </section>
 
-      {/* TRABALHO — Mapa */}
-      <section id="trabalho" className="relative bg-background">
-        <div className="mx-auto max-w-[1400px] px-4 md:px-10 pt-20 md:pt-28 pb-8">
-          <div className="flex items-center gap-3 mb-4">
-            <span className="text-xs font-black text-primary uppercase tracking-[0.3em]">N°01</span>
-            <span className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">
-              Mapa do Impacto · SP
-            </span>
-          </div>
-          <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-none">
-            <span className="text-primary">TRABALHO</span>
-            <br />
-            <span className="italic font-light text-foreground/70 text-3xl md:text-5xl normal-case tracking-tight">
-              cidade por cidade,
-            </span>
-            <br />
-            <span className="text-foreground">impacto real.</span>
-          </h2>
+      <VideoModal
+        open={videoOpen}
+        onOpenChange={setVideoOpen}
+        title="Gente que conhece gente"
+        description="Denis Andia conta sua história."
+      />
 
-          <div className="mt-8 grid grid-cols-3 max-w-md gap-6 border-y border-border py-6">
-            <Stat n="645" label="Municípios" />
-            <Stat n="15" label="Regiões" />
-            <Stat n="100%" label="de SP" />
+      {/* TRABALHO — SP Map */}
+      <section id="trabalho" className="relative bg-background overflow-hidden">
+        <div className="mx-auto max-w-[1400px] px-4 md:px-10 pt-20 md:pt-28 pb-8 grid gap-10 lg:grid-cols-[1.15fr_1fr] items-end">
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-xs font-black text-primary uppercase tracking-[0.3em]">N°01</span>
+              <span className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">
+                Emendas · São Paulo
+              </span>
+            </div>
+            <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-none">
+              <span className="text-primary">O TRABALHO</span>
+              <br />
+              <span className="italic font-light text-foreground/70 text-3xl md:text-5xl normal-case tracking-tight">
+                já chegou nas cidades.
+              </span>
+            </h2>
+            <p className="mt-6 max-w-xl text-muted-foreground">
+              Emendas que viraram obra, escola, saúde e oportunidade. Denis leva o resultado
+              onde a gente mora — sem palanque, com resultado.
+            </p>
+            <div className="mt-8 grid grid-cols-3 max-w-md gap-6 border-y border-border py-6">
+              <Stat n="645" label="Municípios" />
+              <Stat n="15" label="Regiões" />
+              <Stat n="100%" label="de SP" />
+            </div>
+          </div>
+
+          <div className="relative flex justify-end">
+            <img
+              src={obraImg}
+              alt="Denis Andia de capacete inspecionando uma obra"
+              className="h-[300px] md:h-[420px] w-auto object-contain drop-shadow-2xl"
+            />
+            <span className="absolute -bottom-2 right-6 rotate-[-4deg] rounded-full bg-primary px-5 py-2 text-primary-foreground text-sm font-black uppercase tracking-wider shadow-brand">
+              Já mandou
+            </span>
           </div>
         </div>
 
         <div className="mx-auto max-w-[1400px] px-4 md:px-10 pb-20">
-          <RegionMap />
-        </div>
-      </section>
-
-      {/* SOBRE MIM */}
-      <section id="sobre" className="bg-secondary/40 py-24">
-        <div className="mx-auto max-w-[1400px] px-4 md:px-10 grid gap-12 lg:grid-cols-[1fr_1.1fr] items-center">
-          <div className="relative">
-            <div className="absolute -inset-4 bg-primary rounded-[2rem] rotate-[-3deg]" />
-            <img
-              src={walkImg}
-              alt="Denis Ferreira caminhando com apoiadores"
-              width={1600}
-              height={1200}
-              loading="lazy"
-              className="relative rounded-[1.5rem] shadow-brand w-full h-auto object-cover aspect-[4/5]"
-            />
-          </div>
-          <div>
-            <p className="text-xs font-bold text-primary uppercase tracking-[0.3em]">Sobre mim</p>
-            <h2 className="mt-4 text-4xl md:text-5xl font-black leading-[1.05] tracking-tight">
-              Um coração inquieto
-              <span className="block text-primary italic font-serif font-normal my-2">diante das dificuldades</span>
-              não pode ficar parado.
-            </h2>
-            <p className="mt-6 text-lg text-muted-foreground max-w-xl">
-              Denis nasceu no interior paulista, cresceu vendo de perto as lutas da sua gente e
-              transformou a vontade de servir em compromisso público. Hoje anda pelas cidades,
-              escuta, atua e leva resultado — sem palanque, sem pose.
-            </p>
-            <Link
-              to="/sobre-mim"
-              className="mt-8 inline-flex items-center rounded-full bg-primary px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-primary-foreground shadow-brand hover:opacity-90 transition"
-            >
-              Saiba mais
-            </Link>
-          </div>
+          <SPMap />
         </div>
       </section>
 
@@ -179,7 +233,7 @@ function Home() {
               </h2>
             </div>
             <p className="max-w-md text-muted-foreground">
-              Propostas que refletem a voz da população e ações que estão mudando o dia a dia.
+              Banner rotativo com as notícias mais recentes. (Textos e fotos definitivos a enviar.)
             </p>
           </div>
           <NewsCarousel />
