@@ -29,6 +29,8 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
+  const [videoOpen, setVideoOpen] = useState(false);
+
   return (
     <Layout transparentHeader>
       {/* HERO */}
