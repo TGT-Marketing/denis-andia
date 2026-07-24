@@ -42,21 +42,21 @@ function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/30 to-ink/60" style={{ background: "linear-gradient(to bottom, color-mix(in oklab, var(--ink) 75%, transparent), color-mix(in oklab, var(--ink) 20%, transparent), color-mix(in oklab, var(--ink) 65%, transparent))" }} />
 
-        <div className="relative mx-auto max-w-[1400px] px-4 md:px-10 pt-32 md:pt-40 pb-0">
-          <div className="relative flex justify-center min-h-[75vh] md:min-h-[92vh] items-end">
+        <div className="relative mx-auto max-w-[1400px] px-4 md:px-10 pt-28 md:pt-40 pb-0">
+          <div className="relative flex justify-center min-h-[65vh] sm:min-h-[75vh] md:min-h-[92vh] items-end">
             {/* CUTOUT PHOTO — on top */}
             <img
               src={cutout}
               alt="Denis Andia"
               width={1600}
               height={2000}
-              className="pointer-events-none relative z-20 h-[70vh] md:h-[92vh] w-auto object-contain object-bottom drop-shadow-[0_30px_60px_rgba(0,0,0,0.55)] animate-fade-in"
+              className="pointer-events-none relative z-20 h-[60vh] sm:h-[70vh] md:h-[92vh] w-auto object-contain object-bottom drop-shadow-[0_30px_60px_rgba(0,0,0,0.55)] animate-fade-in"
             />
 
             {/* GIANT NAME BEHIND — rises from below hand height */}
             <h1 className="pointer-events-none absolute inset-x-0 bottom-[55%] md:bottom-[65%] z-10 flex justify-center overflow-hidden">
               <span
-                className="font-black tracking-tighter text-white leading-[0.8] text-[26vw] md:text-[22vw] select-none"
+                className="font-black tracking-tighter text-white leading-[0.8] text-[22vw] md:text-[22vw] select-none"
                 style={{ animation: "denis-rise 1.1s cubic-bezier(0.22,1,0.36,1) 0.15s both" }}
               >
                 DENIS
@@ -68,12 +68,12 @@ function Home() {
               className="pointer-events-none absolute z-30 text-secondary"
               style={{
                 left: "50%",
-                bottom: "calc(55% + 14vw)",
+                bottom: "calc(55% + 12vw)",
 
-                transform: "translateX(calc(-50% - 28vw)) rotate(-6deg)",
+                transform: "translateX(calc(-50% - 24vw)) rotate(-6deg)",
                 fontFamily: '"Brush Script MT", "Lucida Handwriting", cursive',
                 color: "var(--brand-blue)",
-                fontSize: "clamp(2.5rem, 8vw, 8rem)",
+                fontSize: "clamp(2rem, 8vw, 8rem)",
                 textShadow: "0 6px 30px rgba(0,0,0,.6)",
                 animation: "andia-in 1s ease-out 0.9s both",
               }}
@@ -108,32 +108,32 @@ function Home() {
         {/* Color band */}
         <div className="relative">
           <div className="bg-accent">
-            <div className="mx-auto max-w-[1400px] px-4 md:px-10 py-6 md:py-8 flex flex-col md:flex-row items-center gap-6 md:gap-10">
-              <div className="bg-secondary text-secondary-foreground px-8 py-6 md:py-8 shadow-brand">
-                <p className="text-2xl md:text-3xl font-black leading-tight tracking-tight uppercase">
+            <div className="mx-auto max-w-[1400px] px-4 md:px-10 py-6 md:py-8 flex flex-col md:flex-row items-stretch md:items-center gap-4 md:gap-10">
+              <div className="bg-secondary text-secondary-foreground px-6 md:px-8 py-5 md:py-8 shadow-brand text-center md:text-left">
+                <p className="text-xl sm:text-2xl md:text-3xl font-black leading-tight tracking-tight uppercase">
                   Gente que <br />
                   <span>conhece gente</span>
                 </p>
               </div>
               <a
                 href="#trabalho"
-                className="inline-flex items-center rounded-full border-2 border-primary bg-transparent px-10 py-4 text-lg font-black uppercase tracking-wider text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                className="inline-flex justify-center items-center rounded-full border-2 border-primary bg-transparent px-6 md:px-10 py-3 md:py-4 text-base md:text-lg font-black uppercase tracking-wider text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
               >
                 Abrace o novo
               </a>
               <button
                 type="button"
                 onClick={() => setVideoOpen(true)}
-                className="group md:ml-auto flex items-center gap-3 md:gap-4"
+                className="group md:ml-auto flex items-center gap-3 md:gap-4 justify-center md:justify-start"
                 aria-label="Reproduzir vídeo: Gente que conhece gente"
               >
-                <span className="relative flex h-14 w-14 md:h-16 md:w-16 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-brand transition-transform duration-300 group-hover:scale-110">
+                <span className="relative flex h-12 w-12 md:h-16 md:w-16 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-brand transition-transform duration-300 group-hover:scale-110">
                   <span className="absolute inset-0 rounded-full bg-primary/50 animate-ping" />
-                  <Play className="relative h-5 w-5 md:h-6 md:w-6 fill-current" />
+                  <Play className="relative h-4 w-4 md:h-6 md:w-6 fill-current" />
                 </span>
-                <span className="flex flex-col text-left">
+                <span className="flex flex-col text-left min-w-0">
                   <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-accent-foreground/70">Assista</span>
-                  <span className="text-sm md:text-base font-black uppercase leading-tight text-accent-foreground max-w-[200px]">
+                  <span className="text-xs md:text-base font-black uppercase leading-tight text-accent-foreground max-w-[220px]">
                     Conheça a história de Denis Andia
                   </span>
                 </span>
@@ -141,7 +141,7 @@ function Home() {
 
             </div>
           </div>
-          <div className="flex h-3 w-full">
+          <div className="flex h-2 md:h-3 w-full">
             <div className="flex-1 bg-primary" />
             <div className="flex-1 bg-secondary" />
             <div className="flex-1" style={{ backgroundColor: "var(--brand-blue)" }} />

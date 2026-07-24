@@ -55,8 +55,8 @@ export function Footer() {
 
 
         {/* MIDDLE — nav (spacer for image on desktop) */}
-        <div className="md:pl-8 md:pt-6 self-end md:self-center">
-          <ul className="space-y-6 max-w-[240px] ml-auto">
+        <div className="md:pl-8 md:pt-6 self-start md:self-center">
+          <ul className="space-y-6 max-w-[240px] md:ml-auto">
             {NAV.map((n) => (
               <li key={n.label} className="border-b border-foreground/30 pb-2">
                 <Link
@@ -71,7 +71,7 @@ export function Footer() {
         </div>
 
         {/* RIGHT — social card */}
-        <div className="flex flex-col items-end">
+        <div className="flex flex-col items-start md:items-end">
           <h4 className="text-2xl font-black text-foreground mb-4">
             Redes Sociais
           </h4>
@@ -102,8 +102,8 @@ export function Footer() {
 
       {/* bottom bar */}
       <div className="relative border-t border-foreground/15">
-        <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-5 flex flex-col md:flex-row justify-between items-center gap-3 text-[11px] font-bold tracking-[0.2em] uppercase text-foreground/80">
-          <p>
+        <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-5 flex flex-col md:flex-row justify-between items-start md:items-center gap-3 text-[10px] md:text-[11px] font-bold tracking-[0.15em] md:tracking-[0.2em] uppercase text-foreground/80 text-center md:text-left">
+          <p className="w-full md:w-auto">
             Candidato Denis Andia © {new Date().getFullYear()} — Todos os direitos reservados ·{" "}
             <a
               href="https://www.targetmarketingdigital.com.br/"

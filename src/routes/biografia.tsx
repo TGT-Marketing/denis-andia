@@ -139,20 +139,20 @@ function Biografia() {
             <span className="text-primary italic font-serif font-normal"> da caminhada.</span>
           </h2>
 
-          <div className="mt-12 grid gap-4 md:gap-6 md:grid-cols-4 md:grid-rows-2 md:h-[560px]">
-            <figure className="relative overflow-hidden rounded-2xl shadow-card md:col-span-2 md:row-span-2">
+          <div className="mt-12 grid gap-4 md:gap-6 grid-cols-2 md:grid-cols-4 md:grid-rows-2 md:h-[560px]">
+            <figure className="relative overflow-hidden rounded-2xl shadow-card col-span-2 md:col-span-2 md:row-span-2 h-56 md:h-auto">
               <img src={rallyBg} alt="Denis com apoiadores" className="h-full w-full object-cover" />
             </figure>
-            <figure className="relative overflow-hidden rounded-2xl shadow-card">
+            <figure className="relative overflow-hidden rounded-2xl shadow-card h-40 md:h-auto">
               <img src={walkImg} alt="Denis nas ruas" className="h-full w-full object-cover" />
             </figure>
-            <figure className="relative overflow-hidden rounded-2xl shadow-card">
+            <figure className="relative overflow-hidden rounded-2xl shadow-card h-40 md:h-auto">
               <img src={cutout} alt="Denis em campanha" className="h-full w-full object-cover" />
             </figure>
-            <figure className="relative overflow-hidden rounded-2xl shadow-card">
+            <figure className="relative overflow-hidden rounded-2xl shadow-card h-40 md:h-auto">
               <img src={cityImg} alt="Cidade" className="h-full w-full object-cover" />
             </figure>
-            <figure className="relative overflow-hidden rounded-2xl shadow-card">
+            <figure className="relative overflow-hidden rounded-2xl shadow-card h-40 md:h-auto">
               <img src={peopleImg} alt="Pessoas" className="h-full w-full object-cover" />
             </figure>
           </div>
