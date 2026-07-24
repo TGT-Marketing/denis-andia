@@ -11,9 +11,9 @@ const cutout = cutoutAsset.url;
 export const Route = createFileRoute("/sobre-mim")({
   head: () => ({
     meta: [
-      { title: "Sobre mim — Denis Ferreira" },
-      { name: "description", content: "Conheça a história, a trajetória e os valores do deputado Denis Ferreira." },
-      { property: "og:title", content: "Sobre mim — Denis Ferreira" },
+      { title: "Sobre mim — Denis Andia" },
+      { name: "description", content: "Conheça a história, a trajetória e os valores do deputado Denis Andia." },
+      { property: "og:title", content: "Sobre mim — Denis Andia" },
       { property: "og:description", content: "Um coração inquieto diante das dificuldades não pode ficar parado." },
       { property: "og:type", content: "profile" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -51,7 +51,7 @@ function SobreMim() {
           <div className="relative hidden lg:block">
             <img
               src={cutout}
-              alt="Denis Ferreira"
+              alt="Denis Andia"
               className="w-full h-auto object-contain drop-shadow-2xl"
             />
           </div>

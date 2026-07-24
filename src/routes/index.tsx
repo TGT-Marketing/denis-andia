@@ -13,9 +13,9 @@ const walkImg = walkAsset.url;
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Denis Ferreira — Gente que conhece gente" },
-      { name: "description", content: "Site oficial do candidato Denis Ferreira. Um novo jeito de fazer política em São Paulo e no Brasil." },
-      { property: "og:title", content: "Denis Ferreira — Gente que conhece gente" },
+      { title: "Denis Andia — Gente que conhece gente" },
+      { name: "description", content: "Site oficial do candidato Denis Andia. Um novo jeito de fazer política em São Paulo e no Brasil." },
+      { property: "og:title", content: "Denis Andia — Gente que conhece gente" },
       { property: "og:description", content: "Escuta, presença e resultado. Conheça o trabalho de Denis." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -74,7 +74,7 @@ function Home() {
                 Abrace o novo
               </a>
               <p className="md:ml-auto text-xs font-semibold text-accent-foreground/70 uppercase tracking-widest">
-                #DenisFerreira · São Paulo
+                #DenisAndia · São Paulo
               </p>
             </div>
           </div>
@@ -120,7 +120,7 @@ function Home() {
             <div className="absolute -inset-4 bg-primary rounded-[2rem] rotate-[-3deg]" />
             <img
               src={walkImg}
-              alt="Denis Ferreira caminhando com apoiadores"
+              alt="Denis Andia caminhando com apoiadores"
               width={1600}
               height={1200}
               loading="lazy"
