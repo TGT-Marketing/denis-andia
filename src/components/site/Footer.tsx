@@ -55,8 +55,8 @@ export function Footer() {
 
 
         {/* MIDDLE — nav (spacer for image on desktop) */}
-        <div className="md:pl-8 md:pt-6 self-end md:self-center">
-          <ul className="space-y-6 max-w-[240px] ml-auto">
+        <div className="md:pl-8 md:pt-6 self-start md:self-center">
+          <ul className="space-y-6 max-w-[240px] md:ml-auto">
             {NAV.map((n) => (
               <li key={n.label} className="border-b border-foreground/30 pb-2">
                 <Link
