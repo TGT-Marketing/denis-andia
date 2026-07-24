@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
 import { RegionMap } from "@/components/site/RegionMap";
 import { NewsCarousel } from "@/components/site/NewsCarousel";
@@ -141,12 +141,12 @@ function Home() {
               transformou a vontade de servir em compromisso público. Hoje anda pelas cidades,
               escuta, atua e leva resultado — sem palanque, sem pose.
             </p>
-            <a
-              href="#numeros"
+            <Link
+              to="/sobre-mim"
               className="mt-8 inline-flex items-center rounded-full bg-primary px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-primary-foreground shadow-brand hover:opacity-90 transition"
             >
               Saiba mais
-            </a>
+            </Link>
           </div>
         </div>
       </section>
