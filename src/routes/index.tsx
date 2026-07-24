@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Play } from "lucide-react";
 import { Layout } from "@/components/site/Layout";
-import { RegionMap } from "@/components/site/RegionMap";
+import { SPRegionMap } from "@/components/site/SPRegionMap";
 import { VideoModal } from "@/components/site/VideoModal";
 import { NewsCarousel } from "@/components/site/NewsCarousel";
 import cutoutAsset from "@/assets/denis-cutout.png.asset.json";
@@ -176,7 +176,19 @@ function Home() {
         </div>
 
         <div className="mx-auto max-w-[1400px] px-4 md:px-10 pb-20">
-          <RegionMap />
+          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] items-end">
+            <div className="relative">
+              <div className="absolute inset-0 flex items-end justify-center pointer-events-none">
+                <div className="w-[80%] h-[80%] rounded-full bg-primary/20 blur-3xl" />
+              </div>
+              <img
+                src={cutout}
+                alt="Denis Andia com capacete em uma obra"
+                className="relative w-full h-auto max-h-[560px] object-contain object-bottom drop-shadow-[0_20px_40px_rgba(0,0,0,0.35)]"
+              />
+            </div>
+            <SPRegionMap />
+          </div>
         </div>
       </section>
 
