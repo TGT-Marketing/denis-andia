@@ -38,7 +38,7 @@ function Home() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroBg})` }}
         />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, color-mix(in oklab, var(--ink) 55%, transparent), color-mix(in oklab, var(--ink) 25%, transparent), color-mix(in oklab, var(--ink) 70%, transparent))" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, color-mix(in oklab, var(--ink) 85%, transparent), color-mix(in oklab, var(--ink) 65%, transparent), color-mix(in oklab, var(--ink) 92%, transparent))" }} />
 
 
 
