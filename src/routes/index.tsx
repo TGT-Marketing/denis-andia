@@ -1,6 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
+import { Play } from "lucide-react";
 import { Layout } from "@/components/site/Layout";
 import { RegionMap } from "@/components/site/RegionMap";
+import { VideoModal } from "@/components/site/VideoModal";
 import { NewsCarousel } from "@/components/site/NewsCarousel";
 import cutoutAsset from "@/assets/denis-cutout.png.asset.json";
 import rallyBgAsset from "@/assets/denis-menina.jpg.asset.json";
@@ -26,6 +29,8 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
+  const [videoOpen, setVideoOpen] = useState(false);
+
   return (
     <Layout transparentHeader>
       {/* HERO */}
@@ -75,8 +80,35 @@ function Home() {
             >
               Andia
             </span>
+
+            {/* Play button — right side */}
+            <button
+              type="button"
+              onClick={() => setVideoOpen(true)}
+              className="group absolute right-2 md:right-8 bottom-24 md:bottom-32 z-40 flex items-center gap-3 md:gap-4 animate-fade-in"
+              aria-label="Reproduzir vídeo: Gente que conhece gente"
+            >
+              <span className="relative flex h-14 w-14 md:h-20 md:w-20 items-center justify-center rounded-full bg-secondary text-secondary-foreground shadow-brand transition-transform duration-300 group-hover:scale-110">
+                <span className="absolute inset-0 rounded-full bg-secondary/60 animate-ping" />
+                <Play className="relative h-6 w-6 md:h-8 md:w-8 fill-current" />
+              </span>
+              <span className="hidden md:flex flex-col text-left text-white">
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-secondary">Assista</span>
+                <span className="text-sm font-black uppercase leading-tight max-w-[180px]">
+                  Conheça a história de Denis Andia
+                </span>
+              </span>
+            </button>
           </div>
         </div>
+
+        <VideoModal
+          open={videoOpen}
+          onOpenChange={setVideoOpen}
+          title="Gente que conhece gente"
+          description="Conheça a história de Denis Andia"
+        />
+
 
         {/* keyframes local */}
         <style>{`
