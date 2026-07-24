@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Youtube, Send } from "lucide-react";
 import denisCutout from "@/assets/denis-footer-cutout.png";
+import denisLogo from "@/assets/denis-logo.png.asset.json";
+
 
 
 const NAV = [
@@ -30,17 +32,14 @@ export function Footer() {
 
         {/* LEFT — brand (mesmo logo do header) */}
         <div className="flex flex-col">
-          <Link to="/" className="flex flex-col leading-none text-foreground">
-            <span className="text-[10px] tracking-[0.35em] font-semibold text-primary">
-              DEPUTADO FEDERAL
-            </span>
-            <span className="text-3xl md:text-4xl font-black tracking-tight mt-1 text-foreground">
-              DEN<span className="text-primary">I</span>S
-            </span>
-            <span className="text-[10px] tracking-[0.4em] font-semibold text-foreground/80">
-              ANDIA
-            </span>
+          <Link to="/" className="inline-block">
+            <img
+              src={denisLogo.url}
+              alt="Denis Andia 1540 - Deputado Federal"
+              className="h-20 md:h-24 w-auto object-contain"
+            />
           </Link>
+
 
           <p
             className="mt-8 text-4xl md:text-5xl leading-[0.95] text-primary"
