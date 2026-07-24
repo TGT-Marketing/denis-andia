@@ -29,9 +29,6 @@ export function Header() {
     >
       <div className={`mx-auto max-w-[1400px] px-6 md:px-10 flex items-center justify-between transition-all duration-300 ${scrolled ? "h-16" : "h-24"}`}>
         <Link to="/" className="flex flex-col leading-none text-white">
-          <span className="text-[10px] tracking-[0.35em] font-semibold text-accent">
-            DEPUTADO FEDERAL
-          </span>
           <span className={`font-black tracking-tight mt-1 transition-all ${scrolled ? "text-2xl md:text-3xl" : "text-3xl md:text-4xl"}`}>
             DEN<span className="text-accent">I</span>S
           </span>
