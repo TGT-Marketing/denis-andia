@@ -1,10 +1,18 @@
 import { Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 export function Header() {
   const [open, setOpen] = useState(false);
   const [subOpen, setSubOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const submenu = [
     { to: "/sua-cidade", label: "Sua cidade" },
@@ -13,13 +21,18 @@ export function Header() {
   ] as const;
 
   return (
-    <header className="absolute top-0 inset-x-0 z-40">
-      <div className="mx-auto max-w-[1400px] px-6 md:px-10 h-24 flex items-center justify-between">
+    <header
+      className={`fixed top-0 inset-x-0 z-40 transition-all duration-300 ${
+        scrolled ? "backdrop-blur-md shadow-brand" : ""
+      }`}
+      style={scrolled ? { backgroundColor: "color-mix(in oklab, var(--ink) 88%, transparent)" } : undefined}
+    >
+      <div className={`mx-auto max-w-[1400px] px-6 md:px-10 flex items-center justify-between transition-all duration-300 ${scrolled ? "h-16" : "h-24"}`}>
         <Link to="/" className="flex flex-col leading-none text-white">
           <span className="text-[10px] tracking-[0.35em] font-semibold text-accent">
             DEPUTADO ESTADUAL
           </span>
-          <span className="text-3xl md:text-4xl font-black tracking-tight mt-1">
+          <span className={`font-black tracking-tight mt-1 transition-all ${scrolled ? "text-2xl md:text-3xl" : "text-3xl md:text-4xl"}`}>
             DEN<span className="text-accent">I</span>S
           </span>
           <span className="text-[10px] tracking-[0.4em] font-semibold text-white/80">

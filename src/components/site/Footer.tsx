@@ -1,6 +1,5 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Youtube, Send } from "lucide-react";
-import fistImg from "@/assets/denis-fist.png";
 
 const NAV = [
   { label: "Emendas", to: "/pelo-brasil" },
@@ -18,44 +17,20 @@ const SOCIAL = [
 export function Footer() {
   return (
     <footer className="relative bg-secondary text-secondary-foreground overflow-hidden">
-      {/* radial glow behind the fist */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute left-1/2 -translate-x-1/2 bottom-0 h-[110%] w-[900px] max-w-[95%]"
-        style={{
-          background:
-            "radial-gradient(ellipse at 50% 60%, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.35) 35%, rgba(255,255,255,0) 65%)",
-        }}
-      />
-
-      {/* Center hero fist image */}
-      <img
-        src={fistImg}
-        alt=""
-        aria-hidden
-        width={900}
-        height={1100}
-        loading="lazy"
-        className="pointer-events-none absolute left-1/2 -translate-x-1/2 bottom-0 h-[92%] w-auto object-contain object-bottom opacity-95 select-none"
-      />
-
-      <div className="relative mx-auto max-w-[1400px] px-6 md:px-10 pt-16 pb-24 grid gap-14 md:grid-cols-3 min-h-[520px]">
-        {/* LEFT — brand */}
+      <div className="relative mx-auto max-w-[1400px] px-6 md:px-10 pt-16 pb-16 grid gap-14 md:grid-cols-3">
+        {/* LEFT — brand (mesmo logo do header) */}
         <div className="flex flex-col">
-          <div className="flex items-center gap-3">
-            <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-primary-foreground font-black text-xl shadow-brand">
-              D
+          <Link to="/" className="flex flex-col leading-none text-foreground">
+            <span className="text-[10px] tracking-[0.35em] font-semibold text-primary">
+              DEPUTADO ESTADUAL
             </span>
-            <div className="leading-tight">
-              <p className="text-[10px] font-bold tracking-[0.25em] text-primary">
-                CANDIDATO
-              </p>
-              <p className="text-2xl font-black text-primary">
-                DENIS
-                <span className="text-foreground">FERREIRA</span>
-              </p>
-            </div>
-          </div>
+            <span className="text-3xl md:text-4xl font-black tracking-tight mt-1 text-foreground">
+              DEN<span className="text-primary">I</span>S
+            </span>
+            <span className="text-[10px] tracking-[0.4em] font-semibold text-foreground/80">
+              ANDIA
+            </span>
+          </Link>
 
           <p
             className="mt-8 text-4xl md:text-5xl leading-[0.95] text-primary"
@@ -68,6 +43,7 @@ export function Footer() {
             conhece gente.
           </p>
         </div>
+
 
         {/* MIDDLE — nav (spacer for image on desktop) */}
         <div className="md:pl-8 md:pt-6 self-end md:self-center">
