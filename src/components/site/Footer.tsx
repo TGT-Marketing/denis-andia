@@ -1,5 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Youtube, Send } from "lucide-react";
+import denisCutout from "@/assets/denis-footer-cutout.png";
+
 
 const NAV = [
   { label: "Emendas", to: "/pelo-brasil" },
