@@ -165,7 +165,7 @@ function Home() {
               <img
                 src={denisTrabalhoCutout.url}
                 alt="Denis Andia com capacete"
-                className="w-full max-w-[640px] object-contain drop-shadow-2xl"
+                className="w-full max-w-[820px] object-contain drop-shadow-2xl"
               />
             </div>
           </div>
