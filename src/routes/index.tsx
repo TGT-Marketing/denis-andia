@@ -49,7 +49,7 @@ function Home() {
             />
 
             {/* GIANT NAME BEHIND — rises from below hand height */}
-            <h1 className="pointer-events-none absolute inset-x-0 bottom-[42%] md:bottom-[52%] z-10 flex justify-center overflow-hidden">
+            <h1 className="pointer-events-none absolute inset-x-0 bottom-[55%] md:bottom-[65%] z-10 flex justify-center overflow-hidden">
               <span
                 className="font-black tracking-tighter text-white leading-[0.8] text-[26vw] md:text-[22vw] select-none"
                 style={{ animation: "denis-rise 1.1s cubic-bezier(0.22,1,0.36,1) 0.15s both" }}
@@ -63,7 +63,8 @@ function Home() {
               className="pointer-events-none absolute z-30 text-secondary"
               style={{
                 left: "50%",
-                bottom: "calc(42% + 14vw)",
+                bottom: "calc(55% + 14vw)",
+
                 transform: "translateX(calc(-50% - 8vw)) rotate(-6deg)",
                 fontFamily: '"Brush Script MT", "Lucida Handwriting", cursive',
                 color: "var(--brand-blue)",
