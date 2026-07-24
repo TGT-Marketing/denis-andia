@@ -45,28 +45,34 @@ function Home() {
 
         <div className="relative mx-auto max-w-[1400px] px-4 md:px-10 pt-28 md:pt-40 pb-0">
           <div className="relative flex justify-center min-h-[65vh] sm:min-h-[75vh] md:min-h-[92vh] items-end">
-            {/* cutout removido para dar destaque ao nome */}
+            {/* CUTOUT PHOTO — on top */}
+            <img
+              src={cutout}
+              alt="Denis Andia"
+              width={1600}
+              height={2000}
+              className="pointer-events-none relative z-20 h-[60vh] sm:h-[70vh] md:h-[92vh] w-auto object-contain object-bottom drop-shadow-[0_30px_60px_rgba(0,0,0,0.55)] animate-fade-in"
+            />
 
-            {/* GIANT NAME — DENIS grande com ANDIA logo abaixo, ponta a ponta */}
-            <div className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 z-10 flex justify-center">
-              <div className="inline-flex flex-col items-stretch leading-none text-white">
-                <span
-                  className="font-black tracking-tight text-[22vw] leading-[0.85] select-none block"
-                  style={{ animation: "denis-rise 1.1s cubic-bezier(0.22,1,0.36,1) 0.15s both" }}
-                >
-                  DEN<span className="text-accent">I</span>S
-                </span>
-                <span
-                  aria-label="ANDIA"
-                  className="flex justify-between w-full font-black text-white select-none mt-1 md:mt-2"
-                  style={{
-                    fontSize: "clamp(0.9rem, 2.9vw, 3.25rem)",
-                    animation: "andia-in 1s ease-out 0.9s both",
-                  }}
-                >
-                  <span>A</span><span>N</span><span>D</span><span>I</span><span>A</span>
-                </span>
-              </div>
+            {/* GIANT NAME BEHIND — DENIS on top, ANDIA tight below */}
+            <div className="pointer-events-none absolute inset-x-0 bottom-[55%] md:bottom-[60%] z-10 flex flex-col items-center overflow-hidden">
+              <span
+                className="font-black tracking-tighter text-white leading-[0.8] text-[22vw] select-none"
+                style={{ animation: "denis-rise 1.1s cubic-bezier(0.22,1,0.36,1) 0.15s both" }}
+              >
+                DENIS
+              </span>
+              <span
+                className="font-black text-white leading-none select-none -mt-[1vw] md:-mt-[1.2vw]"
+                style={{
+                  fontSize: "clamp(1rem, 3.05vw, 3.5rem)",
+                  letterSpacing: "0.55em",
+                  paddingLeft: "0.55em",
+                  animation: "andia-in 1s ease-out 0.9s both",
+                }}
+              >
+                ANDIA
+              </span>
             </div>
           </div>
         </div>
