@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
 import walkAsset from "@/assets/denis-chapeu.jpg";
-import rallyBgAsset from "@/assets/denis-menina.JPG";
-import cutoutAsset from "@/assets/denis-trabalho.JPG";
+import rallyBgAsset from "@/assets/denis-menina.jpg";
+import cutoutAsset from "@/assets/denis-trabalho.jpg";
 import cityImg from "@/assets/denis-city.jpg";
 import peopleImg from "@/assets/denis-people.jpg";
 import brasilImg from "@/assets/denis-brasil.jpg";

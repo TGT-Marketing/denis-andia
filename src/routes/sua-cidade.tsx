@@ -8,8 +8,8 @@ import cityImg from "@/assets/denis-city.jpg";
 import peopleImg from "@/assets/denis-people.jpg";
 import brasilImg from "@/assets/denis-brasil.jpg";
 import chapeuImg from "@/assets/denis-chapeu.jpg";
-import meninaImg from "@/assets/denis-menina.JPG";
-import trabalhoImg from "@/assets/denis-trabalho.JPG";
+import meninaImg from "@/assets/denis-menina.jpg";
+import trabalhoImg from "@/assets/denis-trabalho.jpg";
 
 export const Route = createFileRoute("/sua-cidade")({
   head: () => ({
