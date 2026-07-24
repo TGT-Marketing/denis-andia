@@ -8,6 +8,7 @@ import { NewsCarousel } from "@/components/site/NewsCarousel";
 import cutout from "@/assets/denis-menina-cutout.png";
 import walkImg from "@/assets/denis-chapeu.jpg";
 import bgAsset from "@/assets/02-capa-fundo.jpg.asset.json";
+import denisTrabalhoCutout from "@/assets/denis-trabalho-cutout.png.asset.json";
 
 const heroBg = bgAsset.url;
 
