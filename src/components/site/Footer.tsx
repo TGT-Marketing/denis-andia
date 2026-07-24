@@ -5,7 +5,7 @@ import fistImg from "@/assets/denis-fist.png";
 const NAV = [
   { label: "Emendas", to: "/pelo-brasil" },
   { label: "Projetos de Lei", to: "/nossa-gente" },
-  { label: "Sobre mim", to: "/sua-cidade" },
+  { label: "Sobre mim", to: "/sobre-mim" },
 ] as const;
 
 const SOCIAL = [
