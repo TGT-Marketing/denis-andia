@@ -42,21 +42,21 @@ function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/30 to-ink/60" style={{ background: "linear-gradient(to bottom, color-mix(in oklab, var(--ink) 75%, transparent), color-mix(in oklab, var(--ink) 20%, transparent), color-mix(in oklab, var(--ink) 65%, transparent))" }} />
 
-        <div className="relative mx-auto max-w-[1400px] px-4 md:px-10 pt-32 md:pt-40 pb-0">
-          <div className="relative flex justify-center min-h-[75vh] md:min-h-[92vh] items-end">
+        <div className="relative mx-auto max-w-[1400px] px-4 md:px-10 pt-28 md:pt-40 pb-0">
+          <div className="relative flex justify-center min-h-[65vh] sm:min-h-[75vh] md:min-h-[92vh] items-end">
             {/* CUTOUT PHOTO — on top */}
             <img
               src={cutout}
               alt="Denis Andia"
               width={1600}
               height={2000}
-              className="pointer-events-none relative z-20 h-[70vh] md:h-[92vh] w-auto object-contain object-bottom drop-shadow-[0_30px_60px_rgba(0,0,0,0.55)] animate-fade-in"
+              className="pointer-events-none relative z-20 h-[60vh] sm:h-[70vh] md:h-[92vh] w-auto object-contain object-bottom drop-shadow-[0_30px_60px_rgba(0,0,0,0.55)] animate-fade-in"
             />
 
             {/* GIANT NAME BEHIND — rises from below hand height */}
             <h1 className="pointer-events-none absolute inset-x-0 bottom-[55%] md:bottom-[65%] z-10 flex justify-center overflow-hidden">
               <span
-                className="font-black tracking-tighter text-white leading-[0.8] text-[26vw] md:text-[22vw] select-none"
+                className="font-black tracking-tighter text-white leading-[0.8] text-[22vw] md:text-[22vw] select-none"
                 style={{ animation: "denis-rise 1.1s cubic-bezier(0.22,1,0.36,1) 0.15s both" }}
               >
                 DENIS
@@ -68,12 +68,12 @@ function Home() {
               className="pointer-events-none absolute z-30 text-secondary"
               style={{
                 left: "50%",
-                bottom: "calc(55% + 14vw)",
+                bottom: "calc(55% + 12vw)",
 
-                transform: "translateX(calc(-50% - 28vw)) rotate(-6deg)",
+                transform: "translateX(calc(-50% - 24vw)) rotate(-6deg)",
                 fontFamily: '"Brush Script MT", "Lucida Handwriting", cursive',
                 color: "var(--brand-blue)",
-                fontSize: "clamp(2.5rem, 8vw, 8rem)",
+                fontSize: "clamp(2rem, 8vw, 8rem)",
                 textShadow: "0 6px 30px rgba(0,0,0,.6)",
                 animation: "andia-in 1s ease-out 0.9s both",
               }}
