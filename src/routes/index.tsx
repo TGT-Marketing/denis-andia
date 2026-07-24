@@ -136,28 +136,40 @@ function Home() {
       {/* TRABALHO — Mapa */}
       <section id="trabalho" className="relative bg-background">
         <div className="mx-auto max-w-[1400px] px-4 md:px-10 pt-20 md:pt-28 pb-8">
-          <div className="flex items-center gap-3 mb-4">
-            <span className="text-xs font-black text-primary uppercase tracking-[0.3em]">N°01</span>
-            <span className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">
-              Mapa do Impacto · SP
-            </span>
-          </div>
-          <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-none">
-            <span className="text-primary">TRABALHO</span>
-            <br />
-            <span className="italic font-light text-foreground/70 text-3xl md:text-5xl normal-case tracking-tight">
-              cidade por cidade,
-            </span>
-            <br />
-            <span className="text-foreground">impacto real.</span>
-          </h2>
+          <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr] items-end">
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-xs font-black text-primary uppercase tracking-[0.3em]">N°01</span>
+                <span className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">
+                  Mapa do Impacto · SP
+                </span>
+              </div>
+              <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-none">
+                <span className="text-primary">TRABALHO</span>
+                <br />
+                <span className="italic font-light text-foreground/70 text-3xl md:text-5xl normal-case tracking-tight">
+                  cidade por cidade,
+                </span>
+                <br />
+                <span className="text-foreground">impacto real.</span>
+              </h2>
 
-          <div className="mt-8 grid grid-cols-3 max-w-md gap-6 border-y border-border py-6">
-            <Stat n="645" label="Municípios" />
-            <Stat n="15" label="Regiões" />
-            <Stat n="100%" label="de SP" />
+              <div className="mt-8 grid grid-cols-3 max-w-md gap-6 border-y border-border py-6">
+                <Stat n="645" label="Municípios" />
+                <Stat n="15" label="Regiões" />
+                <Stat n="100%" label="de SP" />
+              </div>
+            </div>
+            <div className="relative hidden lg:flex justify-end">
+              <img
+                src={denisTrabalhoCutout.url}
+                alt="Denis Andia com capacete"
+                className="w-full max-w-[420px] object-contain drop-shadow-2xl"
+              />
+            </div>
           </div>
         </div>
+
 
         <div className="mx-auto max-w-[1400px] px-4 md:px-10 pb-20">
           <RegionMap />
