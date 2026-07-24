@@ -62,18 +62,8 @@ function Home() {
               >
                 DENIS
               </span>
-              <span
-                className="font-black text-white leading-none select-none -mt-[1vw] md:-mt-[1.2vw]"
-                style={{
-                  fontSize: "clamp(1rem, 3.05vw, 3.5rem)",
-                  letterSpacing: "0.55em",
-                  paddingLeft: "0.55em",
-                  animation: "andia-in 1s ease-out 0.9s both",
-                }}
-              >
-                ANDIA
-              </span>
             </div>
+
           </div>
         </div>
 
