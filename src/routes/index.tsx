@@ -2,13 +2,14 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
 import { RegionMap } from "@/components/site/RegionMap";
 import { NewsCarousel } from "@/components/site/NewsCarousel";
-import cutoutAsset from "@/assets/denis-trabalho.jpg.asset.json";
+import cutoutAsset from "@/assets/denis-cutout.png.asset.json";
 import rallyBgAsset from "@/assets/denis-menina.jpg.asset.json";
 import walkAsset from "@/assets/denis-chapeu.jpg.asset.json";
 
 const cutout = cutoutAsset.url;
 const rallyBg = rallyBgAsset.url;
 const walkImg = walkAsset.url;
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -37,25 +38,58 @@ function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/30 to-ink/60" style={{ background: "linear-gradient(to bottom, color-mix(in oklab, var(--ink) 75%, transparent), color-mix(in oklab, var(--ink) 20%, transparent), color-mix(in oklab, var(--ink) 65%, transparent))" }} />
 
         <div className="relative mx-auto max-w-[1400px] px-4 md:px-10 pt-32 md:pt-40 pb-0">
-          <div className="relative flex justify-center min-h-[70vh] md:min-h-[85vh] items-end">
-            {/* GIANT NAME BEHIND */}
-            <h1 className="pointer-events-none absolute inset-x-0 top-6 md:top-8 flex justify-center">
-              <span className="font-black tracking-tighter text-white leading-[0.8] text-[22vw] md:text-[18vw] select-none">
-                DEN<span className="inline-block">IS</span>
+          <div className="relative flex justify-center min-h-[75vh] md:min-h-[92vh] items-end">
+            {/* CUTOUT PHOTO — on top */}
+            <img
+              src={cutout}
+              alt="Denis Andia"
+              width={1600}
+              height={2000}
+              className="pointer-events-none relative z-20 h-[70vh] md:h-[92vh] w-auto object-contain object-bottom drop-shadow-[0_30px_60px_rgba(0,0,0,0.55)] animate-fade-in"
+            />
+
+            {/* GIANT NAME BEHIND — rises from below hand height */}
+            <h1 className="pointer-events-none absolute inset-x-0 bottom-[18%] md:bottom-[22%] z-10 flex justify-center overflow-hidden">
+              <span
+                className="font-black tracking-tighter text-white leading-[0.8] text-[26vw] md:text-[22vw] select-none"
+                style={{ animation: "denis-rise 1.1s cubic-bezier(0.22,1,0.36,1) 0.15s both" }}
+              >
+                DENIS
               </span>
             </h1>
-            {/* script overlay */}
+
+            {/* script "Andia" overlay — sits over the D and E */}
             <span
-              className="pointer-events-none absolute left-1/2 -translate-x-[45%] top-[38%] md:top-[42%] text-secondary text-4xl md:text-7xl"
-              style={{ fontFamily: '"Brush Script MT", "Lucida Handwriting", cursive', color: "var(--brand-blue)", textShadow: "0 4px 30px rgba(0,0,0,.6)" }}
+              className="pointer-events-none absolute z-30 text-secondary"
+              style={{
+                left: "50%",
+                bottom: "calc(18% + 14vw)",
+                transform: "translateX(calc(-50% - 8vw)) rotate(-6deg)",
+                fontFamily: '"Brush Script MT", "Lucida Handwriting", cursive',
+                color: "var(--brand-blue)",
+                fontSize: "clamp(2.5rem, 8vw, 8rem)",
+                textShadow: "0 6px 30px rgba(0,0,0,.6)",
+                animation: "andia-in 1s ease-out 0.9s both",
+              }}
             >
               Andia
             </span>
-
-            {/* CUTOUT PHOTO removed */}
-
           </div>
         </div>
+
+        {/* keyframes local */}
+        <style>{`
+          @keyframes denis-rise {
+            0%   { transform: translateY(60%); opacity: 0; }
+            60%  { opacity: 1; }
+            100% { transform: translateY(0);   opacity: 1; }
+          }
+          @keyframes andia-in {
+            0%   { opacity: 0; transform: translateX(calc(-50% - 8vw)) rotate(-6deg) scale(0.85); }
+            100% { opacity: 1; transform: translateX(calc(-50% - 8vw)) rotate(-6deg) scale(1); }
+          }
+        `}</style>
+
 
         {/* Color band */}
         <div className="relative">
