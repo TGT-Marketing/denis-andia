@@ -35,8 +35,8 @@ export function Header() {
           <span className={`font-black tracking-tight mt-1 transition-all ${scrolled ? "text-2xl md:text-3xl" : "text-3xl md:text-4xl"}`}>
             DEN<span className="text-accent">I</span>S
           </span>
-          <span className="text-[10px] tracking-[0.4em] font-semibold text-white/80">
-            ANDIA
+          <span className="text-[11px] md:text-xs tracking-[0.55em] font-black text-white mt-1">
+            A N D I A
           </span>
         </Link>
 
