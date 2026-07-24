@@ -195,7 +195,7 @@ function Home() {
             />
           </div>
           <div>
-            <p className="text-xs font-bold text-primary uppercase tracking-[0.3em]">Sobre mim</p>
+            <p className="text-xs font-bold text-primary uppercase tracking-[0.3em]">Biografia</p>
             <h2 className="mt-4 text-4xl md:text-5xl font-black leading-[1.05] tracking-tight">
               Um coração inquieto
               <span className="block text-primary italic font-serif font-normal my-2">diante das dificuldades</span>
@@ -207,10 +207,10 @@ function Home() {
               escuta, atua e leva resultado — sem palanque, sem pose.
             </p>
             <Link
-              to="/sobre-mim"
+              to="/biografia"
               className="mt-8 inline-flex items-center rounded-full bg-primary px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-primary-foreground shadow-brand hover:opacity-90 transition"
             >
-              Saiba mais
+              Ver biografia
             </Link>
           </div>
         </div>
