@@ -24,7 +24,7 @@ export function Footer() {
       <img
         src={denisCutout.url}
         alt="Denis Andia"
-        className="pointer-events-none select-none hidden md:block absolute z-0 bottom-0 right-0 translate-x-[5%] h-[110%] w-auto object-contain object-bottom opacity-90"
+        className="pointer-events-none select-none hidden md:block absolute z-10 bottom-0 left-1/2 -translate-x-[65%] h-[110%] w-auto object-contain object-bottom opacity-90"
       />
 
       <div className="relative z-20 mx-auto max-w-[1400px] px-6 md:px-10 pt-16 pb-16 grid gap-14 md:grid-cols-3">
