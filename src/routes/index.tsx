@@ -5,11 +5,9 @@ import { Layout } from "@/components/site/Layout";
 import { RegionMap } from "@/components/site/RegionMap";
 import { VideoModal } from "@/components/site/VideoModal";
 import { NewsCarousel } from "@/components/site/NewsCarousel";
-import cutoutAsset from "@/assets/denis-cutout.png.asset.json";
-import rallyBg from "@/assets/denis-menina.jpg";
+import cutout from "@/assets/denis-menina-cutout.png";
 import walkImg from "@/assets/denis-chapeu.jpg";
 
-const cutout = cutoutAsset.url;
 
 
 export const Route = createFileRoute("/")({
@@ -33,12 +31,8 @@ function Home() {
     <Layout transparentHeader>
       {/* HERO */}
       <section className="relative overflow-hidden bg-ink text-white" style={{ backgroundColor: "var(--ink)" }}>
-        {/* backdrop */}
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-60"
-          style={{ backgroundImage: `url(${rallyBg})` }}
-        />
         <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/30 to-ink/60" style={{ background: "linear-gradient(to bottom, color-mix(in oklab, var(--ink) 75%, transparent), color-mix(in oklab, var(--ink) 20%, transparent), color-mix(in oklab, var(--ink) 65%, transparent))" }} />
+
 
         <div className="relative mx-auto max-w-[1400px] px-4 md:px-10 pt-28 md:pt-40 pb-0">
           <div className="relative flex justify-center min-h-[65vh] sm:min-h-[75vh] md:min-h-[92vh] items-end">
