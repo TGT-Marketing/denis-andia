@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Play } from "lucide-react";
 import { Layout } from "@/components/site/Layout";
-import { RegionMap } from "@/components/site/RegionMap";
+import { SPRegionMap } from "@/components/site/SPRegionMap";
 import { VideoModal } from "@/components/site/VideoModal";
 import { NewsCarousel } from "@/components/site/NewsCarousel";
 import cutoutAsset from "@/assets/denis-cutout.png.asset.json";
