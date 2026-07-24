@@ -178,7 +178,7 @@ function Home() {
       <section id="sobre" className="bg-secondary/40 py-24">
         <div className="mx-auto max-w-[1400px] px-4 md:px-10 grid gap-12 lg:grid-cols-[1fr_1.1fr] items-center">
           <div className="relative">
-            <div className="absolute -inset-4 bg-primary rounded-[2rem] rotate-[-3deg]" />
+            
             <img
               src={walkImg}
               alt="Denis Andia caminhando com apoiadores"
