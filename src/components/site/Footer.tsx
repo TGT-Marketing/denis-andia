@@ -104,8 +104,17 @@ export function Footer() {
       <div className="relative border-t border-foreground/15">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-5 flex flex-col md:flex-row justify-between items-center gap-3 text-[11px] font-bold tracking-[0.2em] uppercase text-foreground/80">
           <p>
-            Candidato Denis Andia © {new Date().getFullYear()} — Todos os direitos reservados
+            Candidato Denis Andia © {new Date().getFullYear()} — Todos os direitos reservados ·{" "}
+            <a
+              href="https://www.targetmarketingdigital.com.br/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors"
+            >
+              Criado por Target Marketing
+            </a>
           </p>
+
           <a href="#" className="hover:text-primary transition-colors">
             Política de Privacidade
           </a>
