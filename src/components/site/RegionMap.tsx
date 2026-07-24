@@ -93,7 +93,7 @@ export function RegionMap() {
       </div>
 
       <div>
-        <p className="text-sm font-semibold uppercase tracking-widest text-primary">Encontre um representante</p>
+        <p className="text-sm font-semibold uppercase tracking-widest text-primary">Trabalho já chegou</p>
         <h2 className="mt-2 text-4xl md:text-5xl font-black text-foreground tracking-tight">
           Onde Denis <span className="text-primary">está</span>
         </h2>
