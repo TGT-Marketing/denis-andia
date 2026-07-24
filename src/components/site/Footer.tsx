@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Youtube, Send } from "lucide-react";
 import denisCutout from "@/assets/denis-footer-cutout.png";
+import denisLogo from "@/assets/denis-logo.png.asset.json";
+
 
 
 const NAV = [
