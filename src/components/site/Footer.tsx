@@ -19,7 +19,14 @@ const SOCIAL = [
 export function Footer() {
   return (
     <footer className="relative bg-secondary text-secondary-foreground overflow-hidden">
-      <div className="relative mx-auto max-w-[1400px] px-6 md:px-10 pt-16 pb-16 grid gap-14 md:grid-cols-3">
+      {/* Cutout do Denis ao centro (igual ao header do site de referência) */}
+      <img
+        src={denisCutout}
+        alt="Denis Andia"
+        className="pointer-events-none select-none hidden md:block absolute left-1/2 bottom-0 -translate-x-1/2 h-[110%] w-auto object-contain object-bottom z-0"
+      />
+      <div className="relative z-10 mx-auto max-w-[1400px] px-6 md:px-10 pt-16 pb-16 grid gap-14 md:grid-cols-3">
+
         {/* LEFT — brand (mesmo logo do header) */}
         <div className="flex flex-col">
           <Link to="/" className="flex flex-col leading-none text-foreground">
