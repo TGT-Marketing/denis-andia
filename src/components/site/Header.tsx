@@ -90,9 +90,9 @@ export function Header() {
               </Link>
             ))}
             <div className="h-px bg-white/10 my-2" />
-            <a href="#sobre" onClick={() => setOpen(false)} className="rounded-lg px-3 py-2 text-sm font-bold uppercase tracking-wider">
+            <Link to="/sobre-mim" onClick={() => setOpen(false)} className="rounded-lg px-3 py-2 text-sm font-bold uppercase tracking-wider">
               Sobre mim
-            </a>
+            </Link>
           </div>
         </div>
       )}
