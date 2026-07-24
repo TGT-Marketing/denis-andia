@@ -42,7 +42,7 @@ export function Footer() {
 
 
           <p
-            className="mt-8 text-4xl md:text-5xl leading-[0.95] text-primary"
+            className="mt-8 text-4xl md:text-5xl leading-[0.95] text-white"
             style={{
               fontFamily:
                 '"Brush Script MT", "Lucida Handwriting", cursive',
