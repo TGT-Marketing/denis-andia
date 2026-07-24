@@ -13,7 +13,6 @@ import { Route as SuaCidadeRouteImport } from './routes/sua-cidade'
 import { Route as SobreMimRouteImport } from './routes/sobre-mim'
 import { Route as PeloBrasilRouteImport } from './routes/pelo-brasil'
 import { Route as NossaGenteRouteImport } from './routes/nossa-gente'
-import { Route as BioRouteImport } from './routes/bio'
 import { Route as IndexRouteImport } from './routes/index'
 
 const SuaCidadeRoute = SuaCidadeRouteImport.update({
@@ -36,11 +35,6 @@ const NossaGenteRoute = NossaGenteRouteImport.update({
   path: '/nossa-gente',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BioRoute = BioRouteImport.update({
-  id: '/bio',
-  path: '/bio',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -49,7 +43,6 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/bio': typeof BioRoute
   '/nossa-gente': typeof NossaGenteRoute
   '/pelo-brasil': typeof PeloBrasilRoute
   '/sobre-mim': typeof SobreMimRoute
@@ -57,7 +50,6 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/bio': typeof BioRoute
   '/nossa-gente': typeof NossaGenteRoute
   '/pelo-brasil': typeof PeloBrasilRoute
   '/sobre-mim': typeof SobreMimRoute
@@ -66,7 +58,6 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/bio': typeof BioRoute
   '/nossa-gente': typeof NossaGenteRoute
   '/pelo-brasil': typeof PeloBrasilRoute
   '/sobre-mim': typeof SobreMimRoute
@@ -76,23 +67,15 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/bio'
     | '/nossa-gente'
     | '/pelo-brasil'
     | '/sobre-mim'
     | '/sua-cidade'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/bio'
-    | '/nossa-gente'
-    | '/pelo-brasil'
-    | '/sobre-mim'
-    | '/sua-cidade'
+  to: '/' | '/nossa-gente' | '/pelo-brasil' | '/sobre-mim' | '/sua-cidade'
   id:
     | '__root__'
     | '/'
-    | '/bio'
     | '/nossa-gente'
     | '/pelo-brasil'
     | '/sobre-mim'
@@ -101,7 +84,6 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  BioRoute: typeof BioRoute
   NossaGenteRoute: typeof NossaGenteRoute
   PeloBrasilRoute: typeof PeloBrasilRoute
   SobreMimRoute: typeof SobreMimRoute
@@ -138,13 +120,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NossaGenteRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/bio': {
-      id: '/bio'
-      path: '/bio'
-      fullPath: '/bio'
-      preLoaderRoute: typeof BioRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -157,7 +132,6 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  BioRoute: BioRoute,
   NossaGenteRoute: NossaGenteRoute,
   PeloBrasilRoute: PeloBrasilRoute,
   SobreMimRoute: SobreMimRoute,
