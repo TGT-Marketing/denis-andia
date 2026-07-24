@@ -23,7 +23,7 @@ export function Header() {
             DEN<span className="text-accent">I</span>S
           </span>
           <span className="text-[10px] tracking-[0.4em] font-semibold text-white/80">
-            FERREIRA
+            ANDIA
           </span>
         </Link>
 
