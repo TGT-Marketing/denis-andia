@@ -200,21 +200,8 @@ function Home() {
         </div>
       </section>
 
-      {/* NÚMEROS */}
-      <section id="numeros" className="bg-ink text-white py-24" style={{ backgroundColor: "var(--ink)" }}>
-        <div className="mx-auto max-w-[1400px] px-4 md:px-10">
-          <p className="text-xs font-bold text-accent uppercase tracking-[0.3em]">Números que importam</p>
-          <h2 className="mt-3 text-4xl md:text-5xl font-black tracking-tight">
-            Trabalho que se vê, resultado que se sente.
-          </h2>
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8">
-            <BigStat n="8" label="anos de mandato" />
-            <BigStat n="1.2M" label="apoiadores" />
-            <BigStat n="+320" label="emendas" />
-            <BigStat n="+45" label="projetos de lei" />
-          </div>
-        </div>
-      </section>
+
+
 
       {/* NOTÍCIAS */}
       <section id="noticias" className="bg-background py-24">
