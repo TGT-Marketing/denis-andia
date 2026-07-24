@@ -197,10 +197,10 @@ export function RegionMap() {
 
       <VideoModal
         open={!!selected}
-        onClose={() => setSelected(null)}
+        onOpenChange={(o) => !o && setSelected(null)}
         title={selected?.name ?? ""}
-        videoUrl=""
       />
+
     </div>
   );
 }
