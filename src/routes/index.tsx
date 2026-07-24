@@ -7,7 +7,7 @@ import { VideoModal } from "@/components/site/VideoModal";
 import { NewsCarousel } from "@/components/site/NewsCarousel";
 import cutout from "@/assets/denis-menina-cutout.png";
 import walkImg from "@/assets/denis-chapeu.jpg";
-import bgAsset from "@/assets/denis-senhor-bg.jpg.asset.json";
+import bgAsset from "@/assets/02-capa-fundo.jpg.asset.json";
 
 const heroBg = bgAsset.url;
 
