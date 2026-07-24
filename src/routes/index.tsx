@@ -10,8 +10,8 @@ import rallyBgAsset from "@/assets/denis-menina.jpg";
 import walkAsset from "@/assets/denis-chapeu.jpg";
 
 const cutout = cutoutAsset.url;
-const rallyBg = rallyBgAsset.url;
-const walkImg = walkAsset.url;
+const rallyBg = rallyBgAsset;
+const walkImg = walkAsset;
 
 
 export const Route = createFileRoute("/")({
