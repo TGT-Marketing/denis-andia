@@ -4,11 +4,8 @@ import denisCutout from "@/assets/denis-footer.png.asset.json";
 
 
 
-const NAV = [
-  { label: "Emendas", to: "/pelo-brasil" },
-  { label: "Projetos de Lei", to: "/nossa-gente" },
-  { label: "Biografia", to: "/biografia" },
-] as const;
+const NAV: { label: string; to: string }[] = [];
+
 
 const SOCIAL = [
   { icon: Instagram, label: "denisferreiradm", href: "#" },
