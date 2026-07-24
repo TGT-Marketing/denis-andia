@@ -63,7 +63,7 @@ function Home() {
               className="pointer-events-none absolute z-30 text-secondary"
               style={{
                 left: "50%",
-                bottom: "calc(18% + 14vw)",
+                bottom: "calc(42% + 14vw)",
                 transform: "translateX(calc(-50% - 8vw)) rotate(-6deg)",
                 fontFamily: '"Brush Script MT", "Lucida Handwriting", cursive',
                 color: "var(--brand-blue)",
