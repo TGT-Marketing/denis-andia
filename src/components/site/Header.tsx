@@ -32,12 +32,6 @@ export function Header() {
           <span className={`font-black tracking-tight transition-all ${scrolled ? "text-2xl md:text-3xl" : "text-3xl md:text-4xl"}`}>
             DEN<span className="text-accent">I</span>S
           </span>
-          <span
-            aria-label="ANDIA"
-            className="flex justify-between w-full text-[11px] md:text-xs font-black text-white -mt-0.5"
-          >
-            <span>A</span><span>N</span><span>D</span><span>I</span><span>A</span>
-          </span>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-10 text-white">
