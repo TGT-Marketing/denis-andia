@@ -65,7 +65,7 @@ function Home() {
                 left: "50%",
                 bottom: "calc(55% + 14vw)",
 
-                transform: "translateX(calc(-50% - 8vw)) rotate(-6deg)",
+                transform: "translateX(calc(-50% - 18vw)) rotate(-6deg)",
                 fontFamily: '"Brush Script MT", "Lucida Handwriting", cursive',
                 color: "var(--brand-blue)",
                 fontSize: "clamp(2.5rem, 8vw, 8rem)",
