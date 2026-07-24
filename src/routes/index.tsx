@@ -49,7 +49,7 @@ function Home() {
               className="pointer-events-none absolute left-1/2 -translate-x-[45%] top-[38%] md:top-[42%] text-secondary text-4xl md:text-7xl"
               style={{ fontFamily: '"Brush Script MT", "Lucida Handwriting", cursive', color: "var(--brand-blue)", textShadow: "0 4px 30px rgba(0,0,0,.6)" }}
             >
-              Ferreira
+              Andia
             </span>
 
             {/* CUTOUT PHOTO removed */}
