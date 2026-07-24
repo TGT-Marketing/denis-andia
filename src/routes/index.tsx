@@ -52,14 +52,8 @@ function Home() {
               Ferreira
             </span>
 
-            {/* CUTOUT PHOTO */}
-            <img
-              src={cutout}
-              alt="Denis Ferreira"
-              width={1200}
-              height={1600}
-              className="relative z-10 h-[60vh] md:h-[85vh] w-auto object-contain object-bottom"
-            />
+            {/* CUTOUT PHOTO removed */}
+
           </div>
         </div>
 
