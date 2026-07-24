@@ -1,133 +1,206 @@
 import { useState } from "react";
 import { VideoModal } from "./VideoModal";
-import mapData from "./brStates.json";
 
-type State = { uf: string; name: string; d: string; cx: number; cy: number };
+type Region = {
+  id: string;
+  name: string;
+  d: string;
+  cx: number;
+  cy: number;
+  highlight?: boolean;
+};
 
-const DATA = mapData as { viewBox: string; states: State[] };
+// Stylized São Paulo state map — approximate polygons for the main
+// administrative / metropolitan regions of SP. viewBox is arbitrary units.
+const VIEWBOX = "0 0 900 620";
 
-// UFs where Denis has active representation / work highlighted
-const HIGHLIGHTED = new Set(["SP", "MG", "RJ", "PR", "GO", "DF", "BA", "CE", "PE", "RS", "SC", "MT", "MS", "ES", "PB"]);
+const OUTLINE =
+  "M60,300 L110,220 L200,170 L300,140 L420,120 L560,120 L680,150 L780,210 L840,290 L860,380 L820,470 L720,530 L600,560 L470,570 L360,555 L260,520 L170,470 L100,400 Z";
+
+const REGIONS: Region[] = [
+  {
+    id: "rm-campinas",
+    name: "Região Metropolitana de Campinas",
+    d: "M360,270 L470,255 L520,290 L510,355 L440,375 L370,355 L340,315 Z",
+    cx: 425,
+    cy: 315,
+    highlight: true,
+  },
+  {
+    id: "rm-piracicaba",
+    name: "Região Metropolitana de Piracicaba",
+    d: "M270,300 L360,270 L340,315 L370,355 L310,375 L245,355 Z",
+    cx: 305,
+    cy: 325,
+    highlight: true,
+  },
+  {
+    id: "rm-sao-paulo",
+    name: "Região Metropolitana de São Paulo",
+    d: "M470,380 L590,370 L640,410 L620,470 L520,485 L440,460 L430,410 Z",
+    cx: 530,
+    cy: 425,
+  },
+  {
+    id: "rm-sorocaba",
+    name: "Região Metropolitana de Sorocaba",
+    d: "M290,395 L410,380 L430,410 L440,460 L360,485 L270,460 L245,420 Z",
+    cx: 345,
+    cy: 430,
+  },
+  {
+    id: "rm-vale-paraiba",
+    name: "Região Metropolitana do Vale do Paraíba",
+    d: "M620,340 L760,300 L820,360 L790,430 L680,440 L620,410 Z",
+    cx: 710,
+    cy: 375,
+  },
+  {
+    id: "rm-baixada",
+    name: "Região Metropolitana da Baixada Santista",
+    d: "M470,485 L620,470 L640,520 L560,555 L470,545 Z",
+    cx: 545,
+    cy: 515,
+  },
+  {
+    id: "rm-ribeirao",
+    name: "Região de Ribeirão Preto",
+    d: "M340,180 L470,170 L520,215 L470,255 L360,270 L310,225 Z",
+    cx: 410,
+    cy: 220,
+  },
+  {
+    id: "outras",
+    name: "Demais regiões do Estado",
+    d: OUTLINE,
+    cx: 150,
+    cy: 500,
+  },
+];
 
 export function RegionMap() {
   const [hovered, setHovered] = useState<string | null>(null);
-  const [selected, setSelected] = useState<State | null>(null);
+  const [selected, setSelected] = useState<Region | null>(null);
+
+  const active = REGIONS.find((r) => r.id === hovered);
 
   return (
     <div className="grid gap-10 lg:grid-cols-[1.15fr_1fr] items-center">
       <div className="relative rounded-3xl bg-background p-4 md:p-6">
         <svg
-          viewBox={DATA.viewBox}
+          viewBox={VIEWBOX}
           className="w-full h-auto"
           role="img"
-          aria-label="Mapa interativo do Brasil"
+          aria-label="Mapa interativo do estado de São Paulo"
         >
-          <g>
-            {DATA.states.map((s) => {
-              const isHover = hovered === s.uf;
-              const isHighlighted = HIGHLIGHTED.has(s.uf);
-              const fill = isHover
-                ? "var(--brand-green)"
-                : isHighlighted
-                ? "color-mix(in oklab, var(--brand-green) 25%, #e5e7eb)"
-                : "#d1d5db";
-              return (
-                <path
-                  key={s.uf}
-                  d={s.d}
-                  onMouseEnter={() => setHovered(s.uf)}
-                  onMouseLeave={() => setHovered(null)}
-                  onClick={() => setSelected(s)}
-                  className="cursor-pointer transition-all duration-200"
-                  style={{
-                    fill,
-                    stroke: "#ffffff",
-                    strokeWidth: 1,
-                  }}
-                />
-              );
-            })}
-          </g>
-          <g pointerEvents="none">
-            {DATA.states.map((s) => (
-              <text
-                key={s.uf}
-                x={s.cx}
-                y={s.cy}
-                textAnchor="middle"
-                dominantBaseline="middle"
-                className="select-none"
+          {/* Base outline — "demais regiões", dark by default */}
+          <path
+            d={OUTLINE}
+            onMouseEnter={() => setHovered("outras")}
+            onMouseLeave={() => setHovered(null)}
+            onClick={() =>
+              setSelected(REGIONS.find((r) => r.id === "outras") ?? null)
+            }
+            className="cursor-pointer transition-all duration-200"
+            style={{
+              fill:
+                hovered === "outras"
+                  ? "color-mix(in oklab, var(--brand-green) 65%, #0b1220)"
+                  : "#1f2937",
+              stroke: "#ffffff",
+              strokeWidth: 2,
+            }}
+          />
+
+          {/* Region overlays */}
+          {REGIONS.filter((r) => r.id !== "outras").map((r) => {
+            const isHover = hovered === r.id;
+            const dim = hovered && !isHover;
+            const fill = isHover
+              ? "var(--brand-yellow)"
+              : r.highlight
+              ? "var(--brand-green)"
+              : "color-mix(in oklab, var(--brand-green) 55%, #0b1220)";
+            return (
+              <path
+                key={r.id}
+                d={r.d}
+                onMouseEnter={() => setHovered(r.id)}
+                onMouseLeave={() => setHovered(null)}
+                onClick={() => setSelected(r)}
+                className="cursor-pointer transition-all duration-200"
                 style={{
+                  fill,
+                  opacity: dim ? 0.35 : 1,
+                  stroke: "#ffffff",
+                  strokeWidth: 1.5,
+                }}
+              />
+            );
+          })}
+
+          {/* Tooltip label */}
+          {active && (
+            <g pointerEvents="none">
+              <rect
+                x={active.cx - 140}
+                y={active.cy - 40}
+                width={280}
+                height={28}
+                rx={6}
+                style={{ fill: "var(--ink)", opacity: 0.9 }}
+              />
+              <text
+                x={active.cx}
+                y={active.cy - 21}
+                textAnchor="middle"
+                style={{
+                  fill: "#fff",
                   fontSize: 14,
-                  fontWeight: 700,
-                  fill: hovered === s.uf ? "#ffffff" : "#374151",
-                  transition: "fill 200ms",
+                  fontWeight: 600,
                 }}
               >
-                {s.uf}
+                {active.name}
               </text>
-            ))}
-          </g>
-          {HIGHLIGHTED.size > 0 &&
-            DATA.states
-              .filter((s) => HIGHLIGHTED.has(s.uf))
-              .map((s) => (
-                <circle
-                  key={`dot-${s.uf}`}
-                  cx={s.cx}
-                  cy={s.cy - 18}
-                  r={4}
-                  fill="var(--brand-blue)"
-                  pointerEvents="none"
-                />
-              ))}
+            </g>
+          )}
         </svg>
-        {hovered && (
-          <div className="absolute bottom-4 left-6 right-6 rounded-xl bg-foreground/90 text-background backdrop-blur px-4 py-3 shadow-card">
-            <p className="text-sm font-bold uppercase tracking-wide">
-              {DATA.states.find((s) => s.uf === hovered)?.name}
-            </p>
-            <p className="text-xs opacity-80">Clique para assistir ao vídeo</p>
-          </div>
-        )}
       </div>
 
+      {/* Side list */}
       <div>
-        <p className="text-sm font-semibold uppercase tracking-widest text-primary">Encontre um representante</p>
-        <h2 className="mt-2 text-4xl md:text-5xl font-black text-foreground tracking-tight">
-          Onde Denis <span className="text-primary">está</span>
-        </h2>
-        <p className="mt-4 text-muted-foreground">
-          Passe o mouse sobre um estado do Brasil e clique para assistir ao vídeo do trabalho
-          realizado naquela região.
-        </p>
-        <div className="mt-6 grid grid-cols-2 gap-2 max-h-[360px] overflow-auto pr-2">
-          {DATA.states
-            .slice()
-            .sort((a, b) => a.name.localeCompare(b.name, "pt-BR"))
-            .map((s) => (
+        <h3 className="text-2xl font-bold mb-4">Regiões do estado</h3>
+        <ul className="divide-y divide-border rounded-2xl border border-border overflow-hidden bg-background">
+          {REGIONS.map((r) => (
+            <li key={r.id}>
               <button
-                key={s.uf}
-                onClick={() => setSelected(s)}
-                onMouseEnter={() => setHovered(s.uf)}
+                type="button"
+                onMouseEnter={() => setHovered(r.id)}
                 onMouseLeave={() => setHovered(null)}
-                className="flex items-center gap-2 text-left rounded-md px-3 py-2 text-sm font-medium text-foreground hover:bg-accent/40 transition-colors"
+                onClick={() => setSelected(r)}
+                className="flex w-full items-center justify-between px-4 py-3 text-left hover:bg-muted transition-colors"
               >
-                <span className="inline-flex h-6 w-8 items-center justify-center rounded bg-primary/10 text-[11px] font-black text-primary">
-                  {s.uf}
-                </span>
-                <span className="truncate">{s.name}</span>
+                <span className="font-medium">{r.name}</span>
+                <span
+                  className="inline-block h-2 w-2 rounded-full"
+                  style={{
+                    background: r.highlight
+                      ? "var(--brand-green)"
+                      : "var(--brand-blue)",
+                  }}
+                />
               </button>
-            ))}
-        </div>
+            </li>
+          ))}
+        </ul>
       </div>
 
       <VideoModal
         open={!!selected}
         onOpenChange={(o) => !o && setSelected(null)}
         title={selected?.name ?? ""}
-        description={selected ? `Trabalho de Denis em ${selected.name}.` : undefined}
       />
+
     </div>
   );
 }
