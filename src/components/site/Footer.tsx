@@ -1,109 +1,127 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Facebook } from "lucide-react";
-import criancaAsset from "@/assets/denis-crianca.png.asset.json";
-
-const crianca = criancaAsset.url;
+import { Instagram, Youtube, Send } from "lucide-react";
+import fistImg from "@/assets/denis-fist.png";
 
 const NAV = [
-  { label: "Sua cidade", to: "/sua-cidade" },
-  { label: "Nossa gente", to: "/nossa-gente" },
-  { label: "Pelo Brasil", to: "/pelo-brasil" },
-  { label: "Biografia", to: "/biografia" },
+  { label: "Emendas", to: "/pelo-brasil" },
+  { label: "Projetos de Lei", to: "/nossa-gente" },
+  { label: "Sobre mim", to: "/sobre-mim" },
+] as const;
+
+const SOCIAL = [
+  { icon: Instagram, label: "denisferreiradm", href: "#" },
+  { icon: Youtube, label: "Denis Ferreira", href: "#" },
+  { icon: XIcon, label: "denis_dm", href: "#" },
+  { icon: Send, label: "Denis Ferreira", href: "#" },
 ] as const;
 
 export function Footer() {
   return (
     <footer className="relative bg-secondary text-secondary-foreground overflow-hidden">
-      <div className="relative mx-auto max-w-[1400px] px-6 md:px-12 pt-16 pb-8 grid gap-10 md:grid-cols-[1.1fr_1fr] items-end min-h-[520px]">
-        {/* LEFT — child hug image */}
-        <div className="relative flex items-end justify-center md:justify-start">
-          <img
-            src={crianca}
-            alt="Denis Andia abraçando uma criança"
-            className="max-h-[500px] w-auto object-contain object-bottom drop-shadow-2xl"
-            loading="lazy"
-          />
-        </div>
+      {/* radial glow behind the fist */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute left-1/2 -translate-x-1/2 bottom-0 h-[110%] w-[900px] max-w-[95%]"
+        style={{
+          background:
+            "radial-gradient(ellipse at 50% 60%, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.35) 35%, rgba(255,255,255,0) 65%)",
+        }}
+      />
 
-        {/* RIGHT — brand + nav + social */}
-        <div className="flex flex-col gap-8 pb-6">
-          <div>
-            <div className="flex items-center gap-3">
-              <span className="flex h-14 w-14 items-center justify-center rounded-lg bg-primary text-primary-foreground font-black text-2xl shadow-brand">
-                D
-              </span>
-              <div className="leading-tight">
-                <p className="text-[10px] font-bold tracking-[0.3em] text-primary uppercase">
-                  Candidato
-                </p>
-                <p className="text-3xl font-black text-foreground">
-                  Denis <span className="text-primary">Andia</span>
-                </p>
-              </div>
+      {/* Center hero fist image */}
+      <img
+        src={fistImg}
+        alt=""
+        aria-hidden
+        width={900}
+        height={1100}
+        loading="lazy"
+        className="pointer-events-none absolute left-1/2 -translate-x-1/2 bottom-0 h-[92%] w-auto object-contain object-bottom opacity-95 select-none"
+      />
+
+      <div className="relative mx-auto max-w-[1400px] px-6 md:px-10 pt-16 pb-24 grid gap-14 md:grid-cols-3 min-h-[520px]">
+        {/* LEFT — brand */}
+        <div className="flex flex-col">
+          <div className="flex items-center gap-3">
+            <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-primary-foreground font-black text-xl shadow-brand">
+              D
+            </span>
+            <div className="leading-tight">
+              <p className="text-[10px] font-bold tracking-[0.25em] text-primary">
+                CANDIDATO
+              </p>
+              <p className="text-2xl font-black text-primary">
+                DENIS
+                <span className="text-foreground">FERREIRA</span>
+              </p>
             </div>
-            <p
-              className="mt-5 text-4xl md:text-5xl leading-[0.95] text-primary"
-              style={{ fontFamily: '"Brush Script MT", "Lucida Handwriting", cursive' }}
-            >
-              Gente que <br /> conhece gente.
-            </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-x-6 gap-y-3 max-w-md">
+          <p
+            className="mt-8 text-4xl md:text-5xl leading-[0.95] text-primary"
+            style={{
+              fontFamily:
+                '"Brush Script MT", "Lucida Handwriting", cursive',
+            }}
+          >
+            Gente que <br />
+            conhece gente.
+          </p>
+        </div>
+
+        {/* MIDDLE — nav (spacer for image on desktop) */}
+        <div className="md:pl-8 md:pt-6 self-end md:self-center">
+          <ul className="space-y-6 max-w-[240px] ml-auto">
             {NAV.map((n) => (
-              <Link
-                key={n.to}
-                to={n.to}
-                className="text-sm font-black uppercase tracking-wide text-foreground border-b border-foreground/30 pb-1 hover:text-primary hover:border-primary transition-colors"
-              >
-                {n.label}
-              </Link>
+              <li key={n.label} className="border-b border-foreground/30 pb-2">
+                <Link
+                  to={n.to}
+                  className="block text-lg font-black uppercase tracking-wide text-foreground hover:text-primary transition-colors"
+                >
+                  {n.label}
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
+        </div>
 
-          <div>
-            <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-foreground/70 mb-2">
-              Redes sociais
-            </p>
-            <div className="flex gap-3">
-              <a
-                href="#"
-                aria-label="Facebook"
-                className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
-              >
-                <Facebook className="h-5 w-5" strokeWidth={2.2} />
-              </a>
-              <a
-                href="#"
-                aria-label="Instagram"
-                className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
-              >
-                <Instagram className="h-5 w-5" strokeWidth={2.2} />
-              </a>
-              <a
-                href="#"
-                aria-label="X (Twitter)"
-                className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
-              >
-                <XIcon className="h-4 w-4" />
-              </a>
-            </div>
+        {/* RIGHT — social card */}
+        <div className="flex flex-col items-end">
+          <h4 className="text-2xl font-black text-foreground mb-4">
+            Redes Sociais
+          </h4>
+          <div
+            className="w-full max-w-sm rounded-3xl p-4 shadow-brand"
+            style={{ backgroundColor: "var(--brand-blue)" }}
+          >
+            <ul className="space-y-2">
+              {SOCIAL.map((s) => (
+                <li key={s.label}>
+                  <a
+                    href={s.href}
+                    className="flex items-center gap-3 rounded-2xl px-3 py-2.5 hover:bg-white/40 transition-colors"
+                  >
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-foreground">
+                      <s.icon className="h-5 w-5" strokeWidth={2.2} />
+                    </span>
+                    <span className="text-sm font-semibold text-foreground">
+                      {s.label}
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
-      </div>
-
-      {/* Tricolor bar */}
-      <div className="grid grid-cols-3 h-2">
-        <span style={{ backgroundColor: "var(--brand-green)" }} />
-        <span style={{ backgroundColor: "var(--brand-yellow)" }} />
-        <span style={{ backgroundColor: "#0b3a8f" }} />
       </div>
 
       {/* bottom bar */}
-      <div className="relative bg-ink text-white/80" style={{ backgroundColor: "var(--ink)" }}>
-        <div className="mx-auto max-w-[1400px] px-6 md:px-12 py-4 flex flex-col md:flex-row justify-between items-center gap-3 text-[11px] font-bold tracking-[0.2em] uppercase">
-          <p>Denis Andia © {new Date().getFullYear()} — Todos os direitos reservados</p>
-          <a href="#" className="hover:text-accent transition-colors">
+      <div className="relative border-t border-foreground/15">
+        <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-5 flex flex-col md:flex-row justify-between items-center gap-3 text-[11px] font-bold tracking-[0.2em] uppercase text-foreground/80">
+          <p>
+            Candidato Denis Ferreira © {new Date().getFullYear()} — Todos os direitos reservados
+          </p>
+          <a href="#" className="hover:text-primary transition-colors">
             Política de Privacidade
           </a>
         </div>
