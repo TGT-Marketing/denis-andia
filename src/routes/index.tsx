@@ -54,33 +54,26 @@ function Home() {
               className="pointer-events-none relative z-20 h-[60vh] sm:h-[70vh] md:h-[92vh] w-auto object-contain object-bottom drop-shadow-[0_30px_60px_rgba(0,0,0,0.55)] animate-fade-in"
             />
 
-            {/* GIANT NAME BEHIND — rises from below hand height */}
-            <h1 className="pointer-events-none absolute inset-x-0 bottom-[55%] md:bottom-[65%] z-10 flex justify-center overflow-hidden">
+            {/* GIANT NAME BEHIND — DENIS on top, ANDIA tight below */}
+            <div className="pointer-events-none absolute inset-x-0 bottom-[55%] md:bottom-[60%] z-10 flex flex-col items-center overflow-hidden">
               <span
-                className="font-black tracking-tighter text-white leading-[0.8] text-[22vw] md:text-[22vw] select-none"
+                className="font-black tracking-tighter text-white leading-[0.8] text-[22vw] select-none"
                 style={{ animation: "denis-rise 1.1s cubic-bezier(0.22,1,0.36,1) 0.15s both" }}
               >
                 DENIS
               </span>
-            </h1>
-
-            {/* script "Andia" — below Denis, centered */}
-            <span
-              className="pointer-events-none absolute z-30"
-              style={{
-                left: "50%",
-                bottom: "calc(55% - 6vw)",
-                transform: "translateX(-50%) rotate(-4deg)",
-                fontFamily: '"Great Vibes", "Brush Script MT", cursive',
-                color: "var(--brand-blue)",
-                fontSize: "clamp(3rem, 12vw, 12rem)",
-                lineHeight: 1,
-                textShadow: "0 6px 30px rgba(0,0,0,.6)",
-                animation: "andia-in 1s ease-out 0.9s both",
-              }}
-            >
-              Andia
-            </span>
+              <span
+                className="font-black text-white leading-none select-none -mt-[1vw] md:-mt-[1.2vw]"
+                style={{
+                  fontSize: "clamp(1rem, 3.05vw, 3.5rem)",
+                  letterSpacing: "0.55em",
+                  paddingLeft: "0.55em",
+                  animation: "andia-in 1s ease-out 0.9s both",
+                }}
+              >
+                ANDIA
+              </span>
+            </div>
           </div>
         </div>
 
