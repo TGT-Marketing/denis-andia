@@ -1,131 +1,132 @@
 import { useState } from "react";
 import { VideoModal } from "./VideoModal";
+import mapData from "./brStates.json";
 
-type Region = {
-  id: string;
-  name: string;
-  path: string;
-  description: string;
-};
+type State = { uf: string; name: string; d: string; cx: number; cy: number };
 
-// Stylized regions of São Paulo state (illustrative, not geographic-precise)
-const REGIONS: Region[] = [
-  {
-    id: "campinas",
-    name: "Região Metropolitana de Campinas",
-    description: "Investimentos em saúde, mobilidade e educação na região de Campinas.",
-    path: "M180 180 L280 160 L340 200 L320 280 L220 300 L160 260 Z",
-  },
-  {
-    id: "piracicaba",
-    name: "Região Metropolitana de Piracicaba",
-    description: "Apoio ao agronegócio, indústria e cultura em Piracicaba e cidades vizinhas.",
-    path: "M80 200 L180 180 L160 260 L100 290 L40 240 Z",
-  },
-  {
-    id: "grande-sp",
-    name: "Grande São Paulo",
-    description: "Ações voltadas para a maior região metropolitana do país.",
-    path: "M340 200 L440 210 L470 300 L400 340 L320 280 Z",
-  },
-  {
-    id: "vale",
-    name: "Vale do Paraíba",
-    description: "Ciência, tecnologia e desenvolvimento regional no Vale.",
-    path: "M470 140 L580 160 L600 240 L520 260 L440 210 L460 160 Z",
-  },
-  {
-    id: "litoral",
-    name: "Baixada Santista",
-    description: "Portos, turismo e preservação do litoral paulista.",
-    path: "M400 340 L500 360 L520 420 L420 430 L360 400 Z",
-  },
-  {
-    id: "interior",
-    name: "Interior Paulista",
-    description: "Presente em todo o interior de São Paulo, com escuta e ação.",
-    path: "M40 100 L280 90 L340 140 L280 160 L180 180 L80 200 L40 240 L20 160 Z",
-  },
-];
+const DATA = mapData as { viewBox: string; states: State[] };
+
+// UFs where Denis has active representation / work highlighted
+const HIGHLIGHTED = new Set(["SP", "MG", "RJ", "PR", "GO", "DF", "BA", "CE", "PE", "RS", "SC", "MT", "MS", "ES", "PB"]);
 
 export function RegionMap() {
   const [hovered, setHovered] = useState<string | null>(null);
-  const [selected, setSelected] = useState<Region | null>(null);
+  const [selected, setSelected] = useState<State | null>(null);
 
   return (
-    <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr] items-center">
-      <div className="relative rounded-3xl bg-gradient-hero p-6 shadow-brand">
+    <div className="grid gap-10 lg:grid-cols-[1.15fr_1fr] items-center">
+      <div className="relative rounded-3xl bg-background p-4 md:p-6">
         <svg
-          viewBox="0 0 620 480"
+          viewBox={DATA.viewBox}
           className="w-full h-auto"
           role="img"
-          aria-label="Mapa interativo do estado de São Paulo"
+          aria-label="Mapa interativo do Brasil"
         >
-          {REGIONS.map((r) => {
-            const isHover = hovered === r.id;
-            const dim = hovered !== null && !isHover;
-            return (
-              <path
-                key={r.id}
-                d={r.path}
-                onMouseEnter={() => setHovered(r.id)}
-                onMouseLeave={() => setHovered(null)}
-                onClick={() => setSelected(r)}
-                className="cursor-pointer transition-all duration-300"
+          <g>
+            {DATA.states.map((s) => {
+              const isHover = hovered === s.uf;
+              const isHighlighted = HIGHLIGHTED.has(s.uf);
+              const fill = isHover
+                ? "var(--brand-green)"
+                : isHighlighted
+                ? "color-mix(in oklab, var(--brand-green) 25%, #e5e7eb)"
+                : "#d1d5db";
+              return (
+                <path
+                  key={s.uf}
+                  d={s.d}
+                  onMouseEnter={() => setHovered(s.uf)}
+                  onMouseLeave={() => setHovered(null)}
+                  onClick={() => setSelected(s)}
+                  className="cursor-pointer transition-all duration-200"
+                  style={{
+                    fill,
+                    stroke: "#ffffff",
+                    strokeWidth: 1,
+                  }}
+                />
+              );
+            })}
+          </g>
+          <g pointerEvents="none">
+            {DATA.states.map((s) => (
+              <text
+                key={s.uf}
+                x={s.cx}
+                y={s.cy}
+                textAnchor="middle"
+                dominantBaseline="middle"
+                className="select-none"
                 style={{
-                  fill: isHover
-                    ? "var(--brand-yellow)"
-                    : dim
-                    ? "color-mix(in oklab, black 55%, var(--brand-green))"
-                    : "color-mix(in oklab, white 10%, var(--brand-green))",
-                  stroke: "white",
-                  strokeWidth: isHover ? 3 : 1.5,
-                  filter: isHover ? "drop-shadow(0 6px 20px rgba(0,0,0,0.35))" : "none",
+                  fontSize: 14,
+                  fontWeight: 700,
+                  fill: hovered === s.uf ? "#ffffff" : "#374151",
+                  transition: "fill 200ms",
                 }}
-              />
-            );
-          })}
+              >
+                {s.uf}
+              </text>
+            ))}
+          </g>
+          {HIGHLIGHTED.size > 0 &&
+            DATA.states
+              .filter((s) => HIGHLIGHTED.has(s.uf))
+              .map((s) => (
+                <circle
+                  key={`dot-${s.uf}`}
+                  cx={s.cx}
+                  cy={s.cy - 18}
+                  r={4}
+                  fill="var(--brand-blue)"
+                  pointerEvents="none"
+                />
+              ))}
         </svg>
         {hovered && (
-          <div className="absolute bottom-4 left-6 right-6 rounded-xl bg-background/90 backdrop-blur px-4 py-3 shadow-card">
-            <p className="text-sm font-semibold text-foreground">
-              {REGIONS.find((r) => r.id === hovered)?.name}
+          <div className="absolute bottom-4 left-6 right-6 rounded-xl bg-foreground/90 text-background backdrop-blur px-4 py-3 shadow-card">
+            <p className="text-sm font-bold uppercase tracking-wide">
+              {DATA.states.find((s) => s.uf === hovered)?.name}
             </p>
-            <p className="text-xs text-muted-foreground">Clique para assistir ao vídeo</p>
+            <p className="text-xs opacity-80">Clique para assistir ao vídeo</p>
           </div>
         )}
       </div>
 
       <div>
-        <p className="text-sm font-semibold uppercase tracking-widest text-primary">Trabalho</p>
-        <h2 className="mt-2 text-4xl md:text-5xl font-bold text-foreground">
-          Onde Denis já <span className="text-primary">chegou</span>
+        <p className="text-sm font-semibold uppercase tracking-widest text-primary">Encontre um representante</p>
+        <h2 className="mt-2 text-4xl md:text-5xl font-black text-foreground tracking-tight">
+          Onde Denis <span className="text-primary">está</span>
         </h2>
         <p className="mt-4 text-muted-foreground">
-          Passe o mouse pelo mapa e clique em uma região para ver o que estamos fazendo por lá.
-          Cidade por cidade, no coração do estado de São Paulo.
+          Passe o mouse sobre um estado do Brasil e clique para assistir ao vídeo do trabalho
+          realizado naquela região.
         </p>
-        <ul className="mt-6 grid gap-2">
-          {REGIONS.map((r) => (
-            <li key={r.id}>
+        <div className="mt-6 grid grid-cols-2 gap-2 max-h-[360px] overflow-auto pr-2">
+          {DATA.states
+            .slice()
+            .sort((a, b) => a.name.localeCompare(b.name, "pt-BR"))
+            .map((s) => (
               <button
-                onClick={() => setSelected(r)}
-                onMouseEnter={() => setHovered(r.id)}
+                key={s.uf}
+                onClick={() => setSelected(s)}
+                onMouseEnter={() => setHovered(s.uf)}
                 onMouseLeave={() => setHovered(null)}
-                className="w-full text-left rounded-lg px-3 py-2 text-sm font-medium text-foreground hover:bg-accent/40 transition-colors"
+                className="flex items-center gap-2 text-left rounded-md px-3 py-2 text-sm font-medium text-foreground hover:bg-accent/40 transition-colors"
               >
-                → {r.name}
+                <span className="inline-flex h-6 w-8 items-center justify-center rounded bg-primary/10 text-[11px] font-black text-primary">
+                  {s.uf}
+                </span>
+                <span className="truncate">{s.name}</span>
               </button>
-            </li>
-          ))}
-        </ul>
+            ))}
+        </div>
       </div>
 
       <VideoModal
         open={!!selected}
         onOpenChange={(o) => !o && setSelected(null)}
         title={selected?.name ?? ""}
-        description={selected?.description}
+        description={selected ? `Trabalho de Denis em ${selected.name}.` : undefined}
       />
     </div>
   );
