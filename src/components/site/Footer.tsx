@@ -71,7 +71,7 @@ export function Footer() {
         </div>
 
         {/* RIGHT — social card */}
-        <div className="flex flex-col items-end">
+        <div className="flex flex-col items-start md:items-end">
           <h4 className="text-2xl font-black text-foreground mb-4">
             Redes Sociais
           </h4>
