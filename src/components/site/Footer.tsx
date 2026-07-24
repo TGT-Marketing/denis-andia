@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Youtube, Send } from "lucide-react";
 import denisCutout from "@/assets/denis-footer-cutout.png";
-import denisLogo from "@/assets/denis-andia-wordmark.png.asset.json";
+import denisLogo from "@/assets/denis-andia-wordmark-white.png.asset.json";
 
 
 
