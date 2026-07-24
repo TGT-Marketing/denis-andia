@@ -6,12 +6,10 @@ import { RegionMap } from "@/components/site/RegionMap";
 import { VideoModal } from "@/components/site/VideoModal";
 import { NewsCarousel } from "@/components/site/NewsCarousel";
 import cutoutAsset from "@/assets/denis-cutout.png.asset.json";
-import rallyBgAsset from "@/assets/denis-menina.jpg.asset.json";
-import walkAsset from "@/assets/denis-chapeu.jpg.asset.json";
+import rallyBg from "@/assets/denis-menina.jpg";
+import walkImg from "@/assets/denis-chapeu.jpg";
 
 const cutout = cutoutAsset.url;
-const rallyBg = rallyBgAsset.url;
-const walkImg = walkAsset.url;
 
 
 export const Route = createFileRoute("/")({
