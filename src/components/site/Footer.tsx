@@ -32,12 +32,15 @@ export function Footer() {
 
         {/* LEFT — brand (mesmo formato do header) */}
         <div className="flex flex-col">
-          <Link to="/" className="flex flex-col leading-none text-white">
+          <Link to="/" className="inline-flex flex-col items-center leading-none text-white self-start">
             <span className="font-black tracking-tight text-4xl md:text-5xl">
               DEN<span className="text-accent">I</span>S
             </span>
-            <span className="text-xs md:text-sm tracking-[0.55em] font-black text-white -mt-0.5">
-              A N D I A
+            <span
+              className="text-xs md:text-sm font-black text-white -mt-0.5"
+              style={{ letterSpacing: "0.55em", paddingLeft: "0.55em" }}
+            >
+              ANDIA
             </span>
           </Link>
 
