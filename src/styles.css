@@ -121,3 +121,13 @@
 @utility shadow-card {
   box-shadow: var(--shadow-card);
 }
+
+@keyframes name-reveal {
+  0% { opacity: 0; transform: translateY(30px) scale(0.96); filter: blur(12px); }
+  60% { opacity: 1; filter: blur(0); }
+  100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+@utility animate-name-reveal {
+  animation: name-reveal 1.2s ease-out both;
+}
