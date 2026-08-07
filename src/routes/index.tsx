@@ -88,8 +88,8 @@ function Home() {
         {/* Tricolor bar */}
         <div className="flex h-2 md:h-3 w-full relative">
           <div className="flex-1 bg-primary" />
-          <div className="flex-1 bg-secondary" />
-          <div className="flex-1" style={{ backgroundColor: "var(--brand-blue)" }} />
+          <div className="flex-1 bg-accent" />
+          <div className="flex-1 bg-brand-blue-dark" />
         </div>
       </section>
 
