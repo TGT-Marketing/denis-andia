@@ -29,12 +29,12 @@ export function Header() {
     >
       <div className={`mx-auto max-w-[1400px] px-6 md:px-10 flex items-center justify-between transition-all duration-300 ${scrolled ? "h-16" : "h-24"}`}>
         <Link to="/" className="inline-flex flex-col leading-none text-white">
-          <span className={`font-black tracking-tight transition-all ${scrolled ? "text-2xl md:text-3xl" : "text-3xl md:text-4xl"}`}>
+          <span className={`font-black tracking-tight transition-all ${scrolled ? "text-3xl md:text-4xl" : "text-4xl md:text-5xl"}`}>
             DEN<span className="text-accent">I</span>S
           </span>
           <span
             aria-label="ANDIA"
-            className="flex justify-between w-full text-[11px] md:text-xs font-black text-white -mt-0.5"
+            className="flex justify-between w-full text-[13px] md:text-sm font-black text-white -mt-0.5"
           >
             <span>A</span><span>N</span><span>D</span><span>I</span><span>A</span>
           </span>

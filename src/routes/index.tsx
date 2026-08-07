@@ -43,16 +43,6 @@ function Home() {
           <div className="relative flex justify-center min-h-[65vh] sm:min-h-[75vh] md:min-h-[92vh] items-end">
 
 
-            {/* GIANT NAME BEHIND — DENIS on top, ANDIA tight below */}
-            <div className="pointer-events-none absolute inset-x-0 bottom-[55%] md:bottom-[60%] z-10 flex flex-col items-center overflow-hidden">
-              <span
-                className="font-black tracking-tighter text-white leading-[0.8] text-[22vw] select-none"
-                style={{ animation: "denis-rise 1.1s cubic-bezier(0.22,1,0.36,1) 0.15s both" }}
-              >
-                DENIS
-              </span>
-            </div>
-
           </div>
         </div>
 
