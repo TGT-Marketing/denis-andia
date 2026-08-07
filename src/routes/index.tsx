@@ -48,18 +48,15 @@ function Home() {
             <button
               type="button"
               onClick={() => setVideoOpen(true)}
-              className="group flex items-center gap-3 md:gap-4 justify-center"
+              className="group flex items-center gap-3 md:gap-4 justify-center rounded-full border-2 border-white/80 bg-black/20 px-6 md:px-8 py-3 md:py-4 hover:bg-black/30 transition-colors"
               aria-label="Reproduzir vídeo: Gente que conhece gente"
             >
-              <span className="relative flex h-12 w-12 md:h-16 md:w-16 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-brand transition-transform duration-300 group-hover:scale-110">
+              <span className="relative flex h-10 w-10 md:h-14 md:w-14 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-brand transition-transform duration-300 group-hover:scale-110">
                 <span className="absolute inset-0 rounded-full bg-primary/50 animate-ping" />
-                <Play className="relative h-4 w-4 md:h-6 md:w-6 fill-current" />
+                <Play className="relative h-3 w-3 md:h-5 md:w-5 fill-current" />
               </span>
-              <span className="flex flex-col text-left min-w-0">
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/70">Gente que</span>
-                <span className="text-xs md:text-base font-black uppercase leading-tight text-white max-w-[220px]">
-                  Conhece gente
-                </span>
+              <span className="text-sm md:text-xl font-black uppercase leading-tight tracking-tight text-white">
+                Gente que conhece gente
               </span>
             </button>
           </div>
@@ -88,8 +85,8 @@ function Home() {
         {/* Tricolor bar */}
         <div className="flex h-2 md:h-3 w-full relative">
           <div className="flex-1 bg-primary" />
-          <div className="flex-1 bg-secondary" />
-          <div className="flex-1" style={{ backgroundColor: "var(--brand-blue)" }} />
+          <div className="flex-1 bg-accent" />
+          <div className="flex-1 bg-brand-blue-dark" />
         </div>
       </section>
 
