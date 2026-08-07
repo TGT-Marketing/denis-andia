@@ -5,9 +5,8 @@ import { Layout } from "@/components/site/Layout";
 import { RegionMap } from "@/components/site/RegionMap";
 import { VideoModal } from "@/components/site/VideoModal";
 import { NewsCarousel } from "@/components/site/NewsCarousel";
-import cutout from "@/assets/denis-menina-cutout.png";
 import walkImg from "@/assets/denis-chapeu.jpg";
-import bgAsset from "@/assets/02-capa-fundo.jpg.asset.json";
+import bgAsset from "@/assets/hero-denis-senhor.jpg.asset.json";
 import denisTrabalhoCutout from "@/assets/denis-trabalho-cutout.png.asset.json";
 
 const heroBg = bgAsset.url;
@@ -39,21 +38,10 @@ function Home() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroBg})` }}
         />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, color-mix(in oklab, var(--ink) 85%, transparent), color-mix(in oklab, var(--ink) 65%, transparent), color-mix(in oklab, var(--ink) 92%, transparent))" }} />
-
-
-
 
         <div className="relative mx-auto max-w-[1400px] px-4 md:px-10 pt-28 md:pt-40 pb-0">
           <div className="relative flex justify-center min-h-[65vh] sm:min-h-[75vh] md:min-h-[92vh] items-end">
-            {/* CUTOUT PHOTO — on top */}
-            <img
-              src={cutout}
-              alt="Denis Andia"
-              width={1600}
-              height={2000}
-              className="pointer-events-none relative z-20 h-[60vh] sm:h-[70vh] md:h-[92vh] w-auto object-contain object-bottom drop-shadow-[0_30px_60px_rgba(0,0,0,0.55)] animate-fade-in"
-            />
+
 
             {/* GIANT NAME BEHIND — DENIS on top, ANDIA tight below */}
             <div className="pointer-events-none absolute inset-x-0 bottom-[55%] md:bottom-[60%] z-10 flex flex-col items-center overflow-hidden">
