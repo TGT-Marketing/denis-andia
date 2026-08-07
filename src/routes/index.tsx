@@ -39,10 +39,41 @@ function Home() {
           style={{ backgroundImage: `url(${heroBg})` }}
         />
 
-        <div className="relative mx-auto max-w-[1400px] px-4 md:px-10 pt-28 md:pt-40 pb-0">
-          <div className="relative flex justify-center min-h-[65vh] sm:min-h-[75vh] md:min-h-[92vh] items-end">
+        <div className="relative mx-auto max-w-[1400px] px-4 md:px-10 pt-28 md:pt-40 pb-8 md:pb-12">
+          <div className="relative flex justify-center min-h-[55vh] sm:min-h-[65vh] md:min-h-[80vh] items-end">
+          </div>
 
-
+          {/* Buttons over hero image */}
+          <div className="relative flex flex-col md:flex-row items-stretch md:items-center gap-4 md:gap-10 pt-6 md:pt-10">
+            <div className="bg-secondary text-secondary-foreground px-6 md:px-8 py-5 md:py-8 shadow-brand text-center md:text-left">
+              <p className="text-xl sm:text-2xl md:text-3xl font-black leading-tight tracking-tight uppercase">
+                Gente que <br />
+                <span>conhece gente</span>
+              </p>
+            </div>
+            <a
+              href="#trabalho"
+              className="inline-flex justify-center items-center rounded-full border-2 border-primary bg-transparent px-6 md:px-10 py-3 md:py-4 text-base md:text-lg font-black uppercase tracking-wider text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+            >
+              Abrace o novo
+            </a>
+            <button
+              type="button"
+              onClick={() => setVideoOpen(true)}
+              className="group md:ml-auto flex items-center gap-3 md:gap-4 justify-center md:justify-start"
+              aria-label="Reproduzir vídeo: Gente que conhece gente"
+            >
+              <span className="relative flex h-12 w-12 md:h-16 md:w-16 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-brand transition-transform duration-300 group-hover:scale-110">
+                <span className="absolute inset-0 rounded-full bg-primary/50 animate-ping" />
+                <Play className="relative h-4 w-4 md:h-6 md:w-6 fill-current" />
+              </span>
+              <span className="flex flex-col text-left min-w-0">
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/70">Assista</span>
+                <span className="text-xs md:text-base font-black uppercase leading-tight text-white max-w-[220px]">
+                  Conheça a história de Denis Andia
+                </span>
+              </span>
+            </button>
           </div>
         </div>
 
@@ -52,7 +83,6 @@ function Home() {
           title="Gente que conhece gente"
           description="Conheça a história de Denis Andia"
         />
-
 
         {/* keyframes local */}
         <style>{`
@@ -67,48 +97,11 @@ function Home() {
           }
         `}</style>
 
-
-        {/* Color band */}
-        <div className="relative">
-          <div className="bg-accent">
-            <div className="mx-auto max-w-[1400px] px-4 md:px-10 py-6 md:py-8 flex flex-col md:flex-row items-stretch md:items-center gap-4 md:gap-10">
-              <div className="bg-secondary text-secondary-foreground px-6 md:px-8 py-5 md:py-8 shadow-brand text-center md:text-left">
-                <p className="text-xl sm:text-2xl md:text-3xl font-black leading-tight tracking-tight uppercase">
-                  Gente que <br />
-                  <span>conhece gente</span>
-                </p>
-              </div>
-              <a
-                href="#trabalho"
-                className="inline-flex justify-center items-center rounded-full border-2 border-primary bg-transparent px-6 md:px-10 py-3 md:py-4 text-base md:text-lg font-black uppercase tracking-wider text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
-              >
-                Abrace o novo
-              </a>
-              <button
-                type="button"
-                onClick={() => setVideoOpen(true)}
-                className="group md:ml-auto flex items-center gap-3 md:gap-4 justify-center md:justify-start"
-                aria-label="Reproduzir vídeo: Gente que conhece gente"
-              >
-                <span className="relative flex h-12 w-12 md:h-16 md:w-16 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-brand transition-transform duration-300 group-hover:scale-110">
-                  <span className="absolute inset-0 rounded-full bg-primary/50 animate-ping" />
-                  <Play className="relative h-4 w-4 md:h-6 md:w-6 fill-current" />
-                </span>
-                <span className="flex flex-col text-left min-w-0">
-                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-accent-foreground/70">Assista</span>
-                  <span className="text-xs md:text-base font-black uppercase leading-tight text-accent-foreground max-w-[220px]">
-                    Conheça a história de Denis Andia
-                  </span>
-                </span>
-              </button>
-
-            </div>
-          </div>
-          <div className="flex h-2 md:h-3 w-full">
-            <div className="flex-1 bg-primary" />
-            <div className="flex-1 bg-secondary" />
-            <div className="flex-1" style={{ backgroundColor: "var(--brand-blue)" }} />
-          </div>
+        {/* Tricolor bar */}
+        <div className="flex h-2 md:h-3 w-full relative">
+          <div className="flex-1 bg-primary" />
+          <div className="flex-1 bg-secondary" />
+          <div className="flex-1" style={{ backgroundColor: "var(--brand-blue)" }} />
         </div>
       </section>
 
