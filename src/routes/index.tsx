@@ -44,23 +44,11 @@ function Home() {
           </div>
 
           {/* Buttons over hero image */}
-          <div className="relative flex flex-col md:flex-row items-stretch md:items-center gap-4 md:gap-10 pt-6 md:pt-10">
-            <div className="bg-secondary text-secondary-foreground px-6 md:px-8 py-5 md:py-8 shadow-brand text-center md:text-left">
-              <p className="text-xl sm:text-2xl md:text-3xl font-black leading-tight tracking-tight uppercase">
-                Gente que <br />
-                <span>conhece gente</span>
-              </p>
-            </div>
-            <a
-              href="#trabalho"
-              className="inline-flex justify-center items-center rounded-full border-2 border-primary bg-transparent px-6 md:px-10 py-3 md:py-4 text-base md:text-lg font-black uppercase tracking-wider text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
-            >
-              Abrace o novo
-            </a>
+          <div className="relative flex flex-col md:flex-row items-center justify-center gap-4 md:gap-10 pt-6 md:pt-10">
             <button
               type="button"
               onClick={() => setVideoOpen(true)}
-              className="group md:ml-auto flex items-center gap-3 md:gap-4 justify-center md:justify-start"
+              className="group flex items-center gap-3 md:gap-4 justify-center"
               aria-label="Reproduzir vídeo: Gente que conhece gente"
             >
               <span className="relative flex h-12 w-12 md:h-16 md:w-16 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-brand transition-transform duration-300 group-hover:scale-110">
@@ -68,9 +56,9 @@ function Home() {
                 <Play className="relative h-4 w-4 md:h-6 md:w-6 fill-current" />
               </span>
               <span className="flex flex-col text-left min-w-0">
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/70">Assista</span>
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/70">Gente que</span>
                 <span className="text-xs md:text-base font-black uppercase leading-tight text-white max-w-[220px]">
-                  Conheça a história de Denis Andia
+                  Conhece gente
                 </span>
               </span>
             </button>
