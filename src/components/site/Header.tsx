@@ -1,10 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 export function Header() {
   const [open, setOpen] = useState(false);
-  const [subOpen, setSubOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -15,10 +14,11 @@ export function Header() {
   }, []);
 
   const submenu = [
-    { to: "/sua-cidade", label: "Sua cidade" },
-    { to: "/nossa-gente", label: "Nossa gente" },
+    { to: "/sua-cidade", label: "Por sua cidade" },
+    { to: "/nossa-gente", label: "Por nossa gente" },
     { to: "/pelo-brasil", label: "Pelo Brasil" },
   ] as const;
+
 
   return (
     <header
