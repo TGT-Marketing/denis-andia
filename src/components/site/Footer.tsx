@@ -76,7 +76,7 @@ export function Footer() {
 
         {/* RIGHT — social card */}
         <div className="flex flex-col items-start md:items-end">
-          <h4 className="text-2xl font-black text-foreground mb-4">
+          <h4 className="text-2xl font-black text-white mb-4">
             Redes Sociais
           </h4>
           <div
@@ -106,7 +106,7 @@ export function Footer() {
 
       {/* bottom bar */}
       <div className="relative border-t border-foreground/15">
-        <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-5 flex flex-col md:flex-row justify-between items-start md:items-center gap-3 text-[10px] md:text-[11px] font-bold tracking-[0.15em] md:tracking-[0.2em] uppercase text-foreground/80 text-center md:text-left">
+        <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-5 flex flex-col md:flex-row justify-between items-start md:items-center gap-3 text-[10px] md:text-[11px] font-bold tracking-[0.15em] md:tracking-[0.2em] uppercase text-white/80 text-center md:text-left">
           <p className="w-full md:w-auto">
             Candidato Denis Andia © {new Date().getFullYear()} — Todos os direitos reservados ·{" "}
             <a
