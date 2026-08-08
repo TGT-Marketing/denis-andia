@@ -30,7 +30,7 @@ export function Header() {
       <div className={`mx-auto max-w-[1400px] px-6 md:px-10 flex items-center justify-between transition-all duration-300 ${scrolled ? "h-16" : "h-24"}`}>
         <Link to="/" className="inline-flex flex-col leading-none text-white">
           <span className={`font-black tracking-tight transition-all ${scrolled ? "text-3xl md:text-4xl" : "text-4xl md:text-5xl"}`}>
-            DEN<span className="text-accent">I</span>S
+            DE<span className="text-primary">N</span><span className="text-accent">I</span>S
           </span>
           <span
             aria-label="ANDIA"

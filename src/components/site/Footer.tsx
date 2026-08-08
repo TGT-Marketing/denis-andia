@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Youtube, Send } from "lucide-react";
-import denisCutout from "@/assets/denis-footer.png.asset.json";
+import footerBg from "@/assets/footer-bg.png.asset.json";
 
 
 
@@ -16,13 +16,14 @@ const SOCIAL = [
 
 export function Footer() {
   return (
-    <footer className="relative bg-secondary text-secondary-foreground overflow-hidden">
-      {/* Denis cutout — atrás do conteúdo, mais para a direita */}
-      <img
-        src={denisCutout.url}
-        alt="Denis Andia"
-        className="pointer-events-none select-none hidden md:block absolute z-0 bottom-0 left-[35%] -translate-x-1/2 h-[110%] w-auto object-contain object-bottom opacity-90"
+    <footer className="relative text-white overflow-hidden">
+      {/* Fundo geral do rodapé */}
+      <div
+        className="absolute inset-0 z-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${footerBg.url})` }}
       />
+      <div className="absolute inset-0 z-0 bg-black/40" />
+
 
       <div className="relative z-20 mx-auto max-w-[1400px] px-6 md:px-10 pt-16 pb-16 grid gap-14 md:grid-cols-3">
 
@@ -32,7 +33,7 @@ export function Footer() {
         <div className="flex flex-col">
           <Link to="/" className="inline-flex flex-col leading-none text-white self-start">
             <span className="font-black tracking-tight text-4xl md:text-5xl">
-              DEN<span className="text-accent">I</span>S
+              DE<span className="text-primary">N</span><span className="text-accent">I</span>S
             </span>
             <span
               aria-label="ANDIA"
