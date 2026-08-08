@@ -25,11 +25,9 @@ export function Footer() {
       <div className="absolute inset-0 z-0 bg-black/40" />
 
 
-      <div className="relative z-20 mx-auto max-w-[1400px] px-6 md:px-10 pt-16 pb-16 grid gap-14 md:grid-cols-3">
+      <div className="relative z-20 mx-auto max-w-[1400px] px-6 md:px-10 pt-16 pb-10 grid gap-10 md:grid-cols-2">
 
-
-
-        {/* LEFT — brand (mesmo formato do header) */}
+        {/* LEFT — brand + social icons */}
         <div className="flex flex-col">
           <Link to="/" className="inline-flex flex-col leading-none text-white self-start">
             <span className="font-black tracking-tight text-4xl md:text-5xl">
@@ -43,23 +41,23 @@ export function Footer() {
             </span>
           </Link>
 
-
-          <p
-            className="mt-8 text-4xl md:text-5xl leading-[0.95] text-white"
-            style={{
-              fontFamily:
-                '"Brush Script MT", "Lucida Handwriting", cursive',
-            }}
-          >
-            Gente que <br />
-            conhece gente.
-          </p>
+          {/* Social icons small */}
+          <div className="mt-6 flex items-center gap-4">
+            {SOCIAL.map((s) => (
+              <a
+                key={s.label}
+                href={s.href}
+                aria-label={s.label}
+                className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 hover:scale-105 transition-all"
+              >
+                <s.icon className="h-4 w-4" strokeWidth={2} />
+              </a>
+            ))}
+          </div>
         </div>
 
-
-
-        {/* MIDDLE — nav (spacer for image on desktop) */}
-        <div className="md:pl-8 md:pt-6 self-start md:self-center">
+        {/* RIGHT — nav */}
+        <div className="md:pl-8 md:pt-6 self-start md:self-center md:text-right">
           <ul className="space-y-6 max-w-[240px] md:ml-auto">
             {NAV.map((n) => (
               <li key={n.label} className="border-b border-foreground/30 pb-2">
@@ -72,35 +70,6 @@ export function Footer() {
               </li>
             ))}
           </ul>
-        </div>
-
-        {/* RIGHT — social card */}
-        <div className="flex flex-col items-start md:items-end">
-          <h4 className="text-2xl font-black text-white mb-4">
-            Redes Sociais
-          </h4>
-          <div
-            className="w-full max-w-sm rounded-3xl p-4 shadow-brand"
-            style={{ backgroundColor: "var(--brand-blue)" }}
-          >
-            <ul className="space-y-2">
-              {SOCIAL.map((s) => (
-                <li key={s.label}>
-                  <a
-                    href={s.href}
-                    className="flex items-center gap-3 rounded-2xl px-3 py-2.5 hover:bg-white/40 transition-colors"
-                  >
-                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-foreground">
-                      <s.icon className="h-5 w-5" strokeWidth={2.2} />
-                    </span>
-                    <span className="text-sm font-semibold text-foreground">
-                      {s.label}
-                    </span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
       </div>
 
