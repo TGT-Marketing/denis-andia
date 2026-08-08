@@ -69,9 +69,6 @@ export function Header() {
       {open && (
         <div className="lg:hidden bg-ink text-white" style={{ backgroundColor: "var(--ink)" }}>
           <div className="px-6 py-4 flex flex-col gap-1">
-            <div className="px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-accent">
-              O que o Denis fez por
-            </div>
             {submenu.map((s) => (
               <Link
                 key={s.to}
@@ -84,8 +81,9 @@ export function Header() {
             ))}
             <div className="h-px bg-white/10 my-2" />
             <Link to="/biografia" onClick={() => setOpen(false)} className="rounded-lg px-3 py-2 text-sm font-bold uppercase tracking-wider">
-              Biografia
+              Sobre o Denis
             </Link>
+
           </div>
         </div>
       )}
