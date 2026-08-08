@@ -102,14 +102,15 @@ function Home() {
                 </span>
               </div>
               <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-none">
-                <span className="text-primary">TRABALHO</span>
+                <span className="text-primary">O TRABALHO</span>
+                <br />
+                <span className="text-foreground">JÁ CHEGOU!</span>
                 <br />
                 <span className="italic font-light text-foreground/70 text-3xl md:text-5xl normal-case tracking-tight">
-                  cidade por cidade,
+                  cidade por cidade, impacto real.
                 </span>
-                <br />
-                <span className="text-foreground">impacto real.</span>
               </h2>
+
 
               <div className="mt-8 grid grid-cols-3 max-w-md gap-6 border-y border-border py-6">
                 <Stat n="645" label="Municípios" />

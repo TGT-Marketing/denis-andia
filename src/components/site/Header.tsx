@@ -1,10 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 export function Header() {
   const [open, setOpen] = useState(false);
-  const [subOpen, setSubOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -15,10 +14,11 @@ export function Header() {
   }, []);
 
   const submenu = [
-    { to: "/sua-cidade", label: "Sua cidade" },
-    { to: "/nossa-gente", label: "Nossa gente" },
+    { to: "/sua-cidade", label: "Por sua cidade" },
+    { to: "/nossa-gente", label: "Por nossa gente" },
     { to: "/pelo-brasil", label: "Pelo Brasil" },
   ] as const;
+
 
   return (
     <header
@@ -41,41 +41,21 @@ export function Header() {
         </Link>
 
         <nav className="hidden lg:flex items-center gap-10 text-white">
-          <div
-            className="relative"
-            onMouseEnter={() => setSubOpen(true)}
-            onMouseLeave={() => setSubOpen(false)}
-          >
-            <button className="flex items-center gap-1.5 text-sm font-bold tracking-wider uppercase hover:text-accent transition-colors">
-              O que o Denis fez por <ChevronDown className="h-4 w-4" />
-            </button>
-            {subOpen && (
-              <div className="absolute right-0 top-full pt-4">
-                <div className="min-w-56 rounded-xl bg-card text-foreground shadow-card border border-border p-2">
-                  {submenu.map((s) => (
-                    <Link
-                      key={s.to}
-                      to={s.to}
-                      className="block rounded-lg px-3 py-2 text-sm font-semibold hover:bg-accent hover:text-accent-foreground transition-colors"
-                    >
-                      {s.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
           <Link to="/sua-cidade" className="text-sm font-bold tracking-wider uppercase hover:text-accent transition-colors">
-            São Paulo
+            Por sua cidade
+          </Link>
+          <Link to="/nossa-gente" className="text-sm font-bold tracking-wider uppercase hover:text-accent transition-colors">
+            Por nossa gente
           </Link>
           <Link to="/pelo-brasil" className="text-sm font-bold tracking-wider uppercase hover:text-accent transition-colors">
-            Brasil
+            Pelo Brasil
           </Link>
           <span className="h-6 w-px bg-white/30" />
           <Link to="/biografia" className="text-sm font-black tracking-wider uppercase hover:text-accent transition-colors">
-            Biografia
+            Sobre o Denis
           </Link>
         </nav>
+
 
         <button
           className="lg:hidden p-2 text-white"
@@ -89,9 +69,6 @@ export function Header() {
       {open && (
         <div className="lg:hidden bg-ink text-white" style={{ backgroundColor: "var(--ink)" }}>
           <div className="px-6 py-4 flex flex-col gap-1">
-            <div className="px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-accent">
-              O que o Denis fez por
-            </div>
             {submenu.map((s) => (
               <Link
                 key={s.to}
@@ -104,8 +81,9 @@ export function Header() {
             ))}
             <div className="h-px bg-white/10 my-2" />
             <Link to="/biografia" onClick={() => setOpen(false)} className="rounded-lg px-3 py-2 text-sm font-bold uppercase tracking-wider">
-              Biografia
+              Sobre o Denis
             </Link>
+
           </div>
         </div>
       )}
