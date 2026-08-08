@@ -41,41 +41,21 @@ export function Header() {
         </Link>
 
         <nav className="hidden lg:flex items-center gap-10 text-white">
-          <div
-            className="relative"
-            onMouseEnter={() => setSubOpen(true)}
-            onMouseLeave={() => setSubOpen(false)}
-          >
-            <button className="flex items-center gap-1.5 text-sm font-bold tracking-wider uppercase hover:text-accent transition-colors">
-              O que o Denis fez por <ChevronDown className="h-4 w-4" />
-            </button>
-            {subOpen && (
-              <div className="absolute right-0 top-full pt-4">
-                <div className="min-w-56 rounded-xl bg-card text-foreground shadow-card border border-border p-2">
-                  {submenu.map((s) => (
-                    <Link
-                      key={s.to}
-                      to={s.to}
-                      className="block rounded-lg px-3 py-2 text-sm font-semibold hover:bg-accent hover:text-accent-foreground transition-colors"
-                    >
-                      {s.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
           <Link to="/sua-cidade" className="text-sm font-bold tracking-wider uppercase hover:text-accent transition-colors">
-            São Paulo
+            Por sua cidade
+          </Link>
+          <Link to="/nossa-gente" className="text-sm font-bold tracking-wider uppercase hover:text-accent transition-colors">
+            Por nossa gente
           </Link>
           <Link to="/pelo-brasil" className="text-sm font-bold tracking-wider uppercase hover:text-accent transition-colors">
-            Brasil
+            Pelo Brasil
           </Link>
           <span className="h-6 w-px bg-white/30" />
           <Link to="/biografia" className="text-sm font-black tracking-wider uppercase hover:text-accent transition-colors">
-            Biografia
+            Sobre o Denis
           </Link>
         </nav>
+
 
         <button
           className="lg:hidden p-2 text-white"
