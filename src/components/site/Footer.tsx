@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Youtube, Send } from "lucide-react";
-import denisCutout from "@/assets/denis-footer.png.asset.json";
+import footerBg from "@/assets/footer-bg.png.asset.json";
 
 
 
@@ -16,13 +16,14 @@ const SOCIAL = [
 
 export function Footer() {
   return (
-    <footer className="relative bg-secondary text-secondary-foreground overflow-hidden">
-      {/* Denis cutout — atrás do conteúdo, mais para a direita */}
-      <img
-        src={denisCutout.url}
-        alt="Denis Andia"
-        className="pointer-events-none select-none hidden md:block absolute z-0 bottom-0 left-[35%] -translate-x-1/2 h-[110%] w-auto object-contain object-bottom opacity-90"
+    <footer className="relative text-white overflow-hidden">
+      {/* Fundo geral do rodapé */}
+      <div
+        className="absolute inset-0 z-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${footerBg.url})` }}
       />
+      <div className="absolute inset-0 z-0 bg-black/40" />
+
 
       <div className="relative z-20 mx-auto max-w-[1400px] px-6 md:px-10 pt-16 pb-16 grid gap-14 md:grid-cols-3">
 
@@ -32,7 +33,7 @@ export function Footer() {
         <div className="flex flex-col">
           <Link to="/" className="inline-flex flex-col leading-none text-white self-start">
             <span className="font-black tracking-tight text-4xl md:text-5xl">
-              DEN<span className="text-accent">I</span>S
+              DE<span className="text-primary">N</span><span className="text-accent">I</span>S
             </span>
             <span
               aria-label="ANDIA"
@@ -75,7 +76,7 @@ export function Footer() {
 
         {/* RIGHT — social card */}
         <div className="flex flex-col items-start md:items-end">
-          <h4 className="text-2xl font-black text-foreground mb-4">
+          <h4 className="text-2xl font-black text-white mb-4">
             Redes Sociais
           </h4>
           <div
@@ -105,7 +106,7 @@ export function Footer() {
 
       {/* bottom bar */}
       <div className="relative border-t border-foreground/15">
-        <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-5 flex flex-col md:flex-row justify-between items-start md:items-center gap-3 text-[10px] md:text-[11px] font-bold tracking-[0.15em] md:tracking-[0.2em] uppercase text-foreground/80 text-center md:text-left">
+        <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-5 flex flex-col md:flex-row justify-between items-start md:items-center gap-3 text-[10px] md:text-[11px] font-bold tracking-[0.15em] md:tracking-[0.2em] uppercase text-white/80 text-center md:text-left">
           <p className="w-full md:w-auto">
             Candidato Denis Andia © {new Date().getFullYear()} — Todos os direitos reservados ·{" "}
             <a
