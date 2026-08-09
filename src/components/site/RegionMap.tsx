@@ -35,7 +35,7 @@ const REGIONS: Region[] = [
   },
 ];
 
-export function RegionMap() {
+export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
   const [hovered, setHovered] = useState<string | null>(null);
   const [selected, setSelected] = useState<{ name: string } | null>(null);
 
@@ -48,8 +48,9 @@ export function RegionMap() {
     hovered === "demais" ? others.name : REGIONS.find((r) => r.id === hovered)?.name;
 
   return (
-    <div className="grid gap-10 lg:grid-cols-[1.15fr_1fr] items-center">
+    <div className={mapOnly ? "" : "grid gap-10 lg:grid-cols-[1.15fr_1fr] items-center"}>
       <div className="relative rounded-3xl bg-background p-4 md:p-6">
+
         <svg
           viewBox="0 0 900 600"
           className="w-full h-auto"
@@ -121,7 +122,7 @@ export function RegionMap() {
         )}
       </div>
 
-      <div>
+      <div className={mapOnly ? "hidden" : ""}>
         <p className="text-sm font-semibold uppercase tracking-widest text-primary">Trabalho já chegou</p>
         <h2 className="mt-2 text-4xl md:text-5xl font-black text-foreground tracking-tight">
           Onde Denis <span className="text-primary">está</span>
