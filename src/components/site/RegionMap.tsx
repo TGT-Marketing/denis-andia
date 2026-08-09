@@ -35,7 +35,7 @@ const REGIONS: Region[] = [
   },
 ];
 
-export function RegionMap() {
+export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
   const [hovered, setHovered] = useState<string | null>(null);
   const [selected, setSelected] = useState<{ name: string } | null>(null);
 
