@@ -91,48 +91,44 @@ function Home() {
       </section>
 
       {/* TRABALHO — Mapa */}
-      <section id="trabalho" className="relative bg-background">
-        <div className="mx-auto max-w-[1400px] px-4 md:px-10 pt-20 md:pt-28 pb-8">
-          <div className="grid gap-10 lg:grid-cols-[1fr_1fr] items-end">
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-xs font-black text-primary uppercase tracking-[0.3em]">N°01</span>
-                <span className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">
-                  Mapa do Impacto · SP
-                </span>
-              </div>
-              <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-none">
-                <span className="text-primary">O TRABALHO</span>
-                <br />
-                <span className="text-foreground">JÁ CHEGOU!</span>
-                <br />
-                <span className="italic font-light text-foreground/70 text-3xl md:text-5xl normal-case tracking-tight">
-                  cidade por cidade, impacto real.
-                </span>
-              </h2>
+      <section id="trabalho" className="relative bg-background overflow-hidden">
+        <div className="mx-auto max-w-[1400px] px-4 md:px-10 pt-16 md:pt-24 pb-16 md:pb-24">
+          {/* Título gigante ao fundo */}
+          <h2 className="relative z-10 text-center lg:text-left font-black uppercase tracking-tighter leading-[0.85] text-[clamp(2.5rem,8.5vw,8rem)]">
+            <span className="text-primary">O TRABALHO</span>{" "}
+            <span className="text-foreground">JÁ CHEGOU!</span>
+          </h2>
 
-
-              <div className="mt-8 grid grid-cols-3 max-w-md gap-6 border-y border-border py-6">
-                <Stat n="645" label="Municípios" />
-                <Stat n="15" label="Regiões" />
-                <Stat n="100%" label="de SP" />
-              </div>
-            </div>
-            <div className="relative hidden lg:flex justify-end">
+          <div className="relative mt-[-1rem] md:mt-[-3rem] grid gap-6 lg:grid-cols-[0.85fr_1.15fr] items-end">
+            {/* Foto à esquerda */}
+            <div className="relative z-20 flex justify-center lg:justify-start">
               <img
-                src={denisTrabalhoCutout.url}
-                alt="Denis Andia com capacete"
-                className="w-full max-w-[820px] object-contain drop-shadow-2xl"
+                src={denisObra.url}
+                alt="Denis Andia segurando capacete de obra"
+                loading="lazy"
+                className="w-full max-w-[380px] lg:max-w-[520px] object-contain drop-shadow-2xl"
               />
             </div>
+
+            {/* Mapa à direita */}
+            <div className="relative z-10">
+              <RegionMap mapOnly />
+              <div className="mt-4 flex flex-wrap gap-3 justify-center lg:justify-start">
+                <Legend color="var(--brand-green)" label="RMC — Região Metropolitana de Campinas" />
+                <Legend color="var(--brand-green)" label="RMP — Região Metropolitana de Piracicaba" />
+                <Legend color="#d1d5db" label="Demais Regiões" />
+              </div>
+            </div>
+          </div>
+
+          <div className="relative z-20 mt-10 grid grid-cols-3 max-w-md gap-6 border-y border-border py-6 mx-auto lg:mx-0">
+            <Stat n="645" label="Municípios" />
+            <Stat n="15" label="Regiões" />
+            <Stat n="100%" label="de SP" />
           </div>
         </div>
-
-
-        <div className="mx-auto max-w-[1400px] px-4 md:px-10 pb-20">
-          <RegionMap />
-        </div>
       </section>
+
 
       {/* SOBRE MIM */}
       <section id="sobre" className="bg-background py-24">
