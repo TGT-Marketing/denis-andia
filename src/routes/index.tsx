@@ -7,7 +7,7 @@ import { VideoModal } from "@/components/site/VideoModal";
 import { NewsCarousel } from "@/components/site/NewsCarousel";
 import walkImg from "@/assets/denis-chapeu.jpg";
 import bgAsset from "@/assets/hero-denis-senhor.jpg.asset.json";
-import denisTrabalhoCutout from "@/assets/denis-trabalho-cutout.png.asset.json";
+import denisObra from "@/assets/denis-obra.png.asset.json";
 
 const heroBg = bgAsset.url;
 
@@ -191,6 +191,15 @@ function Home() {
   );
 }
 
+function Legend({ color, label }: { color: string; label: string }) {
+  return (
+    <span className="inline-flex items-center gap-2 text-xs font-semibold text-muted-foreground">
+      <span className="h-3 w-3 rounded-sm" style={{ background: color }} />
+      {label}
+    </span>
+  );
+}
+
 function Stat({ n, label }: { n: string; label: string }) {
   return (
     <div>
@@ -199,6 +208,7 @@ function Stat({ n, label }: { n: string; label: string }) {
     </div>
   );
 }
+
 
 function BigStat({ n, label }: { n: string; label: string }) {
   return (
