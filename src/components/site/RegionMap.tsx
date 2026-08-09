@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { VideoModal } from "./VideoModal";
+import spPaths from "./sp-paths.json";
 
 type Region = {
   id: string;
@@ -11,27 +12,25 @@ type Region = {
   highlight: boolean;
 };
 
-// Stylized map of the State of São Paulo.
-const SP_OUTLINE =
-  "M120 250 L150 195 L205 160 L268 140 L330 132 L392 140 L455 132 L520 120 L585 118 L650 132 L705 158 L748 196 L775 245 L790 300 L775 350 L735 392 L680 420 L615 436 L545 448 L480 462 L415 470 L352 462 L295 442 L245 412 L200 375 L160 330 L132 292 Z";
+const SP_OUTLINE = spPaths.other;
 
 const REGIONS: Region[] = [
   {
     id: "rmc",
     name: "RMC — Região Metropolitana de Campinas",
     short: "RMC",
-    d: "M520 178 L590 168 L640 190 L652 232 L628 274 L572 288 L520 272 L502 228 Z",
-    cx: 576,
-    cy: 228,
+    d: spPaths.rmc,
+    cx: 660,
+    cy: 360,
     highlight: true,
   },
   {
     id: "rmp",
     name: "RMP — Região Metropolitana de Piracicaba",
     short: "RMP",
-    d: "M408 200 L500 196 L502 228 L520 272 L470 300 L412 292 L388 250 Z",
-    cx: 452,
-    cy: 248,
+    d: spPaths.rmp,
+    cx: 494,
+    cy: 288,
     highlight: true,
   },
 ];
