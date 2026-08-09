@@ -48,8 +48,9 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
     hovered === "demais" ? others.name : REGIONS.find((r) => r.id === hovered)?.name;
 
   return (
-    <div className="grid gap-10 lg:grid-cols-[1.15fr_1fr] items-center">
+    <div className={mapOnly ? "" : "grid gap-10 lg:grid-cols-[1.15fr_1fr] items-center"}>
       <div className="relative rounded-3xl bg-background p-4 md:p-6">
+
         <svg
           viewBox="0 0 900 600"
           className="w-full h-auto"
