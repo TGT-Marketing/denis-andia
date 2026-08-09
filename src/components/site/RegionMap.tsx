@@ -20,7 +20,7 @@ const REGIONS: Region[] = [
     name: "RMC — Região Metropolitana de Campinas",
     short: "RMC",
     d: spPaths.rmc,
-    cx: 660,
+    cx: 700,
     cy: 360,
     highlight: true,
   },
@@ -29,8 +29,8 @@ const REGIONS: Region[] = [
     name: "RMP — Região Metropolitana de Piracicaba",
     short: "RMP",
     d: spPaths.rmp,
-    cx: 494,
-    cy: 288,
+    cx: 470,
+    cy: 268,
     highlight: true,
   },
 ];
@@ -51,7 +51,7 @@ export function RegionMap() {
     <div className="grid gap-10 lg:grid-cols-[1.15fr_1fr] items-center">
       <div className="relative rounded-3xl bg-background p-4 md:p-6">
         <svg
-          viewBox="0 0 900 560"
+          viewBox="0 0 900 600"
           className="w-full h-auto"
           role="img"
           aria-label="Mapa interativo do Estado de São Paulo"
@@ -66,7 +66,7 @@ export function RegionMap() {
             style={{
               fill: hovered === "demais" ? "#9ca3af" : "#d1d5db",
               stroke: "#ffffff",
-              strokeWidth: 3,
+              strokeWidth: 0.5,
             }}
           />
 
@@ -86,8 +86,16 @@ export function RegionMap() {
                       ? "var(--brand-green)"
                       : "color-mix(in oklab, var(--brand-green) 70%, #ffffff)",
                     stroke: "#ffffff",
-                    strokeWidth: 3,
+                    strokeWidth: 0.5,
                   }}
+                />
+                <line
+                  x1={r.id === "rmc" ? 620 : 520}
+                  y1={r.id === "rmc" ? 340 : 300}
+                  x2={r.cx}
+                  y2={r.cy + 8}
+                  pointerEvents="none"
+                  style={{ stroke: "var(--brand-green)", strokeWidth: 2 }}
                 />
                 <text
                   x={r.cx}
@@ -96,7 +104,7 @@ export function RegionMap() {
                   dominantBaseline="middle"
                   pointerEvents="none"
                   className="select-none"
-                  style={{ fontSize: 26, fontWeight: 900, fill: "#ffffff" }}
+                  style={{ fontSize: 24, fontWeight: 900, fill: "var(--brand-green)" }}
                 >
                   {r.short}
                 </text>
