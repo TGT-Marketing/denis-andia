@@ -7,7 +7,7 @@ import { VideoModal } from "@/components/site/VideoModal";
 import { NewsCarousel } from "@/components/site/NewsCarousel";
 import walkImg from "@/assets/denis-chapeu.jpg";
 import bgAsset from "@/assets/hero-denis-senhor.jpg.asset.json";
-import denisObra from "@/assets/denis-obra.png.asset.json";
+import denisCapacete from "@/assets/denis-capacete.png.asset.json";
 
 const heroBg = bgAsset.url;
 
