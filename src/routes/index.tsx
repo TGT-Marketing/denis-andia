@@ -92,36 +92,34 @@ function Home() {
 
       {/* TRABALHO — Mapa */}
       <section id="trabalho" className="relative bg-background overflow-hidden">
-        <div className="mx-auto max-w-[1400px] px-4 md:px-10 pt-16 md:pt-24 pb-16 md:pb-24">
+        <div className="w-full px-2 md:px-6 pt-16 md:pt-24 pb-16 md:pb-24">
           {/* Título gigante ao fundo */}
           <h2 className="relative z-10 text-center lg:text-left font-black uppercase tracking-tighter leading-[0.85] text-[clamp(2.5rem,8.5vw,8rem)]">
             <span className="text-primary">O TRABALHO</span>{" "}
             <span className="text-foreground">JÁ CHEGOU!</span>
           </h2>
 
-          <div className="relative mt-[-1rem] md:mt-[-3rem] grid gap-6 lg:grid-cols-[0.85fr_1.15fr] items-end">
-            {/* Foto à esquerda */}
-            <div className="relative z-20 flex justify-center lg:justify-start">
-              <img
-                src={denisObra.url}
-                alt="Denis Andia segurando capacete de obra"
-                loading="lazy"
-                className="w-full max-w-[380px] lg:max-w-[520px] object-contain drop-shadow-2xl"
-              />
+          {/* Mapa ocupando a tela toda, com a foto surgindo por trás à direita */}
+          <div className="relative mt-2 md:mt-[-2rem] w-full">
+            <div className="relative z-10 w-full">
+              <RegionMap mapOnly />
             </div>
 
-            {/* Mapa à direita */}
-            <div className="relative z-10">
-              <RegionMap mapOnly />
-              <div className="mt-4 flex flex-wrap gap-3 justify-center lg:justify-start">
-                <Legend color="var(--brand-green)" label="RMC — Região Metropolitana de Campinas" />
-                <Legend color="var(--brand-green)" label="RMP — Região Metropolitana de Piracicaba" />
-                <Legend color="#d1d5db" label="Demais Regiões" />
-              </div>
-            </div>
+            <img
+              src={denisCapacete.url}
+              alt="Denis Andia segurando capacete de obra"
+              loading="lazy"
+              className="pointer-events-none absolute z-0 bottom-0 right-0 md:right-[2%] w-[52%] md:w-[38%] lg:w-[32%] max-w-[620px] object-contain object-bottom drop-shadow-2xl"
+            />
           </div>
 
-          <div className="relative z-20 mt-10 grid grid-cols-3 max-w-md gap-6 border-y border-border py-6 mx-auto lg:mx-0">
+          <div className="relative z-20 mt-6 flex flex-wrap gap-3 justify-center lg:justify-start lg:pl-6">
+            <Legend color="var(--brand-green)" label="RMC — Região Metropolitana de Campinas" />
+            <Legend color="var(--brand-green)" label="RMP — Região Metropolitana de Piracicaba" />
+            <Legend color="color-mix(in oklab, var(--brand-green) 30%, #ffffff)" label="Demais Regiões" />
+          </div>
+
+          <div className="relative z-20 mt-10 grid grid-cols-3 max-w-md gap-6 border-y border-border py-6 mx-auto lg:mx-0 lg:ml-6">
             <Stat n="645" label="Municípios" />
             <Stat n="15" label="Regiões" />
             <Stat n="100%" label="de SP" />
