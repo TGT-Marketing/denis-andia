@@ -1,11 +1,10 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Play } from "lucide-react";
 import { Layout } from "@/components/site/Layout";
 import { RegionMap } from "@/components/site/RegionMap";
 import { VideoModal } from "@/components/site/VideoModal";
 import { NewsCarousel } from "@/components/site/NewsCarousel";
-import walkImg from "@/assets/denis-chapeu.jpg";
 import bgAsset from "@/assets/hero-denis-senhor.jpg.asset.json";
 import denisCapacete from "@/assets/denis-capacete.png.asset.json";
 
