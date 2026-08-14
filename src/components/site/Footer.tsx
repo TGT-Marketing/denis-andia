@@ -1,85 +1,52 @@
-import { Link } from "@tanstack/react-router";
-import { Instagram, Youtube, Send } from "lucide-react";
+import { Instagram, Facebook } from "lucide-react";
 import footerBg from "@/assets/footer-bg.png.asset.json";
 
-
-
-const NAV: { label: string; to: string }[] = [];
-
-
 const SOCIAL = [
-  { icon: Instagram, label: "denisferreiradm", href: "#" },
-  { icon: Youtube, label: "Denis Andia", href: "#" },
-  { icon: XIcon, label: "denis_dm", href: "#" },
-  { icon: Send, label: "Denis Andia", href: "#" },
+  { icon: Instagram, label: "Instagram", href: "#" },
+  { icon: Facebook, label: "Facebook", href: "#" },
+  { icon: XIcon, label: "X / denisandia", href: "#" },
 ] as const;
 
 export function Footer() {
   return (
     <footer className="relative text-white overflow-hidden">
-      {/* Fundo geral do rodapé */}
+      {/* Fundo geral do rodapé — imagem inteira, sem cortes */}
       <div
-        className="absolute inset-0 z-0 bg-no-repeat bg-center bg-contain md:bg-cover"
+        className="absolute inset-0 z-0 bg-no-repeat bg-center bg-contain"
         style={{ backgroundImage: `url(${footerBg.url})`, backgroundColor: "var(--ink)" }}
       />
       <div className="absolute inset-0 z-0 bg-black/40" />
 
-
-      <div className="relative z-20 mx-auto max-w-[1400px] px-6 md:px-10 pt-16 pb-10 grid gap-10 md:grid-cols-2">
-
-        {/* LEFT — brand + social icons */}
-        <div className="flex flex-col">
-          <Link to="/" className="inline-flex flex-col leading-none text-white self-start">
-            <span className="font-black tracking-tight text-4xl md:text-5xl">
-              DE<span className="text-primary">N</span><span className="text-accent">I</span>S
-            </span>
-            <span
-              aria-label="ANDIA"
-              className="flex justify-between w-full text-xs md:text-sm font-black text-white -mt-0.5"
-            >
-              <span>A</span><span>N</span><span>D</span><span>I</span><span>A</span>
-            </span>
-          </Link>
-
-          {/* Social icons small */}
-          <div className="mt-6 flex items-center gap-4">
-            {SOCIAL.map((s) => (
-              <a
-                key={s.label}
-                href={s.href}
-                aria-label={s.label}
-                className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 hover:scale-105 transition-all"
-              >
-                <s.icon className="h-4 w-4" strokeWidth={2} />
-              </a>
-            ))}
-          </div>
+      <div className="relative z-20 mx-auto max-w-[1400px] px-6 md:px-10 pt-16 pb-10 min-h-[45vw] md:min-h-[38vw] flex flex-col">
+        {/* Centro — chamada sobre a mão da foto central */}
+        <div className="flex-1 flex items-center justify-center">
+          <p className="text-center font-black uppercase tracking-[0.2em] text-xl md:text-3xl lg:text-4xl drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]">
+            Abrace o novo
+          </p>
         </div>
 
-        {/* RIGHT — nav */}
-        <div className="md:pl-8 md:pt-6 self-start md:self-center md:text-right">
-          <ul className="space-y-6 max-w-[240px] md:ml-auto">
-            {NAV.map((n) => (
-              <li key={n.label} className="border-b border-foreground/30 pb-2">
-                <Link
-                  to={n.to}
-                  className="block text-lg font-black uppercase tracking-wide text-foreground hover:text-primary transition-colors"
-                >
-                  {n.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+        {/* Mídias — canto direito, pequenas */}
+        <div className="flex items-center justify-end gap-3">
+          {SOCIAL.map((s) => (
+            <a
+              key={s.label}
+              href={s.href}
+              aria-label={s.label}
+              className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 hover:scale-105 transition-all"
+            >
+              <s.icon className="h-3.5 w-3.5" strokeWidth={2} />
+            </a>
+          ))}
         </div>
       </div>
 
       {/* bottom bar */}
-      <div className="relative border-t border-foreground/15">
-        <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-5 flex flex-col md:flex-row justify-between items-start md:items-center gap-3 text-[10px] md:text-[11px] font-bold tracking-[0.15em] md:tracking-[0.2em] uppercase text-white/80 text-center md:text-left">
-          <p className="w-full md:w-auto">
+      <div className="relative z-20 border-t border-foreground/15">
+        <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-4 flex flex-col md:flex-row justify-between items-center gap-2 text-[9px] font-semibold tracking-[0.12em] uppercase text-white/70 text-center md:text-left">
+          <p>
             Candidato Denis Andia © {new Date().getFullYear()} — Todos os direitos reservados ·{" "}
             <a
-              href="https://www.targetmarketingdigital.com.br/"
+              href="https://www.tgtmarketing.com.br"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-primary transition-colors"
@@ -88,7 +55,7 @@ export function Footer() {
             </a>
           </p>
 
-          <a href="#" className="hover:text-primary transition-colors">
+          <a href="#" className="text-[9px] hover:text-primary transition-colors">
             Política de Privacidade
           </a>
         </div>
