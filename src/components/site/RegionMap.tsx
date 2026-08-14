@@ -49,11 +49,11 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
 
   return (
     <div className={mapOnly ? "" : "grid gap-10 lg:grid-cols-[1.15fr_1fr] items-center"}>
-      <div className="relative rounded-3xl bg-background p-4 md:p-6">
+      <div className="relative">
 
         <svg
           viewBox="0 0 900 600"
-          className="w-full h-auto"
+          className="w-full h-auto overflow-visible"
           role="img"
           aria-label="Mapa interativo do Estado de São Paulo"
         >
@@ -65,7 +65,10 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
             onClick={() => setSelected({ name: others.name })}
             className="cursor-pointer transition-all duration-200"
             style={{
-              fill: hovered === "demais" ? "#9ca3af" : "#d1d5db",
+              fill:
+                hovered === "demais"
+                  ? "color-mix(in oklab, var(--brand-green) 45%, #ffffff)"
+                  : "color-mix(in oklab, var(--brand-green) 30%, #ffffff)",
               stroke: "#ffffff",
               strokeWidth: 0.5,
             }}
@@ -81,13 +84,19 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
                   onMouseEnter={() => setHovered(r.id)}
                   onMouseLeave={() => setHovered(null)}
                   onClick={() => setSelected({ name: r.name })}
-                  className="cursor-pointer transition-all duration-200"
+                  className="cursor-pointer transition-all duration-300"
                   style={{
+                    transformBox: "fill-box",
+                    transformOrigin: "center",
+                    transform: isHover ? "scale(1.12)" : "scale(1)",
+                    filter: isHover
+                      ? "drop-shadow(0 10px 18px color-mix(in oklab, var(--brand-green-dark) 55%, transparent))"
+                      : "drop-shadow(0 4px 8px color-mix(in oklab, var(--brand-green-dark) 35%, transparent))",
                     fill: isHover
-                      ? "var(--brand-green)"
-                      : "color-mix(in oklab, var(--brand-green) 70%, #ffffff)",
+                      ? "var(--brand-green-dark)"
+                      : "var(--brand-green)",
                     stroke: "#ffffff",
-                    strokeWidth: 0.5,
+                    strokeWidth: 1.2,
                   }}
                 />
                 <line
