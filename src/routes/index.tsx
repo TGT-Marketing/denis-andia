@@ -108,7 +108,7 @@ function Home() {
               src={denisCapacete.url}
               alt="Denis Andia segurando capacete de obra"
               loading="lazy"
-              className="pointer-events-none absolute z-0 bottom-[35%] md:bottom-[42%] right-0 md:right-[2%] w-[52%] md:w-[38%] lg:w-[32%] max-w-[620px] object-contain object-bottom drop-shadow-2xl"
+              className="pointer-events-none absolute z-0 bottom-[40%] md:bottom-[48%] right-0 md:right-[2%] w-[52%] md:w-[38%] lg:w-[32%] max-w-[620px] object-contain object-bottom drop-shadow-2xl"
             />
           </div>
 
@@ -133,19 +133,14 @@ function Home() {
 
 
       {/* NOTÍCIAS */}
-      <section id="noticias" className="bg-background pt-4 pb-16 md:pt-6 md:pb-20">
+      <section id="noticias" className="bg-background pt-0 pb-16 md:pt-0 md:pb-20">
         <div className="mx-auto max-w-[1400px] px-4 md:px-10">
           <div className="flex items-end justify-between flex-wrap gap-4 mb-10">
             <div>
-              <p className="text-xs font-bold text-primary uppercase tracking-[0.3em]">Notícias</p>
-              <h2 className="mt-3 text-4xl md:text-5xl font-black tracking-tight">
-                Meus <span className="text-primary italic font-serif font-normal">projetos</span>
-                <br />e acontece agora
+              <h2 className="text-4xl md:text-5xl font-black tracking-tight">
+                NOTÍCIAS
               </h2>
             </div>
-            <p className="max-w-md text-muted-foreground">
-              Propostas que refletem a voz da população e ações que estão mudando o dia a dia.
-            </p>
           </div>
           <NewsCarousel />
         </div>
