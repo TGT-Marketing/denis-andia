@@ -91,7 +91,7 @@ function Home() {
 
       {/* TRABALHO — Mapa */}
       <section id="trabalho" className="relative bg-background overflow-hidden">
-        <div className="w-full px-2 md:px-6 pt-16 md:pt-24 pb-16 md:pb-24">
+        <div className="w-full px-2 md:px-6 pt-16 md:pt-24 pb-6 md:pb-8">
           {/* Título gigante ao fundo */}
           <h2 className="relative z-10 text-center lg:text-left font-black uppercase tracking-tighter leading-[0.85] text-[clamp(2.5rem,8.5vw,8rem)]">
             <span className="text-primary">O TRABALHO</span>{" "}
@@ -108,7 +108,7 @@ function Home() {
               src={denisCapacete.url}
               alt="Denis Andia segurando capacete de obra"
               loading="lazy"
-              className="pointer-events-none absolute z-0 bottom-0 right-0 md:right-[2%] w-[52%] md:w-[38%] lg:w-[32%] max-w-[620px] object-contain object-bottom drop-shadow-2xl"
+              className="pointer-events-none absolute z-0 bottom-[28%] md:bottom-[34%] right-0 md:right-[2%] w-[52%] md:w-[38%] lg:w-[32%] max-w-[620px] object-contain object-bottom drop-shadow-2xl"
             />
           </div>
 
