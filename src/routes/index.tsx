@@ -99,12 +99,12 @@ function Home() {
           </h2>
 
           {/* Mapa ocupando a tela toda, com a foto surgindo por trás à direita */}
-          <div className="relative mt-2 md:mt-[-2rem] w-full">
-            <div className="relative z-0 w-full">
+          <div className="relative mt-2 md:mt-[-4rem] w-full flex flex-col md:block">
+            <div className="relative z-0 w-full md:scale-125 lg:scale-135 transition-transform duration-500">
               <RegionMap mapOnly />
             </div>
 
-            <div className="absolute z-10 bottom-[20%] md:bottom-[25%] left-0 md:left-[2%] w-[52%] md:w-[38%] lg:w-[32%] max-w-[620px] pointer-events-none">
+            <div className="relative md:absolute z-10 mt-[-15%] sm:mt-[-20%] md:mt-0 md:bottom-[20%] lg:bottom-[25%] left-0 md:left-[2%] w-[45%] md:w-[35%] lg:w-[28%] max-w-[580px] pointer-events-none">
               <img
                 src={denisCapacete.url}
                 alt="Denis Andia segurando capacete de obra"
