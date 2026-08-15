@@ -85,18 +85,24 @@ function Biografia() {
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-primary">A história</p>
             <h2 className="mt-4 text-4xl md:text-5xl font-black tracking-tight">
-              De onde vem
-              <span className="block text-primary italic font-serif font-normal my-1">esse jeito.</span>
+              Gente que
+              <span className="block text-primary italic font-serif font-normal my-1">conhece gente!</span>
             </h2>
             <div className="mt-6 space-y-5 text-lg text-muted-foreground">
               <p>
-                Denis nasceu no interior paulista, filho de trabalhadores que ensinaram, no dia a dia, o valor da palavra dada e do esforço honesto. Aprendeu cedo que política é, antes de tudo, cuidado com as pessoas.
+                Nascido em Santa Bárbara d’Oeste (SP), Denis Eduardo Andia é o caçula de uma família típica do interior paulista. Filho de uma professora primária, que lecionou em escolas rurais, e de um trabalhador que dedicou toda a sua carreira à mesma empresa, onde ingressou ainda jovem. É casado com a Roberta.
               </p>
               <p>
-                Militou em movimentos comunitários, foi líder de bairro e vereador antes de assumir a prefeitura de Santa Bárbara d'Oeste — cidade que transformou com marcos históricos em habitação, saúde e educação.
+                Estudou em escola pública, cursou Matemática Aplicada e Computacional na Unicamp e formou-se em Publicidade e Propaganda pela PUC-Campinas. Ainda jovem, fundou a empresa que administra até hoje.
               </p>
               <p>
-                Depois, levou essa forma de fazer para o país inteiro, como Secretário Nacional de Mobilidade. Segue com a mesma bandeira de sempre: gente que conhece gente.
+                Em 2012, foi eleito prefeito de Santa Bárbara d’Oeste pela primeira vez. Quatro anos depois, tornou-se o primeiro prefeito reeleito da história do município. Ao concluir seu segundo mandato, em 2020, alcançou aprovação popular de 82%.
+              </p>
+              <p>
+                Durante sua trajetória na vida pública, presidiu a Região Metropolitana de Campinas (RMC) e recebeu o prêmio Prefeito Empreendedor do Estado de São Paulo, concedido pelo Sebrae.
+              </p>
+              <p>
+                Em 2023, assumiu o cargo de secretário nacional de Mobilidade Urbana no Ministério das Cidades, onde passou a atuar na formulação e execução de importantes projetos de infraestrutura e transporte em todo o Brasil. Sua atuação também fortaleceu o acesso dos municípios a programas e investimentos, ampliando oportunidades e facilitando a captação de recursos das esferas estadual e federal.
               </p>
             </div>
           </div>
