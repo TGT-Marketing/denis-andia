@@ -100,11 +100,11 @@ function Home() {
 
           {/* Mapa ocupando a tela toda, com a foto surgindo por trás à direita */}
           <div className="relative mt-2 md:mt-[-4rem] w-full flex flex-col md:block">
-            <div className="relative z-0 w-full scale-[1.15] md:scale-[1.35] lg:scale-[1.45] transition-transform duration-500 order-1 md:order-none">
+            <div className="relative z-0 w-full scale-[1.3] md:scale-[1.35] lg:scale-[1.45] transition-transform duration-500 order-1 md:order-none mt-4 md:mt-0">
               <RegionMap mapOnly />
             </div>
 
-            <div className="relative md:absolute z-10 mt-[-10%] sm:mt-[-15%] md:mt-0 md:bottom-[20%] lg:bottom-[25%] left-0 md:left-[2%] w-[70%] md:w-[35%] lg:w-[28%] max-w-[580px] pointer-events-none order-2 md:order-none mx-auto md:mx-0">
+            <div className="relative md:absolute z-10 mt-[-25%] sm:mt-[-30%] md:mt-0 md:bottom-[20%] lg:bottom-[25%] left-0 md:left-[2%] w-[85%] md:w-[35%] lg:w-[28%] max-w-[580px] pointer-events-none order-2 md:order-none mx-auto md:mx-0">
               <img
                 src={denisCapacete.url}
                 alt="Denis Andia segurando capacete de obra"
