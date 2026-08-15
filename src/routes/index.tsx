@@ -100,7 +100,7 @@ function Home() {
 
           {/* Mapa ocupando a tela toda, com a foto surgindo por trás à direita */}
           <div className="relative mt-2 md:mt-[-4rem] w-full flex flex-col md:block">
-            <div className="relative z-0 w-full md:scale-[1.35] lg:scale-[1.45] transition-transform duration-500 order-1 md:order-none">
+            <div className="relative z-0 w-full scale-[1.15] md:scale-[1.35] lg:scale-[1.45] transition-transform duration-500 order-1 md:order-none">
               <RegionMap mapOnly />
             </div>
 
