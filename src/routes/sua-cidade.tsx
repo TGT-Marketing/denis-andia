@@ -40,7 +40,17 @@ const PROJETOS: Projeto[] = [
     eyebrow: "Legado",
     title: "Legado em Santa Bárbara d'Oeste",
     description:
-      "Uma gestão marcada por resultados concretos, obras entregues e cuidado com quem mais precisa. Denis transformou Santa Bárbara d'Oeste com trabalho de perto e escuta ativa.",
+      "Como prefeito de Santa Bárbara d'Oeste por oito anos, Denis Andia transformou a cidade e resgatou o orgulho do barbarense! Com autoestima, o cidadão passou a enxergar uma cidade mais moderna, organizada e preparada para o futuro.",
+    topics: [
+      "Fim da única favela existente na cidade",
+      "Alas pediátricas nos prontos-socorros",
+      "Leitos de UTI duplicados",
+      "ISO 9001 na rede municipal de Saúde",
+      "Fila de vagas de creche zerada",
+      "Maior nota da Educação na história",
+      "100% do esgoto tratado e ampliação no abastecimento de água",
+      "Implantação de videomonitoramento na Segurança Pública",
+    ],
     gallery: [
       { image: meninaImg, caption: "Escuta ativa nos bairros" },
       { image: trabalhoImg, caption: "Obras entregues" },
@@ -48,6 +58,7 @@ const PROJETOS: Projeto[] = [
       { image: cityImg, caption: "Cidade renovada" },
     ],
   },
+
   {
     id: "favela",
     eyebrow: "Habitação",
