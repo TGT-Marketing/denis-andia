@@ -34,7 +34,7 @@ export function Header() {
             <span
               style={{
                 backgroundImage:
-                  "linear-gradient(to right, #ffffff 0%, #ffffff 62%, var(--brand-green) 62%, var(--brand-green) 91%, #ffffff 91%, #ffffff 100%)",
+                  "linear-gradient(to right, #ffffff 0%, #ffffff 62.5%, var(--brand-green) 62.5%, var(--brand-green) 87.5%, #ffffff 87.5%, #ffffff 100%)",
                 WebkitBackgroundClip: "text",
                 backgroundClip: "text",
                 color: "transparent",
