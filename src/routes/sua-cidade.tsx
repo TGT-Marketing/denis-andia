@@ -29,8 +29,10 @@ type Projeto = {
   eyebrow: string;
   title: string;
   description: string;
+  topics?: string[];
   gallery: { image: string; caption: string }[];
 };
+
 
 const PROJETOS: Projeto[] = [
   {
@@ -38,7 +40,17 @@ const PROJETOS: Projeto[] = [
     eyebrow: "Legado",
     title: "Legado em Santa Bárbara d'Oeste",
     description:
-      "Uma gestão marcada por resultados concretos, obras entregues e cuidado com quem mais precisa. Denis transformou Santa Bárbara d'Oeste com trabalho de perto e escuta ativa.",
+      "Como prefeito de Santa Bárbara d'Oeste por oito anos, Denis Andia transformou a cidade e resgatou o orgulho do barbarense! Com autoestima, o cidadão passou a enxergar uma cidade mais moderna, organizada e preparada para o futuro.",
+    topics: [
+      "Fim da única favela existente na cidade",
+      "Alas pediátricas nos prontos-socorros",
+      "Leitos de UTI duplicados",
+      "ISO 9001 na rede municipal de Saúde",
+      "Fila de vagas de creche zerada",
+      "Maior nota da Educação na história",
+      "100% do esgoto tratado e ampliação no abastecimento de água",
+      "Implantação de videomonitoramento na Segurança Pública",
+    ],
     gallery: [
       { image: meninaImg, caption: "Escuta ativa nos bairros" },
       { image: trabalhoImg, caption: "Obras entregues" },
@@ -46,6 +58,7 @@ const PROJETOS: Projeto[] = [
       { image: cityImg, caption: "Cidade renovada" },
     ],
   },
+
   {
     id: "favela",
     eyebrow: "Habitação",
@@ -154,6 +167,16 @@ function ProjetoBlock({ projeto, reverse }: { projeto: Projeto; reverse: boolean
           <p className="text-sm font-bold uppercase tracking-widest text-primary">{projeto.eyebrow}</p>
           <h2 className="mt-2 text-3xl md:text-4xl font-black text-foreground">{projeto.title}</h2>
           <p className="mt-4 text-lg text-muted-foreground">{projeto.description}</p>
+          {projeto.topics && projeto.topics.length > 0 && (
+            <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+              {projeto.topics.map((topic) => (
+                <li key={topic} className="flex items-start gap-3 text-foreground">
+                  <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-primary" />
+                  <span className="text-base leading-relaxed">{topic}</span>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
         <div className="rounded-3xl overflow-hidden shadow-card">
           <img src={projeto.gallery[0]?.image} alt={projeto.title} className="h-72 w-full object-cover" />
@@ -163,6 +186,7 @@ function ProjetoBlock({ projeto, reverse }: { projeto: Projeto; reverse: boolean
     </article>
   );
 }
+
 
 function GalleryCarousel({ items }: { items: { image: string; caption: string }[] }) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" });
