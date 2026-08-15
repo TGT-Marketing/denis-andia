@@ -104,15 +104,17 @@ function Home() {
               <RegionMap mapOnly />
             </div>
 
-            <div className="absolute z-10 bottom-[35%] md:bottom-[42%] left-0 md:left-[2%] w-[52%] md:w-[38%] lg:w-[32%] max-w-[620px] pointer-events-none">
+            <div className="absolute z-10 bottom-[20%] md:bottom-[25%] left-0 md:left-[2%] w-[52%] md:w-[38%] lg:w-[32%] max-w-[620px] pointer-events-none">
               <img
                 src={denisCapacete.url}
                 alt="Denis Andia segurando capacete de obra"
                 loading="lazy"
                 className="w-full h-auto object-contain object-bottom drop-shadow-2xl"
                 style={{
-                  maskImage: 'linear-gradient(to right, black 85%, transparent 100%)',
-                  WebkitMaskImage: 'linear-gradient(to right, black 85%, transparent 100%)'
+                  maskImage: 'linear-gradient(to right, black 80%, transparent 100%), linear-gradient(to top, transparent 0%, black 20%)',
+                  WebkitMaskImage: 'linear-gradient(to right, black 80%, transparent 100%), linear-gradient(to top, transparent 0%, black 20%)',
+                  maskComposite: 'intersect',
+                  WebkitMaskComposite: 'source-in'
                 }}
               />
             </div>
