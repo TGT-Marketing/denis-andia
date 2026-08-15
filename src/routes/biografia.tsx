@@ -26,12 +26,13 @@ export const Route = createFileRoute("/biografia")({
 });
 
 const TIMELINE = [
-  { year: "1970", title: "Origem no interior", text: "Nasce em uma família de trabalhadores no interior paulista, onde aprende o valor do esforço e do cuidado com o próximo." },
-  { year: "1990", title: "Militância comunitária", text: "Começa a atuar em movimentos de bairro, associações e coletivos, ouvindo de perto as demandas da população." },
-  { year: "2005", title: "Primeiro mandato", text: "Eleito para sua primeira função pública, leva ao parlamento a voz das cidades do interior." },
-  { year: "2013", title: "Prefeito de Santa Bárbara d'Oeste", text: "Assume a prefeitura e entrega marcos históricos: Fim da Favela, SUS Zerado e a melhor nota da educação." },
-  { year: "2019", title: "Secretário Nacional de Mobilidade", text: "À frente da secretaria, coordena políticas de mobilidade urbana e integração entre modais em todo o país." },
-  { year: "Hoje", title: "Presente nas ruas", text: "Segue caminhando, escutando e transformando — perto de gente, com trabalho honesto." },
+  { year: "Origem", title: "Raízes em Santa Bárbara d'Oeste", text: "Nascido em Santa Bárbara d'Oeste (SP), é o caçula de uma família típica do interior paulista: filho de uma professora primária e de um trabalhador dedicado à mesma empresa por toda a carreira. É casado com a Roberta." },
+  { year: "Formação", title: "Educação pública e universidades", text: "Estudou em escola pública, cursou Matemática Aplicada e Computacional na Unicamp e formou-se em Publicidade e Propaganda pela PUC-Campinas. Ainda jovem, fundou a empresa que administra até hoje." },
+  { year: "2012", title: "Primeiro mandato como prefeito", text: "Eleito prefeito de Santa Bárbara d'Oeste pela primeira vez, levando para a gestão a experiência de quem conhece de perto a realidade do interior." },
+  { year: "2016", title: "Reeleito pela primeira vez", text: "Tornou-se o primeiro prefeito reeleito da história do município, demonstrando a confiança da população em seu trabalho." },
+  { year: "2020", title: "82% de aprovação", text: "Ao concluir o segundo mandato, alcançou 82% de aprovação popular, consolidando resultados expressivos para a cidade." },
+  { year: "Reconhecimento", title: "RMC e Sebrae", text: "Presidiu a Região Metropolitana de Campinas (RMC) e recebeu o prêmio Prefeito Empreendedor do Estado de São Paulo, concedido pelo Sebrae." },
+  { year: "2023", title: "Secretário Nacional de Mobilidade Urbana", text: "Assumiu o cargo no Ministério das Cidades, atuando na formulação e execução de projetos de infraestrutura e transporte em todo o Brasil, além de ampliar o acesso dos municípios a investimentos." },
 ];
 
 const NUMEROS = [
