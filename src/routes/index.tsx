@@ -93,7 +93,7 @@ function Home() {
       <section id="trabalho" className="relative bg-background overflow-hidden">
         <div className="w-full px-2 md:px-6 pt-16 md:pt-24 pb-6 md:pb-8">
           {/* Título gigante ao fundo */}
-          <h2 className="relative z-10 text-center lg:text-left font-black uppercase tracking-tighter leading-[0.85] text-[clamp(2.5rem,8.5vw,8rem)]">
+          <h2 className="relative z-10 text-center lg:text-left font-black uppercase tracking-tighter leading-[0.85] text-[clamp(2rem,6vw,5rem)]">
             <span className="text-primary">O TRABALHO</span>{" "}
             <span className="text-foreground">JÁ CHEGOU!</span>
           </h2>
@@ -108,7 +108,7 @@ function Home() {
               src={denisCapacete.url}
               alt="Denis Andia segurando capacete de obra"
               loading="lazy"
-              className="pointer-events-none absolute z-0 bottom-[35%] md:bottom-[42%] right-0 md:right-[2%] w-[52%] md:w-[38%] lg:w-[32%] max-w-[620px] object-contain object-bottom drop-shadow-2xl"
+              className="pointer-events-none absolute z-0 bottom-[35%] md:bottom-[42%] left-0 md:left-[2%] w-[52%] md:w-[38%] lg:w-[32%] max-w-[620px] object-contain object-bottom drop-shadow-2xl scale-x-[-1]"
             />
           </div>
 
@@ -118,11 +118,6 @@ function Home() {
             <Legend color="color-mix(in oklab, var(--brand-green) 30%, #ffffff)" label="Demais Regiões" />
           </div>
 
-          <div className="relative z-20 mt-10 grid grid-cols-3 max-w-md gap-6 border-y border-border py-6 mx-auto lg:mx-0 lg:ml-6">
-            <Stat n="645" label="Municípios" />
-            <Stat n="15" label="Regiões" />
-            <Stat n="100%" label="de SP" />
-          </div>
         </div>
       </section>
 
@@ -137,9 +132,9 @@ function Home() {
         <div className="mx-auto max-w-[1400px] px-4 md:px-10">
           <div className="flex items-end justify-between flex-wrap gap-4 mb-10">
             <div>
-              <h2 className="relative z-10 font-black uppercase tracking-tighter leading-[0.85] text-[clamp(2.5rem,8.5vw,8rem)]">
-                <span className="text-primary">NOTÍCIAS</span>{" "}
-                <span className="text-foreground">| ACONTECEU E É NOTÍCIA</span>
+              <h2 className="relative z-10 font-black uppercase tracking-tighter leading-[0.85] text-[clamp(2rem,6vw,5rem)]">
+                <span className="text-foreground">ACONTECEU E É</span>{" "}
+                <span className="text-primary">NOTÍCIA</span>
               </h2>
             </div>
           </div>
