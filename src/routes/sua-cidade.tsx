@@ -29,8 +29,10 @@ type Projeto = {
   eyebrow: string;
   title: string;
   description: string;
+  topics?: string[];
   gallery: { image: string; caption: string }[];
 };
+
 
 const PROJETOS: Projeto[] = [
   {
