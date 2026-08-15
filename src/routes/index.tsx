@@ -108,7 +108,7 @@ function Home() {
               src={denisCapacete.url}
               alt="Denis Andia segurando capacete de obra"
               loading="lazy"
-              className="pointer-events-none absolute z-0 bottom-[40%] md:bottom-[48%] right-0 md:right-[2%] w-[52%] md:w-[38%] lg:w-[32%] max-w-[620px] object-contain object-bottom drop-shadow-2xl"
+              className="pointer-events-none absolute z-0 bottom-[35%] md:bottom-[42%] right-0 md:right-[2%] w-[52%] md:w-[38%] lg:w-[32%] max-w-[620px] object-contain object-bottom drop-shadow-2xl"
             />
           </div>
 
