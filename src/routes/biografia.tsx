@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
+import { GalleryCarousel } from "@/components/site/GalleryCarousel";
 import walkAsset from "@/assets/denis-chapeu.jpg";
 import rallyBgAsset from "@/assets/denis-menina.jpg";
 import cutoutAsset from "@/assets/denis-trabalho.jpg";
@@ -35,11 +36,12 @@ const TIMELINE = [
   { year: "2023", title: "Secretário Nacional de Mobilidade Urbana", text: "Assumiu o cargo no Ministério das Cidades, atuando na formulação e execução de projetos de infraestrutura e transporte em todo o Brasil, além de ampliar o acesso dos municípios a investimentos." },
 ];
 
-const NUMEROS = [
-  { n: "645", l: "Municípios alcançados" },
-  { n: "+120", l: "Projetos entregues" },
-  { n: "15", l: "Regiões atendidas" },
-  { n: "20+", l: "Anos de serviço público" },
+const GALLERY = [
+  { image: rallyBgAsset, caption: "Denis Andia com a nossa gente" },
+  { image: walkAsset, caption: "Andando e ouvindo" },
+  { image: cutoutAsset, caption: "Trabalho entregue" },
+  { image: cityImg, caption: "Cidade transformada" },
+  { image: peopleImg, caption: "Gente que conhece gente" },
 ];
 
 function Biografia() {
@@ -138,48 +140,13 @@ function Biografia() {
 
       {/* GALERIA */}
       <section className="bg-background py-24">
-        <div className="mx-auto max-w-[1400px] px-4 md:px-10">
+        <div className="mx-auto max-w-7xl px-4 md:px-8">
           <p className="text-xs font-bold uppercase tracking-[0.3em] text-primary">Fotos</p>
-          <h2 className="mt-3 text-4xl md:text-5xl font-black tracking-tight">
+          <h2 className="mt-3 mb-12 text-4xl md:text-5xl font-black tracking-tight">
             Instantes
             <span className="text-primary italic font-serif font-normal"> da caminhada.</span>
           </h2>
-
-          <div className="mt-12 grid gap-4 md:gap-6 grid-cols-2 md:grid-cols-4 md:grid-rows-2 md:h-[560px]">
-            <figure className="relative overflow-hidden rounded-2xl shadow-card col-span-2 md:col-span-2 md:row-span-2 h-56 md:h-auto">
-              <img src={rallyBg} alt="Denis com apoiadores" className="h-full w-full object-cover" />
-            </figure>
-            <figure className="relative overflow-hidden rounded-2xl shadow-card h-40 md:h-auto">
-              <img src={walkImg} alt="Denis nas ruas" className="h-full w-full object-cover" />
-            </figure>
-            <figure className="relative overflow-hidden rounded-2xl shadow-card h-40 md:h-auto">
-              <img src={cutout} alt="Denis em campanha" className="h-full w-full object-cover" />
-            </figure>
-            <figure className="relative overflow-hidden rounded-2xl shadow-card h-40 md:h-auto">
-              <img src={cityImg} alt="Cidade" className="h-full w-full object-cover" />
-            </figure>
-            <figure className="relative overflow-hidden rounded-2xl shadow-card h-40 md:h-auto">
-              <img src={peopleImg} alt="Pessoas" className="h-full w-full object-cover" />
-            </figure>
-          </div>
-        </div>
-      </section>
-
-      {/* NÚMEROS */}
-      <section className="bg-primary text-primary-foreground py-20">
-        <div className="mx-auto max-w-[1200px] px-4 md:px-10">
-          <p className="text-xs font-bold uppercase tracking-[0.3em] opacity-80">Números</p>
-          <h2 className="mt-3 text-4xl md:text-5xl font-black tracking-tight">
-            Uma trajetória em dados.
-          </h2>
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8">
-            {NUMEROS.map((n) => (
-              <div key={n.l} className="border-t-2 border-primary-foreground/30 pt-4">
-                <div className="text-5xl md:text-6xl font-black leading-none">{n.n}</div>
-                <div className="mt-2 text-sm font-bold uppercase tracking-wider opacity-90">{n.l}</div>
-              </div>
-            ))}
-          </div>
+          <GalleryCarousel items={GALLERY} />
         </div>
       </section>
 

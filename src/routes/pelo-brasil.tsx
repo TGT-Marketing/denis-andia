@@ -34,91 +34,27 @@ type Projeto = {
 
 const PROJETOS: Projeto[] = [
   {
-    id: "transporte",
-    eyebrow: "Pelo Brasil",
-    title: "Marco Legal do Transporte Público",
-    description:
-      "Mais investimentos e possibilidade de tarifas mais acessíveis ao usuário.",
+    id: "nacional",
+    eyebrow: "Atuação Nacional",
+    title: "Macroprojetos e Infraestrutura",
+    description: "Denis Andia teve atuação fundamental na elaboração e avanço de importantes projetos de infraestrutura e transporte em todo o Brasil.",
     gallery: [
       { image: brasilImg, caption: "Transporte público no Brasil" },
       { image: trabalhoImg, caption: "Planejamento de mobilidade" },
+      { image: cityImg, caption: "Ônibus elétricos e sustentabilidade" },
+      { image: chapeuImg, caption: "Visitas técnicas e obras" },
     ],
   },
   {
-    id: "eletricos",
+    id: "projetos",
     eyebrow: "Pelo Brasil",
-    title: "Ônibus elétricos e renovação das frotas",
-    description:
-      "Renovação das frotas em diversas cidades do País, com foco em sustentabilidade e modernização.",
+    title: "Conquistas e Projetos",
+    description: "Lista de atuações e marcos importantes no cenário nacional.",
     gallery: [
-      { image: cityImg, caption: "Ônibus elétrico em operação" },
-      { image: trabalhoImg, caption: "Mobilidade urbana sustentável" },
-    ],
-  },
-  {
-    id: "trem",
-    eyebrow: "Pelo Brasil",
-    title: "Trem Intercidades São Paulo – Campinas",
-    description:
-      "Apoio fundamental para a concretização do projeto que ligará as duas maiores regiões metropolitanas do estado.",
-    gallery: [
-      { image: brasilImg, caption: "Infraestrutura ferroviária" },
-      { image: trabalhoImg, caption: "Desenvolvimento regional" },
-    ],
-  },
-  {
-    id: "rodoanel",
-    eyebrow: "Pelo Brasil",
-    title: "Trecho Norte do Rodoanel",
-    description:
-      "Conclusão de obra estratégica para o tráfego pesado e a logística nacional.",
-    gallery: [
-      { image: cityImg, caption: "Trecho Norte do Rodoanel" },
-      { image: trabalhoImg, caption: "Logística e infraestrutura" },
-    ],
-  },
-  {
-    id: "brts",
-    eyebrow: "Pelo Brasil",
-    title: "BRTs de Campinas, Sorocaba e São José dos Campos",
-    description:
-      "Implantação de sistemas de transporte rápido por ônibus em polos regionais de São Paulo.",
-    gallery: [
-      { image: cityImg, caption: "BRT em operação" },
-      { image: brasilImg, caption: "Transporte eficiente" },
-    ],
-  },
-  {
-    id: "metro",
-    eyebrow: "Pelo Brasil",
-    title: "Nove linhas do metrô paulistano",
-    description:
-      "Avanço na expansão e modernização da malha metroviária da capital paulista.",
-    gallery: [
-      { image: trabalhoImg, caption: "Obras do metrô" },
-      { image: cityImg, caption: "Mobilidade na capital" },
-    ],
-  },
-  {
-    id: "vlt",
-    eyebrow: "Pelo Brasil",
-    title: "VLT Baixada Santista",
-    description:
-      "Expansão do Veículo Leve sobre Trilhos integrando as cidades do litoral.",
-    gallery: [
-      { image: brasilImg, caption: "VLT circulando" },
-      { image: chapeuImg, caption: "Visita técnica ao litoral" },
-    ],
-  },
-  {
-    id: "tunel",
-    eyebrow: "Pelo Brasil",
-    title: "Túnel submerso Santos – Guarujá",
-    description:
-      "Projeto histórico de ligação entre as duas cidades, fundamental para o porto e para a população local.",
-    gallery: [
-      { image: brasilImg, caption: "Projeto do túnel" },
-      { image: trabalhoImg, caption: "Desenvolvimento da Baixada" },
+      { image: brasilImg, caption: "Marco Legal do Transporte Público" },
+      { image: trabalhoImg, caption: "Trem Intercidades SP-Campinas" },
+      { image: cityImg, caption: "Rodoanel e BRTs" },
+      { image: peopleImg, caption: "Metrô e VLT" },
     ],
   },
 ];

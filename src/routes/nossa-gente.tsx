@@ -1,6 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
 import { RegionMap } from "@/components/site/RegionMap";
+import { GalleryCarousel } from "@/components/site/GalleryCarousel";
+import cityImg from "@/assets/denis-city.jpg";
+import peopleImg from "@/assets/denis-people.jpg";
+import brasilImg from "@/assets/denis-brasil.jpg";
+import chapeuImg from "@/assets/denis-chapeu.jpg";
+import trabalhoImg from "@/assets/denis-trabalho.jpg";
 
 export const Route = createFileRoute("/nossa-gente")({
   head: () => ({
@@ -14,6 +20,14 @@ export const Route = createFileRoute("/nossa-gente")({
   }),
   component: NossaGente,
 });
+
+const GALLERY = [
+  { image: peopleImg, caption: "Denis ouvindo a nossa gente" },
+  { image: chapeuImg, caption: "Presença nas comunidades" },
+  { image: trabalhoImg, caption: "Diálogo constante" },
+  { image: cityImg, caption: "Liderança regional" },
+  { image: brasilImg, caption: "Intermediação de recursos" },
+];
 
 function NossaGente() {
   return (
@@ -50,6 +64,12 @@ function NossaGente() {
         </div>
         <div className="mx-auto max-w-[1400px] px-4 md:px-10">
           <RegionMap />
+        </div>
+      </section>
+
+      <section className="bg-background pb-20">
+        <div className="mx-auto max-w-7xl px-4 md:px-8">
+          <GalleryCarousel items={GALLERY} />
         </div>
       </section>
     </Layout>
