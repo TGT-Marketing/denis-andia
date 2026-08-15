@@ -100,16 +100,22 @@ function Home() {
 
           {/* Mapa ocupando a tela toda, com a foto surgindo por trás à direita */}
           <div className="relative mt-2 md:mt-[-2rem] w-full">
-            <div className="relative z-10 w-full">
+            <div className="relative z-0 w-full">
               <RegionMap mapOnly />
             </div>
 
-            <img
-              src={denisCapacete.url}
-              alt="Denis Andia segurando capacete de obra"
-              loading="lazy"
-              className="pointer-events-none absolute z-0 bottom-[35%] md:bottom-[42%] right-0 md:right-[2%] w-[52%] md:w-[38%] lg:w-[32%] max-w-[620px] object-contain object-bottom drop-shadow-2xl"
-            />
+            <div className="absolute z-10 bottom-[35%] md:bottom-[42%] left-0 md:left-[2%] w-[52%] md:w-[38%] lg:w-[32%] max-w-[620px] pointer-events-none">
+              <img
+                src={denisCapacete.url}
+                alt="Denis Andia segurando capacete de obra"
+                loading="lazy"
+                className="w-full h-auto object-contain object-bottom drop-shadow-2xl"
+                style={{
+                  maskImage: 'linear-gradient(to right, black 85%, transparent 100%)',
+                  WebkitMaskImage: 'linear-gradient(to right, black 85%, transparent 100%)'
+                }}
+              />
+            </div>
           </div>
 
           <div className="relative z-20 mt-6 flex flex-wrap gap-3 justify-center lg:justify-start lg:pl-6">
