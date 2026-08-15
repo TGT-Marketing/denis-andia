@@ -88,7 +88,7 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
                   style={{
                     transformBox: "fill-box",
                     transformOrigin: "center",
-                    transform: isHover ? "scale(1.12)" : "scale(1)",
+                    transform: isHover ? "scale(1.25)" : "scale(1)",
                     filter: isHover
                       ? "drop-shadow(0 10px 18px color-mix(in oklab, var(--brand-green-dark) 55%, transparent))"
                       : "drop-shadow(0 4px 8px color-mix(in oklab, var(--brand-green-dark) 35%, transparent))",
