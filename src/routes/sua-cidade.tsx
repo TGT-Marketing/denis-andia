@@ -167,6 +167,16 @@ function ProjetoBlock({ projeto, reverse }: { projeto: Projeto; reverse: boolean
           <p className="text-sm font-bold uppercase tracking-widest text-primary">{projeto.eyebrow}</p>
           <h2 className="mt-2 text-3xl md:text-4xl font-black text-foreground">{projeto.title}</h2>
           <p className="mt-4 text-lg text-muted-foreground">{projeto.description}</p>
+          {projeto.topics && projeto.topics.length > 0 && (
+            <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+              {projeto.topics.map((topic) => (
+                <li key={topic} className="flex items-start gap-3 text-foreground">
+                  <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-primary" />
+                  <span className="text-base leading-relaxed">{topic}</span>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
         <div className="rounded-3xl overflow-hidden shadow-card">
           <img src={projeto.gallery[0]?.image} alt={projeto.title} className="h-72 w-full object-cover" />
@@ -176,6 +186,7 @@ function ProjetoBlock({ projeto, reverse }: { projeto: Projeto; reverse: boolean
     </article>
   );
 }
+
 
 function GalleryCarousel({ items }: { items: { image: string; caption: string }[] }) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" });
