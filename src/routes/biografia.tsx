@@ -111,7 +111,7 @@ function Biografia() {
       </section>
 
       {/* LINHA DO TEMPO */}
-      <section className="bg-secondary/40 py-24">
+      <section className="bg-[oklch(0.97_0.03_145)] py-24">
         <div className="mx-auto max-w-[1200px] px-4 md:px-10">
           <p className="text-xs font-bold uppercase tracking-[0.3em] text-primary">Linha do tempo</p>
           <h2 className="mt-3 text-4xl md:text-5xl font-black tracking-tight">
