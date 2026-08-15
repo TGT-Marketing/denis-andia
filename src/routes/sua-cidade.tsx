@@ -103,8 +103,8 @@ function SuaCidade() {
       <section className="bg-gradient-hero text-white">
         <div className="mx-auto max-w-7xl px-4 md:px-8 py-20 grid gap-10 lg:grid-cols-2 items-center">
           <div>
-            <p className="text-sm font-bold uppercase tracking-widest text-accent">O que Denis fez por</p>
-            <h1 className="mt-3 text-5xl md:text-6xl font-black leading-tight">Sua cidade</h1>
+            <p className="text-sm font-bold uppercase tracking-widest text-accent">O que Denis fez</p>
+            <h1 className="mt-3 text-5xl md:text-6xl font-black leading-tight">Por sua cidade</h1>
             <p className="mt-5 max-w-xl text-lg text-white/85">
               Santa Bárbara d'Oeste virou referência em habitação, saúde e educação. Um legado construído com trabalho, presença e compromisso com as pessoas.
             </p>
