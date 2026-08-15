@@ -9,27 +9,27 @@ import brasilImg from "@/assets/denis-brasil.jpg";
 const NEWS = [
   {
     image: cityImg,
-    date: "12 de março",
-    title: "Denis inaugura novo posto de saúde em Campinas",
-    excerpt: "Unidade atenderá mais de 15 mil famílias com atendimento 24h e especialidades médicas.",
+    date: "Eleições 2026",
+    title: "Eleições 2026: Denis Andia desponta como principal nome da região",
+    excerpt: "Nas eleições deste ano, Santa Bárbara d’Oeste, Americana e região podem voltar a ter um Deputado Federal em Brasília. Com poucos candidatos locais na disputa, destaca-se o nome do ex-prefeito Denis Andia.",
   },
   {
     image: peopleImg,
-    date: "04 de março",
-    title: "Encontro com lideranças reúne mais de 2 mil pessoas",
-    excerpt: "Escuta ativa em Piracicaba levantou pautas de mobilidade, educação e emprego.",
+    date: "Mandato Real",
+    title: "Denis Andia defende “mandato real” e coloca experiência a serviço dos Municípios",
+    excerpt: "Pré-candidato a deputado federal, Denis Andia apresenta uma proposta baseada na proximidade com a população e na busca por soluções concretas para os desafios do dia a dia.",
   },
   {
     image: brasilImg,
-    date: "22 de fevereiro",
-    title: "Projeto de Denis é aprovado por unanimidade",
-    excerpt: "Nova lei fortalece programas de qualificação profissional em todo o estado.",
+    date: "Mobilidade Urbana",
+    title: "Denis Andia trabalha por um transporte público mais acessível",
+    excerpt: "Um programa nacional que visa reduzir as tarifas de ônibus é um dos trabalhos já iniciados por Denis Andia à frente da Secretaria Nacional de Mobilidade Urbana.",
   },
   {
     image: cityImg,
-    date: "10 de fevereiro",
-    title: "Recursos garantem obras em cidades do interior",
-    excerpt: "Emendas destinadas por Denis vão beneficiar 34 municípios paulistas.",
+    date: "Artigo",
+    title: "O CAMINHO DE CASA - Por Denis Andia",
+    excerpt: "Há caminhos que mudam de paisagem, mas nunca mudam de destino. E agora, o tempo faz mais uma curva bonita. Voltei para uma nova caminhada.",
   },
 ];
 

@@ -137,8 +137,9 @@ function Home() {
         <div className="mx-auto max-w-[1400px] px-4 md:px-10">
           <div className="flex items-end justify-between flex-wrap gap-4 mb-10">
             <div>
-              <h2 className="text-4xl md:text-5xl font-black tracking-tight">
-                NOTÍCIAS
+              <h2 className="relative z-10 font-black uppercase tracking-tighter leading-[0.85] text-[clamp(2.5rem,8.5vw,8rem)]">
+                <span className="text-primary">NOTÍCIAS</span>{" "}
+                <span className="text-foreground">| ACONTECEU E É NOTÍCIA</span>
               </h2>
             </div>
           </div>
