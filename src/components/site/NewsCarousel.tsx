@@ -2,31 +2,32 @@ import { useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useCallback } from "react";
-import cityImg from "@/assets/denis-city.jpg";
-import peopleImg from "@/assets/denis-people.jpg";
-import brasilImg from "@/assets/denis-brasil.jpg";
+import news1Asset from "@/assets/news/news_1.jpeg.asset.json";
+import news2Asset from "@/assets/news/news_2.jpeg.asset.json";
+import news3Asset from "@/assets/news/news_3.jpg.asset.json";
+import news4Asset from "@/assets/news/news_4.jpg.asset.json";
 
 const NEWS = [
   {
-    image: cityImg,
+    image: news1Asset.url,
     date: "Eleições 2026",
     title: "Eleições 2026: Denis Andia desponta como principal nome da região",
     excerpt: "Nas eleições deste ano, Santa Bárbara d’Oeste, Americana e região podem voltar a ter um Deputado Federal em Brasília. Com poucos candidatos locais na disputa, destaca-se o nome do ex-prefeito Denis Andia.",
   },
   {
-    image: peopleImg,
+    image: news2Asset.url,
     date: "Mandato Real",
     title: "Denis Andia defende “mandato real” e coloca experiência a serviço dos Municípios",
     excerpt: "Pré-candidato a deputado federal, Denis Andia apresenta uma proposta baseada na proximidade com a população e na busca por soluções concretas para os desafios do dia a dia.",
   },
   {
-    image: brasilImg,
+    image: news3Asset.url,
     date: "Mobilidade Urbana",
     title: "Denis Andia trabalha por um transporte público mais acessível",
     excerpt: "Um programa nacional que visa reduzir as tarifas de ônibus é um dos trabalhos já iniciados por Denis Andia à frente da Secretaria Nacional de Mobilidade Urbana.",
   },
   {
-    image: cityImg,
+    image: news4Asset.url,
     date: "Artigo",
     title: "O CAMINHO DE CASA - Por Denis Andia",
     excerpt: "Há caminhos que mudam de paisagem, mas nunca mudam de destino. E agora, o tempo faz mais uma curva bonita. Voltei para uma nova caminhada.",
