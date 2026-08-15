@@ -20,8 +20,8 @@ function NossaGente() {
     <Layout>
       <section className="bg-gradient-hero text-white">
         <div className="mx-auto max-w-7xl px-4 md:px-8 py-20">
-          <p className="text-sm font-bold uppercase tracking-widest text-accent">O que Denis fez por</p>
-          <h1 className="mt-3 text-5xl md:text-6xl font-black">Nossa gente</h1>
+          <p className="text-sm font-bold uppercase tracking-widest text-accent">O que Denis fez</p>
+          <h1 className="mt-3 text-5xl md:text-6xl font-black">Por nossa gente</h1>
           <p className="mt-5 max-w-2xl text-lg text-white/85">
             Cada região, cada história. Explore o mapa e conheça as ações de Denis por perto de você.
           </p>
