@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight, Play } from "lucide-react";
+import { GalleryCarousel } from "@/components/site/GalleryCarousel";
 import { Layout } from "@/components/site/Layout";
 import { VideoModal } from "@/components/site/VideoModal";
 import cityImg from "@/assets/denis-city.jpg";
@@ -56,110 +57,6 @@ const PROJETOS: Projeto[] = [
       { image: trabalhoImg, caption: "Obras entregues" },
       { image: chapeuImg, caption: "Presente nas comunidades" },
       { image: cityImg, caption: "Cidade renovada" },
-    ],
-  },
-  {
-    id: "favela",
-    eyebrow: "Habitação",
-    title: "Fim da única favela existente na cidade",
-    description:
-      "Programa habitacional que retirou famílias de áreas de risco e garantiu moradia digna com infraestrutura, saneamento e acesso a serviços públicos.",
-    gallery: [
-      { image: peopleImg, caption: "Famílias reassentadas" },
-      { image: cityImg, caption: "Novo bairro entregue" },
-      { image: trabalhoImg, caption: "Obras de urbanização" },
-      { image: brasilImg, caption: "Infraestrutura completa" },
-    ],
-  },
-  {
-    id: "pediatria",
-    eyebrow: "Saúde",
-    title: "Alas pediátricas nos prontos-socorros",
-    description:
-      "Espaços exclusivos para o atendimento infantil nos prontos-socorros, com estrutura acolhedora, equipes especializadas e mais agilidade para as crianças e suas famílias.",
-    gallery: [
-      { image: meninaImg, caption: "Atendimento infantil humanizado" },
-      { image: chapeuImg, caption: "Equipes especializadas" },
-      { image: peopleImg, caption: "Famílias atendidas com dignidade" },
-      { image: cityImg, caption: "Prontos-socorros modernizados" },
-    ],
-  },
-  {
-    id: "uti",
-    eyebrow: "Saúde",
-    title: "Leitos de UTI duplicados",
-    description:
-      "Ampliação da capacidade de atendimento de alta complexidade, dobrando os leitos de UTI e salvando vidas com estrutura, equipamentos e profissionais qualificados.",
-    gallery: [
-      { image: chapeuImg, caption: "Novos leitos em operação" },
-      { image: trabalhoImg, caption: "Investimento em equipamentos" },
-      { image: peopleImg, caption: "Mais vidas atendidas" },
-      { image: cityImg, caption: "Rede hospitalar reforçada" },
-    ],
-  },
-  {
-    id: "iso",
-    eyebrow: "Gestão",
-    title: "ISO 9001 na rede municipal de Saúde",
-    description:
-      "Certificação internacional de qualidade conquistada pela rede municipal de Saúde, com processos padronizados, eficiência e respeito ao cidadão em cada atendimento.",
-    gallery: [
-      { image: trabalhoImg, caption: "Processos certificados" },
-      { image: peopleImg, caption: "Atendimento de qualidade" },
-      { image: chapeuImg, caption: "Servidores capacitados" },
-      { image: cityImg, caption: "Referência na região" },
-    ],
-  },
-  {
-    id: "creche",
-    eyebrow: "Educação",
-    title: "Fila de vagas de creche zerada",
-    description:
-      "Nenhuma criança ficou sem vaga: novas creches, ampliação das unidades existentes e planejamento para garantir atendimento a todas as famílias da cidade.",
-    gallery: [
-      { image: meninaImg, caption: "Vagas para todas as crianças" },
-      { image: peopleImg, caption: "Novas creches entregues" },
-      { image: trabalhoImg, caption: "Unidades ampliadas" },
-      { image: brasilImg, caption: "Famílias tranquilas" },
-    ],
-  },
-  {
-    id: "educacao",
-    eyebrow: "Educação",
-    title: "Maior nota da Educação na história",
-    description:
-      "Santa Bárbara d'Oeste alcançou a melhor nota da educação da sua história, resultado de investimento em professores, escolas reformadas e material de qualidade.",
-    gallery: [
-      { image: meninaImg, caption: "Alunos em primeiro lugar" },
-      { image: peopleImg, caption: "Escolas reformadas" },
-      { image: brasilImg, caption: "Professores valorizados" },
-      { image: cityImg, caption: "Educação de qualidade" },
-    ],
-  },
-  {
-    id: "saneamento",
-    eyebrow: "Saneamento",
-    title: "100% do esgoto tratado e ampliação no abastecimento de água",
-    description:
-      "Cidade com todo o esgoto tratado e rede de abastecimento ampliada, garantindo saúde pública, preservação ambiental e qualidade de vida para todos os bairros.",
-    gallery: [
-      { image: cityImg, caption: "Estação de tratamento" },
-      { image: trabalhoImg, caption: "Obras de saneamento" },
-      { image: brasilImg, caption: "Rede de água ampliada" },
-      { image: peopleImg, caption: "Bairros atendidos" },
-    ],
-  },
-  {
-    id: "seguranca",
-    eyebrow: "Segurança",
-    title: "Implantação de videomonitoramento na Segurança Pública",
-    description:
-      "Câmeras inteligentes espalhadas pela cidade e central de monitoramento integrada, dando mais agilidade às forças de segurança e mais tranquilidade ao cidadão.",
-    gallery: [
-      { image: cityImg, caption: "Câmeras nas ruas" },
-      { image: trabalhoImg, caption: "Central de monitoramento" },
-      { image: chapeuImg, caption: "Mais segurança nos bairros" },
-      { image: peopleImg, caption: "Cidade protegida" },
     ],
   },
 ];
@@ -253,59 +150,3 @@ function ProjetoBlock({ projeto, reverse }: { projeto: Projeto; reverse: boolean
 }
 
 
-function GalleryCarousel({ items }: { items: { image: string; caption: string }[] }) {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" });
-  const [selected, setSelected] = useState(0);
-  const [snaps, setSnaps] = useState<number[]>([]);
-
-  const prev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
-  const next = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    setSnaps(emblaApi.scrollSnapList());
-    const onSel = () => setSelected(emblaApi.selectedScrollSnap());
-    onSel();
-    emblaApi.on("select", onSel);
-    return () => {
-      emblaApi.off("select", onSel);
-    };
-  }, [emblaApi]);
-
-  return (
-    <div className="relative">
-      <div ref={emblaRef} className="overflow-hidden rounded-2xl">
-        <div className="flex">
-          {items.map((item, i) => (
-            <div key={i} className="min-w-0 shrink-0 grow-0 basis-full sm:basis-1/2 lg:basis-1/3 pr-4">
-              <figure className="rounded-2xl overflow-hidden bg-card shadow-card">
-                <img src={item.image} alt={item.caption} loading="lazy" className="h-56 w-full object-cover" />
-                <figcaption className="p-4 text-sm font-semibold text-foreground">{item.caption}</figcaption>
-              </figure>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="mt-4 flex items-center justify-between">
-        <div className="flex gap-2">
-          {snaps.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => emblaApi?.scrollTo(i)}
-              aria-label={`Slide ${i + 1}`}
-              className={`h-2 rounded-full transition-all ${i === selected ? "w-8 bg-primary" : "w-2 bg-muted-foreground/40"}`}
-            />
-          ))}
-        </div>
-        <div className="flex gap-2">
-          <button onClick={prev} aria-label="Anterior" className="flex h-10 w-10 items-center justify-center rounded-full bg-card shadow-card hover:bg-accent hover:text-accent-foreground transition-colors">
-            <ChevronLeft className="h-5 w-5" />
-          </button>
-          <button onClick={next} aria-label="Próximo" className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-brand hover:opacity-90 transition-opacity">
-            <ChevronRight className="h-5 w-5" />
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-}

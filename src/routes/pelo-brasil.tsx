@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight, Play } from "lucide-react";
+import { GalleryCarousel } from "@/components/site/GalleryCarousel";
 import { Layout } from "@/components/site/Layout";
 import { VideoModal } from "@/components/site/VideoModal";
 import cityImg from "@/assets/denis-city.jpg";
@@ -34,91 +35,27 @@ type Projeto = {
 
 const PROJETOS: Projeto[] = [
   {
-    id: "transporte",
-    eyebrow: "Pelo Brasil",
-    title: "Marco Legal do Transporte Público",
-    description:
-      "Mais investimentos e possibilidade de tarifas mais acessíveis ao usuário.",
+    id: "nacional",
+    eyebrow: "Atuação Nacional",
+    title: "Macroprojetos e Infraestrutura",
+    description: "Denis Andia teve atuação fundamental na elaboração e avanço de importantes projetos de infraestrutura e transporte em todo o Brasil.",
     gallery: [
       { image: brasilImg, caption: "Transporte público no Brasil" },
       { image: trabalhoImg, caption: "Planejamento de mobilidade" },
+      { image: cityImg, caption: "Ônibus elétricos e sustentabilidade" },
+      { image: chapeuImg, caption: "Visitas técnicas e obras" },
     ],
   },
   {
-    id: "eletricos",
+    id: "projetos",
     eyebrow: "Pelo Brasil",
-    title: "Ônibus elétricos e renovação das frotas",
-    description:
-      "Renovação das frotas em diversas cidades do País, com foco em sustentabilidade e modernização.",
+    title: "Conquistas e Projetos",
+    description: "Lista de atuações e marcos importantes no cenário nacional.",
     gallery: [
-      { image: cityImg, caption: "Ônibus elétrico em operação" },
-      { image: trabalhoImg, caption: "Mobilidade urbana sustentável" },
-    ],
-  },
-  {
-    id: "trem",
-    eyebrow: "Pelo Brasil",
-    title: "Trem Intercidades São Paulo – Campinas",
-    description:
-      "Apoio fundamental para a concretização do projeto que ligará as duas maiores regiões metropolitanas do estado.",
-    gallery: [
-      { image: brasilImg, caption: "Infraestrutura ferroviária" },
-      { image: trabalhoImg, caption: "Desenvolvimento regional" },
-    ],
-  },
-  {
-    id: "rodoanel",
-    eyebrow: "Pelo Brasil",
-    title: "Trecho Norte do Rodoanel",
-    description:
-      "Conclusão de obra estratégica para o tráfego pesado e a logística nacional.",
-    gallery: [
-      { image: cityImg, caption: "Trecho Norte do Rodoanel" },
-      { image: trabalhoImg, caption: "Logística e infraestrutura" },
-    ],
-  },
-  {
-    id: "brts",
-    eyebrow: "Pelo Brasil",
-    title: "BRTs de Campinas, Sorocaba e São José dos Campos",
-    description:
-      "Implantação de sistemas de transporte rápido por ônibus em polos regionais de São Paulo.",
-    gallery: [
-      { image: cityImg, caption: "BRT em operação" },
-      { image: brasilImg, caption: "Transporte eficiente" },
-    ],
-  },
-  {
-    id: "metro",
-    eyebrow: "Pelo Brasil",
-    title: "Nove linhas do metrô paulistano",
-    description:
-      "Avanço na expansão e modernização da malha metroviária da capital paulista.",
-    gallery: [
-      { image: trabalhoImg, caption: "Obras do metrô" },
-      { image: cityImg, caption: "Mobilidade na capital" },
-    ],
-  },
-  {
-    id: "vlt",
-    eyebrow: "Pelo Brasil",
-    title: "VLT Baixada Santista",
-    description:
-      "Expansão do Veículo Leve sobre Trilhos integrando as cidades do litoral.",
-    gallery: [
-      { image: brasilImg, caption: "VLT circulando" },
-      { image: chapeuImg, caption: "Visita técnica ao litoral" },
-    ],
-  },
-  {
-    id: "tunel",
-    eyebrow: "Pelo Brasil",
-    title: "Túnel submerso Santos – Guarujá",
-    description:
-      "Projeto histórico de ligação entre as duas cidades, fundamental para o porto e para a população local.",
-    gallery: [
-      { image: brasilImg, caption: "Projeto do túnel" },
-      { image: trabalhoImg, caption: "Desenvolvimento da Baixada" },
+      { image: brasilImg, caption: "Marco Legal do Transporte Público" },
+      { image: trabalhoImg, caption: "Trem Intercidades SP-Campinas" },
+      { image: cityImg, caption: "Rodoanel e BRTs" },
+      { image: peopleImg, caption: "Metrô e VLT" },
     ],
   },
 ];
@@ -200,59 +137,3 @@ function ProjetoBlock({ projeto, reverse }: { projeto: Projeto; reverse: boolean
   );
 }
 
-function GalleryCarousel({ items }: { items: { image: string; caption: string }[] }) {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" });
-  const [selected, setSelected] = useState(0);
-  const [snaps, setSnaps] = useState<number[]>([]);
-
-  const prev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
-  const next = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    setSnaps(emblaApi.scrollSnapList());
-    const onSel = () => setSelected(emblaApi.selectedScrollSnap());
-    onSel();
-    emblaApi.on("select", onSel);
-    return () => {
-      emblaApi.off("select", onSel);
-    };
-  }, [emblaApi]);
-
-  return (
-    <div className="relative">
-      <div ref={emblaRef} className="overflow-hidden rounded-2xl">
-        <div className="flex">
-          {items.map((item, i) => (
-            <div key={i} className="min-w-0 shrink-0 grow-0 basis-full sm:basis-1/2 lg:basis-1/3 pr-4">
-              <figure className="rounded-2xl overflow-hidden bg-card shadow-card">
-                <img src={item.image} alt={item.caption} loading="lazy" className="h-56 w-full object-cover" />
-                <figcaption className="p-4 text-sm font-semibold text-foreground">{item.caption}</figcaption>
-              </figure>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="mt-4 flex items-center justify-between">
-        <div className="flex gap-2">
-          {snaps.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => emblaApi?.scrollTo(i)}
-              aria-label={`Slide ${i + 1}`}
-              className={`h-2 rounded-full transition-all ${i === selected ? "w-8 bg-primary" : "w-2 bg-muted-foreground/40"}`}
-            />
-          ))}
-        </div>
-        <div className="flex gap-2">
-          <button onClick={prev} aria-label="Anterior" className="flex h-10 w-10 items-center justify-center rounded-full bg-card shadow-card hover:bg-accent hover:text-accent-foreground transition-colors">
-            <ChevronLeft className="h-5 w-5" />
-          </button>
-          <button onClick={next} aria-label="Próximo" className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-brand hover:opacity-90 transition-opacity">
-            <ChevronRight className="h-5 w-5" />
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-}
