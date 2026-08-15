@@ -88,7 +88,7 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
                   style={{
                     transformBox: "fill-box",
                     transformOrigin: "center",
-                    transform: isHover ? "scale(1.35)" : "scale(1.1)",
+                    transform: isHover ? "scale(1.35)" : "scale(1.2)", // Aumentadas por padrão no mobile também via escala base
                     filter: isHover
                       ? "drop-shadow(0 10px 18px color-mix(in oklab, var(--brand-green-dark) 55%, transparent))"
                       : "drop-shadow(0 4px 8px color-mix(in oklab, var(--brand-green-dark) 35%, transparent))",
@@ -105,6 +105,7 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
                   x2={r.cx}
                   y2={r.cy + 8}
                   pointerEvents="none"
+                  className="hidden sm:block" // Esconde linha em mobile se necessário, ou ajusta
                   style={{ stroke: "var(--brand-green)", strokeWidth: 2 }}
                 />
                 <text
@@ -114,7 +115,7 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
                   dominantBaseline="middle"
                   pointerEvents="none"
                   className="select-none"
-                  style={{ fontSize: 24, fontWeight: 900, fill: "var(--brand-green)" }}
+                  style={{ fontSize: 28, fontWeight: 900, fill: "var(--brand-green)" }}
                 >
                   {r.short}
                 </text>
