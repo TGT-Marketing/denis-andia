@@ -34,42 +34,91 @@ type Projeto = {
 
 const PROJETOS: Projeto[] = [
   {
-    id: "macroprojetos",
-    eyebrow: "Nacional",
-    title: "Macroprojetos",
+    id: "transporte",
+    eyebrow: "Pelo Brasil",
+    title: "Marco Legal do Transporte Público",
     description:
-      "Grandes iniciativas estruturantes que conectam cidades, fortalecem regiões e destravam o desenvolvimento do país. Projetos pensados para transformar a vida de milhões de brasileiros.",
+      "Mais investimentos e possibilidade de tarifas mais acessíveis ao usuário.",
     gallery: [
-      { image: brasilImg, caption: "Integração regional" },
-      { image: trabalhoImg, caption: "Obras estruturantes" },
-      { image: cityImg, caption: "Desenvolvimento urbano" },
-      { image: peopleImg, caption: "Impacto nacional" },
+      { image: brasilImg, caption: "Transporte público no Brasil" },
+      { image: trabalhoImg, caption: "Planejamento de mobilidade" },
     ],
   },
   {
-    id: "mobilidade",
-    eyebrow: "Governo Federal",
-    title: "Atuação como Secretário Nacional de Mobilidade",
+    id: "eletricos",
+    eyebrow: "Pelo Brasil",
+    title: "Ônibus elétricos e renovação das frotas",
     description:
-      "À frente da Secretaria Nacional de Mobilidade, Denis coordenou políticas públicas para transporte urbano, mobilidade ativa e integração entre modais em todo o Brasil.",
+      "Renovação das frotas em diversas cidades do País, com foco em sustentabilidade e modernização.",
     gallery: [
-      { image: trabalhoImg, caption: "Reuniões técnicas em Brasília" },
-      { image: chapeuImg, caption: "Visitas a projetos regionais" },
-      { image: cityImg, caption: "Mobilidade urbana" },
-      { image: brasilImg, caption: "Articulação com estados" },
+      { image: cityImg, caption: "Ônibus elétrico em operação" },
+      { image: trabalhoImg, caption: "Mobilidade urbana sustentável" },
     ],
   },
   {
-    id: "sobre",
-    eyebrow: "Trajetória",
-    title: "Sobre Denis",
+    id: "trem",
+    eyebrow: "Pelo Brasil",
+    title: "Trem Intercidades São Paulo – Campinas",
     description:
-      "Uma vida dedicada ao serviço público, ao diálogo e à construção de pontes. Denis carrega no jeito de fazer política a marca de quem escuta, decide e entrega.",
+      "Apoio fundamental para a concretização do projeto que ligará as duas maiores regiões metropolitanas do estado.",
     gallery: [
-      { image: chapeuImg, caption: "Perto das pessoas" },
-      { image: meninaImg, caption: "Escuta nas comunidades" },
-      { image: peopleImg, caption: "Presença ativa" },
-      { image: trabalhoImg, caption: "Trabalho contínuo" },
+      { image: brasilImg, caption: "Infraestrutura ferroviária" },
+      { image: trabalhoImg, caption: "Desenvolvimento regional" },
+    ],
+  },
+  {
+    id: "rodoanel",
+    eyebrow: "Pelo Brasil",
+    title: "Trecho Norte do Rodoanel",
+    description:
+      "Conclusão de obra estratégica para o tráfego pesado e a logística nacional.",
+    gallery: [
+      { image: cityImg, caption: "Trecho Norte do Rodoanel" },
+      { image: trabalhoImg, caption: "Logística e infraestrutura" },
+    ],
+  },
+  {
+    id: "brts",
+    eyebrow: "Pelo Brasil",
+    title: "BRTs de Campinas, Sorocaba e São José dos Campos",
+    description:
+      "Implantação de sistemas de transporte rápido por ônibus em polos regionais de São Paulo.",
+    gallery: [
+      { image: cityImg, caption: "BRT em operação" },
+      { image: brasilImg, caption: "Transporte eficiente" },
+    ],
+  },
+  {
+    id: "metro",
+    eyebrow: "Pelo Brasil",
+    title: "Nove linhas do metrô paulistano",
+    description:
+      "Avanço na expansão e modernização da malha metroviária da capital paulista.",
+    gallery: [
+      { image: trabalhoImg, caption: "Obras do metrô" },
+      { image: cityImg, caption: "Mobilidade na capital" },
+    ],
+  },
+  {
+    id: "vlt",
+    eyebrow: "Pelo Brasil",
+    title: "VLT Baixada Santista",
+    description:
+      "Expansão do Veículo Leve sobre Trilhos integrando as cidades do litoral.",
+    gallery: [
+      { image: brasilImg, caption: "VLT circulando" },
+      { image: chapeuImg, caption: "Visita técnica ao litoral" },
+    ],
+  },
+  {
+    id: "tunel",
+    eyebrow: "Pelo Brasil",
+    title: "Túnel submerso Santos – Guarujá",
+    description:
+      "Projeto histórico de ligação entre as duas cidades, fundamental para o porto e para a população local.",
+    gallery: [
+      { image: brasilImg, caption: "Projeto do túnel" },
+      { image: trabalhoImg, caption: "Desenvolvimento da Baixada" },
     ],
   },
 ];
@@ -90,10 +139,10 @@ function PeloBrasil() {
       <section className="bg-gradient-hero text-white">
         <div className="mx-auto max-w-7xl px-4 md:px-8 py-20 grid gap-10 lg:grid-cols-2 items-center">
           <div>
-            <p className="text-sm font-bold uppercase tracking-widest text-accent">O que Denis fez</p>
-            <h1 className="mt-3 text-5xl md:text-6xl font-black leading-tight">Pelo Brasil</h1>
-            <p className="mt-5 max-w-xl text-lg text-white/85">
-              De macroprojetos estruturantes à Secretaria Nacional de Mobilidade, a atuação de Denis leva o jeito de fazer do interior para todo o país.
+            <p className="text-sm font-bold uppercase tracking-widest text-accent">Pelo Brasil</p>
+            <h1 className="mt-3 text-5xl md:text-6xl font-black leading-tight">PELO BRASIL</h1>
+            <p className="mt-5 max-w-xl text-lg text-white/85 font-bold">
+              Secretário Nacional de Mobilidade Urbana do Ministério das Cidades durante três anos, Denis Andia teve atuação fundamental na elaboração e avanço de importantes projetos de infraestrutura e transporte em todo o Brasil.
             </p>
             <button
               onClick={() => setVideoOpen(true)}
