@@ -12,7 +12,7 @@ export function Footer() {
     <footer className="relative text-white overflow-hidden">
       {/* Fundo geral do rodapé — imagem inteira, sem cortes */}
       <div
-        className="absolute inset-0 z-0 bg-no-repeat bg-center bg-contain md:bg-cover"
+        className="absolute inset-0 z-0 bg-no-repeat bg-[center_top] bg-cover md:bg-center"
         style={{ backgroundImage: `url(${footerBg.url})`, backgroundColor: "var(--ink)" }}
       />
       <div className="absolute inset-0 z-0 bg-black/40" />

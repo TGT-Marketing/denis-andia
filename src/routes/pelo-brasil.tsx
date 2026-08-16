@@ -88,7 +88,7 @@ function PeloBrasil() {
 
       {/* HERO */}
       <section className="bg-gradient-hero text-white">
-        <div className="mx-auto max-w-7xl px-4 md:px-8 py-20 grid gap-10 lg:grid-cols-2 items-center">
+        <div className="mx-auto max-w-7xl px-6 md:px-10 py-16 md:py-24 grid gap-10 lg:grid-cols-2 items-center">
           <div>
             <p className="text-xs md:text-sm font-bold uppercase tracking-widest text-accent">Pelo Brasil</p>
             <h1 className="mt-3 text-4xl md:text-6xl font-black leading-tight uppercase">PELO BRASIL</h1>

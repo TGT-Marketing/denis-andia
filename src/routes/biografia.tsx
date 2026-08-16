@@ -57,7 +57,7 @@ function Biografia() {
           className="absolute inset-0"
           style={{ background: "linear-gradient(to bottom, color-mix(in oklab, var(--ink) 80%, transparent), color-mix(in oklab, var(--ink) 40%, transparent), var(--ink))" }}
         />
-        <div className="relative mx-auto max-w-[1400px] px-4 md:px-10 pt-40 pb-24 grid gap-10 lg:grid-cols-[1.1fr_1fr] items-end">
+        <div className="relative mx-auto max-w-[1400px] px-6 md:px-10 pt-32 md:pt-40 pb-16 md:pb-24 grid gap-10 lg:grid-cols-[1.1fr_1fr] items-end">
           <div>
             <p className="text-[10px] md:text-xs font-bold uppercase tracking-[0.35em] text-accent">Biografia</p>
             <h1 className="mt-4 text-4xl md:text-7xl font-black leading-[0.95] tracking-tight">
