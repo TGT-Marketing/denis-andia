@@ -2,11 +2,12 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
 import { RegionMap } from "@/components/site/RegionMap";
 import { GalleryCarousel } from "@/components/site/GalleryCarousel";
-import cityImg from "@/assets/denis-city.jpg";
-import peopleImg from "@/assets/denis-people.jpg";
-import brasilImg from "@/assets/denis-brasil.jpg";
-import chapeuImg from "@/assets/denis-chapeu.jpg";
-import trabalhoImg from "@/assets/denis-trabalho.jpg";
+import people1 from "@/assets/people/denis-people-1.jpeg.asset.json";
+import people2 from "@/assets/people/denis-people-2.jpeg.asset.json";
+import people3 from "@/assets/people/denis-people-3.jpeg.asset.json";
+import people4 from "@/assets/people/denis-people-4.jpeg.asset.json";
+import people5 from "@/assets/people/denis-people-5.jpeg.asset.json";
+import people6 from "@/assets/people/denis-people-6.jpeg.asset.json";
 
 export const Route = createFileRoute("/nossa-gente")({
   head: () => ({
@@ -22,11 +23,12 @@ export const Route = createFileRoute("/nossa-gente")({
 });
 
 const GALLERY = [
-  { image: peopleImg, caption: "Denis ouvindo a nossa gente" },
-  { image: chapeuImg, caption: "Presença nas comunidades" },
-  { image: trabalhoImg, caption: "Diálogo constante" },
-  { image: cityImg, caption: "Liderança regional" },
-  { image: brasilImg, caption: "Intermediação de recursos" },
+  { image: people1.url },
+  { image: people2.url },
+  { image: people3.url },
+  { image: people4.url },
+  { image: people5.url },
+  { image: people6.url },
 ];
 
 function NossaGente() {
