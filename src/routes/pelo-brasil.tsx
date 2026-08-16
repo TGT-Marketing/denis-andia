@@ -124,8 +124,8 @@ function PeloBrasil() {
       {/* PROJETOS */}
       <section className="bg-background">
         <div className="mx-auto max-w-7xl px-4 md:px-8 py-20 space-y-24">
-          {PROJETOS.map((p, i) => (
-            <ProjetoBlock key={p.id} projeto={p} reverse={i % 2 === 1} />
+          {PROJETOS.map((p) => (
+            <ProjetoBlock key={p.id} projeto={p} />
           ))}
         </div>
       </section>
