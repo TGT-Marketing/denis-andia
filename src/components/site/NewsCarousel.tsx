@@ -193,8 +193,8 @@ export function NewsCarousel() {
                           Ler mais →
                         </button>
                       </DialogTrigger>
-                      <DialogContent className="max-w-3xl max-h-[90vh] flex flex-col p-0 overflow-hidden border-none bg-background shadow-2xl">
-                        <div className="relative h-64 w-full">
+                      <DialogContent className="max-w-3xl w-[95vw] md:w-full h-fit max-h-[90vh] flex flex-col p-0 overflow-hidden border-none bg-background shadow-2xl rounded-2xl">
+                        <div className="relative h-48 md:h-72 w-full shrink-0">
                           <img 
                             src={n.image} 
                             alt={n.title} 
@@ -202,17 +202,17 @@ export function NewsCarousel() {
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
                         </div>
-                        <div className="flex-1 overflow-hidden flex flex-col px-6 pb-8 -mt-12 relative z-10">
-                          <DialogHeader className="mb-6">
+                        <div className="flex-1 min-h-0 flex flex-col px-6 pb-2 -mt-12 relative z-10">
+                          <DialogHeader className="mb-4 shrink-0">
                             <span className="inline-block w-fit rounded-full bg-accent px-3 py-1 text-xs font-semibold text-accent-foreground mb-3">
                               {n.date}
                             </span>
-                            <DialogTitle className="text-2xl md:text-3xl font-bold text-foreground leading-tight text-left">
+                            <DialogTitle className="text-xl md:text-3xl font-bold text-foreground leading-tight text-left">
                               {n.title}
                             </DialogTitle>
                           </DialogHeader>
-                          <ScrollArea className="flex-1 pr-4">
-                            <div className="pb-8">
+                          <ScrollArea className="flex-1 w-full overflow-y-auto pr-4">
+                            <div className="pb-10 pt-2">
                               {n.fullContent}
                             </div>
                           </ScrollArea>
