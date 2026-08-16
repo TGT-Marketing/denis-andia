@@ -42,26 +42,6 @@ type Projeto = {
 
 const PROJETOS: Projeto[] = [
   {
-    id: "nacional",
-    eyebrow: "Atuação Nacional",
-    title: "Macroprojetos e Infraestrutura",
-    description: "Denis Andia teve atuação fundamental na elaboração e avanço de importantes projetos de infraestrutura e transporte em todo o Brasil.",
-    gallery: [
-      { image: brasil1.url, caption: "" },
-      { image: brasil2.url, caption: "" },
-      { image: brasil3.url, caption: "" },
-      { image: brasil4.url, caption: "" },
-      { image: brasil5.url, caption: "" },
-      { image: brasil6.url, caption: "" },
-      { image: brasil7.url, caption: "" },
-      { image: brasil8.url, caption: "" },
-      { image: brasil9.url, caption: "" },
-      { image: brasil10.url, caption: "" },
-      { image: brasil11.url, caption: "" },
-      { image: brasil12.url, caption: "" },
-    ],
-  },
-  {
     id: "projetos",
     eyebrow: "Pelo Brasil",
     title: "Conquistas e Projetos",
