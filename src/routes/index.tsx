@@ -99,14 +99,14 @@ function Home() {
           </h2>
 
           {/* Mapa ocupando a tela toda, com a foto surgindo por trás à direita */}
-          <div className="relative mt-2 md:mt-[-4rem] w-full flex flex-col md:block overflow-hidden md:overflow-visible min-h-[500px] md:min-h-0">
+          <div className="relative mt-2 md:mt-[-4rem] w-full flex flex-col md:block overflow-hidden md:overflow-visible min-h-[450px] md:min-h-0">
             {/* Mapa: No mobile ele fica MUITO grande, width > 100% e centralizado com overflow lateral */}
-            <div className="relative z-0 w-[160%] left-[-30%] md:w-full md:left-0 scale-[1.3] md:scale-[1.35] lg:scale-[1.45] transition-transform duration-500 order-1 md:order-none mt-8 md:mt-0">
+            <div className="relative z-0 w-[140%] left-[-20%] md:w-full md:left-0 scale-[1.2] md:scale-[1.35] lg:scale-[1.45] transition-transform duration-500 order-1 md:order-none mt-8 md:mt-0">
               <RegionMap mapOnly />
             </div>
 
             {/* Denis: No mobile à esquerda, menor e sobreposto ao mapa */}
-            <div className="absolute z-10 bottom-[10%] left-[-15%] md:bottom-[20%] lg:bottom-[25%] md:left-[2%] w-[70%] md:w-[35%] lg:w-[28%] max-w-[580px] pointer-events-none md:pointer-events-auto">
+            <div className="absolute z-10 bottom-[5%] left-[-10%] md:bottom-[20%] lg:bottom-[25%] md:left-[2%] w-[65%] md:w-[35%] lg:w-[28%] max-w-[580px] pointer-events-none md:pointer-events-auto">
               <img
                 src={denisCapacete.url}
                 alt="Denis Andia segurando capacete de obra"

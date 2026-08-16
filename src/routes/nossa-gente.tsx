@@ -49,7 +49,7 @@ function NossaGente() {
   return (
     <Layout>
       <section className="bg-gradient-hero text-white">
-        <div className="mx-auto max-w-7xl px-4 md:px-8 py-20">
+        <div className="mx-auto max-w-7xl px-6 md:px-10 py-16 md:py-24">
           <p className="text-xs md:text-sm font-bold uppercase tracking-widest text-accent">O que Denis fez</p>
           <h1 className="mt-3 text-4xl md:text-6xl font-black">Por nossa gente</h1>
           <div className="mt-8 max-w-3xl">
