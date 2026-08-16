@@ -66,7 +66,7 @@ const PROJETOS: Projeto[] = [
     eyebrow: "Pelo Brasil",
     title: "Conquistas e Projetos",
     description: (
-      <ul className="list-disc pl-5 space-y-2">
+      <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
         <li>Marco Legal do Transporte Público (mais investimentos e possibilidade de tarifas mais acessíveis ao usuário)</li>
         <li>Ônibus elétricos e renovação das frotas em diversas cidades do País</li>
         <li>Trem Intercidades São Paulo – Campinas</li>
@@ -76,7 +76,7 @@ const PROJETOS: Projeto[] = [
         <li>VLT Baixada Santista</li>
         <li>Túnel submerso Santos – Guarujá</li>
       </ul>
-    ) as unknown as string,
+    ),
     gallery: [
       { image: brasil1.url, caption: "" },
       { image: brasil2.url, caption: "" },
