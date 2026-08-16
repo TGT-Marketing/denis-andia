@@ -49,6 +49,31 @@ const NEWS = [
     date: "Mandato Real",
     title: "Denis Andia defende “mandato real” e coloca experiência a serviço dos Municípios",
     excerpt: "Pré-candidato a deputado federal, Denis Andia apresenta uma proposta baseada na proximidade com a população e na busca por soluções concretas para os desafios do dia a dia.",
+    fullContent: (
+      <div className="space-y-4 text-foreground leading-relaxed">
+        <p>
+          Pré-candidato a deputado federal, Denis Andia apresenta uma proposta baseada na proximidade com a população, no diálogo com as cidades e na busca por soluções concretas para os desafios do dia a dia.
+        </p>
+        <p>
+          Com o conceito de “mandato real”, Denis afirma que pretende atuar de forma próxima das pessoas, trabalhando diretamente nas necessidades da população e fortalecendo a relação entre Brasília e os municípios.
+        </p>
+        <p>
+          Entre as prioridades defendidas pelo pré-candidato estão a melhoria do transporte público, a redução gradual da tarifa e o fortalecimento das entidades e serviços que atendem a população. Denis também destaca a importância do Marco Legal do Transporte Público, aprovado pelo Congresso Nacional, como instrumento para ampliar investimentos e melhorar a mobilidade urbana.
+        </p>
+        <p>
+          “Meu trabalho sempre foi na linha construtiva, buscando melhorias reais para as pessoas. Quero levar essa experiência para Brasília e ampliar ainda mais a capacidade de trazer recursos e investimentos para os municípios”, afirma.
+        </p>
+        <p>
+          Denis Andia ressalta ainda sua experiência na administração pública e na articulação de verbas para cidades brasileiras durante sua atuação como secretário nacional de mobilidade urbana. Segundo ele, como deputado federal será possível ampliar esse trabalho, representando cerca de 40 a 50 municípios de forma ativa e próxima.
+        </p>
+        <p>
+          “Precisamos aproximar Brasília das cidades. Quem vive a realidade da população sabe onde estão as prioridades”, destaca.
+        </p>
+        <p>
+          Ao lembrar sua trajetória política, Denis afirma que aproveitou as oportunidades recebidas dos barbadenses para desenvolver um trabalho voltado à transformação de Santa Bárbara d’Oeste e à melhoria da qualidade de vida da população.
+        </p>
+      </div>
+    ),
   },
   {
     image: news3Asset.url,
