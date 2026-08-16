@@ -111,6 +111,36 @@ const NEWS = [
         </p>
       </div>
     ),
+    fullContent: (
+      <div className="space-y-4 text-foreground leading-relaxed">
+        <p className="font-bold italic">Por Denis Andia</p>
+        <p>
+          Há caminhos que mudam de paisagem, mas nunca mudam de destino.
+        </p>
+        <p>
+          Nos últimos anos, o trabalho me levou a Brasília, onde portas precisavam ser abertas, pontes construídas, para ajudar nossas cidades no desafio de crescer.
+        </p>
+        <p>
+          Trabalho que fez sentido porque tinha endereço certo: a nossa gente.
+        </p>
+        <p>
+          Por isso, toda semana, eu voltava. Voltava para rever os olhos conhecidos, escutar uma conversa na calçada. Porque é no encontro que a gente aprende. É ouvindo que a gente entende. É caminhando junto que a gente acerta o passo.
+        </p>
+        <p>
+          E agora, o tempo faz mais uma curva bonita. Voltei para uma nova caminhada. Não para começar de novo, mas para continuar o que a gente nunca deixou de lado: fazer o certo, para fazer bem feito!
+        </p>
+        <p>
+          Nestes primeiros meses, a região me convidou para conhecê-la ainda melhor. Aceitei com prazer e honra. Visitei cidades e lugares onde o nosso trabalho já havia chegado.
+        </p>
+        <p>
+          Agora é hora de andar pelas nossas ruas, entrar nos nossos bairros, ouvir quem acorda cedo, quem trabalha duro. Quero escutar mais do que falar. Aprender mais. Juntar forças e esforços - como sempre fizemos juntos.
+        </p>
+        <p>
+          Afinal, a nossa história você sabe que é de verdade, porque você a viu acontecer. Compromisso que não muda, de quem carrega a sua gente dentro do peito e que por onde vai, sabe o caminho de casa.
+        </p>
+        <p className="font-bold text-primary">Vamos em frente!</p>
+      </div>
+    ),
   },
   {
     image: news4Asset.url,
