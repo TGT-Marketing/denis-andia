@@ -36,7 +36,7 @@ type Projeto = {
   id: string;
   eyebrow: string;
   title: string;
-  description: string;
+  description: string | React.ReactNode;
   gallery: { image: string; caption: string }[];
 };
 
