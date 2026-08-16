@@ -142,7 +142,7 @@ function Home() {
         <div className="mx-auto max-w-[1400px] px-4 md:px-10">
           <div className="flex items-end justify-between flex-wrap gap-4 mb-10">
             <div>
-              <h2 className="relative z-10 font-black uppercase tracking-tighter leading-[0.85] text-[clamp(2rem,6vw,5rem)]">
+              <h2 className="relative z-10 text-center md:text-left font-black uppercase tracking-tighter leading-[0.95] text-[clamp(2rem,8vw,5rem)] px-4 md:px-0">
                 <span className="text-foreground">ACONTECEU E É</span>{" "}
                 <span className="text-primary">NOTÍCIA</span>
               </h2>
