@@ -105,8 +105,8 @@ function Home() {
               <RegionMap mapOnly />
             </div>
 
-            {/* Denis: No mobile à esquerda, grande e sobreposto ao mapa */}
-            <div className="absolute z-10 bottom-[10%] left-[-15%] md:bottom-[20%] lg:bottom-[25%] md:left-[2%] w-[85%] md:w-[35%] lg:w-[28%] max-w-[580px] pointer-events-none md:pointer-events-auto">
+            {/* Denis: No mobile à esquerda, menor e sobreposto ao mapa */}
+            <div className="absolute z-10 bottom-[10%] left-[-15%] md:bottom-[20%] lg:bottom-[25%] md:left-[2%] w-[70%] md:w-[35%] lg:w-[28%] max-w-[580px] pointer-events-none md:pointer-events-auto">
               <img
                 src={denisCapacete.url}
                 alt="Denis Andia segurando capacete de obra"

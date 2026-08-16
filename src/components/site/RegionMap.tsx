@@ -105,7 +105,7 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
                   x2={r.cx}
                   y2={r.cy + 8}
                   pointerEvents="none"
-                  className="hidden sm:block" // Esconde linha em mobile se necessário, ou ajusta
+                  className="block"
                   style={{ stroke: "var(--ink)", strokeWidth: 2, opacity: 0.6 }}
                 />
                 <text
