@@ -101,7 +101,7 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
                 />
                 <line
                   x1={r.id === "rmc" ? 620 : 520}
-                  y1={r.id === "rmc" ? 340 : 300}
+                  y1={r.id === "rmc" ? 420 : 300}
                   x2={r.cx}
                   y2={r.cy + 8}
                   pointerEvents="none"
