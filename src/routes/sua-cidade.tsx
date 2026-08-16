@@ -11,6 +11,13 @@ import denisConversaIdosa from "@/assets/denis-conversa-idosa.jpg.asset.json";
 import denisMeninaNoite from "@/assets/denis-menina-noite.jpg.asset.json";
 import denisAbracosCriancas from "@/assets/denis-abracos-criancas.jpg.asset.json";
 import denisBancoCasal from "@/assets/denis-banco-casal.jpg.asset.json";
+import denisConversaIdosa2 from "@/assets/denis-conversa-idosa-2.jpeg.asset.json";
+import denisAbracoMulher from "@/assets/denis-abraco-mulher.jpeg.asset.json";
+import denisConversaCadeirante from "@/assets/denis-conversa-cadeirante.jpeg.asset.json";
+import denisPintandoCrianca from "@/assets/denis-pintando-crianca.jpeg.asset.json";
+import denisBancoHomem from "@/assets/denis-banco-homem.jpeg.asset.json";
+import denisAbracoCriancas2 from "@/assets/denis-abraco-criancas-2.jpeg.asset.json";
+import denisCumprimentoCriancas from "@/assets/denis-cumprimento-criancas.jpeg.asset.json";
 import trabalhoImg from "@/assets/denis-trabalho.jpg";
 
 export const Route = createFileRoute("/sua-cidade")({
