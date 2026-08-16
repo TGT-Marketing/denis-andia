@@ -10,6 +10,13 @@ import brasil2 from "@/assets/national/denis-brasil-2.jpeg.asset.json";
 import brasil3 from "@/assets/national/denis-brasil-3.jpeg.asset.json";
 import brasil4 from "@/assets/national/denis-brasil-4.jpeg.asset.json";
 import brasil5 from "@/assets/national/denis-brasil-5.jpeg.asset.json";
+import brasil6 from "@/assets/national/denis-brasil-6.jpeg.asset.json";
+import brasil7 from "@/assets/national/denis-brasil-7.jpeg.asset.json";
+import brasil8 from "@/assets/national/denis-brasil-8.jpeg.asset.json";
+import brasil9 from "@/assets/national/denis-brasil-9.jpeg.asset.json";
+import brasil10 from "@/assets/national/denis-brasil-10.jpeg.asset.json";
+import brasil11 from "@/assets/national/denis-brasil-11.jpeg.asset.json";
+import brasil12 from "@/assets/national/denis-brasil-12.jpeg.asset.json";
 import trabalhoImg from "@/assets/denis-trabalho.jpg";
 
 export const Route = createFileRoute("/pelo-brasil")({
@@ -45,6 +52,13 @@ const PROJETOS: Projeto[] = [
       { image: brasil3.url, caption: "" },
       { image: brasil4.url, caption: "" },
       { image: brasil5.url, caption: "" },
+      { image: brasil6.url, caption: "" },
+      { image: brasil7.url, caption: "" },
+      { image: brasil8.url, caption: "" },
+      { image: brasil9.url, caption: "" },
+      { image: brasil10.url, caption: "" },
+      { image: brasil11.url, caption: "" },
+      { image: brasil12.url, caption: "" },
     ],
   },
   {
@@ -58,6 +72,13 @@ const PROJETOS: Projeto[] = [
       { image: brasil3.url, caption: "" },
       { image: brasil4.url, caption: "" },
       { image: brasil5.url, caption: "" },
+      { image: brasil6.url, caption: "" },
+      { image: brasil7.url, caption: "" },
+      { image: brasil8.url, caption: "" },
+      { image: brasil9.url, caption: "" },
+      { image: brasil10.url, caption: "" },
+      { image: brasil11.url, caption: "" },
+      { image: brasil12.url, caption: "" },
     ],
   },
 ];
