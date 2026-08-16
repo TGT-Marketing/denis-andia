@@ -138,8 +138,8 @@ function Home() {
 
 
       {/* NOTÍCIAS */}
-      <section id="noticias" className="bg-background pt-16 pb-16 md:pt-24 md:pb-20">
-        <div className="mx-auto max-w-[1400px] px-4 md:px-10">
+      <section id="noticias" className="bg-background py-16 md:py-24">
+        <div className="mx-auto max-w-[1400px] px-6 md:px-10">
           <div className="flex items-end justify-between flex-wrap gap-4 mb-10">
             <div>
               <h2 className="relative z-10 text-center md:text-left font-black uppercase tracking-tighter leading-[0.95] text-[clamp(2rem,8vw,5rem)] px-4 md:px-0">
