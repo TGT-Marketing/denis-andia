@@ -38,7 +38,7 @@ function Home() {
           style={{ backgroundImage: `url(${heroBg})` }}
         />
 
-        <div className="relative mx-auto max-w-[1400px] px-4 md:px-10 pt-28 md:pt-40 pb-8 md:pb-12">
+        <div className="relative mx-auto max-w-[1400px] px-6 md:px-10 pt-28 md:pt-40 pb-8 md:pb-12">
           <div className="relative flex justify-center min-h-[55vh] sm:min-h-[65vh] md:min-h-[80vh] items-end">
           </div>
 
