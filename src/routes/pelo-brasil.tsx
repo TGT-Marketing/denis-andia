@@ -132,7 +132,7 @@ function ProjetoBlock({ projeto, reverse }: { projeto: Projeto; reverse: boolean
           <img src={projeto.gallery[0]?.image} alt={projeto.title} className="h-72 w-full object-cover" />
         </div>
       </div>
-      <GalleryCarousel items={projeto.gallery} />
+      <GalleryCarousel items={projeto.gallery} showCaptions={false} />
     </article>
   );
 }

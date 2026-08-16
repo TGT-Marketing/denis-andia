@@ -67,8 +67,8 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
             style={{
               fill:
                 hovered === "demais"
-                  ? "color-mix(in oklab, var(--brand-green) 45%, #ffffff)"
-                  : "color-mix(in oklab, var(--brand-green) 30%, #ffffff)",
+                  ? "var(--brand-blue-dark)"
+                  : "var(--brand-blue-light)",
               stroke: "#ffffff",
               strokeWidth: 0.5,
             }}
@@ -93,8 +93,8 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
                       ? "drop-shadow(0 10px 18px color-mix(in oklab, var(--brand-green-dark) 55%, transparent))"
                       : "drop-shadow(0 4px 8px color-mix(in oklab, var(--brand-green-dark) 35%, transparent))",
                     fill: isHover
-                      ? "var(--brand-green-dark)"
-                      : "var(--brand-green)",
+                      ? r.id === "rmc" ? "var(--brand-green-dark)" : "var(--accent-dark)"
+                      : r.id === "rmc" ? "var(--brand-green)" : "var(--accent)",
                     stroke: "#ffffff",
                     strokeWidth: 1.2,
                   }}
