@@ -8,6 +8,13 @@ import people3 from "@/assets/people/denis-people-3.jpeg.asset.json";
 import people4 from "@/assets/people/denis-people-4.jpeg.asset.json";
 import people5 from "@/assets/people/denis-people-5.jpeg.asset.json";
 import people6 from "@/assets/people/denis-people-6.jpeg.asset.json";
+import people7 from "@/assets/people/denis-people-7.jpeg.asset.json";
+import people8 from "@/assets/people/denis-people-8.jpeg.asset.json";
+import people9 from "@/assets/people/denis-people-9.jpeg.asset.json";
+import people10 from "@/assets/people/denis-people-10.jpeg.asset.json";
+import people11 from "@/assets/people/denis-people-11.jpeg.asset.json";
+import people12 from "@/assets/people/denis-people-12.jpeg.asset.json";
+import people13 from "@/assets/people/denis-people-13.jpeg.asset.json";
 
 export const Route = createFileRoute("/nossa-gente")({
   head: () => ({
@@ -29,6 +36,13 @@ const GALLERY = [
   { image: people4.url },
   { image: people5.url },
   { image: people6.url },
+  { image: people7.url },
+  { image: people8.url },
+  { image: people9.url },
+  { image: people10.url },
+  { image: people11.url },
+  { image: people12.url },
+  { image: people13.url },
 ];
 
 function NossaGente() {
