@@ -90,9 +90,9 @@ function PeloBrasil() {
       <section className="bg-gradient-hero text-white">
         <div className="mx-auto max-w-7xl px-4 md:px-8 py-20 grid gap-10 lg:grid-cols-2 items-center">
           <div>
-            <p className="text-sm font-bold uppercase tracking-widest text-accent">Pelo Brasil</p>
-            <h1 className="mt-3 text-5xl md:text-6xl font-black leading-tight">PELO BRASIL</h1>
-            <p className="mt-5 max-w-xl text-lg text-white/85 font-bold">
+            <p className="text-xs md:text-sm font-bold uppercase tracking-widest text-accent">Pelo Brasil</p>
+            <h1 className="mt-3 text-4xl md:text-6xl font-black leading-tight uppercase">PELO BRASIL</h1>
+            <p className="mt-5 max-w-xl text-base md:text-lg text-white/85 font-bold">
               Secretário Nacional de Mobilidade Urbana do Ministério das Cidades durante três anos, Denis Andia teve atuação fundamental na elaboração e avanço de importantes projetos de infraestrutura e transporte em todo o Brasil.
             </p>
             <button
