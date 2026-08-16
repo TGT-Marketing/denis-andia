@@ -67,8 +67,8 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
             style={{
               fill:
                 hovered === "demais"
-                  ? "var(--brand-blue-dark)"
-                  : "var(--brand-blue-light)",
+                  ? "#0F5A9C" // azul escuro
+                  : "#B9CEE8", // azul claro (mantendo o que já estava ou aproximando do solicitado)
               stroke: "#ffffff",
               strokeWidth: 0.5,
             }}
@@ -93,8 +93,8 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
                       ? "drop-shadow(0 10px 18px color-mix(in oklab, var(--brand-green-dark) 55%, transparent))"
                       : "drop-shadow(0 4px 8px color-mix(in oklab, var(--brand-green-dark) 35%, transparent))",
                     fill: isHover
-                      ? r.id === "rmc" ? "var(--brand-green-dark)" : "var(--accent-dark)"
-                      : r.id === "rmc" ? "var(--brand-green)" : "var(--accent)",
+                      ? r.id === "rmc" ? "#EAB308" : "#22C55E" // RMC amarelo escuro no hover, RMP verde claro (mantendo o que está no hover)
+                      : r.id === "rmc" ? "#FEF08A" : "#86EFAC", // RMC amarelo claro, RMP verde claro
                     stroke: "#ffffff",
                     strokeWidth: 1.2,
                   }}
