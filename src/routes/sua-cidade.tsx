@@ -116,7 +116,7 @@ function SuaCidade() {
       <section className="bg-background">
         <div className="mx-auto max-w-7xl px-4 md:px-8 py-20 space-y-24">
           {PROJETOS.map((p, i) => (
-            <ProjetoBlock key={p.id} projeto={p} reverse={i % 2 === 1} />
+            <ProjetoBlock key={p.id} projeto={p} reverse={i % 2 === 1} showCaptions={false} />
           ))}
         </div>
       </section>
@@ -124,7 +124,7 @@ function SuaCidade() {
   );
 }
 
-function ProjetoBlock({ projeto, reverse }: { projeto: Projeto; reverse: boolean }) {
+function ProjetoBlock({ projeto, reverse, showCaptions = true }: { projeto: Projeto; reverse: boolean; showCaptions?: boolean }) {
   return (
     <article className="space-y-8">
       <div className={`grid gap-10 lg:grid-cols-2 items-center ${reverse ? "lg:[&>*:first-child]:order-2" : ""}`}>
@@ -147,7 +147,7 @@ function ProjetoBlock({ projeto, reverse }: { projeto: Projeto; reverse: boolean
           <img src={projeto.gallery[0]?.image} alt={projeto.title} className="h-72 w-full object-cover" />
         </div>
       </div>
-      <GalleryCarousel items={projeto.gallery} showCaptions={false} />
+      <GalleryCarousel items={projeto.gallery} showCaptions={showCaptions} />
     </article>
   );
 }

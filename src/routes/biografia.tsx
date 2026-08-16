@@ -146,7 +146,7 @@ function Biografia() {
             Instantes
             <span className="text-primary italic font-serif font-normal"> da caminhada.</span>
           </h2>
-          <GalleryCarousel items={GALLERY} />
+          <GalleryCarousel items={GALLERY} showCaptions={false} />
         </div>
       </section>
 

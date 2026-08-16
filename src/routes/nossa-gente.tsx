@@ -69,7 +69,7 @@ function NossaGente() {
 
       <section className="bg-background pb-20">
         <div className="mx-auto max-w-7xl px-4 md:px-8">
-          <GalleryCarousel items={GALLERY} />
+          <GalleryCarousel items={GALLERY} showCaptions={false} />
         </div>
       </section>
     </Layout>
