@@ -101,7 +101,7 @@ function Home() {
           {/* Mapa ocupando a tela toda, com a foto surgindo por trás à direita */}
           <div className="relative mt-2 md:mt-[-4rem] w-full flex flex-col md:block overflow-hidden md:overflow-visible min-h-[500px] md:min-h-0">
             {/* Mapa: No mobile ele fica MUITO grande, width > 100% e centralizado com overflow lateral */}
-            <div className="relative z-0 w-[140%] left-[-20%] md:w-full md:left-0 scale-[1.3] md:scale-[1.35] lg:scale-[1.45] transition-transform duration-500 order-1 md:order-none mt-8 md:mt-0">
+            <div className="relative z-0 w-[160%] left-[-30%] md:w-full md:left-0 scale-[1.3] md:scale-[1.35] lg:scale-[1.45] transition-transform duration-500 order-1 md:order-none mt-8 md:mt-0">
               <RegionMap mapOnly />
             </div>
 
