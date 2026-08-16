@@ -65,7 +65,18 @@ const PROJETOS: Projeto[] = [
     id: "projetos",
     eyebrow: "Pelo Brasil",
     title: "Conquistas e Projetos",
-    description: "Lista de atuações e marcos importantes no cenário nacional.",
+    description: (
+      <ul className="list-disc pl-5 space-y-2">
+        <li>Marco Legal do Transporte Público (mais investimentos e possibilidade de tarifas mais acessíveis ao usuário)</li>
+        <li>Ônibus elétricos e renovação das frotas em diversas cidades do País</li>
+        <li>Trem Intercidades São Paulo – Campinas</li>
+        <li>Trecho Norte do Rodoanel</li>
+        <li>BRTs de Campinas, Sorocaba e São José dos Campos</li>
+        <li>Nove linhas do metrô paulistano</li>
+        <li>VLT Baixada Santista</li>
+        <li>Túnel submerso Santos – Guarujá</li>
+      </ul>
+    ) as unknown as string,
     gallery: [
       { image: brasil1.url, caption: "" },
       { image: brasil2.url, caption: "" },
