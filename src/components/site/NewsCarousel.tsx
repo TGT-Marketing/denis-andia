@@ -211,7 +211,7 @@ export function NewsCarousel() {
                               {n.title}
                             </DialogTitle>
                           </DialogHeader>
-                          <ScrollArea className="flex-1 w-full pr-4 overflow-y-auto" type="always">
+                          <ScrollArea className="flex-1 w-full pr-4" type="always">
                             <div className="pb-12 pt-2 focus:outline-none" tabIndex={0}>
                               {n.fullContent}
                             </div>
