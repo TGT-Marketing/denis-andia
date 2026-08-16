@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useCallback } from "react";
 import news1Asset from "@/assets/news/news_1.jpeg.asset.json";
 import news2Asset from "@/assets/news/news_2.jpeg.asset.json";
-import news3Asset from "@/assets/news/transportation_news.png.asset.json";
+import news3Asset from "@/assets/news/news_3.jpg.asset.json";
 import news4Asset from "@/assets/news/news_4.jpg.asset.json";
 import {
   Dialog,
