@@ -111,9 +111,15 @@ const NEWS = [
         </p>
       </div>
     ),
+  },
+  {
+    image: news4Asset.url,
+    date: "Artigo",
+    title: "O CAMINHO DE CASA - Por Denis Andia",
+    excerpt: "Há caminhos que mudam de paisagem, mas nunca mudam de destino. E agora, o tempo faz mais uma curva bonita. Voltei para uma nova caminhada.",
     fullContent: (
       <div className="space-y-4 text-foreground leading-relaxed">
-        <p className="font-bold italic">Por Denis Andia</p>
+        <p className="font-bold italic text-lg">Por Denis Andia</p>
         <p>
           Há caminhos que mudam de paisagem, mas nunca mudam de destino.
         </p>
@@ -138,15 +144,9 @@ const NEWS = [
         <p>
           Afinal, a nossa história você sabe que é de verdade, porque você a viu acontecer. Compromisso que não muda, de quem carrega a sua gente dentro do peito e que por onde vai, sabe o caminho de casa.
         </p>
-        <p className="font-bold text-primary">Vamos em frente!</p>
+        <p className="font-bold text-primary text-xl">Vamos em frente!</p>
       </div>
     ),
-  },
-  {
-    image: news4Asset.url,
-    date: "Artigo",
-    title: "O CAMINHO DE CASA - Por Denis Andia",
-    excerpt: "Há caminhos que mudam de paisagem, mas nunca mudam de destino. E agora, o tempo faz mais uma curva bonita. Voltei para uma nova caminhada.",
   },
 ];
 
