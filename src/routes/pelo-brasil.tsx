@@ -124,8 +124,8 @@ function PeloBrasil() {
       {/* PROJETOS */}
       <section className="bg-background">
         <div className="mx-auto max-w-7xl px-4 md:px-8 py-20 space-y-24">
-          {PROJETOS.map((p, i) => (
-            <ProjetoBlock key={p.id} projeto={p} reverse={i % 2 === 1} />
+          {PROJETOS.map((p) => (
+            <ProjetoBlock key={p.id} projeto={p} />
           ))}
         </div>
       </section>
@@ -133,18 +133,13 @@ function PeloBrasil() {
   );
 }
 
-function ProjetoBlock({ projeto, reverse }: { projeto: Projeto; reverse: boolean }) {
+function ProjetoBlock({ projeto }: { projeto: Projeto }) {
   return (
     <article className="space-y-8">
-      <div className={`grid gap-10 lg:grid-cols-2 items-center ${reverse ? "lg:[&>*:first-child]:order-2" : ""}`}>
-        <div>
-          <p className="text-sm font-bold uppercase tracking-widest text-primary">{projeto.eyebrow}</p>
-          <h2 className="mt-2 text-3xl md:text-4xl font-black text-foreground">{projeto.title}</h2>
-          <div className="mt-4 text-lg">{projeto.description}</div>
-        </div>
-        <div className="rounded-3xl overflow-hidden shadow-card">
-          <img src={projeto.gallery[0]?.image} alt={projeto.title} className="h-72 w-full object-cover" />
-        </div>
+      <div>
+        <p className="text-sm font-bold uppercase tracking-widest text-primary">{projeto.eyebrow}</p>
+        <h2 className="mt-2 text-3xl md:text-4xl font-black text-foreground">{projeto.title}</h2>
+        <div className="mt-4 text-lg">{projeto.description}</div>
       </div>
       <GalleryCarousel items={projeto.gallery} showCaptions={false} />
     </article>
