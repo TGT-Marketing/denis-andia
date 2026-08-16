@@ -193,7 +193,7 @@ export function NewsCarousel() {
                           Ler mais →
                         </button>
                       </DialogTrigger>
-                      <DialogContent className="max-w-3xl w-[95vw] md:w-full h-[90vh] md:h-auto md:max-h-[90vh] flex flex-col p-0 overflow-hidden border-none bg-background shadow-2xl rounded-2xl">
+                      <DialogContent className="max-w-3xl w-[95vw] md:w-full h-[90vh] flex flex-col p-0 overflow-hidden border-none bg-background shadow-2xl rounded-2xl">
                         <div className="relative h-48 md:h-72 w-full shrink-0">
                           <img 
                             src={n.image} 
