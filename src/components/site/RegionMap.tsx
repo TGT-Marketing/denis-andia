@@ -101,9 +101,9 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
                 />
                 <line
                   x1={r.id === "rmc" ? 620 : 520}
-                  y1={r.id === "rmc" ? 420 : 300}
+                  y1={r.id === "rmc" ? 340 : 300}
                   x2={r.cx}
-                  y2={r.cy + 8}
+                  y2={r.cy - 20}
                   pointerEvents="none"
                   className="block"
                   style={{ stroke: "var(--ink)", strokeWidth: 2, opacity: 0.6 }}
