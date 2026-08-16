@@ -2,9 +2,9 @@ import { Instagram, Facebook } from "lucide-react";
 import footerBg from "@/assets/footer-bg.png.asset.json";
 
 const SOCIAL = [
-  { icon: Instagram, label: "Instagram", href: "#" },
-  { icon: Facebook, label: "Facebook", href: "#" },
-  { icon: XIcon, label: "X / denisandia", href: "#" },
+  { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/denisandia/?hl=pt" },
+  { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/DenisAndiaOficial/?locale=pt_BR" },
+  { icon: XIcon, label: "X / denisandia", href: "https://x.com/DenisAndia" },
 ] as const;
 
 export function Footer() {
