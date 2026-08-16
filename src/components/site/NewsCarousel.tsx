@@ -80,6 +80,37 @@ const NEWS = [
     date: "Mobilidade Urbana",
     title: "Denis Andia trabalha por um transporte público mais acessível",
     excerpt: "Um programa nacional que visa reduzir as tarifas de ônibus é um dos trabalhos já iniciados por Denis Andia à frente da Secretaria Nacional de Mobilidade Urbana.",
+    fullContent: (
+      <div className="space-y-4 text-foreground leading-relaxed">
+        <p>
+          Um programa nacional que visa reduzir as tarifas de ônibus é um dos trabalhos já iniciados por Denis Andia à frente da Secretaria Nacional de Mobilidade Urbana.
+        </p>
+        <p>
+          O primeiro e importante passo para isso foi a aprovação do Marco Legal do Transporte Público, nova lei apresentada e liderada pelo ex-prefeito barbarense em Brasília, aprovada e sancionada.
+        </p>
+        <p>
+          A partir dessa lei, que reorganiza as atividades e operações do transporte público em todo o Brasil, abrem-se as portas para a criação do Sistema Único de Mobilidade Urbana (SUM) — uma espécie de SUS do transporte público coletivo, visando integrar investimentos federais, estaduais e municipais para garantir tarifas menores aos brasileiros.
+        </p>
+        <p>
+          “Algumas etapas já foram superadas para a criação do SUM. Ampliamos os investimentos em infraestrutura, renovação de frotas e agora temos o Novo Marco Legal, que permite a construção de um programa de financiamento que vai reduzir as tarifas em todas as cidades do Brasil”, afirma Denis Andia.
+        </p>
+        <p>
+          A ideia é permitir que os governos estaduais e a União também possam investir nos sistemas, para que os preços das passagens fiquem menores para os usuários. Atualmente, o governo federal já conta com recursos arrecadados, mas não integralmente utilizados para essa finalidade, como os provenientes do vale-transporte dos trabalhadores. O SUM permitirá canalizar essa e outras fontes de recursos em benefício dos passageiros.
+        </p>
+        <p>
+          “Quanto mais acessível for o transporte público para o cidadão, mais pessoas o utilizarão. E, com mais pessoas no transporte público, haverá menos carros e motos nas ruas. Trânsito melhor, maior mobilidade urbana e menos acidentes. Todos ganham”, ressalta Andia.
+        </p>
+        <p>
+          Essa é uma ideia antiga que começou a sair do papel para se tornar realidade, em grande parte devido ao trabalho técnico e político conduzido pelo ex-prefeito barbarense em Brasília.
+        </p>
+        <p>
+          “Muitos prefeitos sonham com a Tarifa Zero no transporte público. Esse é o caminho para que ela se torne realidade. Quando administrei Santa Bárbara d’Oeste, implantei a tarifa zero aos sábados. Isso mudou a dinâmica da cidade e fortaleceu muito o comércio local, reflexo que permanece até hoje. Essa experiência foi pioneira no Brasil e passou a ser referência em todo o país”, lembrou Denis.
+        </p>
+        <p>
+          Agora, como pré-candidato a deputado federal, Denis Andia pretende trabalhar pela aprovação das leis complementares que permitirão ao SUM avançar e ser implantado.
+        </p>
+      </div>
+    ),
   },
   {
     image: news4Asset.url,
