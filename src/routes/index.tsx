@@ -138,7 +138,7 @@ function Home() {
 
 
       {/* NOTÍCIAS */}
-      <section id="noticias" className="bg-background pt-0 pb-16 md:pt-0 md:pb-20">
+      <section id="noticias" className="bg-background pt-16 pb-16 md:pt-24 md:pb-20">
         <div className="mx-auto max-w-[1400px] px-4 md:px-10">
           <div className="flex items-end justify-between flex-wrap gap-4 mb-10">
             <div>
