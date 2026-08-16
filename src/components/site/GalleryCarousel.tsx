@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-export function GalleryCarousel({ items }: { items: { image: string; caption: string }[] }) {
+export function GalleryCarousel({ items, showCaptions = true }: { items: { image: string; caption: string }[]; showCaptions?: boolean }) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" });
   const [selected, setSelected] = useState(0);
   const [snaps, setSnaps] = useState<number[]>([]);
@@ -29,7 +29,7 @@ export function GalleryCarousel({ items }: { items: { image: string; caption: st
             <div key={i} className="min-w-0 shrink-0 grow-0 basis-full sm:basis-1/2 lg:basis-1/3 pr-4">
               <figure className="rounded-2xl overflow-hidden bg-card shadow-card">
                 <img src={item.image} alt={item.caption} loading="lazy" className="h-56 w-full object-cover" />
-                <figcaption className="p-4 text-sm font-semibold text-foreground">{item.caption}</figcaption>
+                {showCaptions && <figcaption className="p-4 text-sm font-semibold text-foreground">{item.caption}</figcaption>}
               </figure>
             </div>
           ))}

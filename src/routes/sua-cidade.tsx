@@ -5,11 +5,12 @@ import { ChevronLeft, ChevronRight, Play } from "lucide-react";
 import { GalleryCarousel } from "@/components/site/GalleryCarousel";
 import { Layout } from "@/components/site/Layout";
 import { VideoModal } from "@/components/site/VideoModal";
-import cityImg from "@/assets/denis-city.jpg";
-import peopleImg from "@/assets/denis-people.jpg";
-import brasilImg from "@/assets/denis-brasil.jpg";
-import chapeuImg from "@/assets/denis-chapeu.jpg";
-import meninaImg from "@/assets/denis-menina.jpg";
+import denisCriancaFavela from "@/assets/denis-crianca-favela.jpg.asset.json";
+import denisFeira from "@/assets/denis-feira.jpg.asset.json";
+import denisConversaIdosa from "@/assets/denis-conversa-idosa.jpg.asset.json";
+import denisMeninaNoite from "@/assets/denis-menina-noite.jpg.asset.json";
+import denisAbracosCriancas from "@/assets/denis-abracos-criancas.jpg.asset.json";
+import denisBancoCasal from "@/assets/denis-banco-casal.jpg.asset.json";
 import trabalhoImg from "@/assets/denis-trabalho.jpg";
 
 export const Route = createFileRoute("/sua-cidade")({
@@ -53,10 +54,12 @@ const PROJETOS: Projeto[] = [
       "Implantação de videomonitoramento na Segurança Pública",
     ],
     gallery: [
-      { image: meninaImg, caption: "Escuta ativa nos bairros" },
-      { image: trabalhoImg, caption: "Obras entregues" },
-      { image: chapeuImg, caption: "Presente nas comunidades" },
-      { image: cityImg, caption: "Cidade renovada" },
+      { image: denisCriancaFavela.url, caption: "" },
+      { image: denisFeira.url, caption: "" },
+      { image: denisConversaIdosa.url, caption: "" },
+      { image: denisMeninaNoite.url, caption: "" },
+      { image: denisAbracosCriancas.url, caption: "" },
+      { image: denisBancoCasal.url, caption: "" },
     ],
   },
 ];
@@ -144,7 +147,7 @@ function ProjetoBlock({ projeto, reverse }: { projeto: Projeto; reverse: boolean
           <img src={projeto.gallery[0]?.image} alt={projeto.title} className="h-72 w-full object-cover" />
         </div>
       </div>
-      <GalleryCarousel items={projeto.gallery} />
+      <GalleryCarousel items={projeto.gallery} showCaptions={false} />
     </article>
   );
 }
