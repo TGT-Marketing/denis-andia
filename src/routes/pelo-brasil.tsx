@@ -5,11 +5,11 @@ import { ChevronLeft, ChevronRight, Play } from "lucide-react";
 import { GalleryCarousel } from "@/components/site/GalleryCarousel";
 import { Layout } from "@/components/site/Layout";
 import { VideoModal } from "@/components/site/VideoModal";
-import cityImg from "@/assets/denis-city.jpg";
-import peopleImg from "@/assets/denis-people.jpg";
-import brasilImg from "@/assets/denis-brasil.jpg";
-import chapeuImg from "@/assets/denis-chapeu.jpg";
-import meninaImg from "@/assets/denis-menina.jpg";
+import brasil1 from "@/assets/national/denis-brasil-1.jpeg.asset.json";
+import brasil2 from "@/assets/national/denis-brasil-2.jpeg.asset.json";
+import brasil3 from "@/assets/national/denis-brasil-3.jpeg.asset.json";
+import brasil4 from "@/assets/national/denis-brasil-4.jpeg.asset.json";
+import brasil5 from "@/assets/national/denis-brasil-5.jpeg.asset.json";
 import trabalhoImg from "@/assets/denis-trabalho.jpg";
 
 export const Route = createFileRoute("/pelo-brasil")({
