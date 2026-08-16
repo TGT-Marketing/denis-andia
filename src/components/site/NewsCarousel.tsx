@@ -6,6 +6,14 @@ import news1Asset from "@/assets/news/news_1.jpeg.asset.json";
 import news2Asset from "@/assets/news/news_2.jpeg.asset.json";
 import news3Asset from "@/assets/news/news_3.jpg.asset.json";
 import news4Asset from "@/assets/news/news_4.jpg.asset.json";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 const NEWS = [
   {
@@ -13,6 +21,28 @@ const NEWS = [
     date: "Eleições 2026",
     title: "Eleições 2026: Denis Andia desponta como principal nome da região",
     excerpt: "Nas eleições deste ano, Santa Bárbara d’Oeste, Americana e região podem voltar a ter um Deputado Federal em Brasília. Com poucos candidatos locais na disputa, destaca-se o nome do ex-prefeito Denis Andia.",
+    fullContent: (
+      <div className="space-y-4 text-foreground leading-relaxed">
+        <p>
+          Nas eleições deste ano, Santa Bárbara d’Oeste, Americana e região podem voltar a ter um Deputado Federal em Brasília. Com poucos candidatos locais na disputa, destaca-se o nome do ex-prefeito de Santa Bárbara d’Oeste, Denis Andia, que possui forte expressão regional.
+        </p>
+        <p>
+          Em 2022, Denis esteve muito próximo da eleição em sua primeira tentativa, sendo o candidato a Deputado Federal mais votado da Região Metropolitana de Campinas, com 75 mil votos. Ficou na suplência, a apenas 4.900 votos de conquistar uma cadeira na Câmara dos Deputados.
+        </p>
+        <p>
+          Considerando apenas as cidades de Santa Bárbara d’Oeste, Americana e Nova Odessa, Denis Andia somou expressivos 68.291 votos, bem à frente de Vanderlei Macris (19.741) e Maria Giovana (18.343). Dos três nomes, apenas Denis Andia disputará as eleições para Deputado Federal neste ano, o que pode ampliar sua votação local e garantir uma vaga em Brasília para a região.
+        </p>
+        <p>
+          Já para Deputado Estadual, a região conta com alguns candidatos com chances de sucesso, como Franco Sardelli e Ricardo Molina, de Americana, além de Esther Moraes e Celso Ávila, de Santa Bárbara d’Oeste.
+        </p>
+        <p>
+          É importante lembrar que Ricardo Molina esteve próximo da eleição em 2022, quando ficou na suplência, e pode repetir o bom desempenho na região. Franco, filho do prefeito Chico Sardelli, disputará pela primeira vez, mas conta com o apoio da estrutura política do pai. Em Santa Bárbara d’Oeste, Esther Moraes foi a vereadora mais votada em 2024 e aparece como uma das principais promessas. Já Celso Ávila tem no histórico quatro eleições seguidas como vereador.
+        </p>
+        <p>
+          A região já teve quatro deputados eleitos ao mesmo tempo e pode voltar a ter representantes tanto na Assembleia Legislativa de São Paulo quanto na Câmara dos Deputados, em Brasília. O desafio, neste momento, é o eleitor compreender essa nova oportunidade e focar nos candidatos locais com maior potencial eleitoral.
+        </p>
+      </div>
+    ),
   },
   {
     image: news2Asset.url,
@@ -70,9 +100,42 @@ export function NewsCarousel() {
                   </span>
                   <h3 className="mt-3 text-lg font-bold text-foreground">{n.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{n.excerpt}</p>
-                  <button className="mt-4 text-sm font-semibold text-primary hover:underline">
-                    Ler mais →
-                  </button>
+                  {n.fullContent ? (
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <button className="mt-4 text-sm font-semibold text-primary hover:underline cursor-pointer">
+                          Ler mais →
+                        </button>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-3xl max-h-[90vh] flex flex-col p-0 overflow-hidden border-none bg-background shadow-2xl">
+                        <div className="relative h-64 w-full">
+                          <img 
+                            src={n.image} 
+                            alt={n.title} 
+                            className="h-full w-full object-cover"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+                        </div>
+                        <div className="flex-1 overflow-hidden flex flex-col px-6 pb-8 -mt-12 relative z-10">
+                          <DialogHeader className="mb-6">
+                            <span className="inline-block w-fit rounded-full bg-accent px-3 py-1 text-xs font-semibold text-accent-foreground mb-3">
+                              {n.date}
+                            </span>
+                            <DialogTitle className="text-2xl md:text-3xl font-bold text-foreground leading-tight text-left">
+                              {n.title}
+                            </DialogTitle>
+                          </DialogHeader>
+                          <ScrollArea className="flex-1 pr-4">
+                            {n.fullContent}
+                          </ScrollArea>
+                        </div>
+                      </DialogContent>
+                    </Dialog>
+                  ) : (
+                    <button className="mt-4 text-sm font-semibold text-primary hover:underline">
+                      Ler mais →
+                    </button>
+                  )}
                 </div>
               </article>
             </div>
