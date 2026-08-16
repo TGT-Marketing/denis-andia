@@ -115,7 +115,7 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
                   dominantBaseline="middle"
                   pointerEvents="none"
                   className="select-none"
-                  style={{ fontSize: 28, fontWeight: 900, fill: "var(--ink)" }}
+                  style={{ fontSize: 32, fontWeight: 900, fill: "var(--ink)" }}
                 >
                   {r.short}
                 </text>

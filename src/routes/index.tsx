@@ -93,7 +93,7 @@ function Home() {
       <section id="trabalho" className="relative bg-background overflow-hidden">
         <div className="w-full px-2 md:px-6 pt-16 md:pt-24 pb-6 md:pb-8">
           {/* Título gigante ao fundo */}
-          <h2 className="relative z-10 text-center lg:text-left font-black uppercase tracking-tighter leading-[0.85] text-[clamp(2rem,6vw,5rem)]">
+          <h2 className="relative z-10 text-center lg:text-left font-black uppercase tracking-tighter leading-[0.95] text-[clamp(2rem,8vw,5rem)] px-4">
             <span className="text-primary">O TRABALHO</span>{" "}
             <span className="text-foreground">JÁ CHEGOU!</span>
           </h2>
@@ -101,20 +101,20 @@ function Home() {
           {/* Mapa ocupando a tela toda, com a foto surgindo por trás à direita */}
           <div className="relative mt-2 md:mt-[-4rem] w-full flex flex-col md:block overflow-hidden md:overflow-visible min-h-[500px] md:min-h-0">
             {/* Mapa: No mobile ele fica MUITO grande, width > 100% e centralizado com overflow lateral */}
-            <div className="relative z-0 w-[140%] left-[-20%] md:w-full md:left-0 scale-[1.3] md:scale-[1.35] lg:scale-[1.45] transition-transform duration-500 order-1 md:order-none mt-8 md:mt-0">
+            <div className="relative z-0 w-[160%] left-[-30%] md:w-full md:left-0 scale-[1.3] md:scale-[1.35] lg:scale-[1.45] transition-transform duration-500 order-1 md:order-none mt-8 md:mt-0">
               <RegionMap mapOnly />
             </div>
 
             {/* Denis: No mobile à esquerda, grande e sobreposto ao mapa */}
-            <div className="absolute z-10 bottom-[15%] left-[-10%] md:bottom-[20%] lg:bottom-[25%] md:left-[2%] w-[70%] md:w-[35%] lg:w-[28%] max-w-[580px] pointer-events-none md:pointer-events-auto">
+            <div className="absolute z-10 bottom-[10%] left-[-15%] md:bottom-[20%] lg:bottom-[25%] md:left-[2%] w-[85%] md:w-[35%] lg:w-[28%] max-w-[580px] pointer-events-none md:pointer-events-auto">
               <img
                 src={denisCapacete.url}
                 alt="Denis Andia segurando capacete de obra"
                 loading="lazy"
                 className="w-full h-auto object-contain object-bottom drop-shadow-2xl"
                 style={{
-                  maskImage: 'linear-gradient(to right, black 80%, transparent 100%), linear-gradient(to top, transparent 0%, black 20%)',
-                  WebkitMaskImage: 'linear-gradient(to right, black 80%, transparent 100%), linear-gradient(to top, transparent 0%, black 20%)',
+                  maskImage: 'linear-gradient(to right, black 85%, transparent 100%), linear-gradient(to top, transparent 0%, black 15%)',
+                  WebkitMaskImage: 'linear-gradient(to right, black 85%, transparent 100%), linear-gradient(to top, transparent 0%, black 15%)',
                   maskComposite: 'intersect',
                   WebkitMaskComposite: 'source-in'
                 }}
@@ -142,7 +142,7 @@ function Home() {
         <div className="mx-auto max-w-[1400px] px-4 md:px-10">
           <div className="flex items-end justify-between flex-wrap gap-4 mb-10">
             <div>
-              <h2 className="relative z-10 font-black uppercase tracking-tighter leading-[0.85] text-[clamp(2rem,6vw,5rem)]">
+              <h2 className="relative z-10 text-center md:text-left font-black uppercase tracking-tighter leading-[0.95] text-[clamp(2rem,8vw,5rem)] px-4 md:px-0">
                 <span className="text-foreground">ACONTECEU E É</span>{" "}
                 <span className="text-primary">NOTÍCIA</span>
               </h2>

@@ -59,8 +59,8 @@ function Biografia() {
         />
         <div className="relative mx-auto max-w-[1400px] px-4 md:px-10 pt-40 pb-24 grid gap-10 lg:grid-cols-[1.1fr_1fr] items-end">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.35em] text-accent">Biografia</p>
-            <h1 className="mt-4 text-5xl md:text-7xl font-black leading-[0.95] tracking-tight">
+            <p className="text-[10px] md:text-xs font-bold uppercase tracking-[0.35em] text-accent">Biografia</p>
+            <h1 className="mt-4 text-4xl md:text-7xl font-black leading-[0.95] tracking-tight">
               A história
               <span className="block text-accent italic font-serif font-normal my-2">de um jeito</span>
               de fazer política.
