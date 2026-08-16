@@ -67,8 +67,8 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
             style={{
               fill:
                 hovered === "demais"
-                  ? "var(--brand-blue-dark)"
-                  : "var(--brand-blue-light)",
+                  ? "#0F5A9C" // azul escuro
+                  : "#B9CEE8", // azul claro (mantendo o que já estava ou aproximando do solicitado)
               stroke: "#ffffff",
               strokeWidth: 0.5,
             }}
@@ -90,11 +90,11 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
                     transformOrigin: "center",
                     transform: isHover ? "scale(1.35)" : "scale(1.2)", // Aumentadas por padrão no mobile também via escala base
                     filter: isHover
-                      ? "drop-shadow(0 10px 18px color-mix(in oklab, var(--brand-green-dark) 55%, transparent))"
-                      : "drop-shadow(0 4px 8px color-mix(in oklab, var(--brand-green-dark) 35%, transparent))",
+                      ? "drop-shadow(0 10px 18px color-mix(in oklab, var(--ink) 35%, transparent))"
+                      : "drop-shadow(0 4px 8px color-mix(in oklab, var(--ink) 15%, transparent))",
                     fill: isHover
-                      ? r.id === "rmc" ? "var(--brand-green-dark)" : "var(--accent-dark)"
-                      : r.id === "rmc" ? "var(--brand-green)" : "var(--accent)",
+                      ? r.id === "rmc" ? "#EAB308" : "#22C55E" // RMC amarelo escuro no hover, RMP verde claro (mantendo o que está no hover)
+                      : r.id === "rmc" ? "#FEF08A" : "#86EFAC", // RMC amarelo claro, RMP verde claro
                     stroke: "#ffffff",
                     strokeWidth: 1.2,
                   }}
@@ -106,7 +106,7 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
                   y2={r.cy + 8}
                   pointerEvents="none"
                   className="hidden sm:block" // Esconde linha em mobile se necessário, ou ajusta
-                  style={{ stroke: "var(--brand-green)", strokeWidth: 2 }}
+                  style={{ stroke: "var(--ink)", strokeWidth: 2, opacity: 0.6 }}
                 />
                 <text
                   x={r.cx}
@@ -115,7 +115,7 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
                   dominantBaseline="middle"
                   pointerEvents="none"
                   className="select-none"
-                  style={{ fontSize: 28, fontWeight: 900, fill: "var(--brand-green)" }}
+                  style={{ fontSize: 28, fontWeight: 900, fill: "var(--ink)" }}
                 >
                   {r.short}
                 </text>
