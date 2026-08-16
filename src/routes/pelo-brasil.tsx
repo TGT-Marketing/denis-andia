@@ -36,7 +36,7 @@ type Projeto = {
   id: string;
   eyebrow: string;
   title: string;
-  description: string;
+  description: string | React.ReactNode;
   gallery: { image: string; caption: string }[];
 };
 
@@ -65,7 +65,18 @@ const PROJETOS: Projeto[] = [
     id: "projetos",
     eyebrow: "Pelo Brasil",
     title: "Conquistas e Projetos",
-    description: "Lista de atuações e marcos importantes no cenário nacional.",
+    description: (
+      <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
+        <li>Marco Legal do Transporte Público (mais investimentos e possibilidade de tarifas mais acessíveis ao usuário)</li>
+        <li>Ônibus elétricos e renovação das frotas em diversas cidades do País</li>
+        <li>Trem Intercidades São Paulo – Campinas</li>
+        <li>Trecho Norte do Rodoanel</li>
+        <li>BRTs de Campinas, Sorocaba e São José dos Campos</li>
+        <li>Nove linhas do metrô paulistano</li>
+        <li>VLT Baixada Santista</li>
+        <li>Túnel submerso Santos – Guarujá</li>
+      </ul>
+    ),
     gallery: [
       { image: brasil1.url, caption: "" },
       { image: brasil2.url, caption: "" },
@@ -149,7 +160,7 @@ function ProjetoBlock({ projeto, reverse }: { projeto: Projeto; reverse: boolean
         <div>
           <p className="text-sm font-bold uppercase tracking-widest text-primary">{projeto.eyebrow}</p>
           <h2 className="mt-2 text-3xl md:text-4xl font-black text-foreground">{projeto.title}</h2>
-          <p className="mt-4 text-lg text-muted-foreground">{projeto.description}</p>
+          <div className="mt-4 text-lg">{projeto.description}</div>
         </div>
         <div className="rounded-3xl overflow-hidden shadow-card">
           <img src={projeto.gallery[0]?.image} alt={projeto.title} className="h-72 w-full object-cover" />
