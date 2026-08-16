@@ -212,7 +212,9 @@ export function NewsCarousel() {
                             </DialogTitle>
                           </DialogHeader>
                           <ScrollArea className="flex-1 pr-4">
-                            {n.fullContent}
+                            <div className="pb-8">
+                              {n.fullContent}
+                            </div>
                           </ScrollArea>
                         </div>
                       </DialogContent>
