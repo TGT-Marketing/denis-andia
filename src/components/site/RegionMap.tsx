@@ -106,7 +106,7 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
                   y2={r.cy + 8}
                   pointerEvents="none"
                   className="hidden sm:block" // Esconde linha em mobile se necessário, ou ajusta
-                  style={{ stroke: "var(--brand-green)", strokeWidth: 2 }}
+                  style={{ stroke: "var(--ink)", strokeWidth: 2, opacity: 0.6 }}
                 />
                 <text
                   x={r.cx}
@@ -115,7 +115,7 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
                   dominantBaseline="middle"
                   pointerEvents="none"
                   className="select-none"
-                  style={{ fontSize: 28, fontWeight: 900, fill: "var(--brand-green)" }}
+                  style={{ fontSize: 28, fontWeight: 900, fill: "var(--ink)" }}
                 >
                   {r.short}
                 </text>
