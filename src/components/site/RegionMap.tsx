@@ -20,8 +20,8 @@ const REGIONS: Region[] = [
     name: "RMC — Região Metropolitana de Campinas",
     short: "RMC",
     d: spPaths.rmc,
-    cx: 700,
-    cy: 360,
+    cx: 680,
+    cy: 480,
     highlight: true,
   },
   {
@@ -103,7 +103,7 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
                   x1={r.id === "rmc" ? 620 : 520}
                   y1={r.id === "rmc" ? 340 : 300}
                   x2={r.cx}
-                  y2={r.cy + 8}
+                  y2={r.cy - 20}
                   pointerEvents="none"
                   className="block"
                   style={{ stroke: "var(--ink)", strokeWidth: 2, opacity: 0.6 }}
