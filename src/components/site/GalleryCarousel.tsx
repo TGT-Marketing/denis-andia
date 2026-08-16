@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-export function GalleryCarousel({ items, showCaptions = true }: { items: { image: string; caption: string }[]; showCaptions?: boolean }) {
+export function GalleryCarousel({ items, showCaptions = true }: { items: { image: string; caption?: string }[]; showCaptions?: boolean }) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" });
   const [selected, setSelected] = useState(0);
   const [snaps, setSnaps] = useState<number[]>([]);
