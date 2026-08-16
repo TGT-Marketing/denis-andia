@@ -20,8 +20,8 @@ const REGIONS: Region[] = [
     name: "RMC — Região Metropolitana de Campinas",
     short: "RMC",
     d: spPaths.rmc,
-    cx: 700,
-    cy: 360,
+    cx: 680,
+    cy: 480,
     highlight: true,
   },
   {
