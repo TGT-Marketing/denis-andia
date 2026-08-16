@@ -90,8 +90,8 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
                     transformOrigin: "center",
                     transform: isHover ? "scale(1.35)" : "scale(1.2)", // Aumentadas por padrão no mobile também via escala base
                     filter: isHover
-                      ? "drop-shadow(0 10px 18px color-mix(in oklab, var(--brand-green-dark) 55%, transparent))"
-                      : "drop-shadow(0 4px 8px color-mix(in oklab, var(--brand-green-dark) 35%, transparent))",
+                      ? "drop-shadow(0 10px 18px color-mix(in oklab, var(--ink) 35%, transparent))"
+                      : "drop-shadow(0 4px 8px color-mix(in oklab, var(--ink) 15%, transparent))",
                     fill: isHover
                       ? r.id === "rmc" ? "#EAB308" : "#22C55E" // RMC amarelo escuro no hover, RMP verde claro (mantendo o que está no hover)
                       : r.id === "rmc" ? "#FEF08A" : "#86EFAC", // RMC amarelo claro, RMP verde claro
