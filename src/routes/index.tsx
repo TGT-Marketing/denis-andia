@@ -106,15 +106,15 @@ function Home() {
             </div>
 
             {/* Denis: No mobile à esquerda, grande e sobreposto ao mapa */}
-            <div className="absolute z-10 bottom-[15%] left-[-10%] md:bottom-[20%] lg:bottom-[25%] md:left-[2%] w-[70%] md:w-[35%] lg:w-[28%] max-w-[580px] pointer-events-none md:pointer-events-auto">
+            <div className="absolute z-10 bottom-[10%] left-[-15%] md:bottom-[20%] lg:bottom-[25%] md:left-[2%] w-[85%] md:w-[35%] lg:w-[28%] max-w-[580px] pointer-events-none md:pointer-events-auto">
               <img
                 src={denisCapacete.url}
                 alt="Denis Andia segurando capacete de obra"
                 loading="lazy"
                 className="w-full h-auto object-contain object-bottom drop-shadow-2xl"
                 style={{
-                  maskImage: 'linear-gradient(to right, black 80%, transparent 100%), linear-gradient(to top, transparent 0%, black 20%)',
-                  WebkitMaskImage: 'linear-gradient(to right, black 80%, transparent 100%), linear-gradient(to top, transparent 0%, black 20%)',
+                  maskImage: 'linear-gradient(to right, black 85%, transparent 100%), linear-gradient(to top, transparent 0%, black 15%)',
+                  WebkitMaskImage: 'linear-gradient(to right, black 85%, transparent 100%), linear-gradient(to top, transparent 0%, black 15%)',
                   maskComposite: 'intersect',
                   WebkitMaskComposite: 'source-in'
                 }}
