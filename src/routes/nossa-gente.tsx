@@ -36,6 +36,13 @@ const GALLERY = [
   { image: people4.url },
   { image: people5.url },
   { image: people6.url },
+  { image: people7.url },
+  { image: people8.url },
+  { image: people9.url },
+  { image: people10.url },
+  { image: people11.url },
+  { image: people12.url },
+  { image: people13.url },
 ];
 
 function NossaGente() {
