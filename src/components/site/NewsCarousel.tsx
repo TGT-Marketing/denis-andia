@@ -193,7 +193,7 @@ export function NewsCarousel() {
                           Ler mais →
                         </button>
                       </DialogTrigger>
-                      <DialogContent className="max-w-3xl w-[95vw] md:w-full h-fit max-h-[90vh] flex flex-col p-0 overflow-hidden border-none bg-background shadow-2xl rounded-2xl">
+                      <DialogContent className="max-w-3xl w-[95vw] md:w-full h-[90vh] md:h-auto md:max-h-[90vh] flex flex-col p-0 overflow-hidden border-none bg-background shadow-2xl rounded-2xl">
                         <div className="relative h-48 md:h-72 w-full shrink-0">
                           <img 
                             src={n.image} 
@@ -211,8 +211,8 @@ export function NewsCarousel() {
                               {n.title}
                             </DialogTitle>
                           </DialogHeader>
-                          <ScrollArea className="flex-1 w-full overflow-y-auto pr-4">
-                            <div className="pb-10 pt-2">
+                          <ScrollArea className="flex-1 w-full pr-4 overflow-y-auto" type="always">
+                            <div className="pb-12 pt-2 focus:outline-none" tabIndex={0}>
                               {n.fullContent}
                             </div>
                           </ScrollArea>
