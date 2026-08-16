@@ -67,6 +67,13 @@ const PROJETOS: Projeto[] = [
       { image: denisMeninaNoite.url, caption: "" },
       { image: denisAbracosCriancas.url, caption: "" },
       { image: denisBancoCasal.url, caption: "" },
+      { image: denisConversaIdosa2.url, caption: "" },
+      { image: denisAbracoMulher.url, caption: "" },
+      { image: denisConversaCadeirante.url, caption: "" },
+      { image: denisPintandoCrianca.url, caption: "" },
+      { image: denisBancoHomem.url, caption: "" },
+      { image: denisAbracoCriancas2.url, caption: "" },
+      { image: denisCumprimentoCriancas.url, caption: "" },
     ],
   },
 ];
