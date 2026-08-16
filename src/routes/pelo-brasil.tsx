@@ -160,7 +160,7 @@ function ProjetoBlock({ projeto, reverse }: { projeto: Projeto; reverse: boolean
         <div>
           <p className="text-sm font-bold uppercase tracking-widest text-primary">{projeto.eyebrow}</p>
           <h2 className="mt-2 text-3xl md:text-4xl font-black text-foreground">{projeto.title}</h2>
-          <p className="mt-4 text-lg text-muted-foreground">{projeto.description}</p>
+          <div className="mt-4 text-lg">{projeto.description}</div>
         </div>
         <div className="rounded-3xl overflow-hidden shadow-card">
           <img src={projeto.gallery[0]?.image} alt={projeto.title} className="h-72 w-full object-cover" />
