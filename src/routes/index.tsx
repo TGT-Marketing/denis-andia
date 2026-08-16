@@ -93,7 +93,7 @@ function Home() {
       <section id="trabalho" className="relative bg-background overflow-hidden">
         <div className="w-full px-2 md:px-6 pt-16 md:pt-24 pb-6 md:pb-8">
           {/* Título gigante ao fundo */}
-          <h2 className="relative z-10 text-center lg:text-left font-black uppercase tracking-tighter leading-[0.85] text-[clamp(2rem,6vw,5rem)]">
+          <h2 className="relative z-10 text-center lg:text-left font-black uppercase tracking-tighter leading-[0.95] text-[clamp(2rem,8vw,5rem)] px-4">
             <span className="text-primary">O TRABALHO</span>{" "}
             <span className="text-foreground">JÁ CHEGOU!</span>
           </h2>
