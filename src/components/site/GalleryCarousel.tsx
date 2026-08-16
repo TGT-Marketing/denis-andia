@@ -28,7 +28,7 @@ export function GalleryCarousel({ items, showCaptions = true }: { items: { image
           {items.map((item, i) => (
             <div key={i} className="min-w-0 shrink-0 grow-0 basis-full sm:basis-1/2 lg:basis-1/3 pr-4">
               <figure className="rounded-2xl overflow-hidden bg-card shadow-card">
-                <img src={item.image} alt={item.caption} loading="lazy" className="h-56 w-full object-cover" />
+                <img src={item.image} alt={item.caption} loading="lazy" className="h-64 w-full object-contain bg-muted" />
                 {showCaptions && <figcaption className="p-4 text-sm font-semibold text-foreground">{item.caption}</figcaption>}
               </figure>
             </div>

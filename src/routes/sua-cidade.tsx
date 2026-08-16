@@ -158,7 +158,7 @@ function ProjetoBlock({ projeto, reverse, showCaptions = true }: { projeto: Proj
           )}
         </div>
         <div className="rounded-3xl overflow-hidden shadow-card">
-          <img src={projeto.gallery[0]?.image} alt={projeto.title} className="h-72 w-full object-cover" />
+          <img src={projeto.gallery[0]?.image} alt={projeto.title} className="h-96 w-full object-contain bg-muted" />
         </div>
       </div>
       <GalleryCarousel items={projeto.gallery} showCaptions={showCaptions} />
