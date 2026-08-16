@@ -40,10 +40,11 @@ const PROJETOS: Projeto[] = [
     title: "Macroprojetos e Infraestrutura",
     description: "Denis Andia teve atuação fundamental na elaboração e avanço de importantes projetos de infraestrutura e transporte em todo o Brasil.",
     gallery: [
-      { image: brasilImg, caption: "Transporte público no Brasil" },
-      { image: trabalhoImg, caption: "Planejamento de mobilidade" },
-      { image: cityImg, caption: "Ônibus elétricos e sustentabilidade" },
-      { image: chapeuImg, caption: "Visitas técnicas e obras" },
+      { image: brasil1.url, caption: "" },
+      { image: brasil2.url, caption: "" },
+      { image: brasil3.url, caption: "" },
+      { image: brasil4.url, caption: "" },
+      { image: brasil5.url, caption: "" },
     ],
   },
   {
@@ -52,10 +53,11 @@ const PROJETOS: Projeto[] = [
     title: "Conquistas e Projetos",
     description: "Lista de atuações e marcos importantes no cenário nacional.",
     gallery: [
-      { image: brasilImg, caption: "Marco Legal do Transporte Público" },
-      { image: trabalhoImg, caption: "Trem Intercidades SP-Campinas" },
-      { image: cityImg, caption: "Rodoanel e BRTs" },
-      { image: peopleImg, caption: "Metrô e VLT" },
+      { image: brasil1.url, caption: "" },
+      { image: brasil2.url, caption: "" },
+      { image: brasil3.url, caption: "" },
+      { image: brasil4.url, caption: "" },
+      { image: brasil5.url, caption: "" },
     ],
   },
 ];
