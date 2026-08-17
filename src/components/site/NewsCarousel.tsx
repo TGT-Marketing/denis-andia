@@ -178,53 +178,71 @@ export function NewsCarousel() {
         <div className="flex">
           {NEWS.map((n, i) => (
             <div key={i} className="min-w-0 shrink-0 grow-0 basis-full md:basis-1/2 lg:basis-1/3 pr-4">
-              <article className="h-full rounded-2xl bg-card shadow-card overflow-hidden">
-                <img src={n.image} alt={n.title} loading="lazy" className="h-52 w-full object-cover" />
-                <div className="p-5">
-                  <span className="inline-block rounded-full bg-accent px-3 py-1 text-xs font-semibold text-accent-foreground">
-                    {n.date}
-                  </span>
-                  <h3 className="mt-3 text-lg font-bold text-foreground">{n.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{n.excerpt}</p>
-                  {n.fullContent ? (
-                    <Dialog>
-                      <DialogTrigger asChild>
-                        <button className="mt-4 text-sm font-semibold text-primary hover:underline cursor-pointer">
-                          Ler mais →
-                        </button>
-                      </DialogTrigger>
-                      <DialogContent className="max-w-3xl w-[95vw] md:w-full h-[90vh] flex flex-col p-0 overflow-hidden border-none bg-background shadow-2xl rounded-2xl">
-                        <div className="relative h-48 md:h-72 w-full shrink-0">
+              <article className="h-full rounded-2xl bg-card shadow-card overflow-hidden flex flex-col">
+                {n.fullContent ? (
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <button className="flex flex-col h-full w-full text-left cursor-pointer group">
+                        <div className="relative h-52 w-full overflow-hidden">
                           <img 
                             src={n.image} 
                             alt={n.title} 
-                            className="h-full w-full object-cover"
+                            loading="lazy" 
+                            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" 
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
                         </div>
-                        <div className="flex-1 min-h-0 flex flex-col px-6 pb-2 -mt-12 relative z-10">
-                          <DialogHeader className="mb-4 shrink-0">
-                            <span className="inline-block w-fit rounded-full bg-accent px-3 py-1 text-xs font-semibold text-accent-foreground mb-3">
-                              {n.date}
+                        <div className="p-5 flex-1 flex flex-col">
+                          <span className="inline-block w-fit rounded-full bg-accent px-3 py-1 text-xs font-semibold text-accent-foreground">
+                            {n.date}
+                          </span>
+                          <h3 className="mt-3 text-lg font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2">{n.title}</h3>
+                          <p className="mt-2 text-sm text-muted-foreground line-clamp-3">{n.excerpt}</p>
+                          <div className="mt-auto pt-4">
+                            <span className="text-sm font-semibold text-primary group-hover:underline flex items-center gap-1">
+                              Ler mais <ChevronRight className="h-4 w-4" />
                             </span>
-                            <DialogTitle className="text-xl md:text-3xl font-bold text-foreground leading-tight text-left">
-                              {n.title}
-                            </DialogTitle>
-                          </DialogHeader>
-                          <ScrollArea className="flex-1 w-full pr-4" type="always">
-                            <div className="pb-12 pt-2 focus:outline-none" tabIndex={0}>
-                              {n.fullContent}
-                            </div>
-                          </ScrollArea>
+                          </div>
                         </div>
-                      </DialogContent>
-                    </Dialog>
-                  ) : (
-                    <button className="mt-4 text-sm font-semibold text-primary hover:underline">
-                      Ler mais →
-                    </button>
-                  )}
-                </div>
+                      </button>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-3xl w-[95vw] md:w-full h-[90vh] flex flex-col p-0 overflow-hidden border-none bg-background shadow-2xl rounded-2xl">
+                      <div className="relative h-48 md:h-72 w-full shrink-0">
+                        <img 
+                          src={n.image} 
+                          alt={n.title} 
+                          className="h-full w-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+                      </div>
+                      <div className="flex-1 min-h-0 flex flex-col px-6 pb-2 -mt-12 relative z-10">
+                        <DialogHeader className="mb-4 shrink-0">
+                          <span className="inline-block w-fit rounded-full bg-accent px-3 py-1 text-xs font-semibold text-accent-foreground mb-3">
+                            {n.date}
+                          </span>
+                          <DialogTitle className="text-xl md:text-3xl font-bold text-foreground leading-tight text-left">
+                            {n.title}
+                          </DialogTitle>
+                        </DialogHeader>
+                        <ScrollArea className="flex-1 w-full pr-4" type="always">
+                          <div className="pb-12 pt-2 focus:outline-none" tabIndex={0}>
+                            {n.fullContent}
+                          </div>
+                        </ScrollArea>
+                      </div>
+                    </DialogContent>
+                  </Dialog>
+                ) : (
+                  <div className="flex flex-col h-full w-full">
+                    <img src={n.image} alt={n.title} loading="lazy" className="h-52 w-full object-cover" />
+                    <div className="p-5 flex-1 flex flex-col">
+                      <span className="inline-block w-fit rounded-full bg-accent px-3 py-1 text-xs font-semibold text-accent-foreground">
+                        {n.date}
+                      </span>
+                      <h3 className="mt-3 text-lg font-bold text-foreground">{n.title}</h3>
+                      <p className="mt-2 text-sm text-muted-foreground">{n.excerpt}</p>
+                    </div>
+                  </div>
+                )}
               </article>
             </div>
           ))}
