@@ -79,8 +79,8 @@ export function GalleryCarousel({ items, showCaptions = true }: { items: { image
           ))}
         </div>
         <div className="flex gap-2">
-          <button onClick={prev} aria-label="Anterior" className="flex h-10 w-10 items-center justify-center rounded-full bg-card shadow-card hover:bg-accent hover:text-accent-foreground transition-colors">
-            <ChevronLeft className="h-5 w-5" />
+          <button onClick={prev} aria-label="Anterior" className="flex h-10 w-10 items-center justify-center rounded-full bg-card shadow-card hover:bg-accent hover:text-accent-foreground transition-colors group">
+            <ChevronLeft className="h-5 w-5 group-hover:text-primary" />
           </button>
           <button onClick={next} aria-label="Próximo" className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-brand hover:opacity-90 transition-opacity">
             <ChevronRight className="h-5 w-5" />
