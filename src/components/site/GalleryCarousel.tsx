@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 export function GalleryCarousel({ items, showCaptions = true }: { items: { image: string; caption?: string }[]; showCaptions?: boolean }) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" });
@@ -27,10 +29,40 @@ export function GalleryCarousel({ items, showCaptions = true }: { items: { image
         <div className="flex">
           {items.map((item, i) => (
             <div key={i} className="min-w-0 shrink-0 grow-0 basis-full sm:basis-1/2 lg:basis-1/3 pr-4">
-              <figure className="rounded-2xl overflow-hidden bg-card shadow-card">
-                <img src={item.image} alt={item.caption} loading="lazy" className="h-56 w-full object-cover" />
-                {showCaptions && <figcaption className="p-4 text-sm font-semibold text-foreground">{item.caption}</figcaption>}
-              </figure>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <button className="w-full text-left cursor-zoom-in">
+                    <figure className="rounded-2xl overflow-hidden bg-card shadow-card group">
+                      <img 
+                        src={item.image} 
+                        alt={item.caption || "Imagem da galeria"} 
+                        loading="lazy" 
+                        className="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                      />
+                      {showCaptions && item.caption && (
+                        <figcaption className="p-4 text-sm font-semibold text-foreground">{item.caption}</figcaption>
+                      )}
+                    </figure>
+                  </button>
+                </DialogTrigger>
+                <DialogContent className="max-w-[90vw] md:max-w-[80vw] lg:max-w-[70vw] p-0 border-none bg-transparent shadow-none overflow-hidden">
+                  <VisuallyHidden>
+                    <DialogTitle>{item.caption || "Imagem ampliada"}</DialogTitle>
+                  </VisuallyHidden>
+                  <div className="flex items-center justify-center w-full h-full max-h-[85vh]">
+                    <img 
+                      src={item.image} 
+                      alt={item.caption || "Imagem ampliada"} 
+                      className="max-w-full max-h-full object-contain rounded-lg"
+                    />
+                  </div>
+                  {item.caption && (
+                    <div className="absolute bottom-0 left-0 right-0 bg-black/60 p-4 text-white text-center">
+                      {item.caption}
+                    </div>
+                  )}
+                </DialogContent>
+              </Dialog>
             </div>
           ))}
         </div>
