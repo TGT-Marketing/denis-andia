@@ -1,6 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import { Play } from "lucide-react";
 import { Layout } from "@/components/site/Layout";
 import { RegionMap } from "@/components/site/RegionMap";
+import { VideoModal } from "@/components/site/VideoModal";
 import { GalleryCarousel } from "@/components/site/GalleryCarousel";
 import people1 from "@/assets/people/denis-people-1.jpeg.asset.json";
 import people2 from "@/assets/people/denis-people-2.jpeg.asset.json";
@@ -15,6 +18,7 @@ import people10 from "@/assets/people/denis-people-10.jpeg.asset.json";
 import people11 from "@/assets/people/denis-people-11.jpeg.asset.json";
 import people12 from "@/assets/people/denis-people-12.jpeg.asset.json";
 import people13 from "@/assets/people/denis-people-13.jpeg.asset.json";
+import trabalhoImg from "@/assets/denis-trabalho.jpg";
 
 export const Route = createFileRoute("/nossa-gente")({
   head: () => ({
@@ -46,34 +50,49 @@ const GALLERY = [
 ];
 
 function NossaGente() {
+  const [videoOpen, setVideoOpen] = useState(false);
+
   return (
     <Layout>
-      <section className="bg-gradient-hero text-white">
-        <div className="mx-auto max-w-7xl px-6 md:px-10 py-16 md:py-24">
-          <p className="text-xs md:text-sm font-bold uppercase tracking-widest text-accent">O que Denis fez</p>
-          <h1 className="mt-3 text-4xl md:text-6xl font-black">Por nossa gente</h1>
-          <div className="mt-8 max-w-3xl">
-            <p className="text-lg md:text-2xl font-bold leading-tight">
-              Líder regional, Denis Andia construiu uma relação de trabalho e confiança em esferas superiores, como o Governo do Estado de São Paulo e o Governo Federal. Seu trabalho abriu portas aos gestores, atuando diretamente na intermediação de recursos para obras e programas.
+      <VideoModal
+        open={videoOpen}
+        onOpenChange={setVideoOpen}
+        title="O que Denis fez por nossa gente"
+        description="Conheça o trabalho de Denis pela nossa gente."
+      />
+
+      <section className="bg-[#0D9344] text-white">
+        <div className="mx-auto max-w-7xl px-6 md:px-10 py-16 md:py-24 grid gap-10 lg:grid-cols-2 items-center">
+          <div>
+            <p className="text-xs md:text-sm font-bold uppercase tracking-widest text-[#FEEE02]">
+              <span className="text-[#FEEE02]">O QUE O DENIS FEZ</span>
             </p>
-            <ul className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-3 gap-x-8 text-lg text-white/90 font-medium">
-              <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-accent" /> Postos de saúde</li>
-              <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-accent" /> Escolas</li>
-              <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-accent" /> Habitação</li>
-              <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-accent" /> Estações de tratamento de água e de esgoto</li>
-              <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-accent" /> Pavimentações e recapeamentos</li>
-              <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-accent" /> Aneis viários</li>
-              <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-accent" /> Pontes e viadutos</li>
-              <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-accent" /> Iluminação pública</li>
-              <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-accent" /> Auxílio às entidades</li>
-            </ul>
+            <h1 className="mt-3 text-4xl md:text-6xl font-black leading-tight">Por nossa gente</h1>
+            <p className="mt-5 max-w-xl text-base md:text-lg text-white/85">
+              Líder regional, Denis Andia construiu uma relação de trabalho e confiança com o Governo do Estado de São Paulo e o Governo Federal. Seu trabalho abriu portas aos gestores, atuando diretamente na intermediação de recursos para obras e programas.
+            </p>
           </div>
+          <button
+            onClick={() => setVideoOpen(true)}
+            className="relative aspect-video w-full overflow-hidden rounded-3xl shadow-card group"
+            aria-label="Reproduzir vídeo"
+          >
+            <img src={trabalhoImg} alt="Denis Andia" className="h-full w-full object-cover" />
+            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors" />
+            <span className="absolute inset-0 flex items-center justify-center">
+              <span className="flex h-20 w-20 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-brand">
+                <Play className="h-8 w-8 fill-current" />
+              </span>
+            </span>
+          </button>
         </div>
       </section>
 
       <section className="bg-background py-16">
         <div className="mx-auto max-w-[1400px] px-4 md:px-10 mb-8">
-          <p className="text-xs font-bold text-primary uppercase tracking-[0.3em]">O Trabalho Já Chegou</p>
+          <p className="text-xs font-bold text-primary uppercase tracking-[0.3em]">
+            TRABALHO JÁ CHEGOU!
+          </p>
           <h2 className="mt-3 text-4xl md:text-5xl font-black tracking-tight">
             Escolha uma região no mapa
           </h2>

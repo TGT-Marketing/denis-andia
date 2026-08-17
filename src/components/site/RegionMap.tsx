@@ -113,14 +113,9 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
       </div>
 
       <div className={mapOnly ? "hidden" : ""}>
-        <p className="text-sm font-semibold uppercase tracking-widest text-primary">Trabalho já chegou</p>
-        <h2 className="mt-2 text-4xl md:text-5xl font-black text-foreground tracking-tight">
-          Onde Denis <span className="text-primary">está</span>
+        <h2 className="text-4xl md:text-5xl font-black text-foreground tracking-tight">
+          O DENIS <span className="text-primary">ESTÁ</span>
         </h2>
-        <p className="mt-4 text-muted-foreground">
-          Passe o mouse sobre uma região do Estado de São Paulo e clique para assistir ao vídeo do
-          trabalho realizado por lá.
-        </p>
 
         <div className="mt-8 flex flex-col gap-3">
           {REGIONS.map((r) => (
@@ -134,7 +129,9 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
               <span className="inline-flex h-8 w-12 items-center justify-center rounded bg-primary text-[12px] font-black text-primary-foreground">
                 {r.short}
               </span>
-              <span className="text-sm font-semibold text-foreground">{r.name}</span>
+              <span className="text-sm font-semibold text-foreground">
+                Na Região Metropolitana de {r.id === "rmc" ? "Campinas" : "Piracicaba"}
+              </span>
             </button>
           ))}
           <button
@@ -146,7 +143,16 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
             <span className="inline-flex h-8 w-12 items-center justify-center rounded bg-muted text-[12px] font-black text-muted-foreground">
               SP
             </span>
-            <span className="text-sm font-semibold text-foreground">Demais Regiões</span>
+            <span className="text-sm font-semibold text-foreground">Nas demais Regiões</span>
+          </button>
+          <button
+            onClick={() => setSelected({ name: "Em todas as cidades" })}
+            className="flex items-center gap-3 text-left rounded-xl border border-border px-4 py-3 hover:bg-muted transition-colors"
+          >
+            <span className="inline-flex h-8 w-12 items-center justify-center rounded bg-muted text-[12px] font-black text-muted-foreground">
+              DA
+            </span>
+            <span className="text-sm font-semibold text-foreground">Em todas as cidades</span>
           </button>
         </div>
       </div>
