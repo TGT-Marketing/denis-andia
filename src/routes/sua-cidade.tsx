@@ -92,10 +92,10 @@ function SuaCidade() {
       />
 
       {/* HERO */}
-      <section className="bg-primary text-white">
+      <section className="bg-[#0D9344] text-white">
         <div className="mx-auto max-w-7xl px-6 md:px-10 py-16 md:py-24 grid gap-10 lg:grid-cols-2 items-center">
           <div>
-            <p className="text-xs md:text-sm font-bold uppercase tracking-widest text-accent">O que Denis fez</p>
+            <p className="text-xs md:text-sm font-bold uppercase tracking-widest text-[#FEEE02]">O que Denis fez</p>
             <h1 className="mt-3 text-4xl md:text-6xl font-black leading-tight">Por sua cidade</h1>
             <p className="mt-5 max-w-xl text-base md:text-lg text-white/85">
               Como prefeito de Santa Bárbara d´Oeste por oito anos, Denis Andia transformou a cidade e resgatou o orgulho do barbarense.
@@ -133,14 +133,14 @@ function ProjetoBlock({ projeto, reverse, showCaptions = true }: { projeto: Proj
   return (
     <article className="space-y-8">
       <div>
-        <p className="text-sm font-bold uppercase tracking-widest text-primary">{projeto.eyebrow}</p>
-        <h2 className="mt-2 text-5xl md:text-7xl font-black text-primary">{projeto.title}</h2>
+        <p className="text-sm font-bold uppercase tracking-widest text-[#0D9344]">{projeto.eyebrow}</p>
+        <h2 className="mt-2 text-5xl md:text-7xl font-black text-[#0D9344]">{projeto.title}</h2>
         <p className="mt-4 text-lg text-muted-foreground">{projeto.description}</p>
         {projeto.topics && projeto.topics.length > 0 && (
           <ul className="mt-6 grid gap-3 sm:grid-cols-2">
             {projeto.topics.map((topic) => (
               <li key={topic} className="flex items-start gap-3 text-foreground">
-                <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-primary" />
+                <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#0D9344]" />
                 <span className="text-base leading-relaxed">{topic}</span>
               </li>
             ))}
