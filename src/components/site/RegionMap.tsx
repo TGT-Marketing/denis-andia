@@ -67,8 +67,8 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
             style={{
               fill:
                 hovered === "demais"
-                  ? "#0F5A9C" // azul escuro
-                  : "#B9CEE8", // azul claro (mantendo o que já estava ou aproximando do solicitado)
+                  ? "var(--brand-blue-dark)" // azul escuro
+                  : "#B9CEE8", // azul claro
               stroke: "#ffffff",
               strokeWidth: 0.5,
             }}
