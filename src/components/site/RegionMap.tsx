@@ -93,36 +93,12 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
                       ? "drop-shadow(0 10px 18px color-mix(in oklab, var(--ink) 35%, transparent))"
                       : "drop-shadow(0 4px 8px color-mix(in oklab, var(--ink) 15%, transparent))",
                     fill: isHover
-                      ? r.id === "rmc" ? "#EAB308" : "#22C55E" // RMC amarelo escuro no hover, RMP verde claro (mantendo o que está no hover)
-                      : r.id === "rmc" ? "#FEF08A" : "#86EFAC", // RMC amarelo claro, RMP verde claro
+                      ? r.id === "rmc" ? "var(--brand-yellow)" : "var(--brand-green)"
+                      : r.id === "rmc" ? "var(--brand-yellow)" : "var(--brand-green)",
                     stroke: "#ffffff",
                     strokeWidth: 1.2,
                   }}
                 />
-                <line
-                  x1={r.id === "rmc" ? 620 : 520}
-                  y1={r.id === "rmc" ? 340 : 300}
-                  x2={r.cx}
-                  y2={r.cy + 8}
-                  pointerEvents="none"
-                  className="block"
-                  style={{ stroke: "var(--ink)", strokeWidth: 2, opacity: 0.6 }}
-                />
-                <text
-                  x={r.cx}
-                  y={r.cy}
-                  textAnchor="middle"
-                  dominantBaseline="middle"
-                  pointerEvents="none"
-                  className="select-none"
-                  style={{ 
-                    fontWeight: 900, 
-                    fill: "var(--ink)",
-                    fontSize: 'clamp(18px, 5vw, 32px)'
-                  }}
-                >
-                  {r.short}
-                </text>
               </g>
             );
           })}
