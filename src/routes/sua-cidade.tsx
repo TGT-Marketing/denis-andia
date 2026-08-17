@@ -92,7 +92,7 @@ function SuaCidade() {
       />
 
       {/* HERO */}
-      <section className="bg-[#0D9344] text-white">
+      <section className="bg-[var(--brand-green)] text-white">
         <div className="mx-auto max-w-7xl px-6 md:px-10 py-16 md:py-24 grid gap-10 lg:grid-cols-2 items-center">
           <div>
             <p className="text-xs md:text-sm font-bold uppercase tracking-widest text-[#FEEE02]">O que Denis fez</p>
@@ -133,13 +133,13 @@ function ProjetoBlock({ projeto, reverse, showCaptions = true }: { projeto: Proj
   return (
     <article className="space-y-8">
       <div>
-        <h2 className="mt-2 text-sm font-medium text-[#0D9344] uppercase tracking-widest">{projeto.title}</h2>
+        <h2 className="mt-2 text-sm font-medium text-[var(--brand-green)] uppercase tracking-widest">{projeto.title}</h2>
         <p className="mt-4 text-lg text-foreground">{projeto.description}</p>
         {projeto.topics && projeto.topics.length > 0 && (
           <ul className="mt-6 grid gap-3 sm:grid-cols-2">
             {projeto.topics.map((topic) => (
               <li key={topic} className="flex items-start gap-3 text-foreground">
-                <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#0D9344]" />
+                <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[var(--brand-green)]" />
                 <span className="text-base leading-relaxed">{topic}</span>
               </li>
             ))}
