@@ -124,7 +124,7 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
               onClick={() => setSelected({ name: r.name })}
               onMouseEnter={() => setHovered(r.id)}
               onMouseLeave={() => setHovered(null)}
-              className="flex items-center gap-3 text-left rounded-xl border border-border px-4 py-3 hover:bg-primary/10 transition-colors"
+              className="flex items-center gap-3 text-left rounded-xl border border-border px-4 py-3 hover:bg-[var(--brand-green)]/10 transition-colors"
             >
               <span className="inline-flex h-8 w-12 items-center justify-center rounded bg-primary text-[12px] font-black text-primary-foreground">
                 {r.short}
