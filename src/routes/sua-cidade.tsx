@@ -133,8 +133,7 @@ function ProjetoBlock({ projeto, reverse, showCaptions = true }: { projeto: Proj
   return (
     <article className="space-y-8">
       <div>
-        <p className="text-sm font-bold uppercase tracking-widest text-[#0D9344]">{projeto.eyebrow}</p>
-        <h2 className="mt-2 text-5xl md:text-7xl font-black text-[#0D9344]">{projeto.title}</h2>
+        <h2 className="mt-2 text-4xl md:text-5xl font-black text-[#0D9344]">{projeto.title}</h2>
         <p className="mt-4 text-lg text-muted-foreground">{projeto.description}</p>
         {projeto.topics && projeto.topics.length > 0 && (
           <ul className="mt-6 grid gap-3 sm:grid-cols-2">
