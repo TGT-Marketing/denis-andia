@@ -99,15 +99,6 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
                     strokeWidth: 1.2,
                   }}
                 />
-                <line
-                  x1={r.id === "rmc" ? 620 : 520}
-                  y1={r.id === "rmc" ? 340 : 300}
-                  x2={r.cx}
-                  y2={r.cy + 8}
-                  pointerEvents="none"
-                  className="block"
-                  style={{ stroke: "var(--ink)", strokeWidth: 2, opacity: 0.6 }}
-                />
               </g>
             );
           })}
