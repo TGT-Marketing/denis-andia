@@ -100,7 +100,7 @@ function PeloBrasil() {
               O QUE O DENIS FEZ
             </p>
             <h1 className="mt-3 text-4xl md:text-6xl font-black leading-tight uppercase">PELO BRASIL</h1>
-            <p className="mt-5 max-w-xl text-base md:text-lg text-white font-bold">
+            <p className="mt-5 max-w-xl text-base md:text-lg text-white">
               Secretário Nacional de Mobilidade Urbana do Ministério das Cidades durante três anos, Denis Andia teve atuação fundamental na elaboração e avanço de importantes projetos de infraestrutura e transporte em todo o Brasil.
             </p>
           </div>
