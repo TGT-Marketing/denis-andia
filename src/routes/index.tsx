@@ -144,7 +144,7 @@ function Home() {
             <div>
               <h2 className="relative z-10 text-center md:text-left font-black uppercase tracking-tighter leading-[0.95] text-[clamp(2rem,8vw,5rem)] px-4 md:px-0">
                 <span className="text-foreground">ACONTECEU E É</span>{" "}
-                <span className="text-primary">NOTÍCIA</span>
+                <span className="text-primary">NOTÍCIA!</span>
               </h2>
             </div>
           </div>
