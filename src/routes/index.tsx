@@ -123,8 +123,8 @@ function Home() {
           </div>
 
           <div className="relative z-20 mt-6 flex flex-wrap gap-3 justify-center lg:justify-start lg:pl-6">
-            <Legend color="#FEF08A" label="RMC — Região Metropolitana de Campinas" />
-            <Legend color="#86EFAC" label="RMP — Região Metropolitana de Piracicaba" />
+            <Legend color="var(--brand-yellow)" label="RMC — Região Metropolitana de Campinas" />
+            <Legend color="var(--brand-green)" label="RMP — Região Metropolitana de Piracicaba" />
             <Legend color="#B9CEE8" label="Demais Regiões" />
           </div>
 
