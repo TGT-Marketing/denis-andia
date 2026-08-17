@@ -47,9 +47,9 @@ const PROJETOS: Projeto[] = [
   {
     id: "legado",
     eyebrow: "Legado",
-    title: "Legado em Santa Bárbara d'Oeste",
+    title: "LEGADO",
     description:
-      "Como prefeito de Santa Bárbara d'Oeste por oito anos, Denis Andia transformou a cidade e resgatou o orgulho do barbarense! Com autoestima, o cidadão passou a enxergar uma cidade mais moderna, organizada e preparada para o futuro.",
+      "Com autoestima, o cidadão passou a enxergar uma cidade mais moderna, organizada e preparada para o futuro.",
     topics: [
       "Fim da única favela existente na cidade",
       "Alas pediátricas nos prontos-socorros",
@@ -92,23 +92,14 @@ function SuaCidade() {
       />
 
       {/* HERO */}
-      <section className="bg-gradient-hero text-white">
+      <section className="bg-[#0D9344] text-white">
         <div className="mx-auto max-w-7xl px-6 md:px-10 py-16 md:py-24 grid gap-10 lg:grid-cols-2 items-center">
           <div>
-            <p className="text-xs md:text-sm font-bold uppercase tracking-widest text-accent">O que Denis fez</p>
+            <p className="text-xs md:text-sm font-bold uppercase tracking-widest text-[#FEEE02]">O que Denis fez</p>
             <h1 className="mt-3 text-4xl md:text-6xl font-black leading-tight">Por sua cidade</h1>
             <p className="mt-5 max-w-xl text-base md:text-lg text-white/85">
-              Santa Bárbara d'Oeste virou referência em habitação, saúde e educação. Um legado construído com trabalho, presença e compromisso com as pessoas.
+              Como prefeito de Santa Bárbara d´Oeste por oito anos, Denis Andia transformou a cidade e resgatou o orgulho do barbarense.
             </p>
-            <button
-              onClick={() => setVideoOpen(true)}
-              className="mt-8 inline-flex items-center gap-3 rounded-full bg-primary px-6 py-3 text-primary-foreground font-bold shadow-brand hover:opacity-90 transition-opacity"
-            >
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/20">
-                <Play className="h-4 w-4 fill-current" />
-              </span>
-              Assista ao vídeo
-            </button>
           </div>
           <button
             onClick={() => setVideoOpen(true)}
@@ -142,14 +133,14 @@ function ProjetoBlock({ projeto, reverse, showCaptions = true }: { projeto: Proj
   return (
     <article className="space-y-8">
       <div>
-        <p className="text-sm font-bold uppercase tracking-widest text-primary">{projeto.eyebrow}</p>
-        <h2 className="mt-2 text-3xl md:text-4xl font-black text-foreground">{projeto.title}</h2>
+        <p className="text-sm font-bold uppercase tracking-widest text-[#0D9344]">{projeto.eyebrow}</p>
+        <h2 className="mt-2 text-5xl md:text-7xl font-black text-[#0D9344]">{projeto.title}</h2>
         <p className="mt-4 text-lg text-muted-foreground">{projeto.description}</p>
         {projeto.topics && projeto.topics.length > 0 && (
           <ul className="mt-6 grid gap-3 sm:grid-cols-2">
             {projeto.topics.map((topic) => (
               <li key={topic} className="flex items-start gap-3 text-foreground">
-                <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-primary" />
+                <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#0D9344]" />
                 <span className="text-base leading-relaxed">{topic}</span>
               </li>
             ))}

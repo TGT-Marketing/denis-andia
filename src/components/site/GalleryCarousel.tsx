@@ -74,15 +74,15 @@ export function GalleryCarousel({ items, showCaptions = true }: { items: { image
               key={i}
               onClick={() => emblaApi?.scrollTo(i)}
               aria-label={`Slide ${i + 1}`}
-              className={`h-2 rounded-full transition-all ${i === selected ? "w-8 bg-primary" : "w-2 bg-muted-foreground/40"}`}
+              className={`h-2 rounded-full transition-all ${i === selected ? "w-8 bg-[#0D9344]" : "w-2 bg-muted-foreground/40"}`}
             />
           ))}
         </div>
         <div className="flex gap-2">
-          <button onClick={prev} aria-label="Anterior" className="flex h-10 w-10 items-center justify-center rounded-full bg-card shadow-card hover:bg-accent hover:text-accent-foreground transition-colors">
-            <ChevronLeft className="h-5 w-5" />
+          <button onClick={prev} aria-label="Anterior" className="flex h-10 w-10 items-center justify-center rounded-full bg-card shadow-card hover:bg-[#FEEE02] hover:text-accent-foreground transition-colors group">
+            <ChevronLeft className="h-5 w-5 group-hover:text-[#0D9344]" />
           </button>
-          <button onClick={next} aria-label="Próximo" className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-brand hover:opacity-90 transition-opacity">
+          <button onClick={next} aria-label="Próximo" className="flex h-10 w-10 items-center justify-center rounded-full bg-[#0D9344] text-primary-foreground shadow-brand hover:opacity-90 transition-opacity">
             <ChevronRight className="h-5 w-5" />
           </button>
         </div>
