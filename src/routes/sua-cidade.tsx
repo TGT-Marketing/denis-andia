@@ -139,7 +139,7 @@ function ProjetoBlock({ projeto, reverse, showCaptions = true }: { projeto: Proj
           <ul className="mt-6 grid gap-3 sm:grid-cols-2">
             {projeto.topics.map((topic) => (
               <li key={topic} className="flex items-start gap-3 text-foreground">
-                <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#0D9344]" />
+                <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[var(--brand-green)]" />
                 <span className="text-base leading-relaxed">{topic}</span>
               </li>
             ))}
