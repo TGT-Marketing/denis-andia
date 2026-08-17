@@ -45,15 +45,22 @@ const PROJETOS: Projeto[] = [
     eyebrow: "Pelo Brasil",
     title: "PROJETOS",
     description: (
-      <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
-        <li>Marco Legal do Transporte Público (mais investimentos e possibilidade de tarifas mais acessíveis ao usuário)</li>
-        <li>Ônibus elétricos e renovação das frotas em diversas cidades do País</li>
-        <li>Trem Intercidades São Paulo – Campinas</li>
-        <li>Trecho Norte do Rodoanel</li>
-        <li>BRTs de Campinas, Sorocaba e São José dos Campos</li>
-        <li>Nove linhas do metrô paulistano</li>
-        <li>VLT Baixada Santista</li>
-        <li>Túnel submerso Santos – Guarujá</li>
+      <ul className="grid gap-3 sm:grid-cols-2">
+        {[
+          "Marco Legal do Transporte Público (mais investimentos e possibilidade de tarifas mais acessíveis ao usuário)",
+          "Ônibus elétricos e renovação das frotas em diversas cidades do País",
+          "Trem Intercidades São Paulo – Campinas",
+          "Trecho Norte do Rodoanel",
+          "BRTs de Campinas, Sorocaba e São José dos Campos",
+          "Nove linhas do metrô paulistano",
+          "VLT Baixada Santista",
+          "Túnel submerso Santos – Guarujá",
+        ].map((topic) => (
+          <li key={topic} className="flex items-start gap-3 text-foreground">
+            <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[var(--brand-green)]" />
+            <span className="text-base leading-relaxed">{topic}</span>
+          </li>
+        ))}
       </ul>
     ),
     gallery: [
@@ -90,7 +97,7 @@ function PeloBrasil() {
         <div className="mx-auto max-w-7xl px-6 md:px-10 py-16 md:py-24 grid gap-10 lg:grid-cols-2 items-center">
           <div>
             <p className="text-xs md:text-sm font-bold uppercase tracking-widest text-[var(--brand-yellow)]">
-              O QUE O DENIS FEZ <span className="text-white">Pelo Brasil</span>
+              O QUE O DENIS FEZ
             </p>
             <h1 className="mt-3 text-4xl md:text-6xl font-black leading-tight uppercase">PELO BRASIL</h1>
             <p className="mt-5 max-w-xl text-base md:text-lg text-white font-bold">
