@@ -68,7 +68,7 @@ function NossaGente() {
               <span className="text-[var(--brand-yellow)]">O QUE O DENIS FEZ</span>
             </p>
             <h1 className="mt-3 text-4xl md:text-6xl font-black leading-tight">Por nossa gente</h1>
-            <p className="mt-5 max-w-xl text-base md:text-lg text-white/85">
+            <p className="mt-5 max-w-xl text-base md:text-lg text-white">
               Líder regional, Denis Andia construiu uma relação de trabalho e confiança com o Governo do Estado de São Paulo e o Governo Federal. Seu trabalho abriu portas aos gestores, atuando diretamente na intermediação de recursos para obras e programas.
             </p>
           </div>
@@ -91,7 +91,7 @@ function NossaGente() {
       <section className="bg-background py-16">
         <div className="mx-auto max-w-[1400px] px-4 md:px-10 mb-8">
           <p className="text-xs font-bold text-primary uppercase tracking-[0.3em]">
-            TRABALHO JÁ CHEGOU!
+            O TRABALHO JÁ CHEGOU!
           </p>
           <h2 className="mt-3 text-4xl md:text-5xl font-black tracking-tight">
             Escolha uma região no mapa
