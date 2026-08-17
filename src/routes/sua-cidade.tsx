@@ -109,7 +109,7 @@ function SuaCidade() {
             <img src={trabalhoImg} alt="Denis Andia" className="h-full w-full object-cover" />
             <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors" />
             <span className="absolute inset-0 flex items-center justify-center">
-              <span className="flex h-20 w-20 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-brand">
+              <span className="flex h-20 w-20 items-center justify-center rounded-full bg-[var(--brand-yellow)] text-ink shadow-brand">
                 <Play className="h-8 w-8 fill-current" />
               </span>
             </span>

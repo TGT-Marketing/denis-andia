@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useCallback, useEffect, useState } from "react";
-import useEmblaCarousel from "embla-carousel-react";
-import { ChevronLeft, ChevronRight, Play } from "lucide-react";
+import { useState } from "react";
+import { Play } from "lucide-react";
 import { GalleryCarousel } from "@/components/site/GalleryCarousel";
 import { Layout } from "@/components/site/Layout";
 import { VideoModal } from "@/components/site/VideoModal";
@@ -87,19 +86,19 @@ function PeloBrasil() {
       />
 
       {/* HERO */}
-      <section className="bg-gradient-hero text-white">
+      <section className="bg-[var(--brand-green)] text-white">
         <div className="mx-auto max-w-7xl px-6 md:px-10 py-16 md:py-24 grid gap-10 lg:grid-cols-2 items-center">
           <div>
-            <p className="text-xs md:text-sm font-bold uppercase tracking-widest text-accent">Pelo Brasil</p>
+            <p className="text-xs md:text-sm font-bold uppercase tracking-widest text-[var(--brand-yellow)]">Pelo Brasil</p>
             <h1 className="mt-3 text-4xl md:text-6xl font-black leading-tight uppercase">PELO BRASIL</h1>
-            <p className="mt-5 max-w-xl text-base md:text-lg text-white/85 font-bold">
+            <p className="mt-5 max-w-xl text-base md:text-lg text-white font-bold">
               Secretário Nacional de Mobilidade Urbana do Ministério das Cidades durante três anos, Denis Andia teve atuação fundamental na elaboração e avanço de importantes projetos de infraestrutura e transporte em todo o Brasil.
             </p>
             <button
               onClick={() => setVideoOpen(true)}
-              className="mt-8 inline-flex items-center gap-3 rounded-full bg-primary px-6 py-3 text-primary-foreground font-bold shadow-brand hover:opacity-90 transition-opacity"
+              className="mt-8 inline-flex items-center gap-3 rounded-full bg-[var(--brand-yellow)] px-6 py-3 text-ink font-bold shadow-brand hover:opacity-90 transition-opacity"
             >
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/20">
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-black/10">
                 <Play className="h-4 w-4 fill-current" />
               </span>
               Assista ao vídeo
@@ -113,7 +112,7 @@ function PeloBrasil() {
             <img src={trabalhoImg} alt="Denis Andia" className="h-full w-full object-cover" />
             <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors" />
             <span className="absolute inset-0 flex items-center justify-center">
-              <span className="flex h-20 w-20 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-brand">
+              <span className="flex h-20 w-20 items-center justify-center rounded-full bg-[var(--brand-yellow)] text-ink shadow-brand">
                 <Play className="h-8 w-8 fill-current" />
               </span>
             </span>
@@ -137,7 +136,7 @@ function ProjetoBlock({ projeto }: { projeto: Projeto }) {
   return (
     <article className="space-y-8">
       <div>
-        <p className="text-sm font-bold uppercase tracking-widest text-primary">{projeto.eyebrow}</p>
+        <p className="text-sm font-bold uppercase tracking-widest text-[var(--brand-green)]">{projeto.eyebrow}</p>
         <h2 className="mt-2 text-3xl md:text-4xl font-black text-foreground">{projeto.title}</h2>
         <div className="mt-4 text-lg">{projeto.description}</div>
       </div>
@@ -145,4 +144,3 @@ function ProjetoBlock({ projeto }: { projeto: Projeto }) {
     </article>
   );
 }
-
