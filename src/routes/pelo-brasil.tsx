@@ -43,7 +43,7 @@ const PROJETOS: Projeto[] = [
   {
     id: "projetos",
     eyebrow: "Pelo Brasil",
-    title: "Conquistas e Projetos",
+    title: "PROJETOS",
     description: (
       <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
         <li>Marco Legal do Transporte Público (mais investimentos e possibilidade de tarifas mais acessíveis ao usuário)</li>
@@ -89,20 +89,13 @@ function PeloBrasil() {
       <section className="bg-[var(--brand-green)] text-white">
         <div className="mx-auto max-w-7xl px-6 md:px-10 py-16 md:py-24 grid gap-10 lg:grid-cols-2 items-center">
           <div>
-            <p className="text-xs md:text-sm font-bold uppercase tracking-widest text-[var(--brand-yellow)]">Pelo Brasil</p>
+            <p className="text-xs md:text-sm font-bold uppercase tracking-widest text-[var(--brand-yellow)]">
+              O QUE O DENIS FEZ <span className="text-white">Pelo Brasil</span>
+            </p>
             <h1 className="mt-3 text-4xl md:text-6xl font-black leading-tight uppercase">PELO BRASIL</h1>
             <p className="mt-5 max-w-xl text-base md:text-lg text-white font-bold">
               Secretário Nacional de Mobilidade Urbana do Ministério das Cidades durante três anos, Denis Andia teve atuação fundamental na elaboração e avanço de importantes projetos de infraestrutura e transporte em todo o Brasil.
             </p>
-            <button
-              onClick={() => setVideoOpen(true)}
-              className="mt-8 inline-flex items-center gap-3 rounded-full bg-[var(--brand-yellow)] px-6 py-3 text-ink font-bold shadow-brand hover:opacity-90 transition-opacity"
-            >
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-black/10">
-                <Play className="h-4 w-4 fill-current" />
-              </span>
-              Assista ao vídeo
-            </button>
           </div>
           <button
             onClick={() => setVideoOpen(true)}
@@ -136,9 +129,8 @@ function ProjetoBlock({ projeto }: { projeto: Projeto }) {
   return (
     <article className="space-y-8">
       <div>
-        <p className="text-sm font-bold uppercase tracking-widest text-[var(--brand-green)]">{projeto.eyebrow}</p>
-        <h2 className="mt-2 text-3xl md:text-4xl font-black text-foreground">{projeto.title}</h2>
-        <div className="mt-4 text-lg">{projeto.description}</div>
+        <h2 className="mt-2 text-sm font-bold text-[var(--brand-green)] uppercase tracking-widest">{projeto.title}</h2>
+        <div className="mt-4 text-lg text-muted-foreground">{projeto.description}</div>
       </div>
       <GalleryCarousel items={projeto.gallery} showCaptions={false} />
     </article>
