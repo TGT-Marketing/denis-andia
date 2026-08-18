@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { VideoModal } from "./VideoModal";
+import { CitiesModal } from "./CitiesModal";
 import spPaths from "./sp-paths.json";
 
 type Region = {
@@ -38,6 +39,7 @@ const REGIONS: Region[] = [
 export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
   const [hovered, setHovered] = useState<string | null>(null);
   const [selected, setSelected] = useState<{ name: string } | null>(null);
+  const [citiesOpen, setCitiesOpen] = useState(false);
 
   const others = {
     id: "demais",
@@ -146,7 +148,7 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
             <span className="text-sm font-semibold text-foreground">Nas demais Regiões</span>
           </button>
           <button
-            onClick={() => setSelected({ name: "Em todas as cidades" })}
+            onClick={() => setCitiesOpen(true)}
             className="flex items-center gap-3 text-left rounded-xl border border-border px-4 py-3 hover:bg-muted transition-colors"
           >
             <span className="inline-flex h-8 w-12 items-center justify-center rounded bg-muted text-[12px] font-black text-muted-foreground">
@@ -162,6 +164,11 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
         onOpenChange={(o) => !o && setSelected(null)}
         title={selected?.name ?? ""}
         description={selected ? `Trabalho de Denis em ${selected.name}.` : undefined}
+      />
+
+      <CitiesModal 
+        open={citiesOpen} 
+        onOpenChange={setCitiesOpen} 
       />
     </div>
   );
