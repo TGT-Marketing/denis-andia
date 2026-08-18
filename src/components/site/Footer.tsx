@@ -19,14 +19,14 @@ export function Footer() {
 
       <div className="relative z-20 mx-auto max-w-[1400px] px-6 md:px-10 pt-16 pb-6 min-h-[45vw] md:min-h-[42vw] flex flex-col">
         {/* Centro — chamada sobre a mão da foto central */}
-        <div className="flex-1 flex items-end justify-center pb-4 md:pb-6">
-          <p className="text-center font-black uppercase tracking-[0.2em] text-2xl md:text-5xl lg:text-7xl drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]">
+        <div className="flex-1 flex items-end justify-center pb-8 md:pb-6">
+          <p className="text-center font-black uppercase tracking-[0.2em] text-2xl md:text-xl lg:text-7xl drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]">
             Abrace o novo
           </p>
         </div>
 
         {/* Mídias — canto direito, pequenas */}
-        <div className="flex items-center justify-end gap-3">
+        <div className="flex items-center justify-end gap-3 pb-2 md:pb-0">
           {SOCIAL.map((s) => (
             <a
               key={s.label}
