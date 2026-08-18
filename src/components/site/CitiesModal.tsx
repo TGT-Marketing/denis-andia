@@ -362,7 +362,7 @@ export function CitiesModal({ open, onOpenChange }: CitiesModalProps) {
                       <ul className="space-y-2 pl-3">
                         {city.items.map((item, idx) => (
                           <li key={idx} className="text-sm text-muted-foreground leading-relaxed flex items-start gap-2">
-                            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--brand-green)] opacity-60" />
+                            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0D9344]" />
                             {item}
                           </li>
                         ))}
