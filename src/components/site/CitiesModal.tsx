@@ -207,7 +207,12 @@ const CITY_DATA: RegionData[] = [
           "R$ 500 mil (recapeamento)",
           "Moradias do Minha Casa Minha Vida"
         ]
-      },
+      }
+    ]
+  },
+  {
+    region: "DEMAIS REGIÕES",
+    cities: [
       {
         city: "Amparo",
         items: ["R$ 1,2 milhão (pavimentação e recapeamento)"]
