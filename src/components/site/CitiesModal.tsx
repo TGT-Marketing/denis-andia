@@ -333,7 +333,7 @@ interface CitiesModalProps {
 export function CitiesModal({ open, onOpenChange }: CitiesModalProps) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-4xl max-h-[90vh] flex flex-col p-0 overflow-hidden bg-card border-none shadow-2xl">
+      <DialogContent className="max-w-4xl h-[90vh] flex flex-col p-0 overflow-hidden bg-card border-none shadow-2xl">
         <DialogHeader className="px-8 pt-8 pb-4 bg-white shrink-0">
           <DialogTitle className="text-3xl font-black text-[var(--brand-green)] uppercase tracking-tight">
             Em todas as cidades
