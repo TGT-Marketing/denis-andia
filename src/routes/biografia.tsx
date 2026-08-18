@@ -1,6 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
+import { Play } from "lucide-react";
 import { Layout } from "@/components/site/Layout";
 import { GalleryCarousel } from "@/components/site/GalleryCarousel";
+import { VideoModal } from "@/components/site/VideoModal";
 import walkAsset from "@/assets/denis-chapeu.jpg";
 import rallyBgAsset from "@/assets/denis-menina.jpg";
 import cutoutAsset from "@/assets/denis-trabalho.jpg";
@@ -45,8 +48,17 @@ const GALLERY = [
 ];
 
 function Biografia() {
+  const [videoOpen, setVideoOpen] = useState(false);
+
   return (
     <Layout transparentHeader>
+      <VideoModal
+        open={videoOpen}
+        onOpenChange={setVideoOpen}
+        title="Gente que conhece gente"
+        description="Conheça a história de Denis Andia"
+      />
+
       {/* HERO */}
       <section className="relative overflow-hidden text-white" style={{ backgroundColor: "var(--ink)" }}>
         <div
@@ -57,41 +69,41 @@ function Biografia() {
           className="absolute inset-0"
           style={{ background: "linear-gradient(to bottom, color-mix(in oklab, var(--ink) 80%, transparent), color-mix(in oklab, var(--ink) 40%, transparent), var(--ink))" }}
         />
-        <div className="relative mx-auto max-w-[1400px] px-6 md:px-10 pt-32 md:pt-40 pb-16 md:pb-24 grid gap-10 lg:grid-cols-[1.1fr_1fr] items-end">
+        <div className="relative mx-auto max-w-[1400px] px-6 md:px-10 pt-32 md:pt-40 pb-16 md:pb-24 grid gap-10 lg:grid-cols-[1.1fr_1fr] items-center">
           <div>
             <p className="text-[10px] md:text-xs font-bold uppercase tracking-[0.35em] text-accent">Biografia</p>
             <h1 className="mt-4 text-4xl md:text-7xl font-black leading-[0.95] tracking-tight">
-              A história
-              <span className="block text-accent italic font-serif font-normal my-2">de um jeito</span>
-              de fazer política.
+              Gente que
+              <span className="block text-accent italic font-serif font-normal my-2">conhece gente!</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg text-white/85">
               Do interior paulista ao Brasil. Uma trajetória construída ouvindo, andando e entregando — com quem faz o país acontecer todos os dias.
             </p>
           </div>
-          <div className="relative hidden lg:block">
-            <img src={cutout} alt="Denis Andia" className="w-full h-auto object-contain drop-shadow-2xl" />
+          <div className="relative">
+            <button
+              onClick={() => setVideoOpen(true)}
+              className="relative aspect-video w-full overflow-hidden rounded-3xl shadow-card group"
+              aria-label="Reproduzir vídeo"
+            >
+              <img src={cutout} alt="Denis Andia" className="h-full w-full object-cover" />
+              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors" />
+              <span className="absolute inset-0 flex items-center justify-center">
+                <span className="flex h-16 w-16 md:h-20 md:w-20 items-center justify-center rounded-full bg-[var(--brand-yellow)] text-ink shadow-brand">
+                  <Play className="h-6 w-6 md:h-8 md:w-8 fill-current" />
+                </span>
+              </span>
+            </button>
           </div>
         </div>
       </section>
 
       {/* HISTÓRIA */}
-      <section className="bg-background py-24">
-        <div className="mx-auto max-w-[1200px] px-4 md:px-10 grid gap-14 lg:grid-cols-[1fr_1.1fr] items-center">
-          <div className="relative">
-            <img
-              src={walkImg}
-              alt="Denis Andia"
-              className="relative rounded-[1.5rem] shadow-brand w-full h-auto object-cover aspect-[4/5]"
-            />
-          </div>
+      <section className="bg-background pt-24 pb-12">
+        <div className="mx-auto max-w-[1200px] px-4 md:px-10">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-primary">A história</p>
-            <h2 className="mt-4 text-4xl md:text-5xl font-black tracking-tight">
-              Gente que
-              <span className="block text-primary italic font-serif font-normal my-1">conhece gente!</span>
-            </h2>
-            <div className="mt-6 space-y-5 text-lg text-muted-foreground">
+            <div className="mt-8 space-y-5 text-lg text-muted-foreground">
               <p>
                 Nascido em Santa Bárbara d’Oeste (SP), Denis Eduardo Andia é o caçula de uma família típica do interior paulista. Filho de uma professora primária, que lecionou em escolas rurais, e de um trabalhador que dedicou toda a sua carreira à mesma empresa, onde ingressou ainda jovem. É casado com a Roberta.
               </p>
@@ -112,40 +124,9 @@ function Biografia() {
         </div>
       </section>
 
-      {/* LINHA DO TEMPO */}
-      <section className="bg-[oklch(0.97_0.03_145)] py-24">
-        <div className="mx-auto max-w-[1200px] px-4 md:px-10">
-          <p className="text-xs font-bold uppercase tracking-[0.3em] text-primary">Linha do tempo</p>
-          <h2 className="mt-3 text-4xl md:text-5xl font-black tracking-tight">
-            Marcos de uma
-            <span className="text-primary italic font-serif font-normal"> jornada.</span>
-          </h2>
-
-          <ol className="relative mt-14 border-l-2 border-primary/30 pl-8 space-y-10">
-            {TIMELINE.map((item) => (
-              <li key={item.year} className="relative">
-                <span className="absolute -left-[42px] top-1 flex h-6 w-6 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-brand">
-                  <span className="h-2 w-2 rounded-full bg-primary-foreground" />
-                </span>
-                <div className="flex flex-wrap items-baseline gap-3">
-                  <span className="text-2xl md:text-3xl font-black text-primary">{item.year}</span>
-                  <h3 className="text-xl md:text-2xl font-black text-foreground">{item.title}</h3>
-                </div>
-                <p className="mt-2 text-base md:text-lg text-muted-foreground max-w-3xl">{item.text}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
       {/* GALERIA */}
-      <section className="bg-background py-24">
+      <section className="bg-background pb-24">
         <div className="mx-auto max-w-7xl px-4 md:px-8">
-          <p className="text-xs font-bold uppercase tracking-[0.3em] text-primary">Fotos</p>
-          <h2 className="mt-3 mb-12 text-4xl md:text-5xl font-black tracking-tight">
-            Instantes
-            <span className="text-primary italic font-serif font-normal"> da caminhada.</span>
-          </h2>
           <GalleryCarousel items={GALLERY} showCaptions={false} />
         </div>
       </section>
@@ -155,33 +136,10 @@ function Biografia() {
         <div className="mx-auto max-w-[1000px] px-4 md:px-10 text-center">
           <div className="text-6xl md:text-7xl font-serif text-primary leading-none">"</div>
           <blockquote className="text-2xl md:text-4xl font-black tracking-tight text-foreground leading-tight">
-            Política de verdade se faz perto de gente. É andando, ouvindo e entregando que a gente muda a vida das pessoas.
+            “Nada melhor que uma ideia cujo o tempo chegou”.
           </blockquote>
           <div className="mt-6 text-sm font-bold uppercase tracking-[0.3em] text-muted-foreground">
-            Denis Andia
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-20 text-white" style={{ backgroundColor: "var(--ink)" }}>
-        <div className="mx-auto max-w-[1000px] px-4 md:px-10 text-center">
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight">
-            Vamos juntos <span className="text-accent italic font-serif font-normal">abraçar o novo?</span>
-          </h2>
-          <div className="mt-8 flex flex-wrap gap-4 justify-center">
-            <Link
-              to="/sua-cidade"
-              className="inline-flex items-center rounded-full bg-primary px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-primary-foreground shadow-brand hover:opacity-90 transition"
-            >
-              Ver trabalho por cidade
-            </Link>
-            <Link
-              to="/pelo-brasil"
-              className="inline-flex items-center rounded-full border-2 border-white/80 px-8 py-3.5 text-sm font-bold uppercase tracking-wider hover:bg-white hover:text-ink transition"
-            >
-              Pelo Brasil
-            </Link>
+            DENIS ANDIA
           </div>
         </div>
       </section>
