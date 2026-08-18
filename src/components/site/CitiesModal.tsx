@@ -343,7 +343,7 @@ export function CitiesModal({ open, onOpenChange }: CitiesModalProps) {
           </DialogDescription>
         </DialogHeader>
 
-        <ScrollArea className="flex-1 px-8 pb-10">
+        <ScrollArea className="flex-1 px-8 pb-10" scrollbars="vertical">
           <div className="space-y-12 py-6">
             {CITY_DATA.map((region) => (
               <div key={region.region} className="space-y-6">
