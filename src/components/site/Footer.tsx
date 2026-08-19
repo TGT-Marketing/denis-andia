@@ -19,14 +19,14 @@ export function Footer() {
 
       <div className="relative z-20 mx-auto max-w-[1400px] px-6 md:px-10 pt-16 pb-6 min-h-[45vw] md:min-h-[42vw] flex flex-col">
         {/* Centro — chamada sobre a mão da foto central */}
-        <div className="flex-1 flex flex-col items-center justify-end pb-4 md:pb-12">
+        <div className="flex-1 flex flex-col items-center justify-end pb-1 md:pb-1">
           <div className="flex flex-col items-center gap-4 md:block">
             <p className="text-center font-black uppercase tracking-[0.2em] text-xl md:text-5xl lg:text-8xl drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]">
               Abrace o novo
             </p>
             
             {/* Mídias — em mobile fica centralizado abaixo da frase, em desktop no canto direito */}
-            <div className="flex md:absolute md:right-10 md:bottom-28 items-center justify-center gap-3 md:mt-0">
+            <div className="flex md:absolute md:right-10 md:bottom-18 items-center justify-center gap-3 md:mt-0">
               {SOCIAL.map((s) => (
                 <a
                   key={s.label}
@@ -44,7 +44,7 @@ export function Footer() {
 
       {/* bottom bar */}
       <div className="relative z-20 border-t border-foreground/15">
-        <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-4 flex flex-col md:flex-row justify-between items-center gap-2 text-[9px] font-semibold tracking-[0.12em] uppercase text-white/70 text-center md:text-left">
+        <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-4 flex flex-col md:flex-row justify-between items-center gap-2 text-[7px] md:text-[9px] font-semibold tracking-[0.12em] uppercase text-white/70 text-center md:text-left">
           <p>
             Candidato Denis Andia © {new Date().getFullYear()} — Todos os direitos reservados ·{" "}
             <a
