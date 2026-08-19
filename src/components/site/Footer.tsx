@@ -20,7 +20,7 @@ export function Footer() {
       <div className="relative z-20 mx-auto max-w-[1400px] px-6 md:px-10 pt-16 pb-0 md:pb-6 min-h-[45vw] md:min-h-[42vw] flex flex-col">
         {/* Centro — chamada sobre a mão da foto central */}
         <div className="flex-1 flex flex-col items-center justify-end pb-0">
-          <div className="flex flex-col items-center gap-0 md:block translate-y-2 md:translate-y-0">
+          <div className="flex flex-col items-center gap-0 md:block translate-y-3.5 md:translate-y-0">
             <p className="text-center font-black uppercase tracking-[0.2em] text-lg md:text-5xl lg:text-8xl drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]">
               Abrace o novo
             </p>
