@@ -77,7 +77,7 @@ function Biografia() {
               <span className="block text-accent italic font-serif font-normal my-2">conhece gente!</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg text-white/85">
-              Do interior paulista ao Brasil. Uma trajetória construída ouvindo, andando e entregando — com quem faz o país acontecer todos os dias.
+              Do interior para todo o Brasil. Trabalho honesto, feito com amor.
             </p>
           </div>
           <div className="relative">
