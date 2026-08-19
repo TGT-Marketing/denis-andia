@@ -17,16 +17,16 @@ export function Footer() {
       />
       <div className="absolute inset-0 z-0 bg-black/40" />
 
-      <div className="relative z-20 mx-auto max-w-[1400px] px-6 md:px-10 pt-16 pb-2 md:pb-6 min-h-[45vw] md:min-h-[42vw] flex flex-col">
+      <div className="relative z-20 mx-auto max-w-[1400px] px-6 md:px-10 pt-16 pb-0 md:pb-6 min-h-[45vw] md:min-h-[42vw] flex flex-col">
         {/* Centro — chamada sobre a mão da foto central */}
         <div className="flex-1 flex flex-col items-center justify-end pb-0 md:pb-1">
-          <div className="flex flex-col items-center gap-1 md:block">
+          <div className="flex flex-col items-center gap-0.5 md:block">
             <p className="text-center font-black uppercase tracking-[0.2em] text-lg md:text-5xl lg:text-8xl drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]">
               Abrace o novo
             </p>
             
             {/* Mídias — em mobile fica centralizado abaixo da frase, em desktop no canto direito */}
-            <div className="flex md:absolute md:right-10 md:bottom-18 items-center justify-center gap-2 md:mt-0 pb-1 md:pb-0">
+            <div className="flex md:absolute md:right-10 md:bottom-18 items-center justify-center gap-2 md:mt-0 pb-0.5 md:pb-0">
               {SOCIAL.map((s) => (
                 <a
                   key={s.label}
