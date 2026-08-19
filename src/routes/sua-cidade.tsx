@@ -95,7 +95,7 @@ function SuaCidade() {
       <section className="bg-[var(--brand-green)] text-white">
         <div className="mx-auto max-w-7xl px-6 md:px-10 py-16 md:py-24 grid gap-10 lg:grid-cols-2 items-center">
           <div>
-            <p className="text-xs md:text-sm font-bold uppercase tracking-widest text-[#FEEE02]">O que Denis fez</p>
+            <p className="text-xs md:text-sm font-bold uppercase tracking-widest text-[#FEEE02]">O que o Denis fez</p>
             <h1 className="mt-3 text-4xl md:text-6xl font-black leading-tight">Por sua cidade</h1>
             <p className="mt-5 max-w-xl text-base md:text-lg text-white">
               Como prefeito de Santa Bárbara d´Oeste por oito anos, Denis Andia transformou a cidade e resgatou o orgulho do barbarense.
