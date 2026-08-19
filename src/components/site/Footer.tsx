@@ -19,24 +19,24 @@ export function Footer() {
 
       <div className="relative z-20 mx-auto max-w-[1400px] px-6 md:px-10 pt-16 pb-6 min-h-[45vw] md:min-h-[42vw] flex flex-col">
         {/* Centro — chamada sobre a mão da foto central */}
-        <div className="flex-1 flex items-end justify-center pb-8 md:pb-6">
-          <p className="text-center font-black uppercase tracking-[0.2em] text-2xl md:text-xl lg:text-7xl drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]">
+        <div className="flex-1 flex flex-col items-center justify-end pb-8 md:pb-6">
+          <p className="text-center font-black uppercase tracking-[0.2em] text-xl md:text-xl lg:text-7xl drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]">
             Abrace o novo
           </p>
-        </div>
-
-        {/* Mídias — canto direito, pequenas */}
-        <div className="flex items-center justify-end gap-3 pb-2 md:pb-0">
-          {SOCIAL.map((s) => (
-            <a
-              key={s.label}
-              href={s.href}
-              aria-label={s.label}
-              className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 hover:scale-105 transition-all"
-            >
-              <s.icon className="h-3.5 w-3.5" strokeWidth={2} />
-            </a>
-          ))}
+          
+          {/* Mídias — em mobile fica centralizado abaixo da frase, em desktop no canto direito */}
+          <div className="flex md:absolute md:right-10 md:bottom-22 items-center justify-center gap-3 mt-6 md:mt-0">
+            {SOCIAL.map((s) => (
+              <a
+                key={s.label}
+                href={s.href}
+                aria-label={s.label}
+                className="flex h-6 w-6 md:h-7 md:w-7 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 hover:scale-105 transition-all"
+              >
+                <s.icon className="h-3 w-3 md:h-3.5 md:w-3.5" strokeWidth={2} />
+              </a>
+            ))}
+          </div>
         </div>
       </div>
 
