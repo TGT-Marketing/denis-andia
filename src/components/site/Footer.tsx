@@ -19,8 +19,8 @@ export function Footer() {
 
       <div className="relative z-20 mx-auto max-w-[1400px] px-6 md:px-10 pt-16 pb-6 min-h-[45vw] md:min-h-[42vw] flex flex-col">
         {/* Centro — chamada sobre a mão da foto central */}
-        <div className="flex-1 flex flex-col items-center justify-end pb-1 md:pb-1">
-          <div className="flex flex-col items-center gap-2 md:block">
+        <div className="flex-1 flex flex-col items-center justify-end pb-0.5 md:pb-1">
+          <div className="flex flex-col items-center gap-1 md:block">
             <p className="text-center font-black uppercase tracking-[0.2em] text-lg md:text-5xl lg:text-8xl drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]">
               Abrace o novo
             </p>
@@ -44,7 +44,7 @@ export function Footer() {
 
       {/* bottom bar */}
       <div className="relative z-20 border-t border-foreground/15">
-        <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-4 flex flex-col md:flex-row justify-between items-center gap-2 text-[7px] md:text-[9px] font-semibold tracking-[0.12em] uppercase text-white/70 text-center md:text-left">
+        <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-3 flex flex-col md:flex-row justify-between items-center gap-1.5 text-[7px] md:text-[9px] font-semibold tracking-[0.12em] uppercase text-white/70 text-center md:text-left">
           <p>
             Candidato Denis Andia © {new Date().getFullYear()} — Todos os direitos reservados ·{" "}
             <a
@@ -57,7 +57,7 @@ export function Footer() {
             </a>
           </p>
 
-          <a href="#" className="text-[9px] hover:text-primary transition-colors">
+          <a href="#" className="text-[6px] md:text-[9px] hover:text-primary transition-colors">
             Política de Privacidade
           </a>
         </div>
