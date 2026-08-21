@@ -45,17 +45,22 @@ export function Footer() {
       {/* bottom bar */}
       <div className="relative z-20 border-t border-foreground/15">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-3 flex flex-col md:flex-row justify-between items-center gap-1.5 text-[7px] md:text-[9px] font-semibold tracking-[0.12em] uppercase text-white/70 text-center md:text-left">
-          <p>
-            Candidato Denis Andia © {new Date().getFullYear()} — Todos os direitos reservados ·{" "}
-            <a
-              href="https://www.tgtmarketing.com.br"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary transition-colors"
-            >
-              Criado por Target Marketing
-            </a>
-          </p>
+          <div className="flex flex-col items-center md:items-start gap-1">
+            <p>
+              Candidato Denis Andia © {new Date().getFullYear()} — Todos os direitos reservados · PROPAGANDA ELEITORAL | CNPJ 68.293.698/0001-14 |
+            </p>
+            <p>
+              COLIGAÇÃO CORAGEM PARA SEGUIR AVANÇANDO - MDB - Criado por{" "}
+              <a
+                href="https://www.tgtmarketing.com.br"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary transition-colors inline-flex"
+              >
+                TGT Marketing
+              </a>
+            </p>
+          </div>
 
           <a href="#" className="text-[6px] md:text-[9px] hover:text-primary transition-colors">
             Política de Privacidade
