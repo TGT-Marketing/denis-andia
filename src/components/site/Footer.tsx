@@ -22,7 +22,7 @@ export function Footer() {
         <div className="flex-1 flex flex-col items-center justify-end pb-0">
           <div className="flex flex-col items-center gap-0 md:block translate-y-3.5 md:translate-y-0">
             <p className="text-center font-black uppercase tracking-[0.2em] text-lg md:text-5xl lg:text-7xl drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]">
-              Abrace o novo
+              Abrace
             </p>
             
             {/* Mídias — em mobile fica centralizado abaixo da frase, em desktop no canto direito */}
