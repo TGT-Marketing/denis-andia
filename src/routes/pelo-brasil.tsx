@@ -4,14 +4,13 @@ import { Play } from "lucide-react";
 import { GalleryCarousel } from "@/components/site/GalleryCarousel";
 import { Layout } from "@/components/site/Layout";
 import { VideoModal } from "@/components/site/VideoModal";
-import brasil1 from "@/assets/national/denis-brasil-1.jpeg.asset.json";
 import brasil2 from "@/assets/national/denis-brasil-2.jpeg.asset.json";
-import brasil3 from "@/assets/national/denis-brasil-3.jpeg.asset.json";
+import brasil3 from "@/assets/national/denis-brasil-3-wide.jpeg.asset.json";
 import brasil4 from "@/assets/national/denis-brasil-4.jpeg.asset.json";
 import brasil5 from "@/assets/national/denis-brasil-5.jpeg.asset.json";
 import brasil6 from "@/assets/national/denis-brasil-6.jpeg.asset.json";
 import brasil7 from "@/assets/national/denis-brasil-7.jpeg.asset.json";
-import brasil8 from "@/assets/national/denis-brasil-8.jpeg.asset.json";
+import brasil8 from "@/assets/national/denis-brasil-8-wide.jpeg.asset.json";
 import brasil9 from "@/assets/national/denis-brasil-9.jpeg.asset.json";
 import brasil10 from "@/assets/national/denis-brasil-10.jpeg.asset.json";
 import brasil11 from "@/assets/national/denis-brasil-11.jpeg.asset.json";
@@ -64,7 +63,6 @@ const PROJETOS: Projeto[] = [
       </ul>
     ),
     gallery: [
-      { image: brasil1.url, caption: "" },
       { image: brasil2.url, caption: "" },
       { image: brasil3.url, caption: "" },
       { image: brasil4.url, caption: "" },
