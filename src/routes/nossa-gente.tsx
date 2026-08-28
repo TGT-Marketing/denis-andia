@@ -5,9 +5,7 @@ import { Layout } from "@/components/site/Layout";
 import { RegionMap } from "@/components/site/RegionMap";
 import { VideoModal } from "@/components/site/VideoModal";
 import { GalleryCarousel } from "@/components/site/GalleryCarousel";
-import people1 from "@/assets/people/denis-people-1.jpeg.asset.json";
 import people2 from "@/assets/people/denis-people-2.jpeg.asset.json";
-import people3 from "@/assets/people/denis-people-3.jpeg.asset.json";
 import people4 from "@/assets/people/denis-people-4.jpeg.asset.json";
 import people5 from "@/assets/people/denis-people-5.jpeg.asset.json";
 import people6 from "@/assets/people/denis-people-6.jpeg.asset.json";
@@ -34,9 +32,7 @@ export const Route = createFileRoute("/nossa-gente")({
 });
 
 const GALLERY = [
-  { image: people1.url },
   { image: people2.url },
-  { image: people3.url },
   { image: people4.url },
   { image: people5.url },
   { image: people6.url },
