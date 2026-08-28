@@ -9,7 +9,7 @@ import people2 from "@/assets/people/denis-people-2.jpeg.asset.json";
 import people4 from "@/assets/people/denis-people-4.jpeg.asset.json";
 import people5 from "@/assets/people/denis-people-5.jpeg.asset.json";
 import people6 from "@/assets/people/denis-people-6.jpeg.asset.json";
-import people7 from "@/assets/people/denis-people-7.jpeg.asset.json";
+import people7 from "@/assets/people/denis-people-7-wide.jpeg.asset.json";
 import people8 from "@/assets/people/denis-people-8.jpeg.asset.json";
 import people9 from "@/assets/people/denis-people-9.jpeg.asset.json";
 import people10 from "@/assets/people/denis-people-10.jpeg.asset.json";
