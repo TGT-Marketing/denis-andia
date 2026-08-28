@@ -136,7 +136,7 @@ function Biografia() {
         <div className="mx-auto max-w-[1000px] px-4 md:px-10 text-center">
           <div className="text-6xl md:text-7xl font-serif text-primary leading-none">"</div>
           <blockquote className="text-2xl md:text-4xl font-black tracking-tight text-foreground leading-tight">
-            “Nada melhor que uma ideia cujo o tempo chegou”.
+            “Nada melhor do que uma ideia cujo o tempo chegou”.
           </blockquote>
           <div className="mt-6 text-sm font-bold uppercase tracking-[0.3em] text-muted-foreground">
             DENIS ANDIA
