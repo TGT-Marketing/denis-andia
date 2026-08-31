@@ -91,6 +91,7 @@ function SuaCidade() {
         title="Por Sua Cidade — Denis Andia"
         description="Conheça o legado de Denis em Santa Bárbara d'Oeste."
         videoSrc={suaCidadeVideo.url}
+        portrait
       />
 
       {/* HERO */}
