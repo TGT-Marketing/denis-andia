@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { VideoModal } from "./VideoModal";
+import { RegionWorkModal } from "./RegionWorkModal";
 import { CitiesModal } from "./CitiesModal";
 import spPaths from "./sp-paths.json";
+import rmcVideo from "@/assets/rmc-video.mp4.asset.json";
+import rmpVideo from "@/assets/rmp-video.mp4.asset.json";
 
 type Region = {
   id: string;
@@ -38,7 +40,7 @@ const REGIONS: Region[] = [
 
 export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
   const [hovered, setHovered] = useState<string | null>(null);
-  const [selected, setSelected] = useState<{ name: string } | null>(null);
+  const [selected, setSelected] = useState<Region | null>(null);
   const [citiesOpen, setCitiesOpen] = useState(false);
 
   const others = {
@@ -64,7 +66,7 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
             d={SP_OUTLINE}
             onMouseEnter={() => setHovered("demais")}
             onMouseLeave={() => setHovered(null)}
-            onClick={() => setSelected({ name: others.name })}
+            onClick={() => setCitiesOpen(true)}
             className="cursor-pointer transition-all duration-200"
             style={{
               fill:
@@ -85,7 +87,7 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
                   d={r.d}
                   onMouseEnter={() => setHovered(r.id)}
                   onMouseLeave={() => setHovered(null)}
-                  onClick={() => setSelected({ name: r.name })}
+                  onClick={() => setSelected(r)}
                   className="cursor-pointer transition-all duration-300"
                   style={{
                     transformBox: "fill-box",
@@ -123,7 +125,7 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
           {REGIONS.map((r) => (
             <button
               key={r.id}
-              onClick={() => setSelected({ name: r.name })}
+              onClick={() => setSelected(r)}
               onMouseEnter={() => setHovered(r.id)}
               onMouseLeave={() => setHovered(null)}
               className="flex items-center gap-3 text-left rounded-xl border border-border px-4 py-3 hover:bg-[var(--brand-green)]/10 transition-colors"
@@ -148,11 +150,12 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
         </div>
       </div>
 
-      <VideoModal
+      <RegionWorkModal
         open={!!selected}
         onOpenChange={(o) => !o && setSelected(null)}
+        region={selected?.id === "rmp" ? "RMP" : "RMC"}
         title={selected?.name ?? ""}
-        description={selected ? `Trabalho de Denis em ${selected.name}.` : undefined}
+        videoSrc={selected?.id === "rmp" ? rmpVideo.url : rmcVideo.url}
       />
 
       <CitiesModal 
