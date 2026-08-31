@@ -18,7 +18,13 @@ export function VideoModal({ open, onOpenChange, title, description, videoSrc }:
         </DialogHeader>
         <div className="aspect-video w-full bg-black">
           {videoSrc ? (
-            <video controls autoPlay className="h-full w-full" src={videoSrc} />
+            <video
+              controls
+              autoPlay
+              playsInline
+              className="h-full w-full object-contain"
+              src={videoSrc}
+            />
           ) : (
             <div className="flex h-full w-full items-center justify-center text-white/70">
               <div className="text-center">
