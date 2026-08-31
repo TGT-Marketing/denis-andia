@@ -18,7 +18,8 @@ import denisPintandoCrianca from "@/assets/denis-pintando-crianca.jpeg.asset.jso
 import denisBancoHomem from "@/assets/denis-banco-homem.jpeg.asset.json";
 import denisAbracoCriancas2 from "@/assets/denis-abraco-criancas-2.jpeg.asset.json";
 import denisCumprimentoCriancas from "@/assets/denis-cumprimento-criancas.jpeg.asset.json";
-import trabalhoImg from "@/assets/denis-trabalho.jpg";
+import suaCidadeVideo from "@/assets/sua-cidade-video.mp4.asset.json";
+import suaCidadeCover from "@/assets/sua-cidade-cover.jpg.asset.json";
 
 export const Route = createFileRoute("/sua-cidade")({
   head: () => ({
