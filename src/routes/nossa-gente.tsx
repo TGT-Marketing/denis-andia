@@ -16,7 +16,8 @@ import people10 from "@/assets/people/denis-people-10.jpeg.asset.json";
 import people11 from "@/assets/people/denis-people-11.jpeg.asset.json";
 import people12 from "@/assets/people/denis-people-12.jpeg.asset.json";
 import people13 from "@/assets/people/denis-people-13.jpeg.asset.json";
-import trabalhoImg from "@/assets/denis-trabalho.jpg";
+import suaCidadeVideo from "@/assets/sua-cidade-video.mp4.asset.json";
+import suaCidadeCover from "@/assets/sua-cidade-cover.jpg.asset.json";
 
 export const Route = createFileRoute("/nossa-gente")({
   head: () => ({
