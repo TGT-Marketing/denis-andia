@@ -23,13 +23,13 @@ export function VideoModal({ open, onOpenChange, title, description, videoSrc, p
           <DialogTitle className="text-2xl">{title}</DialogTitle>
           {description && <DialogDescription>{description}</DialogDescription>}
         </DialogHeader>
-        <div className={`${portrait ? "aspect-[9/16] max-h-[70vh] mx-auto" : "aspect-video"} w-full bg-black`}>
+        <div className={portrait ? "mx-auto" : "w-full"}>
           {videoSrc ? (
             <video
               controls
               autoPlay
               playsInline
-              className="h-full w-full object-contain"
+              className={portrait ? "block max-h-[75vh] w-auto max-w-full" : "block aspect-video w-full"}
               src={videoSrc}
             />
           ) : (

@@ -106,10 +106,10 @@ function SuaCidade() {
           </div>
           <button
             onClick={() => setVideoOpen(true)}
-            className="relative aspect-video w-full overflow-hidden rounded-3xl shadow-card group bg-black"
+            className="relative aspect-[9/16] w-full max-w-[360px] mx-auto overflow-hidden rounded-3xl shadow-card group"
             aria-label="Reproduzir vídeo"
           >
-            <img src={suaCidadeCover.url} alt="Denis Andia" className="h-full w-full object-contain" />
+            <img src={suaCidadeCover.url} alt="Denis Andia" className="h-full w-full object-cover" />
             <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors" />
             <span className="absolute inset-0 flex items-center justify-center">
               <span className="flex h-20 w-20 items-center justify-center rounded-full bg-[var(--brand-yellow)] text-ink shadow-brand">
