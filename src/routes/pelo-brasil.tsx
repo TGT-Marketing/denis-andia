@@ -9,7 +9,6 @@ import brasil3 from "@/assets/national/denis-brasil-3-wide.jpeg.asset.json";
 import brasil4 from "@/assets/national/denis-brasil-4.jpeg.asset.json";
 import brasil5 from "@/assets/national/denis-brasil-5.jpeg.asset.json";
 import brasil6 from "@/assets/national/denis-brasil-6.jpeg.asset.json";
-import brasil7 from "@/assets/national/denis-brasil-7.jpeg.asset.json";
 import brasil8 from "@/assets/national/denis-brasil-8-wide.jpeg.asset.json";
 import brasil9 from "@/assets/national/denis-brasil-9.jpeg.asset.json";
 import brasil10 from "@/assets/national/denis-brasil-10.jpeg.asset.json";
@@ -68,7 +67,6 @@ const PROJETOS: Projeto[] = [
       { image: brasil4.url, caption: "" },
       { image: brasil5.url, caption: "" },
       { image: brasil6.url, caption: "" },
-      { image: brasil7.url, caption: "" },
       { image: brasil8.url, caption: "" },
       { image: brasil9.url, caption: "" },
       { image: brasil10.url, caption: "" },
