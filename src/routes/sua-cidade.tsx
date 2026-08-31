@@ -90,6 +90,7 @@ function SuaCidade() {
         onOpenChange={setVideoOpen}
         title="Por Sua Cidade — Denis Andia"
         description="Conheça o legado de Denis em Santa Bárbara d'Oeste."
+        videoSrc={suaCidadeVideo.url}
       />
 
       {/* HERO */}
@@ -107,7 +108,7 @@ function SuaCidade() {
             className="relative aspect-video w-full overflow-hidden rounded-3xl shadow-card group"
             aria-label="Reproduzir vídeo"
           >
-            <img src={trabalhoImg} alt="Denis Andia" className="h-full w-full object-cover" />
+            <img src={suaCidadeCover.url} alt="Denis Andia" className="h-full w-full object-cover" />
             <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors" />
             <span className="absolute inset-0 flex items-center justify-center">
               <span className="flex h-20 w-20 items-center justify-center rounded-full bg-[var(--brand-yellow)] text-ink shadow-brand">
