@@ -137,24 +137,13 @@ export function RegionMap({ mapOnly = false }: { mapOnly?: boolean }) {
             </button>
           ))}
           <button
-            onClick={() => setSelected({ name: others.name })}
-            onMouseEnter={() => setHovered("demais")}
-            onMouseLeave={() => setHovered(null)}
+            onClick={() => setCitiesOpen(true)}
             className="flex items-center gap-3 text-left rounded-xl border border-border px-4 py-3 hover:bg-muted transition-colors"
           >
             <span className="inline-flex h-8 w-12 items-center justify-center rounded bg-muted text-[12px] font-black text-muted-foreground">
               SP
             </span>
-            <span className="text-sm font-semibold text-foreground">Nas demais Regiões</span>
-          </button>
-          <button
-            onClick={() => setCitiesOpen(true)}
-            className="flex items-center gap-3 text-left rounded-xl border border-border px-4 py-3 hover:bg-muted transition-colors"
-          >
-            <span className="inline-flex h-8 w-12 items-center justify-center rounded bg-muted text-[12px] font-black text-muted-foreground">
-              DA
-            </span>
-            <span className="text-sm font-semibold text-foreground">Em todas as cidades</span>
+            <span className="text-sm font-semibold text-foreground">Em todo o Estado de SP</span>
           </button>
         </div>
       </div>
