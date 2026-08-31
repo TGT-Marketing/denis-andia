@@ -104,21 +104,37 @@ function Biografia() {
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-primary">A história</p>
             <div className="mt-8 space-y-5 text-lg text-muted-foreground">
+              <p>Que o Denis foi um bom prefeito, muita gente sabe e até comenta.</p>
+              <p>Que é dedicado e trabalha sério, basta ver tudo o que já fez.</p>
+              <p>E quem conhece esse cara que olha no olho percebe logo: ele é gente simples e sabe ouvir.</p>
+              <p>Mas é bom demais descobrir que sua história se parece com a de tanta gente.</p>
               <p>
-                Nascido em Santa Bárbara d’Oeste (SP), Denis Eduardo Andia é o caçula de uma família típica do interior paulista. Filho de uma professora primária, que lecionou em escolas rurais, e de um trabalhador que dedicou toda a sua carreira à mesma empresa, onde ingressou ainda jovem. É casado com a Roberta.
+                Denis nasceu e sempre viveu em Santa Bárbara d'Oeste. É o caçula de três irmãos. Sua mãe foi professora primária em escolas de sítio. Seu pai veio da roça ainda menino, estudou por correspondência e entrou jovem na empresa onde se aposentaria 30 anos depois.
               </p>
               <p>
-                Estudou em escola pública, cursou Matemática Aplicada e Computacional na Unicamp e formou-se em Publicidade e Propaganda pela PUC-Campinas. Ainda jovem, fundou a empresa que administra até hoje.
+                Em 1998, o Denis conheceu uma moça na praça da cidade. Começaram a namorar e depois se casaram. E de lá pra cá, são muitos anos ao lado da Roberta.
               </p>
               <p>
-                Em 2012, foi eleito prefeito de Santa Bárbara d’Oeste pela primeira vez. Quatro anos depois, tornou-se o primeiro prefeito reeleito da história do município. Ao concluir seu segundo mandato, em 2020, alcançou aprovação popular de 82%.
+                O Denis estudou em escola pública e as professoras até hoje contam que ele não era de dar trabalho. Aos 17 anos, cursou matemática na Unicamp e depois formou-se em comunicação social na PUC Campinas. Antes mesmo de se formar, deu início à empresa que administra até os dias de hoje.
+              </p>
+              <p>Bom, já deu pra ver que a política veio bem depois na vida dele.</p>
+              <p>
+                Em 2012, venceu a primeira eleição que disputou para prefeito. Em 2016, tornou-se o primeiro prefeito reeleito da história de sua cidade. Ao concluir os oito anos de mandato, seu trabalho teve a aprovação de 82% dos barbarenses.
               </p>
               <p>
-                Durante sua trajetória na vida pública, presidiu a Região Metropolitana de Campinas (RMC) e recebeu o prêmio Prefeito Empreendedor do Estado de São Paulo, concedido pelo Sebrae.
+                Neste período foi duas vezes presidente da Região Metropolitana de Campinas, recebeu quatro vezes o prêmio de Prefeito Empreendedor do Sebrae e seis vezes de Prefeito VerdeAzul. Um trabalho reconhecido muito além de sua cidade.
               </p>
               <p>
-                Em 2023, assumiu o cargo de secretário nacional de Mobilidade Urbana no Ministério das Cidades, onde passou a atuar na formulação e execução de importantes projetos de infraestrutura e transporte em todo o Brasil. Sua atuação também fortaleceu o acesso dos municípios a programas e investimentos, ampliando oportunidades e facilitando a captação de recursos das esferas estadual e federal.
+                Foi tão longe que chegou a Brasilia, onde foi Secretario Nacional de Mobilidade Urbana. Trabalhou nas principais obras de transporte público do Brasil, com atenção especial aos investimentos realizados no Estado de São Paulo.
               </p>
+              <p>
+                Na última eleição para deputado federal, Denis foi eleito suplente com 75.082 votos - recebidos com muita gratidão. Com mais um pouquinho, a gente chegava direto à capital do Brasil.
+              </p>
+              <p>
+                Agora, mais um capitulo está sendo escrito, com muita dedicação, determinação e Fé. Uma caminhada que a nossa gente já conhece muito bem, porque sempre caminhamos lado a lado.
+              </p>
+              <p>Por isso, aperta o passo que chegou a hora.</p>
+              <p>A gente juntos vai fazer historia!</p>
             </div>
           </div>
         </div>
