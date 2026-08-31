@@ -6,17 +6,24 @@ interface VideoModalProps {
   title: string;
   description?: string;
   videoSrc?: string;
+  portrait?: boolean;
 }
 
-export function VideoModal({ open, onOpenChange, title, description, videoSrc }: VideoModalProps) {
+export function VideoModal({ open, onOpenChange, title, description, videoSrc, portrait }: VideoModalProps) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-3xl p-0 overflow-hidden bg-card">
+      <DialogContent
+        className={
+          portrait
+            ? "max-w-[92vw] sm:max-w-[420px] p-0 overflow-hidden bg-card"
+            : "max-w-3xl p-0 overflow-hidden bg-card"
+        }
+      >
         <DialogHeader className="px-6 pt-6">
           <DialogTitle className="text-2xl">{title}</DialogTitle>
           {description && <DialogDescription>{description}</DialogDescription>}
         </DialogHeader>
-        <div className="aspect-video w-full bg-black">
+        <div className={`${portrait ? "aspect-[9/16] max-h-[70vh] mx-auto" : "aspect-video"} w-full bg-black`}>
           {videoSrc ? (
             <video
               controls
