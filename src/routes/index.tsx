@@ -6,7 +6,7 @@ import { RegionMap } from "@/components/site/RegionMap";
 import { VideoModal } from "@/components/site/VideoModal";
 import { NewsCarousel } from "@/components/site/NewsCarousel";
 import bgAsset from "@/assets/hero-denis-senhor.jpg.asset.json";
-import denisCapacete from "@/assets/denis-capacete.png.asset.json";
+import denisCapacete from "@/assets/denis-andia-foto.png.asset.json";
 
 const heroBg = bgAsset.url;
 
