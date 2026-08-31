@@ -7,6 +7,7 @@ import { VideoModal } from "@/components/site/VideoModal";
 import { NewsCarousel } from "@/components/site/NewsCarousel";
 import bgAsset from "@/assets/hero-denis-senhor.jpg.asset.json";
 import denisCapacete from "@/assets/denis-andia-foto-transparent.png.asset.json";
+import heroVideo from "@/assets/gente-que-conhece-gente-video.mp4.asset.json";
 
 const heroBg = bgAsset.url;
 
@@ -66,6 +67,8 @@ function Home() {
           onOpenChange={setVideoOpen}
           title="Gente que conhece gente"
           description="Conheça a história de Denis Andia"
+          videoSrc={heroVideo.url}
+          portrait
         />
 
         {/* keyframes local */}

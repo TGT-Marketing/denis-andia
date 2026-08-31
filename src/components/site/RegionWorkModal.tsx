@@ -2,36 +2,49 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { CITY_DATA } from "./city-data";
 
-interface CitiesModalProps {
+interface RegionWorkModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  region: "RMC" | "RMP";
+  title: string;
+  videoSrc: string;
 }
 
-export function CitiesModal({ open, onOpenChange }: CitiesModalProps) {
+export function RegionWorkModal({ open, onOpenChange, region, title, videoSrc }: RegionWorkModalProps) {
+  const data = CITY_DATA.find((r) => r.region === region);
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-4xl h-[90vh] flex flex-col p-0 overflow-hidden bg-card border-none shadow-2xl">
         <DialogHeader className="px-8 pt-8 pb-4 bg-white shrink-0">
           <DialogTitle className="text-3xl font-black text-[var(--brand-green)] uppercase tracking-tight">
-            Em todas as cidades
+            {title}
           </DialogTitle>
           <DialogDescription className="text-base text-muted-foreground font-medium">
-            Confira o trabalho de Denis Andia em cada município.
+            Assista ao vídeo e confira o trabalho de Denis Andia na região.
           </DialogDescription>
         </DialogHeader>
 
         <ScrollArea className="flex-1 px-8 pb-10">
-          <div className="space-y-12 py-6">
-            {CITY_DATA.map((region) => (
-              <div key={region.region} className="space-y-6">
+          <div className="py-6 space-y-10">
+            <video
+              controls
+              autoPlay
+              playsInline
+              className="mx-auto block max-h-[55vh] w-auto max-w-full rounded-2xl shadow-card"
+              src={videoSrc}
+            />
+
+            {data && (
+              <div className="space-y-6">
                 <div className="sticky top-0 bg-card/95 backdrop-blur-sm z-10 py-2 border-b border-[var(--brand-green)]/10">
                   <h3 className="text-4xl font-black text-[var(--brand-green)] tracking-tighter">
-                    {region.region}
+                    {data.region}
                   </h3>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
-                  {region.cities.map((city) => (
+                  {data.cities.map((city) => (
                     <div key={city.city} className="space-y-3 group">
                       <h4 className="text-lg font-bold text-foreground border-l-4 border-[var(--brand-yellow)] pl-3 group-hover:border-[var(--brand-green)] transition-colors">
                         {city.city}
@@ -48,7 +61,7 @@ export function CitiesModal({ open, onOpenChange }: CitiesModalProps) {
                   ))}
                 </div>
               </div>
-            ))}
+            )}
           </div>
         </ScrollArea>
       </DialogContent>
