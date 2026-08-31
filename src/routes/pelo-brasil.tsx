@@ -4,6 +4,8 @@ import { Play } from "lucide-react";
 import { GalleryCarousel } from "@/components/site/GalleryCarousel";
 import { Layout } from "@/components/site/Layout";
 import { VideoModal } from "@/components/site/VideoModal";
+import peloBrasilVideo from "@/assets/pelo-brasil-video.mp4.asset.json";
+import peloBrasilCover from "@/assets/pelo-brasil-cover.jpg.asset.json";
 import brasil2 from "@/assets/national/denis-brasil-2.jpeg.asset.json";
 import brasil3 from "@/assets/national/denis-brasil-3-wide.jpeg.asset.json";
 import brasil4 from "@/assets/national/denis-brasil-4.jpeg.asset.json";
@@ -86,6 +88,8 @@ function PeloBrasil() {
         onOpenChange={setVideoOpen}
         title="Pelo Brasil — Denis Andia"
         description="A atuação nacional de Denis Andia."
+        videoSrc={peloBrasilVideo.url}
+        portrait
       />
 
       {/* HERO */}
@@ -102,10 +106,10 @@ function PeloBrasil() {
           </div>
           <button
             onClick={() => setVideoOpen(true)}
-            className="relative aspect-video w-full overflow-hidden rounded-3xl shadow-card group"
+            className="relative aspect-video w-full overflow-hidden rounded-3xl shadow-card group bg-black"
             aria-label="Reproduzir vídeo"
           >
-            <img src={trabalhoImg} alt="Denis Andia" className="h-full w-full object-cover" />
+            <img src={peloBrasilCover.url} alt="Denis Andia" className="h-full w-full object-contain" />
             <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors" />
             <span className="absolute inset-0 flex items-center justify-center">
               <span className="flex h-20 w-20 items-center justify-center rounded-full bg-[var(--brand-yellow)] text-ink shadow-brand">
