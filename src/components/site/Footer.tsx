@@ -1,5 +1,8 @@
+import { useState } from "react";
 import { Instagram, Facebook } from "lucide-react";
 import footerBg from "@/assets/footer-bg.png.asset.json";
+import { PrivacyPolicyModal } from "./PrivacyPolicyModal";
+import { ScrollToTop } from "./ScrollToTop";
 
 const SOCIAL = [
   { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/denisandia/?hl=pt" },
@@ -8,6 +11,8 @@ const SOCIAL = [
 ] as const;
 
 export function Footer() {
+  const [privacyOpen, setPrivacyOpen] = useState(false);
+
   return (
     <footer className="relative text-white overflow-hidden">
       {/* Fundo geral do rodapé — imagem inteira, sem cortes */}
@@ -62,11 +67,18 @@ export function Footer() {
             </p>
           </div>
 
-          <a href="#" className="text-[6px] md:text-[9px] hover:text-primary transition-colors">
+          <button
+            type="button"
+            onClick={() => setPrivacyOpen(true)}
+            className="text-[6px] md:text-[9px] hover:text-primary transition-colors uppercase tracking-[0.12em] font-semibold"
+          >
             Política de Privacidade
-          </a>
+          </button>
         </div>
       </div>
+
+      <PrivacyPolicyModal open={privacyOpen} onOpenChange={setPrivacyOpen} />
+      <ScrollToTop />
     </footer>
   );
 }
