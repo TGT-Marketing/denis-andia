@@ -87,10 +87,10 @@ function Biografia() {
           <div className="relative">
             <button
               onClick={() => setVideoOpen(true)}
-              className="relative aspect-video w-full overflow-hidden rounded-3xl shadow-card group"
+              className="relative aspect-[9/16] w-full max-w-[420px] mx-auto overflow-hidden rounded-3xl shadow-card group"
               aria-label="Reproduzir vídeo"
             >
-              <img src={cutout} alt="Denis Andia" className="h-full w-full object-cover" />
+              <img src={videoCover.url} alt="Denis Andia" className="h-full w-full object-cover" />
               <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors" />
               <span className="absolute inset-0 flex items-center justify-center">
                 <span className="flex h-16 w-16 md:h-20 md:w-20 items-center justify-center rounded-full bg-[var(--brand-yellow)] text-ink shadow-brand">
