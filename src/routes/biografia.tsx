@@ -10,6 +10,8 @@ import cutoutAsset from "@/assets/denis-trabalho.jpg";
 import cityImg from "@/assets/denis-city.jpg";
 import peopleImg from "@/assets/denis-people.jpg";
 import brasilImg from "@/assets/denis-brasil.jpg";
+import heroVideo from "@/assets/gente-que-conhece-gente-video.mp4.asset.json";
+import videoCover from "@/assets/gente-que-conhece-gente-cover.jpg.asset.json";
 
 const walkImg = walkAsset;
 const rallyBg = rallyBgAsset;
@@ -57,6 +59,8 @@ function Biografia() {
         onOpenChange={setVideoOpen}
         title="Gente que conhece gente"
         description="Conheça a história de Denis Andia"
+        videoSrc={heroVideo.url}
+        portrait
       />
 
       {/* HERO */}
