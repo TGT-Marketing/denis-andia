@@ -13,7 +13,7 @@ export function CitiesModal({ open, onOpenChange }: CitiesModalProps) {
       <DialogContent className="max-w-4xl h-[90vh] flex flex-col p-0 overflow-hidden bg-card border-none shadow-2xl">
         <DialogHeader className="px-8 pt-8 pb-4 bg-white shrink-0">
           <DialogTitle className="text-3xl font-black text-[var(--brand-green)] uppercase tracking-tight">
-            Em todas as cidades
+            EM TODO O ESTADO DE SP
           </DialogTitle>
           <DialogDescription className="text-base text-muted-foreground font-medium">
             Confira o trabalho de Denis Andia em cada município.
