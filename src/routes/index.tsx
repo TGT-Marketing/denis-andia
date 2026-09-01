@@ -21,8 +21,12 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Denis Andia — Gente que conhece gente" },
       { property: "og:description", content: "Site oficial do candidato Denis Andia. Um novo jeito de fazer política em São Paulo e no Brasil." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://denis-andia.lovable.app/" },
+      { property: "og:image", content: `https://denis-andia.lovable.app${ogHome}` },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: `https://denis-andia.lovable.app${ogHome}` },
     ],
+    links: [{ rel: "canonical", href: "https://denis-andia.lovable.app/" }],
   }),
   component: Home,
 });
