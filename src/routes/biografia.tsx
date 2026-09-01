@@ -103,11 +103,12 @@ function Biografia() {
       </section>
 
       {/* HISTÓRIA */}
-      <section className="bg-background pt-24 pb-12">
-        <div className="mx-auto max-w-[1200px] px-4 md:px-10">
+      <section className="bg-background pt-20 pb-12">
+        <div className="mx-auto max-w-7xl px-4 md:px-8">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.3em] text-primary">A história</p>
-            <div className="mt-8 space-y-5 text-lg text-muted-foreground">
+            <h2 className="mt-2 text-sm font-bold text-[var(--brand-green)] uppercase tracking-widest">A HISTÓRIA</h2>
+            <div className="mt-4 space-y-4 text-lg text-muted-foreground">
+
               <p>Que o Denis foi um bom prefeito, muita gente sabe e até comenta.</p>
               <p>Que é dedicado e trabalha sério, basta ver tudo o que já fez.</p>
               <p>E quem conhece esse cara que olha no olho percebe logo: ele é gente simples e sabe ouvir.</p>
