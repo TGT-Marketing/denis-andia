@@ -146,8 +146,9 @@ function Biografia() {
       </section>
 
       {/* GALERIA */}
-      <section className="bg-background pb-24">
+      <section className="bg-background pb-6">
         <div className="mx-auto max-w-7xl px-4 md:px-8">
+
           <GalleryCarousel items={GALLERY} showCaptions={false} />
         </div>
       </section>
