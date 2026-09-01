@@ -67,11 +67,18 @@ export function Footer() {
             </p>
           </div>
 
-          <a href="#" className="text-[6px] md:text-[9px] hover:text-primary transition-colors">
+          <button
+            type="button"
+            onClick={() => setPrivacyOpen(true)}
+            className="text-[6px] md:text-[9px] hover:text-primary transition-colors uppercase tracking-[0.12em] font-semibold"
+          >
             Política de Privacidade
-          </a>
+          </button>
         </div>
       </div>
+
+      <PrivacyPolicyModal open={privacyOpen} onOpenChange={setPrivacyOpen} />
+      <ScrollToTop />
     </footer>
   );
 }
