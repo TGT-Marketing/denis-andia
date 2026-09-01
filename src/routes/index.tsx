@@ -8,6 +8,7 @@ import { NewsCarousel } from "@/components/site/NewsCarousel";
 import bgAsset from "@/assets/hero-denis-senhor.jpg.asset.json";
 import denisCapacete from "@/assets/denis-andia-foto-transparent.png.asset.json";
 import heroVideo from "@/assets/gente-que-conhece-gente-video.mp4.asset.json";
+import ogHome from "@/assets/og-home.jpg";
 
 const heroBg = bgAsset.url;
 
