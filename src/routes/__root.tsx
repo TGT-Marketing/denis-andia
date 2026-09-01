@@ -86,8 +86,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:title", content: "Denis Andia — Gente que conhece gente" },
       { property: "og:description", content: "Site oficial do candidato Denis Andia. Um novo jeito de fazer política em São Paulo e no Brasil." },
       { name: "twitter:description", content: "Site oficial do candidato Denis Andia. Um novo jeito de fazer política em São Paulo e no Brasil." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b29a1d4c-da50-4577-8371-bf5b0665a798/id-preview-45de7edc--25a3bbb4-705c-4e8f-8e9e-ab2ee5d3ca45.lovable.app-1784925239821.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b29a1d4c-da50-4577-8371-bf5b0665a798/id-preview-45de7edc--25a3bbb4-705c-4e8f-8e9e-ab2ee5d3ca45.lovable.app-1784925239821.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
