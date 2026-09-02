@@ -55,11 +55,9 @@ const GALLERY = [
   { image: bio02.url },
   { image: bio03.url },
   { image: bio04.url },
-  { image: bio05.url },
   { image: bio06.url },
   { image: bio07.url },
   { image: bio08.url },
-  { image: bio09.url },
 ];
 
 function Biografia() {
