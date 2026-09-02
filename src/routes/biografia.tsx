@@ -17,11 +17,9 @@ import bio01 from "@/assets/bio/bio-01.jpg.asset.json";
 import bio02 from "@/assets/bio/bio-02.png.asset.json";
 import bio03 from "@/assets/bio/bio-03.jpg.asset.json";
 import bio04 from "@/assets/bio/bio-04.jpg.asset.json";
-import bio05 from "@/assets/bio/bio-05.jpg.asset.json";
 import bio06 from "@/assets/bio/bio-06.jpg.asset.json";
 import bio07 from "@/assets/bio/bio-07.jpg.asset.json";
 import bio08 from "@/assets/bio/bio-08.jpg.asset.json";
-import bio09 from "@/assets/bio/bio-09.jpg.asset.json";
 
 const walkImg = walkAsset;
 const rallyBg = rallyBgAsset;
