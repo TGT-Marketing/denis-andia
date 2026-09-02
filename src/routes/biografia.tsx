@@ -52,6 +52,7 @@ const TIMELINE = [
 ];
 
 const GALLERY = [
+  { image: bio00.url },
   { image: bio01.url },
   { image: bio02.url },
   { image: bio03.url },
