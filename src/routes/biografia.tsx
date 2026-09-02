@@ -12,6 +12,7 @@ import peopleImg from "@/assets/denis-people.jpg";
 import brasilImg from "@/assets/denis-brasil.jpg";
 import heroVideo from "@/assets/gente-que-conhece-gente-video.mp4.asset.json";
 import videoCover from "@/assets/gente-que-conhece-gente-cover.jpg.asset.json";
+import bio00 from "@/assets/bio/bio-00.jpg.asset.json";
 import bio01 from "@/assets/bio/bio-01.jpg.asset.json";
 import bio02 from "@/assets/bio/bio-02.png.asset.json";
 import bio03 from "@/assets/bio/bio-03.jpg.asset.json";
