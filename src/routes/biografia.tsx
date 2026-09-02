@@ -42,11 +42,15 @@ const TIMELINE = [
 ];
 
 const GALLERY = [
-  { image: rallyBgAsset, caption: "Denis Andia com a nossa gente" },
-  { image: walkAsset, caption: "Andando e ouvindo" },
-  { image: cutoutAsset, caption: "Trabalho entregue" },
-  { image: cityImg, caption: "Cidade transformada" },
-  { image: peopleImg, caption: "Gente que conhece gente" },
+  { image: bio01.url },
+  { image: bio02.url },
+  { image: bio03.url },
+  { image: bio04.url },
+  { image: bio05.url },
+  { image: bio06.url },
+  { image: bio07.url },
+  { image: bio08.url },
+  { image: bio09.url },
 ];
 
 function Biografia() {
