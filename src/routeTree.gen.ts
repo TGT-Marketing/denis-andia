@@ -16,6 +16,7 @@ import { Route as BiografiaRouteImport } from './routes/biografia'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AdminIndexRouteImport } from './routes/admin.index'
+import { Route as AdminNoticiasRouteImport } from './routes/admin.noticias'
 
 const SuaCidadeRoute = SuaCidadeRouteImport.update({
   id: '/sua-cidade',
@@ -52,6 +53,11 @@ const AdminIndexRoute = AdminIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AdminRoute,
 } as any)
+const AdminNoticiasRoute = AdminNoticiasRouteImport.update({
+  id: '/noticias',
+  path: '/noticias',
+  getParentRoute: () => AdminRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -60,6 +66,7 @@ export interface FileRoutesByFullPath {
   '/nossa-gente': typeof NossaGenteRoute
   '/pelo-brasil': typeof PeloBrasilRoute
   '/sua-cidade': typeof SuaCidadeRoute
+  '/admin/noticias': typeof AdminNoticiasRoute
   '/admin/': typeof AdminIndexRoute
 }
 export interface FileRoutesByTo {
@@ -68,6 +75,7 @@ export interface FileRoutesByTo {
   '/nossa-gente': typeof NossaGenteRoute
   '/pelo-brasil': typeof PeloBrasilRoute
   '/sua-cidade': typeof SuaCidadeRoute
+  '/admin/noticias': typeof AdminNoticiasRoute
   '/admin': typeof AdminIndexRoute
 }
 export interface FileRoutesById {
@@ -78,6 +86,7 @@ export interface FileRoutesById {
   '/nossa-gente': typeof NossaGenteRoute
   '/pelo-brasil': typeof PeloBrasilRoute
   '/sua-cidade': typeof SuaCidadeRoute
+  '/admin/noticias': typeof AdminNoticiasRoute
   '/admin/': typeof AdminIndexRoute
 }
 export interface FileRouteTypes {
@@ -89,6 +98,7 @@ export interface FileRouteTypes {
     | '/nossa-gente'
     | '/pelo-brasil'
     | '/sua-cidade'
+    | '/admin/noticias'
     | '/admin/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -97,6 +107,7 @@ export interface FileRouteTypes {
     | '/nossa-gente'
     | '/pelo-brasil'
     | '/sua-cidade'
+    | '/admin/noticias'
     | '/admin'
   id:
     | '__root__'
@@ -106,6 +117,7 @@ export interface FileRouteTypes {
     | '/nossa-gente'
     | '/pelo-brasil'
     | '/sua-cidade'
+    | '/admin/noticias'
     | '/admin/'
   fileRoutesById: FileRoutesById
 }
@@ -169,14 +181,23 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminIndexRouteImport
       parentRoute: typeof AdminRoute
     }
+    '/admin/noticias': {
+      id: '/admin/noticias'
+      path: '/noticias'
+      fullPath: '/admin/noticias'
+      preLoaderRoute: typeof AdminNoticiasRouteImport
+      parentRoute: typeof AdminRoute
+    }
   }
 }
 
 interface AdminRouteChildren {
+  AdminNoticiasRoute: typeof AdminNoticiasRoute
   AdminIndexRoute: typeof AdminIndexRoute
 }
 
 const AdminRouteChildren: AdminRouteChildren = {
+  AdminNoticiasRoute: AdminNoticiasRoute,
   AdminIndexRoute: AdminIndexRoute,
 }
 
