@@ -23,10 +23,10 @@ export const Route = createFileRoute("/admin")({
 
 const NAV = [
   { to: "/admin", label: "Visão geral", icon: LayoutDashboard, exact: true },
-  { to: "/admin/noticias", label: "Notícias", icon: Newspaper },
-  { to: "/admin/banners", label: "Banners", icon: Image },
-  { to: "/admin/galeria", label: "Galeria", icon: Images },
-  { to: "/admin/configuracoes", label: "Configurações", icon: Settings },
+  { to: "/admin/noticias", label: "Notícias", icon: Newspaper, exact: false },
+  { to: "/admin/banners", label: "Banners", icon: Image, exact: false },
+  { to: "/admin/galeria", label: "Galeria", icon: Images, exact: false },
+  { to: "/admin/configuracoes", label: "Configurações", icon: Settings, exact: false },
 ] as const;
 
 function AdminLayout() {
