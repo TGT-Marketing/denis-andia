@@ -17,6 +17,9 @@ import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as AdminNoticiasRouteImport } from './routes/admin.noticias'
+import { Route as AdminGaleriaRouteImport } from './routes/admin.galeria'
+import { Route as AdminConfiguracoesRouteImport } from './routes/admin.configuracoes'
+import { Route as AdminBannersRouteImport } from './routes/admin.banners'
 
 const SuaCidadeRoute = SuaCidadeRouteImport.update({
   id: '/sua-cidade',
@@ -58,6 +61,21 @@ const AdminNoticiasRoute = AdminNoticiasRouteImport.update({
   path: '/noticias',
   getParentRoute: () => AdminRoute,
 } as any)
+const AdminGaleriaRoute = AdminGaleriaRouteImport.update({
+  id: '/galeria',
+  path: '/galeria',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminConfiguracoesRoute = AdminConfiguracoesRouteImport.update({
+  id: '/configuracoes',
+  path: '/configuracoes',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminBannersRoute = AdminBannersRouteImport.update({
+  id: '/banners',
+  path: '/banners',
+  getParentRoute: () => AdminRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -66,6 +84,9 @@ export interface FileRoutesByFullPath {
   '/nossa-gente': typeof NossaGenteRoute
   '/pelo-brasil': typeof PeloBrasilRoute
   '/sua-cidade': typeof SuaCidadeRoute
+  '/admin/banners': typeof AdminBannersRoute
+  '/admin/configuracoes': typeof AdminConfiguracoesRoute
+  '/admin/galeria': typeof AdminGaleriaRoute
   '/admin/noticias': typeof AdminNoticiasRoute
   '/admin/': typeof AdminIndexRoute
 }
@@ -75,6 +96,9 @@ export interface FileRoutesByTo {
   '/nossa-gente': typeof NossaGenteRoute
   '/pelo-brasil': typeof PeloBrasilRoute
   '/sua-cidade': typeof SuaCidadeRoute
+  '/admin/banners': typeof AdminBannersRoute
+  '/admin/configuracoes': typeof AdminConfiguracoesRoute
+  '/admin/galeria': typeof AdminGaleriaRoute
   '/admin/noticias': typeof AdminNoticiasRoute
   '/admin': typeof AdminIndexRoute
 }
@@ -86,6 +110,9 @@ export interface FileRoutesById {
   '/nossa-gente': typeof NossaGenteRoute
   '/pelo-brasil': typeof PeloBrasilRoute
   '/sua-cidade': typeof SuaCidadeRoute
+  '/admin/banners': typeof AdminBannersRoute
+  '/admin/configuracoes': typeof AdminConfiguracoesRoute
+  '/admin/galeria': typeof AdminGaleriaRoute
   '/admin/noticias': typeof AdminNoticiasRoute
   '/admin/': typeof AdminIndexRoute
 }
@@ -98,6 +125,9 @@ export interface FileRouteTypes {
     | '/nossa-gente'
     | '/pelo-brasil'
     | '/sua-cidade'
+    | '/admin/banners'
+    | '/admin/configuracoes'
+    | '/admin/galeria'
     | '/admin/noticias'
     | '/admin/'
   fileRoutesByTo: FileRoutesByTo
@@ -107,6 +137,9 @@ export interface FileRouteTypes {
     | '/nossa-gente'
     | '/pelo-brasil'
     | '/sua-cidade'
+    | '/admin/banners'
+    | '/admin/configuracoes'
+    | '/admin/galeria'
     | '/admin/noticias'
     | '/admin'
   id:
@@ -117,6 +150,9 @@ export interface FileRouteTypes {
     | '/nossa-gente'
     | '/pelo-brasil'
     | '/sua-cidade'
+    | '/admin/banners'
+    | '/admin/configuracoes'
+    | '/admin/galeria'
     | '/admin/noticias'
     | '/admin/'
   fileRoutesById: FileRoutesById
@@ -188,15 +224,42 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminNoticiasRouteImport
       parentRoute: typeof AdminRoute
     }
+    '/admin/galeria': {
+      id: '/admin/galeria'
+      path: '/galeria'
+      fullPath: '/admin/galeria'
+      preLoaderRoute: typeof AdminGaleriaRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/configuracoes': {
+      id: '/admin/configuracoes'
+      path: '/configuracoes'
+      fullPath: '/admin/configuracoes'
+      preLoaderRoute: typeof AdminConfiguracoesRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/banners': {
+      id: '/admin/banners'
+      path: '/banners'
+      fullPath: '/admin/banners'
+      preLoaderRoute: typeof AdminBannersRouteImport
+      parentRoute: typeof AdminRoute
+    }
   }
 }
 
 interface AdminRouteChildren {
+  AdminBannersRoute: typeof AdminBannersRoute
+  AdminConfiguracoesRoute: typeof AdminConfiguracoesRoute
+  AdminGaleriaRoute: typeof AdminGaleriaRoute
   AdminNoticiasRoute: typeof AdminNoticiasRoute
   AdminIndexRoute: typeof AdminIndexRoute
 }
 
 const AdminRouteChildren: AdminRouteChildren = {
+  AdminBannersRoute: AdminBannersRoute,
+  AdminConfiguracoesRoute: AdminConfiguracoesRoute,
+  AdminGaleriaRoute: AdminGaleriaRoute,
   AdminNoticiasRoute: AdminNoticiasRoute,
   AdminIndexRoute: AdminIndexRoute,
 }
