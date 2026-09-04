@@ -17,6 +17,7 @@ import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as AdminNoticiasRouteImport } from './routes/admin.noticias'
+import { Route as AdminGaleriaRouteImport } from './routes/admin.galeria'
 import { Route as AdminBannersRouteImport } from './routes/admin.banners'
 
 const SuaCidadeRoute = SuaCidadeRouteImport.update({
@@ -59,6 +60,11 @@ const AdminNoticiasRoute = AdminNoticiasRouteImport.update({
   path: '/noticias',
   getParentRoute: () => AdminRoute,
 } as any)
+const AdminGaleriaRoute = AdminGaleriaRouteImport.update({
+  id: '/galeria',
+  path: '/galeria',
+  getParentRoute: () => AdminRoute,
+} as any)
 const AdminBannersRoute = AdminBannersRouteImport.update({
   id: '/banners',
   path: '/banners',
@@ -73,6 +79,7 @@ export interface FileRoutesByFullPath {
   '/pelo-brasil': typeof PeloBrasilRoute
   '/sua-cidade': typeof SuaCidadeRoute
   '/admin/banners': typeof AdminBannersRoute
+  '/admin/galeria': typeof AdminGaleriaRoute
   '/admin/noticias': typeof AdminNoticiasRoute
   '/admin/': typeof AdminIndexRoute
 }
@@ -83,6 +90,7 @@ export interface FileRoutesByTo {
   '/pelo-brasil': typeof PeloBrasilRoute
   '/sua-cidade': typeof SuaCidadeRoute
   '/admin/banners': typeof AdminBannersRoute
+  '/admin/galeria': typeof AdminGaleriaRoute
   '/admin/noticias': typeof AdminNoticiasRoute
   '/admin': typeof AdminIndexRoute
 }
@@ -95,6 +103,7 @@ export interface FileRoutesById {
   '/pelo-brasil': typeof PeloBrasilRoute
   '/sua-cidade': typeof SuaCidadeRoute
   '/admin/banners': typeof AdminBannersRoute
+  '/admin/galeria': typeof AdminGaleriaRoute
   '/admin/noticias': typeof AdminNoticiasRoute
   '/admin/': typeof AdminIndexRoute
 }
@@ -108,6 +117,7 @@ export interface FileRouteTypes {
     | '/pelo-brasil'
     | '/sua-cidade'
     | '/admin/banners'
+    | '/admin/galeria'
     | '/admin/noticias'
     | '/admin/'
   fileRoutesByTo: FileRoutesByTo
@@ -118,6 +128,7 @@ export interface FileRouteTypes {
     | '/pelo-brasil'
     | '/sua-cidade'
     | '/admin/banners'
+    | '/admin/galeria'
     | '/admin/noticias'
     | '/admin'
   id:
@@ -129,6 +140,7 @@ export interface FileRouteTypes {
     | '/pelo-brasil'
     | '/sua-cidade'
     | '/admin/banners'
+    | '/admin/galeria'
     | '/admin/noticias'
     | '/admin/'
   fileRoutesById: FileRoutesById
@@ -200,6 +212,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminNoticiasRouteImport
       parentRoute: typeof AdminRoute
     }
+    '/admin/galeria': {
+      id: '/admin/galeria'
+      path: '/galeria'
+      fullPath: '/admin/galeria'
+      preLoaderRoute: typeof AdminGaleriaRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/admin/banners': {
       id: '/admin/banners'
       path: '/banners'
@@ -212,12 +231,14 @@ declare module '@tanstack/react-router' {
 
 interface AdminRouteChildren {
   AdminBannersRoute: typeof AdminBannersRoute
+  AdminGaleriaRoute: typeof AdminGaleriaRoute
   AdminNoticiasRoute: typeof AdminNoticiasRoute
   AdminIndexRoute: typeof AdminIndexRoute
 }
 
 const AdminRouteChildren: AdminRouteChildren = {
   AdminBannersRoute: AdminBannersRoute,
+  AdminGaleriaRoute: AdminGaleriaRoute,
   AdminNoticiasRoute: AdminNoticiasRoute,
   AdminIndexRoute: AdminIndexRoute,
 }
