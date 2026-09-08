@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Play } from "lucide-react";
 import { Layout } from "@/components/site/Layout";
 import { GalleryCarousel } from "@/components/site/GalleryCarousel";
+import { useCmsGallery } from "@/hooks/useCmsGallery";
 import { VideoModal } from "@/components/site/VideoModal";
 import walkAsset from "@/assets/denis-chapeu.jpg";
 import rallyBgAsset from "@/assets/denis-menina.jpg";
@@ -160,7 +161,7 @@ function Biografia() {
       <section className="bg-background pb-6">
         <div className="mx-auto max-w-7xl px-4 md:px-8">
 
-          <GalleryCarousel items={GALLERY} showCaptions={false} />
+          <GalleryCarousel items={useCmsGallery("biografia", GALLERY)} showCaptions={false} />
         </div>
       </section>
 

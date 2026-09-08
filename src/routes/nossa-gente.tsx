@@ -5,6 +5,7 @@ import { Layout } from "@/components/site/Layout";
 import { RegionMap } from "@/components/site/RegionMap";
 import { VideoModal } from "@/components/site/VideoModal";
 import { GalleryCarousel } from "@/components/site/GalleryCarousel";
+import { useCmsGallery } from "@/hooks/useCmsGallery";
 import people2 from "@/assets/people/denis-people-2.jpeg.asset.json";
 import people4 from "@/assets/people/denis-people-4.jpeg.asset.json";
 import people5 from "@/assets/people/denis-people-5.jpeg.asset.json";
@@ -103,7 +104,7 @@ function NossaGente() {
 
       <section className="bg-background pb-20">
         <div className="mx-auto max-w-7xl px-4 md:px-8">
-          <GalleryCarousel items={GALLERY} showCaptions={false} />
+          <GalleryCarousel items={useCmsGallery("nossa-gente", GALLERY)} showCaptions={false} />
         </div>
       </section>
     </Layout>
