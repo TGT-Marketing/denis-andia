@@ -85,3 +85,32 @@ export async function fetchPublishedNews() {
   if (error) throw error;
   return (data ?? []) as NewsRow[];
 }
+
+export async function fetchActiveBanners() {
+  const { data, error } = await supabase
+    .from("banners")
+    .select("*")
+    .eq("active", true)
+    .order("sort_order", { ascending: true });
+  if (error) throw error;
+  return (data ?? []) as BannerRow[];
+}
+
+export async function fetchGalleryByAlbum(album: string) {
+  const { data, error } = await supabase
+    .from("gallery_images")
+    .select("*")
+    .eq("album", album)
+    .order("sort_order", { ascending: true })
+    .order("created_at", { ascending: true });
+  if (error) throw error;
+  return (data ?? []) as GalleryRow[];
+}
+
+export const GALLERY_ALBUMS = [
+  { value: "biografia", label: "Sobre o Denis" },
+  { value: "sua-cidade", label: "Por sua cidade" },
+  { value: "nossa-gente", label: "Por nossa gente" },
+  { value: "pelo-brasil", label: "Pelo Brasil" },
+  { value: "geral", label: "Geral" },
+] as const;

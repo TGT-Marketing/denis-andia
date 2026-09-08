@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Play } from "lucide-react";
 import { GalleryCarousel } from "@/components/site/GalleryCarousel";
+import { useCmsGallery } from "@/hooks/useCmsGallery";
 import { Layout } from "@/components/site/Layout";
 import { VideoModal } from "@/components/site/VideoModal";
 import peloBrasilVideo from "@/assets/pelo-brasil-video.mp4.asset.json";
@@ -139,7 +140,7 @@ function ProjetoBlock({ projeto }: { projeto: Projeto }) {
         <h2 className="mt-2 text-sm font-bold text-[var(--brand-green)] uppercase tracking-widest">{projeto.title}</h2>
         <div className="mt-4 text-lg text-muted-foreground">{projeto.description}</div>
       </div>
-      <GalleryCarousel items={projeto.gallery} showCaptions={false} />
+      <GalleryCarousel items={useCmsGallery("pelo-brasil", projeto.gallery)} showCaptions={false} />
     </article>
   );
 }

@@ -5,6 +5,7 @@ import { Layout } from "@/components/site/Layout";
 import { RegionMap } from "@/components/site/RegionMap";
 import { VideoModal } from "@/components/site/VideoModal";
 import { NewsCarousel } from "@/components/site/NewsCarousel";
+import { BannerStrip } from "@/components/site/BannerStrip";
 import bgAsset from "@/assets/hero-denis-senhor.jpg.asset.json";
 import denisCapacete from "@/assets/denis-andia-foto-transparent.png.asset.json";
 import heroVideo from "@/assets/gente-que-conhece-gente-video.mp4.asset.json";
@@ -141,6 +142,8 @@ function Home() {
 
 
 
+
+      <BannerStrip />
 
       {/* NOTÍCIAS */}
       <section id="noticias" className="bg-background py-16 md:py-24">
