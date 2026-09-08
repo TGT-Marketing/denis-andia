@@ -3,6 +3,7 @@ import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight, Play } from "lucide-react";
 import { GalleryCarousel } from "@/components/site/GalleryCarousel";
+import { useCmsGallery } from "@/hooks/useCmsGallery";
 import { Layout } from "@/components/site/Layout";
 import { VideoModal } from "@/components/site/VideoModal";
 import denisCriancaFavela from "@/assets/denis-crianca-favela.jpg.asset.json";
@@ -149,7 +150,7 @@ function ProjetoBlock({ projeto, reverse, showCaptions = true }: { projeto: Proj
           </ul>
         )}
       </div>
-      <GalleryCarousel items={projeto.gallery} showCaptions={showCaptions} />
+      <GalleryCarousel items={useCmsGallery("sua-cidade", projeto.gallery)} showCaptions={showCaptions} />
     </article>
   );
 }

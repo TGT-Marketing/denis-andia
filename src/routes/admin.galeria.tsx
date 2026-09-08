@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
-import { uploadMedia, type GalleryRow } from "@/lib/cms";
+import { GALLERY_ALBUMS, uploadMedia, type GalleryRow } from "@/lib/cms";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -16,7 +16,7 @@ export const Route = createFileRoute("/admin/galeria")({
 
 function AdminGallery() {
   const qc = useQueryClient();
-  const [album, setAlbum] = useState("geral");
+  const [album, setAlbum] = useState<string>("biografia");
   const [caption, setCaption] = useState("");
   const [uploading, setUploading] = useState(false);
 
@@ -74,8 +74,18 @@ function AdminGallery() {
         <CardContent className="space-y-4 p-4">
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-2">
-              <Label>Álbum</Label>
-              <Input value={album} maxLength={60} onChange={(e) => setAlbum(e.target.value)} />
+              <Label>Página onde a foto vai aparecer</Label>
+              <select
+                value={album}
+                onChange={(e) => setAlbum(e.target.value)}
+                className="h-10 w-full rounded-md border border-input bg-background px-3 text-sm"
+              >
+                {GALLERY_ALBUMS.map((a) => (
+                  <option key={a.value} value={a.value}>
+                    {a.label}
+                  </option>
+                ))}
+              </select>
             </div>
             <div className="space-y-2">
               <Label>Legenda (opcional)</Label>
