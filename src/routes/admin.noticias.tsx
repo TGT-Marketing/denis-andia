@@ -203,8 +203,9 @@ function AdminNews() {
           {draft && (
             <div className="space-y-4">
               <div className="space-y-2">
-                <Label>Título</Label>
+                <Label htmlFor="n-title">Título</Label>
                 <Input
+                  id="n-title"
                   value={draft.title}
                   maxLength={200}
                   onChange={(e) =>
@@ -218,12 +219,13 @@ function AdminNews() {
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="space-y-2">
-                  <Label>Categoria (etiqueta)</Label>
-                  <Input value={draft.category} maxLength={60} onChange={(e) => setDraft({ ...draft, category: e.target.value })} />
+                  <Label htmlFor="n-cat">Categoria (etiqueta)</Label>
+                  <Input id="n-cat" value={draft.category} maxLength={60} onChange={(e) => setDraft({ ...draft, category: e.target.value })} />
                 </div>
                 <div className="space-y-2">
-                  <Label>Ordem</Label>
+                  <Label htmlFor="n-order">Ordem</Label>
                   <Input
+                    id="n-order"
                     type="number"
                     value={draft.sort_order}
                     onChange={(e) => setDraft({ ...draft, sort_order: Number(e.target.value) })}
@@ -231,8 +233,9 @@ function AdminNews() {
                 </div>
               </div>
               <div className="space-y-2">
-                <Label>Resumo</Label>
+                <Label htmlFor="n-excerpt">Resumo</Label>
                 <Textarea
+                  id="n-excerpt"
                   rows={3}
                   maxLength={600}
                   value={draft.excerpt}
@@ -240,16 +243,18 @@ function AdminNews() {
                 />
               </div>
               <div className="space-y-2">
-                <Label>Conteúdo (um parágrafo por linha)</Label>
+                <Label htmlFor="n-content">Conteúdo (um parágrafo por linha)</Label>
                 <Textarea
+                  id="n-content"
                   rows={12}
                   value={draft.content}
                   onChange={(e) => setDraft({ ...draft, content: e.target.value })}
                 />
               </div>
               <div className="space-y-2">
-                <Label>Imagem</Label>
+                <Label htmlFor="n-image">Imagem</Label>
                 <Input
+                  id="n-image"
                   type="file"
                   accept="image/*"
                   disabled={uploading}
@@ -263,14 +268,15 @@ function AdminNews() {
               <div className="flex flex-wrap items-center gap-6">
                 <div className="flex items-center gap-2">
                   <Switch
+                    id="n-status"
                     checked={draft.status === "published"}
                     onCheckedChange={(v) => setDraft({ ...draft, status: v ? "published" : "draft" })}
                   />
-                  <Label>Publicada</Label>
+                  <Label htmlFor="n-status">Publicada</Label>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Switch checked={draft.featured} onCheckedChange={(v) => setDraft({ ...draft, featured: v })} />
-                  <Label>Destaque</Label>
+                  <Switch id="n-featured" checked={draft.featured} onCheckedChange={(v) => setDraft({ ...draft, featured: v })} />
+                  <Label htmlFor="n-featured">Destaque</Label>
                 </div>
               </div>
             </div>
